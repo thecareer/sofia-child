@@ -1,0 +1,16 @@
+/*
+Theme Name:     Startup.jobs
+Template:       sofia
+Version:        1.0
+*/
+
+/*------------------------------------------------------------------------------------------------------------------------------------
+
+*/
+.padding-top-0 {
+    padding-top:  0 !important;
+}
+
+.custom-company .view-all-block-head {
+    margin-top: 10px;
+}
