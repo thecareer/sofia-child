@@ -307,20 +307,34 @@ get_header();
 
                                             <div class="view-content">
                                             <?php while($companies->have_posts()) : $companies->the_post(); ?>
+                                            <?php
+                                            $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
+                                            if($company_cover_id) {
+                                                $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
+                                                $cover_image_src = $cover_image_src['0'];
+                                            }else {
+                                                $cover_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+                                            }
+                                            ?>
+
                                                 <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
+                                                    <div class="cover-image">
+                                                        <span>
+                                                            <img src="<?php echo $cover_image_src; ?>" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
 
-</span></div>
+                                                        </span>
+                                                    </div>
                                                     <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaksaaaajde3zgrinzk0ltc2ngitndc0my05ytfiltyzmji4njnlzge2na.png" width="200" height="200" alt="" class="image-style-company-logo">
-
+                                                        <div class="centered"> 
+                                                            <!-- <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaksaaaajde3zgrinzk0ltc2ngitndc0my05ytfiltyzmji4njnlzge2na.png" width="200" height="200" alt="" class="image-style-company-logo"> -->
+                                                            <?php the_post_thumbnail(); ?>
                                                         </div>
                                                     </div>
-                                                    <div class="title"><span>Formlabs</span></div>
+                                                    <div class="title"><span><?php the_title(); ?></span></div>
                                                     <div class="company-type"><span>Other</span></div>
                                                     <div class="link"><i></i></div>
                                                     <div class="wrap-view-page">
-                                                        <a href="/company/formlabs" hreflang="en"> </a>
+                                                        <a href="<?php the_permalink() ?>" hreflang="en"> </a>
                                                     </div>
                                                 </div>
                                             <?php endwhile; ?>
