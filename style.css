@@ -14,3 +14,49 @@ Version:        1.0
 .custom-company .view-all-block-head {
     margin-top: 10px;
 }
+.pager__items.js-pager__items .pager__item a {
+	font-size: 16px;
+}
+a.page-numbers{
+	background-color: #FFF;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 33px;
+    width: 33px;
+    text-align: center;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    display: inline-block;
+    line-height: 33px;
+}
+.page-numbers.current {
+	background-color: #F0F2FA;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 33px;
+    width: 33px;
+    text-align: center;
+    display: inline-block;
+    line-height: 33px;
+}

@@ -11,7 +11,7 @@ get_header();
                 <div class="node-header--info-wrapper">
                     <div class="node-header--info">
                         <h1 class="node-header--title">
-                            <div class="field field--name-field-header-subheadline field--type-string field--label-hidden field__item">\
+                            <div class="field field--name-field-header-subheadline field--type-string field--label-hidden field__item">
                                 Boston Startup and Tech Companies
                             </div>
                         </h1>
@@ -335,33 +335,36 @@ get_header();
                                                     'type'               => 'array',
                                                     'prev_next'          => false,
                                                 ) );
-
-
+                                                $current = max( 1, get_query_var('paged') );
                                             ?>
                                             <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
                                                 <ul class="pager__items js-pager__items">
+                                                    <?php if(get_query_var('paged', 1) > 1) : ?>
+                                                        <li class="pager__item pager__item--previous">
+                                                            <a href="<?php echo add_query_arg('paged',$current -1);  ?>" title="Go to previous page" rel="prev">
+                                                                <span class="visually-hidden">Previous page</span>
+                                                                <span aria-hidden="true">‹ Previous</span>
+                                                            </a>
+                                                        </li>
+                                                    <?php endif; ?>
+
                                                     <?php foreach ($link as $key => $value) : ?>
                                                         <li class="pager__item">
-                                                            <!-- <a href="?page=0" title="Current page">
-                                                                <span class="visually-hidden">
-                                                                    Current page
-                                                                </span>1
-                                                            </a> -->
                                                             <?php echo $value; ?>
                                                         </li>
                                                     <?php endforeach; ?>
-                                                    <li class="pager__item pager__item--next">
-                                                        <a href="?page=1" title="Go to next page" rel="next">
-                                                            <span class="visually-hidden">Next page</span>
-                                                            <span aria-hidden="true">Next ›</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="pager__item pager__item--last">
-                                                        <a href="?page=97" title="Go to last page">
-                                                            <span class="visually-hidden">Last page</span>
-                                                            <span aria-hidden="true">Last »</span>
-                                                        </a>
-                                                    </li>
+
+                                                    <?php if(get_query_var('paged') < $companies->max_num_pages) : ?>
+
+
+
+                                                        <li class="pager__item pager__item--next">
+                                                            <a href="<?php echo add_query_arg('paged', $current + 1 ) ?>" title="Go to next page" rel="next">
+                                                                <span class="visually-hidden">Next page</span>
+                                                                <span aria-hidden="true">Next ›</span>
+                                                            </a>
+                                                        </li>
+                                                    <?php endif; ?>
                                                 </ul>
                                             </nav>
 
