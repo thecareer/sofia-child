@@ -22,7 +22,7 @@
             <div id="block-bix-branding" class="block block-system block-system-branding-block">
 
                 <a href="/" title="Home" rel="home" class="site-logo">
-                    <img src="//cdn.builtinboston.com/profiles/builtin/themes/bix/builtin_boston.svg" alt="Built in Boston">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/startup.jobs.logo.svg" alt="Startup.JOBS">
                 </a>
             </div>
 
