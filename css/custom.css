@@ -11078,10 +11078,10 @@ header .site-slogan:last-child {
     transition: all .3s;
 }
 .block-bix-frontpage-job-categories.boston {
-    background-image: url(/profiles/builtin/themes/bix/css/../assets/footer-boston.svg);
+    background-image: url(../img/footer-boston.svg);
 }
 .block-bix-frontpage-job-categories.austin {
-    background-image: url(/profiles/builtin/themes/bix/css/../assets/footer-austin.svg);
+    background-image: url(../img/footer-austin.svg);
 }
 .block-bix-frontpage-job-categories .title {
     font-size: 34px;
@@ -12592,10 +12592,10 @@ header .site-slogan:last-child {
     border-bottom: none !important;
 }
 .block-bix-frontpage-events.boston .events-signup-block {
-    background-image: url(/profiles/builtin/themes/bix/css/../assets/footer-boston.svg);
+    background-image: url(../img/footer-boston.svg);
 }
 .block-bix-frontpage-events.austin .events-signup-block {
-    background-image: url(/profiles/builtin/themes/bix/css/../assets/footer-austin.svg);
+    background-image: url(../img/footer-austin.svg);
 }
 .block-bix-frontpage-events .events-signup-block {
     background-color: #FFF;
@@ -23102,10 +23102,10 @@ body.open-ui-autocomplete {
         margin-top: 110px;
     }
     footer.footer-boston {
-        background-image: url(/profiles/builtin/themes/bix/css/../assets/footer-boston.svg);
+        background-image: url(../img/footer-boston.svg);
     }
     footer.footer-austin {
-        background-image: url(/profiles/builtin/themes/bix/css/../assets/footer-austin.svg);
+        background-image: url(../img/footer-austin.svg);
     }
     .page-frontpage footer {
         margin-top: 60px;
