@@ -6,13 +6,15 @@ get_header();
 
         <div id="block-companiesheader" class="block block-block-content block-block-content1799b2a1-fb95-41d4-aecd-f60979c65325 block--narrow">
             <div class="node-header">
-                <div class="node-header--image" style="background-image: url('//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/optimize/public/2017-09/Webp.net-compress-image.jpg');">
+                <div class="node-header--image" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/img/Webp.net-compress-image.jpg');">
                 </div>
                 <div class="node-header--info-wrapper">
                     <div class="node-header--info">
                         <h1 class="node-header--title">
-            <div class="field field--name-field-header-subheadline field--type-string field--label-hidden field__item">Boston Startup and Tech Companies</div>
-      </h1>
+                            <div class="field field--name-field-header-subheadline field--type-string field--label-hidden field__item">\
+                                Boston Startup and Tech Companies
+                            </div>
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -53,48 +55,48 @@ get_header();
                                                 <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-91">
                                                 <label for="company_types_aggregate_type_industry-91"><span class="facet-item__value">Technology Company</span>
                                                     <span class="facet-item__count">
-          1093
-      </span>
+                                                      1093
+                                                  </span>
                                                 </label>
                                             </li>
                                             <li class="facet-item even">
                                                 <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-42">
                                                 <label for="company_types_aggregate_type_industry-42"><span class="facet-item__value">Angel or VC Firm</span>
                                                     <span class="facet-item__count">
-          26
-      </span>
+                                                      26
+                                                  </span>
                                                 </label>
                                             </li>
                                             <li class="facet-item facet-item--collapsed odd">
                                                 <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-3">
                                                 <label for="company_types_aggregate_type_industry-3"><span class="facet-item__value">Agency</span>
                                                     <span class="facet-item__count">
-          24
-      </span>
+                                                      24
+                                                  </span>
                                                 </label>
                                             </li>
                                             <li class="facet-item even">
                                                 <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-96">
                                                 <label for="company_types_aggregate_type_industry-96"><span class="facet-item__value">Co-Working Space or Incubator</span>
                                                     <span class="facet-item__count">
-          10
-      </span>
+                                                  10
+                                                </span>
                                                 </label>
                                             </li>
                                             <li class="facet-item odd">
                                                 <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-80">
                                                 <label for="company_types_aggregate_type_industry-80"><span class="facet-item__value">Other</span>
                                                     <span class="facet-item__count">
-          7
-      </span>
+                                                        7
+                                                    </span>
                                                 </label>
                                             </li>
                                             <li class="facet-item facet-item--collapsed even last">
                                                 <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-22">
                                                 <label for="company_types_aggregate_type_industry-22"><span class="facet-item__value">Professional Services</span>
                                                     <span class="facet-item__count">
-          6
-      </span>
+                                                        6
+                                                    </span>
                                                 </label>
                                             </li>
                                         </ul>
@@ -110,16 +112,16 @@ get_header();
                                                 <input type="checkbox" class="facets-checkbox" id="local_employees-[1 TO 10]">
                                                 <label for="local_employees-[1 TO 10]"><span class="facet-item__value">1-10</span>
                                                     <span class="facet-item__count">
-          62
-      </span>
+                                                    62
+                                                </span>
                                                 </label>
                                             </li>
                                             <li class="facet-item even">
                                                 <input type="checkbox" class="facets-checkbox" id="local_employees-[11 TO 25]">
                                                 <label for="local_employees-[11 TO 25]"><span class="facet-item__value">11-25</span>
                                                     <span class="facet-item__count">
-          20
-      </span>
+                                                      20
+                                                  </span>
                                                 </label>
                                             </li>
                                             <li class="facet-item odd">
@@ -285,6 +287,15 @@ get_header();
                         </div>
                     </div>
                 </div>
+                <?php 
+                $query = array(
+                    'post_status' => 'publish',
+                    'post_type' => 'company',
+                    'posts_per_page' => 3,
+                );
+                $companies = new WP_Query($query);
+
+                ?>
                 <div class="l-content left">
                     <div class="row">
                         <div class="">
@@ -295,6 +306,7 @@ get_header();
                                         <div class="view view-companies-landing view-id-companies_landing view-display-id-companies_landing_content js-view-dom-id-c4a6b0ee54cdd9791c927a0d29c75886840844819a78a248fdc18e00694ed383">
 
                                             <div class="view-content">
+                                            <?php while($companies->have_posts()) : $companies->the_post(); ?>
                                                 <div class="views-row">
                                                     <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
 
@@ -311,242 +323,33 @@ get_header();
                                                         <a href="/company/formlabs" hreflang="en"> </a>
                                                     </div>
                                                 </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/2017-05/RS278A5450.jpg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
+                                            <?php endwhile; ?>
+                                            <?php
+                                                $big = 999999999; // need an unlikely integer
 
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaavuaaaajde0mjg1zgu0ltmzzjgtndi2mc05ogjkltu5nmu1zguyntcxzg.png" width="200" height="200" alt="" class="image-style-company-logo">
+                                                $link =  paginate_links( array(
+                                                    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                                                    'format' => '?paged=%#%',
+                                                    'current' => max( 1, get_query_var('paged') ),
+                                                    'total' => $companies->max_num_pages,
+                                                    'type'               => 'array',
+                                                    'prev_next'          => false,
+                                                ) );
 
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>Toast</span></div>
-                                                    <div class="company-type"><span>Food, Technology</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/toast" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/denver_team.jpg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
 
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaymaaaajgnmzdu0mtizltzlodytndnjny1hywfmlwzimjixzjnlowjmnq.png" width="200" height="200" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>InVision</span></div>
-                                                    <div class="company-type"><span>Software, Technology</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/invision" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cargurus.png" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/12235061_10156326091175599_2062674886615066039_n.png" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>CarGurus</span></div>
-                                                    <div class="company-type"><span>Automotive, Technology</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/cargurus" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/drupal.png" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaixaaaajgiznde4odzmlthlodgtndrhoc1izdlilwe2nzdlodbhmgm5nw.png" width="200" height="200" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>Acquia</span></div>
-                                                    <div class="company-type"><span>Software</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/acquia" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/rapid-7.jpg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/rapid7_logo.jpg" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>Rapid7</span></div>
-                                                    <div class="company-type"><span>Security</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/rapid7" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/levelup-2_0.jpg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/2c2894e.png" width="100" height="22" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>LevelUp</span></div>
-                                                    <div class="company-type"><span>FinTech, Payments</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/levelup" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/2017-06/klaviyo%201.jpg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaai7aaaajdq4nzlizthllwm3yjetndjlmc1hnmexlwnhmji4ndq1ntgyyq.png" width="200" height="200" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>Klaviyo</span></div>
-                                                    <div class="company-type"><span>AdTech</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/klaviyo" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/2017-07/cloudhealth-technologies-office.jpg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/cloud_health_logo.jpg" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>CloudHealth Technologies</span></div>
-                                                    <div class="company-type"><span>Cloud</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/cloudhealth-technologies" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/2017-06/Tech%20Jam%202.jpg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/untitled-1.png" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>CrunchTime!</span></div>
-                                                    <div class="company-type"><span>Food, Technology</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/crunchtime" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/2017-08/markforged%20gallery.jpeg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/2017-08/markforged%20logo.jpg" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>Markforged</span></div>
-                                                    <div class="company-type"><span>Technology</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/markforged" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-                                                    <div class="cover-image"><span>  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/2017-08/shyft-culture_2%20%281%29.jpg" width="258" height="193" alt="" class="image-style-company-card-thumbnail">
-
-</span></div>
-                                                    <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/2017-08/SHYFT-logo-black-blue-analytics-white-background.png" width="262" height="74" alt="" class="image-style-company-logo">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="title"><span>SHYFT Analytics</span></div>
-                                                    <div class="company-type"><span>Big Data, HealthTech</span></div>
-                                                    <div class="link"><i></i></div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/company/shyft-analytics" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
+                                            ?>
                                             <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
                                                 <ul class="pager__items js-pager__items">
-                                                    <li class="pager__item is-active">
-                                                        <a href="?page=0" title="Current page">
-                                                            <span class="visually-hidden">
-              Current page
-            </span>1</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=1" title="Go to page 2">
-                                                            <span class="visually-hidden">
-              Page
-            </span>2</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=2" title="Go to page 3">
-                                                            <span class="visually-hidden">
-              Page
-            </span>3</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=3" title="Go to page 4">
-                                                            <span class="visually-hidden">
-              Page
-            </span>4</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=4" title="Go to page 5">
-                                                            <span class="visually-hidden">
-              Page
-            </span>5</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=5" title="Go to page 6">
-                                                            <span class="visually-hidden">
-              Page
-            </span>6</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=6" title="Go to page 7">
-                                                            <span class="visually-hidden">
-              Page
-            </span>7</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=7" title="Go to page 8">
-                                                            <span class="visually-hidden">
-              Page
-            </span>8</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=8" title="Go to page 9">
-                                                            <span class="visually-hidden">
-              Page
-            </span>9</a>
-                                                    </li>
-                                                    <li class="pager__item pager__item--ellipsis" role="presentation">…</li>
+                                                    <?php foreach ($link as $key => $value) : ?>
+                                                        <li class="pager__item">
+                                                            <!-- <a href="?page=0" title="Current page">
+                                                                <span class="visually-hidden">
+                                                                    Current page
+                                                                </span>1
+                                                            </a> -->
+                                                            <?php echo $value; ?>
+                                                        </li>
+                                                    <?php endforeach; ?>
                                                     <li class="pager__item pager__item--next">
                                                         <a href="?page=1" title="Go to next page" rel="next">
                                                             <span class="visually-hidden">Next page</span>
