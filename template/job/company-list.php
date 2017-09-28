@@ -64,10 +64,14 @@ get_header();
                                                     $current = true;
                                                 }
                                             ?>
-                                                <li class="facet-item facet-item--collapsed odd first">
-                                                <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug)); ?>">
-                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php $industry->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="company_types_aggregate_type_industry-91"><span class="facet-item__value"><?php echo $industry->name; ?></span>
+                                                <li class="facet-item ">
+                                                    <?php if($current) : ?>
+                                                        <a href="<?php echo esc_url(remove_query_arg('type[]', $industry->slug)); ?>">
+                                                    <?php else : ?>
+                                                        <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug)); ?>">
+                                                    <?php endif; ?>
+                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php echo $industry->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <label for="type-<?php echo $industry->slug ?>"><span class="facet-item__value"><?php echo $industry->name; ?></span>
                                                         <span class="facet-item__count">
                                                           <?php echo $industry->count ?>
                                                       </span>
@@ -135,76 +139,44 @@ get_header();
                                         </ul>
                                     </div>
                                 </div>
+
+
+                                <?php
+                                $fundings = get_terms( array('taxonomy' => 'company-funding','hide_empty' => false) );
+                                $selected_funding = isset($_GET['funding']) ? $_GET['funding'] : array();
+                                ?>
+
                                 <div class="block-facet--bix-facets-checkboxes block block-facets block-facet-blockfield-funding-amount last">
 
-                                    <h2 class="box-title">Funding</h2>
+                                    <h2 class="box-title <?php if(!empty($selected_funding)) {echo 'active';} ?>">Funding</h2>
 
                                     <div class="item-list">
                                         <ul data-drupal-facet-id="field_funding_amount" data-drupal-facet-alias="field_funding_amount" class="js-facets-checkbox-links">
-                                            <li class="facet-item odd first">
-                                                <input type="checkbox" class="facets-checkbox" id="field_funding_amount-[1 TO 100000]">
-                                                <label for="field_funding_amount-[1 TO 100000]"><span class="facet-item__value">1-100K</span>
-                                                    <span class="facet-item__count">
-          54
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item even">
-                                                <input type="checkbox" class="facets-checkbox" id="field_funding_amount-[101000 TO 500000]">
-                                                <label for="field_funding_amount-[101000 TO 500000]"><span class="facet-item__value">101K-500K</span>
-                                                    <span class="facet-item__count">
-          80
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item odd">
-                                                <input type="checkbox" class="facets-checkbox" id="field_funding_amount-[500001 TO 1000000]">
-                                                <label for="field_funding_amount-[500001 TO 1000000]"><span class="facet-item__value">500K-1M</span>
-                                                    <span class="facet-item__count">
-          65
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item even">
-                                                <input type="checkbox" class="facets-checkbox" id="field_funding_amount-[1000000 TO 5000000]">
-                                                <label for="field_funding_amount-[1000000 TO 5000000]"><span class="facet-item__value">1M-5M</span>
-                                                    <span class="facet-item__count">
-          261
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item odd">
-                                                <input type="checkbox" class="facets-checkbox" id="field_funding_amount-[5000000 TO 10000000]">
-                                                <label for="field_funding_amount-[5000000 TO 10000000]"><span class="facet-item__value">5M-10M</span>
-                                                    <span class="facet-item__count">
-          168
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item even">
-                                                <input type="checkbox" class="facets-checkbox" id="field_funding_amount-[10000000 TO 20000000]">
-                                                <label for="field_funding_amount-[10000000 TO 20000000]"><span class="facet-item__value">10M-20M</span>
-                                                    <span class="facet-item__count">
-          148
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item odd">
-                                                <input type="checkbox" class="facets-checkbox" id="field_funding_amount-[20000000 TO 50000000]">
-                                                <label for="field_funding_amount-[20000000 TO 50000000]"><span class="facet-item__value">20M-50M</span>
-                                                    <span class="facet-item__count">
-          97
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item even last">
-                                                <input type="checkbox" class="facets-checkbox" id="field_funding_amount-[50000000 TO *]">
-                                                <label for="field_funding_amount-[50000000 TO *]"><span class="facet-item__value">50M+</span>
-                                                    <span class="facet-item__count">
-          47
-      </span>
-                                                </label>
-                                            </li>
+                                            <?php foreach ($fundings as $key => $funding) : ?>
+
+                                            <?php
+                                                $current = false;
+                                                
+                                                if(in_array($funding->slug, $selected_funding)) {
+                                                    $current = true;
+                                                }
+                                            ?>
+                                                <li class="facet-item facet-item--collapsed odd first">
+                                                <?php if($current) : ?>
+                                                    <a href="<?php echo esc_url(remove_query_arg('funding[]', $funding->slug)); ?>">
+                                                <?php else : ?>
+                                                    <a href="<?php echo esc_url(add_query_arg('funding[]', $funding->slug)); ?>">
+                                                <?php endif; ?>
+                                                
+                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php echo $funding->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <label for="type-<?php echo $funding->slug ?>"><span class="facet-item__value"><?php echo $funding->name; ?></span>
+                                                        <span class="facet-item__count">
+                                                          <?php echo $funding->count ?>
+                                                      </span>
+                                                    </label>
+                                                </a>
+                                                </li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </div>
                                 </div>

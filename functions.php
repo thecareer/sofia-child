@@ -181,14 +181,23 @@ function dakachi_add_company_cover_photo()
 
     unregister_taxonomy('dress-code');
 
-    unregister_taxonomy_for_object_type('job-category', 'company');
-    register_taxonomy_for_object_type('job-location', 'company');
-
     register_taxonomy('company-industry', array('company'),
         array(
             'hierarchical'   => true,
             'label'          => __("Company Industry", "jobplanet-themes"),
             'singular_label' => __("Company Industry", "jobplanet-themes"),
+            'rewrite'        => false,
+            'query_var'      => true,
+            'public'         => true,
+            'show_ui'        => true,
+        )
+    );
+
+    register_taxonomy('company-funding', array('company'),
+        array(
+            'hierarchical'   => true,
+            'label'          => __("Company Funding", "jobplanet-themes"),
+            'singular_label' => __("Company Funding", "jobplanet-themes"),
             'rewrite'        => false,
             'query_var'      => true,
             'public'         => true,
