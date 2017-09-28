@@ -39,66 +39,42 @@ get_header();
 
                                     <div class="item-list">
                                         <ul>
-                                            <li class="inactive"><a href="/companies?solrsort=is_company_hiring%20desc">Hiring now</a></li>
-                                            <li class="inactive"><a href="/companies?solrsort=ds_company_funding_max%20desc">Recently Funded</a></li>
-                                            <li class="inactive"><a href="/companies?solrsort=ds_field_year_founded%20desc">Recently Launched</a></li>
+                                            <li class="inactive"><a href="<?php echo esc_url(add_query_arg('orderby', 'hiring')); ?>">Hiring now</a></li>
+                                            <li class="inactive"><a href="echo esc_url(add_query_arg('orderby', 'funded'));">Recently Funded</a></li>
+                                            <li class="inactive"><a href="echo esc_url(add_query_arg('orderby', 'date'));">Recently Launched</a></li>
                                         </ul>
                                     </div>
                                 </div>
+                                <?php
+                                $industries = get_terms( array('taxonomy' => 'company-industry','hide_empty' => false) );
+                                $selected_industry = isset($_GET['type']) ? $_GET['type'] : array();
+                                ?>
                                 <div class="block-facet--checkbox block block-facets block-facet-blockcompany-types-aggregate-type-industry">
 
-                                    <h2 class="box-title">Type</h2>
+                                    <h2 class="box-title <?php if(!empty($selected_industry)) {echo 'active';} ?>">Type</h2>
 
-                                    <div class="item-list">
+                                    <div class="item-list" <?php if(!empty($selected_industry)) {echo 'style="display:block"';} ?>>
                                         <ul data-drupal-facet-id="company_types_aggregate_type_industry" data-drupal-facet-alias="company_types_aggregate_type_industry" class="js-facets-checkbox-links">
-                                            <li class="facet-item facet-item--collapsed odd first">
-                                                <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-91">
-                                                <label for="company_types_aggregate_type_industry-91"><span class="facet-item__value">Technology Company</span>
-                                                    <span class="facet-item__count">
-                                                      1093
-                                                  </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item even">
-                                                <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-42">
-                                                <label for="company_types_aggregate_type_industry-42"><span class="facet-item__value">Angel or VC Firm</span>
-                                                    <span class="facet-item__count">
-                                                      26
-                                                  </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item facet-item--collapsed odd">
-                                                <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-3">
-                                                <label for="company_types_aggregate_type_industry-3"><span class="facet-item__value">Agency</span>
-                                                    <span class="facet-item__count">
-                                                      24
-                                                  </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item even">
-                                                <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-96">
-                                                <label for="company_types_aggregate_type_industry-96"><span class="facet-item__value">Co-Working Space or Incubator</span>
-                                                    <span class="facet-item__count">
-                                                  10
-                                                </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item odd">
-                                                <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-80">
-                                                <label for="company_types_aggregate_type_industry-80"><span class="facet-item__value">Other</span>
-                                                    <span class="facet-item__count">
-                                                        7
-                                                    </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item facet-item--collapsed even last">
-                                                <input type="checkbox" class="facets-checkbox" id="company_types_aggregate_type_industry-22">
-                                                <label for="company_types_aggregate_type_industry-22"><span class="facet-item__value">Professional Services</span>
-                                                    <span class="facet-item__count">
-                                                        6
-                                                    </span>
-                                                </label>
-                                            </li>
+                                            <?php foreach ($industries as $key => $industry) : ?>
+
+                                            <?php
+                                                $current = false;
+                                                
+                                                if(in_array($industry->slug, $selected_industry)) {
+                                                    $current = true;
+                                                }
+                                            ?>
+                                                <li class="facet-item facet-item--collapsed odd first">
+                                                <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug)); ?>">
+                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php $industry->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <label for="company_types_aggregate_type_industry-91"><span class="facet-item__value"><?php echo $industry->name; ?></span>
+                                                        <span class="facet-item__count">
+                                                          <?php echo $industry->count ?>
+                                                      </span>
+                                                    </label>
+                                                </a>
+                                                </li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </div>
                                 </div>
