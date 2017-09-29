@@ -65,77 +65,76 @@ get_header();
                                                 }
                                             ?>
                                                 <li class="facet-item ">
-                                                    <?php if($current) : ?>
-                                                        <a href="<?php echo esc_url(remove_query_arg('type[]', $industry->slug)); ?>">
-                                                    <?php else : ?>
-                                                        <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug)); ?>">
-                                                    <?php endif; ?>
                                                     <input type="checkbox" class="facets-checkbox" id="type-<?php echo $industry->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="type-<?php echo $industry->slug ?>"><span class="facet-item__value"><?php echo $industry->name; ?></span>
-                                                        <span class="facet-item__count">
-                                                          <?php echo $industry->count ?>
-                                                      </span>
+                                                    <label for="type-<?php echo $industry->slug ?>">
+                                                        <?php if($current) : 
+                                                            $link  = remove_query_arg('type');
+                                                            foreach ($selected_industry as $key => $v) {
+                                                                if($v != $industry->slug) {
+                                                                    $link  = add_query_arg(array('type[]' => $v), $link );
+                                                                }
+                                                            }
+                                                        ?>
+                                                            <a href="<?php echo esc_url($link); ?>">
+                                                            <?php else : ?>
+                                                                <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug)); ?>">
+                                                            <?php endif; ?>
+                                                                <span class="facet-item__value"><?php echo $industry->name; ?></span>
+                                                                <span class="facet-item__count">
+                                                                  <?php echo $industry->count ?>
+                                                              </span>
+                                                        </a>
                                                     </label>
-                                                </a>
+                                                
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </div>
                                 </div>
+
+                                <!-- company-size -->
+                                <?php
+                                $sizes = get_terms( array('taxonomy' => 'company-size','hide_empty' => false) );
+                                $selected_size = isset($_GET['size']) ? $_GET['size'] : array();
+                                ?>
                                 <div class="block-facet--bix-facets-checkboxes block block-facets block-facet-blocklocal-employees">
 
-                                    <h2 class="box-title">Size</h2>
+                                    <h2 class="box-title <?php if(!empty($selected_size)) {echo 'active';} ?>">Size</h2>
 
-                                    <div class="item-list">
+                                    <div class="item-list" <?php if(!empty($selected_size)) {echo 'style="display:block"';} ?>>
                                         <ul data-drupal-facet-id="local_employees" data-drupal-facet-alias="local_employees" class="js-facets-checkbox-links">
+                                        <?php foreach ($sizes as $key => $size) : ?>
+
+                                            <?php
+                                                $current = false;
+                                                
+                                                if(in_array($size->slug, $selected_size)) {
+                                                    $current = true;
+                                                }
+                                            ?>
                                             <li class="facet-item odd first">
-                                                <input type="checkbox" class="facets-checkbox" id="local_employees-[1 TO 10]">
-                                                <label for="local_employees-[1 TO 10]"><span class="facet-item__value">1-10</span>
-                                                    <span class="facet-item__count">
-                                                    62
-                                                </span>
+                                                <input type="checkbox" class="facets-checkbox" id="size-<?php echo $size->slug ?>" <?php if($current){echo 'checked=true';} ?>>
+                                                <label for="size-<?php echo $size->slug ?>">
+                                                <?php if($current) : 
+                                                    $link  = remove_query_arg('size');
+                                                    foreach ($selected_size as $key => $v) {
+                                                        if($v != $size->slug) {
+                                                            $link  = add_query_arg(array('size[]' => $v), $link );
+                                                        }
+                                                    }
+                                                ?>
+                                                    <a href="<?php echo esc_url($link); ?>">
+                                                <?php else : ?>
+                                                    <a href="<?php echo esc_url(add_query_arg('size[]', $size->slug)); ?>">
+                                                <?php endif; ?>
+                                                    <span class="facet-item__value"><?php echo $size->name; ?></span>
+                                                        <span class="facet-item__count">
+                                                        <?php echo $size->count ?>
+                                                    </span>
+                                                </a>
                                                 </label>
                                             </li>
-                                            <li class="facet-item even">
-                                                <input type="checkbox" class="facets-checkbox" id="local_employees-[11 TO 25]">
-                                                <label for="local_employees-[11 TO 25]"><span class="facet-item__value">11-25</span>
-                                                    <span class="facet-item__count">
-                                                      20
-                                                  </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item odd">
-                                                <input type="checkbox" class="facets-checkbox" id="local_employees-[26 TO 30]">
-                                                <label for="local_employees-[26 TO 30]"><span class="facet-item__value">26-30</span>
-                                                    <span class="facet-item__count">
-          7
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item even">
-                                                <input type="checkbox" class="facets-checkbox" id="local_employees-[51 TO 100]">
-                                                <label for="local_employees-[51 TO 100]"><span class="facet-item__value">51-100</span>
-                                                    <span class="facet-item__count">
-          15
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item odd">
-                                                <input type="checkbox" class="facets-checkbox" id="local_employees-[101 TO 200]">
-                                                <label for="local_employees-[101 TO 200]"><span class="facet-item__value">101-200</span>
-                                                    <span class="facet-item__count">
-          16
-      </span>
-                                                </label>
-                                            </li>
-                                            <li class="facet-item even last">
-                                                <input type="checkbox" class="facets-checkbox" id="local_employees-[201 TO *]">
-                                                <label for="local_employees-[201 TO *]"><span class="facet-item__value">200+</span>
-                                                    <span class="facet-item__count">
-          8
-      </span>
-                                                </label>
-                                            </li>
+                                            <?php endforeach;?>
                                         </ul>
                                     </div>
                                 </div>
@@ -150,7 +149,7 @@ get_header();
 
                                     <h2 class="box-title <?php if(!empty($selected_funding)) {echo 'active';} ?>">Funding</h2>
 
-                                    <div class="item-list">
+                                    <div class="item-list" <?php if(!empty($selected_industry)) {echo 'style="display:block"';} ?>>
                                         <ul data-drupal-facet-id="field_funding_amount" data-drupal-facet-alias="field_funding_amount" class="js-facets-checkbox-links">
                                             <?php foreach ($fundings as $key => $funding) : ?>
 
@@ -162,19 +161,29 @@ get_header();
                                                 }
                                             ?>
                                                 <li class="facet-item facet-item--collapsed odd first">
-                                                <?php if($current) : ?>
-                                                    <a href="<?php echo esc_url(remove_query_arg('funding[]', $funding->slug)); ?>">
-                                                <?php else : ?>
-                                                    <a href="<?php echo esc_url(add_query_arg('funding[]', $funding->slug)); ?>">
-                                                <?php endif; ?>
+                                                
                                                 
                                                     <input type="checkbox" class="facets-checkbox" id="type-<?php echo $funding->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="type-<?php echo $funding->slug ?>"><span class="facet-item__value"><?php echo $funding->name; ?></span>
-                                                        <span class="facet-item__count">
-                                                          <?php echo $funding->count ?>
-                                                      </span>
+                                                    <label for="type-<?php echo $funding->slug ?>">
+                                                        <?php if($current) : 
+                                                            $link  = remove_query_arg('funding');
+                                                            foreach ($selected_funding as $key => $v) {
+                                                                if($v != $funding->slug) {
+                                                                    $link  = add_query_arg(array('funding[]' => $v), $link );
+                                                                }
+                                                            }
+                                                        ?>
+                                                            <a href="<?php echo esc_url($link); ?>">
+                                                        <?php else : ?>
+                                                            <a href="<?php echo esc_url(add_query_arg('funding[]', $funding->slug)); ?>">
+                                                        <?php endif; ?>
+                                                            <span class="facet-item__value"><?php echo $funding->name; ?></span>
+                                                            <span class="facet-item__count">
+                                                              <?php echo $funding->count ?>
+                                                        </span>
+                                                      </a>
                                                     </label>
-                                                </a>
+                                                
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>

@@ -6,7 +6,7 @@ get_header();
 
         <div id="block-jobsheader" class="block block-block-content block-block-content7aa316fb-6600-4156-9515-05ae41f80c69 block--narrow">
             <div class="node-header">
-                <div class="node-header--image" style="background-image: url('//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/optimize/public/2017-05/boston%20startup%20jobs.jpg');">
+                <div class="node-header--image" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/img/boston-startup-jobs.jpg');">
                 </div>
                 <div class="node-header--info-wrapper">
                     <div class="node-header--info">
@@ -2129,7 +2129,7 @@ get_header();
                     <div class="row">
                         <div class="">
                             <div class="block-region-middle">
-                                <div class="block block-bix-jobs block-bix-jobs-landing-page-featured-views">
+                                <!--<div class="block block-bix-jobs block-bix-jobs-landing-page-featured-views">
 
                                     <h2 class="box-title">Boston Startups and Companies hiring</h2>
                                     <div class="views-element-container">
@@ -2199,7 +2199,15 @@ get_header();
                                         </div>
                                     </div>
 
-                                </div>
+                                </div> -->
+                                <?php 
+                                $query = array(
+                                    'post_status' => 'publish',
+                                    'post_type' => 'job',
+                                    'posts_per_page' => 3,
+                                );
+                                $jobs = new WP_Query($query);
+                                ?>
                                 <div class="views-element-container block block-views block-views-blockjobs-jobs-landing">
 
                                     <div>
@@ -2208,6 +2216,7 @@ get_header();
                                             <h1 class="box-title">Boston startup jobs and tech jobs</h1>
 
                                             <div class="view-content">
+                                            <?php while($jobs->have_posts()) : $jobs->the_post(); ?>
                                                 <div class="views-row">
 
                                                     <div class="left">
@@ -2232,468 +2241,51 @@ get_header();
                                                         <a href="/job/customer-happiness-associate-1" hreflang="en"> </a>
                                                     </div>
                                                 </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaakaaaajdi0m2zlytlklwrlmdctndvhos1howy2ltvhzjq4mdjiyjmymq.png" width="200" height="200" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Sales Development Representative (multiple opening…</h2>
-                                                        <div class="company-title">Barkly</div>
-                                                        <div class="description">Have you ever been involved in a “ground floor” opportunity?This is your chance to be a founding member of the sales team!Last year, busin…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">1 hour ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/sales-development-representative-multiple-openings" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/izotope.jpg" width="180" height="180" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Freelance Web Designer</h2>
-                                                        <div class="company-title">iZotope</div>
-                                                        <div class="description">The Opportunity iZotope is looking for an experienced Web Designer for upcoming freelance web design projects. The successful candidate will focus on…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">6 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/freelance-web-designer" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/2017-07/19944560_1170526829720097_274475357263119587_o_0.png" width="300" height="303" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Sr. ServiceNow Engagement Manager</h2>
-                                                        <div class="company-title">Acorio</div>
-                                                        <div class="description">Acorio is looking for a highly-experienced Sr. Engagement Manager who has experience delivering large IT transformation projects to enterprise custome…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">6 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/sr-servicenow-engagement-manager" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/2017-07/19944560_1170526829720097_274475357263119587_o_0.png" width="300" height="303" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Sr. ServiceNow Consultant</h2>
-                                                        <div class="company-title">Acorio</div>
-                                                        <div class="description">Acorio is looking for a Senior ServiceNow Consultant who is passionate about the platform and wants to push the boundaries of the product suite every…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">7 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/sr-servicenow-consultant" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/2017-07/19944560_1170526829720097_274475357263119587_o_0.png" width="300" height="303" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Jr. Developer/Associate Consultant </h2>
-                                                        <div class="company-title">Acorio</div>
-                                                        <div class="description">Acorio Academy Program Apply Now Do you want to work with a leading cloud platform? Do you thrive on learn new technologies? Do you enjoy…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">7 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/jr-developerassociate-consultant" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/skyword.jpeg" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Content Strategist</h2>
-                                                        <div class="company-title">Skyword</div>
-                                                        <div class="description">Skyword is seeking an energetic, experienced self-starter to support many of our clients’ content marketing programs. The&nbsp;Content Strategis…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">14 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/content-strategist-2" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaas2aaaajdc2ndmymzllltq1mzatndnlos04yjg2lwywotu5mznhyzawna.png" width="200" height="200" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Sales Operations Specialist</h2>
-                                                        <div class="company-title">Datto</div>
-                                                        <div class="description">Datto&nbsp;protects business data and provides secure connectivity for tens of thousands of the world's fastest growing companies. Datto's Total Data…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">14 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/sales-operations-specialist-6" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/invaluable.png" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Principal Front-End Engineer</h2>
-                                                        <div class="company-title">Invaluable</div>
-                                                        <div class="description">About Invaluable: Invaluable, the world’s largest online live auction marketplace is rapidly disrupting the traditional auction industry by brin…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">13 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/principal-front-end-engineer" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/netcracker_0.jpg" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Director of SaaS Sales (CRM/e-Commerce/Self Care)</h2>
-                                                        <div class="company-title">Netcracker</div>
-                                                        <div class="description">Join Netcracker Technology, a wholly owned subsidiary of NEC Corporation, to work for a forward-looking software company, offering mission-critical so…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Waltham</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/director-saas-sales-crme-commerceself-care" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/netcracker_0.jpg" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Director SaaS Product Management</h2>
-                                                        <div class="company-title">Netcracker</div>
-                                                        <div class="description">Join Netcracker Technology, a wholly owned subsidiary of NEC Corporation, to work for a forward-looking software company, offering mission-critical so…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Waltham</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/director-saas-product-management" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/eneroc_logo.png" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Product Manager</h2>
-                                                        <div class="company-title">EnerNOC</div>
-                                                        <div class="description">EnerNOC, a leading provider of technology-based energy management solutions, has an immediate need for a Product Manager to join our product managemen…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/product-manager-27" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaizaaaajdaxngfjnmnmlwjmngqtndk2yi04n2i4ltcxzjk3ywuxodg3ma.png" width="200" height="200" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Backend Software Engineer</h2>
-                                                        <div class="company-title">CloudLock</div>
-                                                        <div class="description">WHY US? Cloudlock was launched in 2011 with one simple goal in mind: to transform cloud security into a business enabler. From that initial goal, we…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Waltham</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/backend-software-engineer-0" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/evertrue.png" width="300" height="301" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Senior Devops Engineer</h2>
-                                                        <div class="company-title">EverTrue</div>
-                                                        <div class="description">About EverTrue: EverTrue is a leading advancement software platform that supports fundraising efforts at educational institutions. Powered by institut…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/senior-devops-engineer-3" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/brightcove.png" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Technical Product Manager, CDN</h2>
-                                                        <div class="company-title">Brightcove</div>
-                                                        <div class="description">&nbsp;We’re looking for an experienced professional to manage Brightcove’s CDN integrations and CDN-related products. You’ll work wi…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/technical-product-manager-cdn" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/3df9c1b.png" width="100" height="41" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Product Manager</h2>
-                                                        <div class="company-title">Wellframe</div>
-                                                        <div class="description">Department OverviewThe product team at Wellframe is responsible for ensuring our product delivers value to our internal and external stakeholders. We…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/product-manager-39" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaivaaaajda4ymuxn2izlwewndctndrhny1hmzvjlta4mmfjnzzhndqzzq.png" width="200" height="200" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Senior Product Manager</h2>
-                                                        <div class="company-title">Flywire</div>
-                                                        <div class="description">We, at Flywire, are seeking a Senior Product Manager to drive impact in our rapidly growing business by identifying and solving problems that provide…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/senior-product-manager-15" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-row">
-
-                                                    <div class="left">
-                                                        <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/drizly_logo.png" width="300" height="300" alt="" class="image-style-company-logo">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="center">
-                                                        <h2 class="title">Inside Sales Intern</h2>
-                                                        <div class="company-title">Drizly</div>
-                                                        <div class="description">We are looking for a talented and competitive Inside Sales Intern to call companies and pitch them Drizly's Corporate offering. The successful candida…</div>
-                                                    </div>
-                                                    <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">22 hours ago</div>
-                                                        <div class="job-location">Greater Boston Area</div>
-                                                        <div class="link"><i></i></div>
-                                                    </div>
-                                                    <div class="wrap-view-page">
-                                                        <a href="/job/inside-sales-intern" hreflang="en"> </a>
-                                                    </div>
-                                                </div>
+                                            <?php endwhile; ?>
 
                                             </div>
 
+                                            <?php
+                                                $big = 999999999; // need an unlikely integer
+
+                                                $link =  paginate_links( array(
+                                                    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                                                    'format' => '?paged=%#%',
+                                                    'current' => max( 1, get_query_var('paged') ),
+                                                    'total' => $jobs->max_num_pages,
+                                                    'type'               => 'array',
+                                                    'prev_next'          => false,
+                                                ) );
+                                                $current = max( 1, get_query_var('paged') );
+                                            ?>
                                             <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
                                                 <ul class="pager__items js-pager__items">
-                                                    <li class="pager__item is-active">
-                                                        <a href="?page=0" title="Current page">
-                                                            <span class="visually-hidden">
-              Current page
-            </span>1</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=1" title="Go to page 2">
-                                                            <span class="visually-hidden">
-              Page
-            </span>2</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=2" title="Go to page 3">
-                                                            <span class="visually-hidden">
-              Page
-            </span>3</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=3" title="Go to page 4">
-                                                            <span class="visually-hidden">
-              Page
-            </span>4</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=4" title="Go to page 5">
-                                                            <span class="visually-hidden">
-              Page
-            </span>5</a>
-                                                    </li>
-                                                    <li class="pager__item">
-                                                        <a href="?page=5" title="Go to page 6">
-                                                            <span class="visually-hidden">
-              Page
-            </span>6</a>
-                                                    </li>
-                                                    <li class="pager__item pager__item--ellipsis" role="presentation">…</li>
-                                                    <li class="pager__item pager__item--next">
-                                                        <a href="?page=1" title="Go to next page" rel="next">
-                                                            <span class="visually-hidden">Next page</span>
-                                                            <span aria-hidden="true">Next ›</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="pager__item pager__item--last">
-                                                        <a href="?page=66" title="Go to last page">
-                                                            <span class="visually-hidden">Last page</span>
-                                                            <span aria-hidden="true">Last »</span>
-                                                        </a>
-                                                    </li>
+                                                    <?php if(get_query_var('paged', 1) > 1) : ?>
+                                                        <li class="pager__item pager__item--previous">
+                                                            <a href="<?php echo add_query_arg('paged',$current -1);  ?>" title="Go to previous page" rel="prev">
+                                                                <span class="visually-hidden">Previous page</span>
+                                                                <span aria-hidden="true">‹ Previous</span>
+                                                            </a>
+                                                        </li>
+                                                    <?php endif; ?>
+
+                                                    <?php foreach ($link as $key => $value) : ?>
+                                                        <li class="pager__item">
+                                                            <?php echo $value; ?>
+                                                        </li>
+                                                    <?php endforeach; ?>
+
+                                                    <?php if(get_query_var('paged') < $jobs->max_num_pages) : ?>
+
+
+
+                                                        <li class="pager__item pager__item--next">
+                                                            <a href="<?php echo add_query_arg('paged', $current + 1 ) ?>" title="Go to next page" rel="next">
+                                                                <span class="visually-hidden">Next page</span>
+                                                                <span aria-hidden="true">Next ›</span>
+                                                            </a>
+                                                        </li>
+                                                    <?php endif; ?>
                                                 </ul>
                                             </nav>
 

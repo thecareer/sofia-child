@@ -4,6 +4,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+require_once dirname(__FILE__) .'/inc/company.php';
+
 function onix_add_cssjs_ver($src)
 {
     if (strpos($src, '?ver=')) {
@@ -198,6 +200,17 @@ function dakachi_add_company_cover_photo()
             'hierarchical'   => true,
             'label'          => __("Company Funding", "jobplanet-themes"),
             'singular_label' => __("Company Funding", "jobplanet-themes"),
+            'rewrite'        => false,
+            'query_var'      => true,
+            'public'         => true,
+            'show_ui'        => true,
+        )
+    );
+    register_taxonomy('company-size', array('company'),
+        array(
+            'hierarchical'   => true,
+            'label'          => __("Company Size", "jobplanet-themes"),
+            'singular_label' => __("Company Size", "jobplanet-themes"),
             'rewrite'        => false,
             'query_var'      => true,
             'public'         => true,
