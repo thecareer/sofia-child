@@ -2217,23 +2217,30 @@ get_header();
 
                                             <div class="view-content">
                                             <?php while($jobs->have_posts()) : $jobs->the_post(); ?>
+
+                                                <?php 
+                                                    $job_id = get_the_ID(); 
+                                                    $company_id = vp_metabox('jobplanet_job.company_id');
+                                                    $company_image_id = get_post_thumbnail_id($company_id);
+                                                    $company_image_src = wp_get_attachment_image_src($company_image_id, 'full');
+                                                ?>
                                                 <div class="views-row">
 
                                                     <div class="left">
                                                         <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaccaaaajgq1ntrhngyzltgznmitndcxyy1iodiylti3mzbmnwfknge3nw.png" width="200" height="200" alt="" class="image-style-company-logo">
+                                                            <div class="centered"> <img src="<?php echo $company_image_src[0]; ?>" width="200" height="200" alt="" class="image-style-company-logo">
 
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="center">
-                                                        <h2 class="title">Customer Happiness Associate</h2>
-                                                        <div class="company-title">Lovepop</div>
-                                                        <div class="description">Our Customer Happiness team exists to delight our customers by creatively solving problems and delivering unexpectedly delightful support to our custo…</div>
+                                                        <h2 class="title"><?php the_title(); ?></h2>
+                                                        <div class="company-title"><?php echo get_the_title($company_id); ?></div>
+                                                        <div class="description"><?php the_excerpt(); ?></div>
                                                     </div>
                                                     <div class="right">
                                                         <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
-                                                        <div class="job-date">44 minutes ago</div>
+                                                        <div class="job-date"><?php echo human_time_diff( strtotime(get_the_date()) ); ?></div>
                                                         <div class="job-location">Greater Boston Area</div>
                                                         <div class="link"><i></i></div>
                                                     </div>
