@@ -1,6 +1,13 @@
 <?php
 get_header();
 the_post();
+
+$company_id = vp_metabox('jobplanet_job.company_id');
+$company_image_id = get_post_thumbnail_id($company_id);
+$company_image_src = wp_get_attachment_image_src($company_image_id, 'full');
+
+$locations = wp_get_post_terms( get_the_ID(), 'job-location');
+$location = $locations[0];
 ?>
 <div class="region region-help">
     
@@ -23,23 +30,24 @@ the_post();
                                         <div class="job-info-wrapper">
                                             <div class="logo-wrapper-small">
                                                 <div class="centered">
-                                                    <a href="/company/energysavvy"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/company_logos/a0ztdbcl.png" width="300" height="300" alt="">
-
+                                                    <a href="<?php echo get_the_permalink( $company_id ); ?>"> 
+                                                        <img src="<?php echo $company_image_src[0] ?>" width="300" height="300" alt="<?php echo get_the_title($company_id); ?>">
                                                     </a>
                                                 </div>
                                             </div>
 
                                             <h1 class="node-title">
-                                                <span class="field field--name-title field--type-string field--label-hidden">Software Engineer (Cambridge)</span>
-
+                                                <span class="field field--name-title field--type-string field--label-hidden"><?php the_title(); ?></span>
                                             </h1>
 
                                             <div class="job-info">
 
                                                 <div class="field field--name-field-company field--type-entity-reference field--label-hidden field__items">
-                                                    <div class="field__item"><a href="/company/energysavvy" hreflang="en">EnergySavvy</a></div>
+                                                    <div class="field__item">
+                                                        <a href="<?php echo get_the_permalink( $company_id ); ?>" hreflang="en"><?php echo get_the_title($company_id); ?></a>
+                                                    </div>
                                                 </div>
-                                                | <span class="company-address">Cambridge</span> </div>
+                                                | <span class="company-address"><?php echo $location->name; ?></span> </div>
                                         </div>
 
                                         <div class="block block-bix-jobs-apply-bottom-only-apply">
@@ -57,30 +65,7 @@ the_post();
                                         <div class="node__content">
                                             <div class="job-description fade-out">
                                                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                    <p>We're looking for a creative software developer for EnergySavvy's Engineering team. You'll be a good fit if you care more about using software to provide great energy-efficiency experiences and solve real business problems than you do about wringing the last bit of efficiency out of a loop.</p>
-                                                    <p>Our Engineers work in rapid iterations, solving the complex problems that come with the challenge of making homes and business more energy efficient. They configure and build on top of our ecosystem of core products in a modern web stack, with a strong focus on usability and quality. To give you a sense of our favorite technologies, our team works with Django, Python, React, Mercurial, and PostgreSQL, but we don’t expect you to walk in the door knowing them.</p>
-                                                    <p>Our company is headquartered in Seattle, with a growing Cambridge office that’s home to almost half of the team you’ll be working with. This is a unique chance to expand EnergySavvy's engineering presence and work closer to our East Coast customers.</p>
-                                                    <p>Why EnergySavvy?</p>
-                                                    <ul>
-                                                        <li>You can be part of team where you have real impact on the product and you have daily access to the management team</li>
-                                                        <li>We're dedicated to bringing the results, processes, and passion often seen in successful consumer software to the enterprise software space</li>
-                                                        <li>You'll work with a fantastic set of tools and a powerful product to fit the individual needs of our clients. This ranges from workflow configuration, to UI customization, to integrating with third party services—and when all else fails, creatively pragmatic hacks</li>
-                                                        <li>We’re a Software-as-a-Service company that cares deeply about our customers and our product</li>
-                                                        <li>We've been recognized as one of Washington State’s Best Workplaces, and now we’re setting our sights on Massachusetts!</li>
-                                                    </ul>
-                                                    <p>Requirements:</p>
-                                                    <ul>
-                                                        <li>Passionate about learning web technologies, and have experience with modern engineering techniques (Git, continuous integration, etc.)</li>
-                                                        <li>Attention to detail and a knack for understanding how business requirements drive technical solutions</li>
-                                                        <li>Strong communication skills—active listener, superb verbal and writing skills</li>
-                                                        <li>An ethic of service and a desire to use your technical skills and aptitude to improve how ordinary people interact with software to do their work</li>
-                                                        <li>Excellent troubleshooting, diagnostic, problem-solving and analytical skills</li>
-                                                        <li>Solid programming experience and expertise in at least one modern language (Python, Ruby, Javascript, C#/Java, etc.)</li>
-                                                    </ul>
-                                                    <p><b>About EnergySavvy</b></p>
-                                                    <p>EnergySavvy is a cloud software company that helps utilities transform their customer experience and operations. EnergySavvy provides personalized customer insights, breakthrough customer engagement, and automated program delivery with the industry's only platform purpose-built to enhance the customer experience and increase operational efficiency. Nearly 40 utilities and state programs rely on EnergySavvy to enable customer experience transformation in the modern, digital customer era. </p>
-                                                    <p>We believe in diversity, not merely because it’s a mechanism for happier, more productive teams, but because we believe we have an obligation to work against structural discrimination. As such, we don't discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.&nbsp;</p>
-                                                    <p>Learn more about EnergySavvy's company and culture.</p>
+                                                    <?php the_content(  ) ; ?>
                                                 </div>
                                             </div>
                                             <div id="read-more-description-toggle"><span data-ga-event="job-read-description" class="ga-event-processed">Read Full Job Description</span></div>
@@ -216,13 +201,10 @@ the_post();
                                 <div id="sticky-wrapper" class="wrap-sticky" style="height: 371px;">
                                     <div class="block block-bix-jobs block-bix-jobs-apply" style="width: 266px;">
 
-                                        <a href="/company/energysavvy"></a>
                                         <div class="logo-wrapper-medium">
-                                            <a href="/company/energysavvy"></a>
                                             <div class="centered">
-                                                <a href="/company/energysavvy"></a>
-                                                <a href="/company/energysavvy"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/company_logos/a0ztdbcl.png" width="300" height="300" alt="">
-
+                                                <a href="<?php echo get_the_permalink( $company_id ); ?>"> 
+                                                    <img src="<?php echo $company_image_src[0]; ?>" width="300" height="300" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -252,7 +234,8 @@ the_post();
                                             <input data-drupal-selector="edit-bix-jobs-email-job-form" type="hidden" name="form_id" value="bix_jobs_email_job_form">
 
                                         </form>
-                                        <a href="/company/energysavvy" class="view-profile">View EnergySavvy's full profile</a><a href="/company/energysavvy#seemorejobs" class="job-category">See more EnergySavvy jobs</a>
+                                        <a href="<?php echo get_the_permalink( $company_id ); ?>" class="view-profile">View <?php echo get_the_title($company_id); ?>'s full profile</a>
+                                        <a href="<?php echo get_the_permalink( $company_id ); ?>#seemorejobs" class="job-category">See more <?php echo get_the_title($company_id); ?> jobs</a>
                                     </div>
                                 </div>
                             </div>

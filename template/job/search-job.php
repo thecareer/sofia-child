@@ -278,7 +278,7 @@ get_header();
                                                         <div class="link"><i></i></div>
                                                     </div>
                                                     <div class="wrap-view-page">
-                                                        <a href="/job/customer-happiness-associate-1" hreflang="en"> </a>
+                                                        <a href="<?php the_permalink(); ?>" hreflang="en"> </a>
                                                     </div>
                                                 </div>
                                             <?php endwhile; ?>
