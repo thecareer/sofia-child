@@ -263,6 +263,8 @@ get_header();
                                             }else {
                                                 $cover_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
                                             }
+                                            $terms = wp_get_post_terms( get_the_ID(), 'company-industry');
+                                            $term = $terms[0];
                                             ?>
 
                                                 <div class="views-row">
@@ -273,13 +275,12 @@ get_header();
                                                         </span>
                                                     </div>
                                                     <div class="logo-wrapper-small">
-                                                        <div class="centered"> 
-                                                            <!-- <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaksaaaajde3zgrinzk0ltc2ngitndc0my05ytfiltyzmji4njnlzge2na.png" width="200" height="200" alt="" class="image-style-company-logo"> -->
+                                                        <div class="centered">
                                                             <?php the_post_thumbnail(); ?>
                                                         </div>
                                                     </div>
                                                     <div class="title"><span><?php the_title(); ?></span></div>
-                                                    <div class="company-type"><span>Other</span></div>
+                                                    <div class="company-type"><span><?php echo $term->name; ?></span></div>
                                                     <div class="link"><i></i></div>
                                                     <div class="wrap-view-page">
                                                         <a href="<?php the_permalink() ?>" hreflang="en"> </a>
