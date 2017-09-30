@@ -3724,56 +3724,56 @@ document.documentElement.className += ' js';
 (function($, Drupal, drupalSettings) {
     'use strict';
     Drupal.google_analytics = {};
-    $(document).ready(function() {
-        $(document.body).on('mousedown keyup touchstart', function(event) {
-            $(event.target).closest('a,area').each(function() {
-                if (Drupal.google_analytics.isInternal(this.href)) {
-                    if ($(this).is('.colorbox') && (drupalSettings.google_analytics.trackColorbox));
-                    else if (drupalSettings.google_analytics.trackDownload && Drupal.google_analytics.isDownload(this.href)) {
-                        ga('send', {
-                            hitType: 'event',
-                            eventCategory: 'Downloads',
-                            eventAction: Drupal.google_analytics.getDownloadExtension(this.href).toUpperCase(),
-                            eventLabel: Drupal.google_analytics.getPageUrl(this.href),
-                            transport: 'beacon'
-                        })
-                    } else if (Drupal.google_analytics.isInternalSpecial(this.href)) ga('send', {
-                        hitType: 'pageview',
-                        page: Drupal.google_analytics.getPageUrl(this.href),
-                        transport: 'beacon'
-                    })
-                } else if (drupalSettings.google_analytics.trackMailto && $(this).is("a[href^='mailto:'],area[href^='mailto:']")) {
-                    ga('send', {
-                        hitType: 'event',
-                        eventCategory: 'Mails',
-                        eventAction: 'Click',
-                        eventLabel: this.href.substring(7),
-                        transport: 'beacon'
-                    })
-                } else if (drupalSettings.google_analytics.trackOutbound && this.href.match(/^\w+:\/\//i))
-                    if (drupalSettings.google_analytics.trackDomainMode !== 2 || (drupalSettings.google_analytics.trackDomainMode === 2 && !Drupal.google_analytics.isCrossDomain(this.hostname, drupalSettings.google_analytics.trackCrossDomains))) ga('send', {
-                        hitType: 'event',
-                        eventCategory: 'Outbound links',
-                        eventAction: 'Click',
-                        eventLabel: this.href,
-                        transport: 'beacon'
-                    })
-            })
-        });
-        if (drupalSettings.google_analytics.trackUrlFragments) window.onhashchange = function() {
-            ga('send', {
-                hitType: 'pageview',
-                page: location.pathname + location.search + location.hash
-            })
-        };
-        if (drupalSettings.google_analytics.trackColorbox) $(document).on('cbox_complete', function() {
-            var href = $.colorbox.element().attr('href');
-            if (href) ga('send', {
-                hitType: 'pageview',
-                page: Drupal.google_analytics.getPageUrl(href)
-            })
-        })
-    });
+    // $(document).ready(function() {
+    //     $(document.body).on('mousedown keyup touchstart', function(event) {
+    //         $(event.target).closest('a,area').each(function() {
+    //             if (Drupal.google_analytics.isInternal(this.href)) {
+    //                 if ($(this).is('.colorbox') && (drupalSettings.google_analytics.trackColorbox));
+    //                 else if (drupalSettings.google_analytics.trackDownload && Drupal.google_analytics.isDownload(this.href)) {
+    //                     ga('send', {
+    //                         hitType: 'event',
+    //                         eventCategory: 'Downloads',
+    //                         eventAction: Drupal.google_analytics.getDownloadExtension(this.href).toUpperCase(),
+    //                         eventLabel: Drupal.google_analytics.getPageUrl(this.href),
+    //                         transport: 'beacon'
+    //                     })
+    //                 } else if (Drupal.google_analytics.isInternalSpecial(this.href)) ga('send', {
+    //                     hitType: 'pageview',
+    //                     page: Drupal.google_analytics.getPageUrl(this.href),
+    //                     transport: 'beacon'
+    //                 })
+    //             } else if (drupalSettings.google_analytics.trackMailto && $(this).is("a[href^='mailto:'],area[href^='mailto:']")) {
+    //                 ga('send', {
+    //                     hitType: 'event',
+    //                     eventCategory: 'Mails',
+    //                     eventAction: 'Click',
+    //                     eventLabel: this.href.substring(7),
+    //                     transport: 'beacon'
+    //                 })
+    //             } else if (drupalSettings.google_analytics.trackOutbound && this.href.match(/^\w+:\/\//i))
+    //                 if (drupalSettings.google_analytics.trackDomainMode !== 2 || (drupalSettings.google_analytics.trackDomainMode === 2 && !Drupal.google_analytics.isCrossDomain(this.hostname, drupalSettings.google_analytics.trackCrossDomains))) ga('send', {
+    //                     hitType: 'event',
+    //                     eventCategory: 'Outbound links',
+    //                     eventAction: 'Click',
+    //                     eventLabel: this.href,
+    //                     transport: 'beacon'
+    //                 })
+    //         })
+    //     });
+        // if (drupalSettings.google_analytics.trackUrlFragments) window.onhashchange = function() {
+        //     ga('send', {
+        //         hitType: 'pageview',
+        //         page: location.pathname + location.search + location.hash
+        //     })
+        // };
+        // if (drupalSettings.google_analytics.trackColorbox) $(document).on('cbox_complete', function() {
+        //     var href = $.colorbox.element().attr('href');
+        //     if (href) ga('send', {
+        //         hitType: 'pageview',
+        //         page: Drupal.google_analytics.getPageUrl(href)
+        //     })
+        // })
+    // });
     Drupal.google_analytics.isCrossDomain = function(hostname, crossDomains) {
         return $.inArray(hostname, crossDomains) > -1 ? true : false
     };
@@ -7411,9 +7411,9 @@ document.documentElement.className += ' js';
         this.url = this.url.replace(/\/nojs(\/|$|\?|#)/g, '/ajax$1');
         // If the 'nojs' version of the URL is trusted, also trust the 'ajax'
         // version.
-        if (drupalSettings.ajaxTrustedUrl[originalUrl]) {
-            drupalSettings.ajaxTrustedUrl[this.url] = true;
-        }
+        // if (drupalSettings.ajaxTrustedUrl[originalUrl]) {
+        //     drupalSettings.ajaxTrustedUrl[this.url] = true;
+        // }
 
         // Set the options for the ajaxSubmit function.
         // The 'this' variable will not persist inside of the options object.
@@ -7481,12 +7481,12 @@ document.documentElement.className += ' js';
                 //   #ajax) can bypass header verification. This is especially useful
                 //   for Ajax with multipart forms. Because IFRAME transport is used,
                 //   the response headers cannot be accessed for verification.
-                if (response !== null && !drupalSettings.ajaxTrustedUrl[ajax.url]) {
-                    if (xmlhttprequest.getResponseHeader('X-Drupal-Ajax-Token') !== '1') {
-                        var customMessage = Drupal.t('The response failed verification so will not be processed.');
-                        return ajax.error(xmlhttprequest, ajax.url, customMessage);
-                    }
-                }
+                // if (response !== null && !drupalSettings.ajaxTrustedUrl[ajax.url]) {
+                //     if (xmlhttprequest.getResponseHeader('X-Drupal-Ajax-Token') !== '1') {
+                //         var customMessage = Drupal.t('The response failed verification so will not be processed.');
+                //         return ajax.error(xmlhttprequest, ajax.url, customMessage);
+                //     }
+                // }
 
                 return ajax.success(response, status);
             },
@@ -7514,14 +7514,14 @@ document.documentElement.className += ' js';
         ajax.options.url += Drupal.ajax.WRAPPER_FORMAT + '=drupal_' + (element_settings.dialogType || 'ajax');
 
         // Bind the ajaxSubmit function to the element event.
-        $(ajax.element).on(element_settings.event, function(event) {
-            if (!drupalSettings.ajaxTrustedUrl[ajax.url] && !Drupal.url.isLocal(ajax.url)) {
-                throw new Error(Drupal.t('The callback URL is not local and not trusted: !url', {
-                    '!url': ajax.url
-                }));
-            }
-            return ajax.eventResponse(this, event);
-        });
+        // $(ajax.element).on(element_settings.event, function(event) {
+        //     if (!drupalSettings.ajaxTrustedUrl[ajax.url] && !Drupal.url.isLocal(ajax.url)) {
+        //         throw new Error(Drupal.t('The callback URL is not local and not trusted: !url', {
+        //             '!url': ajax.url
+        //         }));
+        //     }
+        //     return ajax.eventResponse(this, event);
+        // });
 
         // If necessary, enable keyboard submission so that Ajax behaviors
         // can be triggered through keyboard input as well as e.g. a mousedown

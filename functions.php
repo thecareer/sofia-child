@@ -28,6 +28,7 @@ add_action( 'after_setup_theme', 'remove_css_js' );
  * Add bolton style
  */
 function startup_add_scripts_styles() {
+
 	wp_enqueue_style('main', get_stylesheet_directory_uri() . '/css/main.css');
 	
 	if(!is_page_template( 'page-post-job.php' )) {
@@ -41,6 +42,9 @@ function startup_add_scripts_styles() {
 	wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
 	wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js');
 	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js');
+
+    wp_enqueue_script( 'jeg-gmap', get_stylesheet_directory_uri(). '/js/gmap.js"');
+    wp_enqueue_script( 'jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js"');
 
 }
 add_action( 'wp_enqueue_scripts', 'startup_add_scripts_styles' );

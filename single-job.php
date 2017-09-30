@@ -8,6 +8,10 @@ $company_image_src = wp_get_attachment_image_src($company_image_id, 'full');
 
 $locations = wp_get_post_terms( get_the_ID(), 'job-location');
 $location = $locations[0];
+
+$latlng = explode(',', vp_metabox('jobplanet_job.map_location'));
+$company_name = get_the_title($company_id);
+
 ?>
 <div class="region region-help">
     
@@ -44,7 +48,7 @@ $location = $locations[0];
 
                                                 <div class="field field--name-field-company field--type-entity-reference field--label-hidden field__items">
                                                     <div class="field__item">
-                                                        <a href="<?php echo get_the_permalink( $company_id ); ?>" hreflang="en"><?php echo get_the_title($company_id); ?></a>
+                                                        <a href="<?php echo get_the_permalink( $company_id ); ?>" hreflang="en"><?php echo $company_name; ?></a>
                                                     </div>
                                                 </div>
                                                 | <span class="company-address"><?php echo $location->name; ?></span> </div>
@@ -115,9 +119,9 @@ $location = $locations[0];
                                     <h2 class="box-title">Location</h2>
                                 
                                     <div class="gmap_location_widget company_location">
-                                        <div class="gmap_location_widget_description company_description">Street, Cambridge, MA 01001</div>
-                                        <div class="gmap_location_widget_address company_address">Street, Cambridge, MA 01001</div>
-                                        <div id="gmap_location_widget_map" style="position: relative; overflow: hidden;"></div>
+                                        <div class="gmap_location_widget_description company_description"><?php echo esc_html(vp_metabox('jobplanet_job.address')); ?></div>
+                                        <div id="gmap_location_widget_map" style="position: relative; overflow: hidden;" data-lat="<?php echo esc_html(trim($latlng[0])); ?>" data-lng="<?php echo esc_html(trim($latlng[1])); ?>">
+                                        </div>
                                     </div>
                                 </div>
                                
@@ -125,59 +129,59 @@ $location = $locations[0];
 
                                     <div>
                                         <div class="job-opportunities view view-job-opportunities view-id-job_opportunities view-display-id-block_1 js-view-dom-id-633b3dd5208feb4dc04444b51fc4b4b441513ba4866ec143c0121a631880be9c" id="bix-companies-open-jobs">
+                                            <?php
+                                            $query = array(
+                                                'post_status' => 'publish',
+                                                'post_type' => 'job',
+                                                'paged' => $currentpage,
+                                                'meta_key' => 'company_id',
+                                                'meta_value' => $company_id,
+                                                'exclude' => array(get_the_ID())
+                                            );
 
-                                            <div class="box-title">More Jobs at EnergySavvy<span>2 open jobs</span></div>
+                                            $result = new WP_Query($query);
+                                            if($result->have_posts()) :
+                                            ?>
+                                            <div class="box-title"><?php printf(__( "More Jobs at %s<span>%d open jobs</span>" , "enginethemes" ), $company_name, $result->found_posts) ?></div>
 
-                                            <div class="job-categories">
+                                            <!-- <div class="job-categories">
                                                 <div class="category processed" data-category="all"><span>All</span></div>
                                                 <div class="category active processed" data-category=".category-wrapper-developer"><span>Developer + Engineer</span></div>
                                                 <div class="category processed" data-category=".category-wrapper-operations"><span>Operations</span></div>
-                                            </div>
+                                            </div> -->
 
-                                            <div class="view-content processed" style="position: relative; height: 208px;">
+                                            <div class="view-content processed">
 
                                                 <div class="grid-sizer"></div>
                                                 <div class="gutter-sizer"></div>
-                                                <div class="category-wrapper-developer shuffle-item views-row" style="position: absolute; left: 0%; top: 0px;">
+                                                <?php while($result->have_posts()) : $result->the_post(); ?>
+                                                <?php
+                                                $id = get_the_ID();
+                                                $jobtype = get_the_terms(get_the_ID(), 'job-type');
+                                                ?>
+                                                <div class="category-wrapper-developer views-row" style="margin-right:1%;">
 
                                                     <div class="category">
-                                                        Developer + Engineer
+                                                        <?php  echo $jobtype[0]->name; ?>
                                                     </div>
 
                                                     <div class="title">
-                                                        <a href="/job/software-engineer-cambridge-1" hreflang="en">Software Engineer (Cambridge)</a>
+                                                        <a href="<?php the_permalink(); ?>" hreflang="en">
+                                                        <?php the_title(); ?>
+                                                        </a>
                                                     </div>
 
                                                     <div class="location">
-                                                        <div class="">EnergySavvy</div>
+                                                        <div class=""><?php echo $company_name; ?></div>
                                                     </div>
 
                                                     <div class="link">
-                                                        <a href="/job/software-engineer-cambridge-1">View</a>
+                                                        <a href="<?php the_permalink(); ?>">View</a>
                                                     </div>
 
                                                 </div>
-                                                <div class="category-wrapper-operations shuffle-item views-row" style="position: absolute; left: 25.2275%; top: 0px; display: none;">
-
-                                                    <div class="category">
-                                                        Operations
-                                                    </div>
-
-                                                    <div class="title">
-                                                        <a href="/job/client-engagement-professional-boston-0" hreflang="en">Client Engagement Professional (Boston)</a>
-                                                    </div>
-
-                                                    <div class="location">
-                                                        <div class="">EnergySavvy</div>
-                                                    </div>
-
-                                                    <div class="link">
-                                                        <a href="/job/client-engagement-professional-boston-0">View</a>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="views-row views-row-more" style="position: absolute; left: 50.5787%; top: 0px; display: none;">
+                                                <?php endwhile; ?>
+                                                <div class="views-row views-row-more" style="">
                                                     <h3 class="title">Get notified<br>when new<br>jobs pop up.</h3>
                                                     <div class="more-link"><span>Create job alert</span></div>
                                                     <div id="create-job-alert-wrapper">
@@ -186,6 +190,8 @@ $location = $locations[0];
                                                 </div>
 
                                             </div>
+                                            <?php endif; ?>
+                                            <?php wp_reset_query(); ?>
                                         </div>
                                     </div>
 
