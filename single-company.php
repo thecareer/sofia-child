@@ -87,7 +87,7 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                                                 <div class="company-gallery-dots"><span class="item"></span><span class="item"></span></div>
                                                             </div>
                                                             <div class="col-2">
-                                                                <h2 class="title"><?php printf(__( "Hello, we're %s" , "enginethemes" ), get_the_title()); ?></h2>
+                                                                <!-- <h2 class="title"><?php printf(__( "Hello, we're %s" , "enginethemes" ), get_the_title()); ?></h2> -->
                                                                 <div class="description">
                                                                     <?php the_content(  ); ?>
                                                                 </div>
