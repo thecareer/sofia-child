@@ -93,3 +93,81 @@ a.page-numbers{
   font-size: 12px;
   font-weight: bolder;
 }
+
+.home-top-company .views-row .title {
+    margin-top: 8px;
+    margin-bottom: 0;
+    line-height: 0;
+    text-wrap: normal;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #3A3B41;
+    min-height: auto;
+}
+
+.home-top-company .views-row .cover-image {
+    overflow: hidden;
+    position: relative;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    min-height: 188px;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.home-top-company .views-row{
+    background-color: #F0F2FA;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.home-top-company .company-type{
+    margin-top: 10px;
+    max-width: 200px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #7F8398;
+    text-transform: uppercase;
+}
+.home-top-company .link {
+    position: absolute;
+    right: 20px;
+    bottom: 11px;
+}
+.home-top-company .open-jobs {
+    font-size: 10px;
+    font-weight: 500;
+    color: #7F8398;
+    margin-top: 5px;
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.home-top-company .open-jobs a {
+    font-size: 10px;
+    font-weight: 500;
+    color: #7F8398;
+}
+
+.home-top-company .views-row .logo-wrapper-small {
+    margin-top: -55px;
+    position: relative;
+    z-index: 1;
+}
