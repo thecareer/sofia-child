@@ -160,7 +160,7 @@ $company_name = get_the_title($company_id);
                                                 $jobtype = get_the_terms(get_the_ID(), 'job-type');
                                                 $location = get_the_terms(get_the_ID(), 'job-location');
                                                 ?>
-                                                <div class="category-wrapper-developer views-row" style="margin-righ">
+                                                <div class="category-wrapper-developer views-row" style="margin-right: 1%;">
 
                                                     <div class="category">
                                                         <?php  echo $jobtype[0]->name; ?>
