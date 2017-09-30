@@ -1,5 +1,10 @@
 <?php
 get_header();
+$base = remove_query_arg( 'paged' );
+$base = preg_replace('%\/page/[0-9]+%', '', $base);
+if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
+    $base = remove_query_arg( 'keyword', $base );
+}
 ?>
 <div class="region region-featured-top">
     <div class="region-inner">
@@ -68,7 +73,7 @@ get_header();
                                                     <input type="checkbox" class="facets-checkbox" id="type-<?php echo $industry->slug ?>" <?php if($current){echo 'checked=true';} ?> >
                                                     <label for="type-<?php echo $industry->slug ?>">
                                                         <?php if($current) : 
-                                                            $link  = remove_query_arg('type');
+                                                            $link  = remove_query_arg('type', $base );
                                                             foreach ($selected_industry as $key => $v) {
                                                                 if($v != $industry->slug) {
                                                                     $link  = add_query_arg(array('type[]' => $v), $link );
@@ -77,7 +82,7 @@ get_header();
                                                         ?>
                                                             <a href="<?php echo esc_url($link); ?>">
                                                             <?php else : ?>
-                                                                <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug)); ?>">
+                                                                <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug, $base )); ?>">
                                                             <?php endif; ?>
                                                                 <span class="facet-item__value"><?php echo $industry->name; ?></span>
                                                                 <span class="facet-item__count">
@@ -116,7 +121,7 @@ get_header();
                                                 <input type="checkbox" class="facets-checkbox" id="size-<?php echo $size->slug ?>" <?php if($current){echo 'checked=true';} ?>>
                                                 <label for="size-<?php echo $size->slug ?>">
                                                 <?php if($current) : 
-                                                    $link  = remove_query_arg('size');
+                                                    $link  = remove_query_arg('size', $base );
                                                     foreach ($selected_size as $key => $v) {
                                                         if($v != $size->slug) {
                                                             $link  = add_query_arg(array('size[]' => $v), $link );
@@ -125,7 +130,7 @@ get_header();
                                                 ?>
                                                     <a href="<?php echo esc_url($link); ?>">
                                                 <?php else : ?>
-                                                    <a href="<?php echo esc_url(add_query_arg('size[]', $size->slug)); ?>">
+                                                    <a href="<?php echo esc_url(add_query_arg('size[]', $size->slug, $base )); ?>">
                                                 <?php endif; ?>
                                                     <span class="facet-item__value"><?php echo $size->name; ?></span>
                                                         <span class="facet-item__count">
@@ -166,7 +171,7 @@ get_header();
                                                     <input type="checkbox" class="facets-checkbox" id="type-<?php echo $funding->slug ?>" <?php if($current){echo 'checked=true';} ?> >
                                                     <label for="type-<?php echo $funding->slug ?>">
                                                         <?php if($current) : 
-                                                            $link  = remove_query_arg('funding');
+                                                            $link  = remove_query_arg('funding', $base );
                                                             foreach ($selected_funding as $key => $v) {
                                                                 if($v != $funding->slug) {
                                                                     $link  = add_query_arg(array('funding[]' => $v), $link );
@@ -175,7 +180,7 @@ get_header();
                                                         ?>
                                                             <a href="<?php echo esc_url($link); ?>">
                                                         <?php else : ?>
-                                                            <a href="<?php echo esc_url(add_query_arg('funding[]', $funding->slug)); ?>">
+                                                            <a href="<?php echo esc_url(add_query_arg('funding[]', $funding->slug , $base )); ?>">
                                                         <?php endif; ?>
                                                             <span class="facet-item__value"><?php echo $funding->name; ?></span>
                                                             <span class="facet-item__count">

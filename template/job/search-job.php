@@ -1,5 +1,10 @@
 <?php
 get_header();
+$base = remove_query_arg( 'paged' );
+$base = preg_replace('%\/page/[0-9]+%', '', $base);
+if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
+    $base = remove_query_arg( 'keyword', $base );
+}
 ?>
 <div class="region region-featured-top">
     <div class="region-inner">
@@ -14,12 +19,12 @@ get_header();
                 </div>
             </div>
         </div>
-        <form action="/job-list" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
+        <form action="<?php echo $base; ?>" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
         <div id="block-searchjob" class="block block-bix-jobs block-bix-jobs-search-job">
 
             <div class="search-bar"><span class="label">Search |</span>
                 <div class="job-search-wrapper">
-                    <input type="text" name="keyword" placeholder="job title or keyword" value="<?php echo urldecode(stripslashes(esc_html(get_query_var( 'keyword' ))));  ?>" />
+                    <input type="text" required name="keyword" placeholder="job title or keyword" value="<?php echo urldecode(stripslashes(esc_html(get_query_var( 'keyword' ))));  ?>" />
                 </div>
                 <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
                     <input data-drupal-selector="edit-submit-jobs" type="submit" id="edit-submit-jobs" value="Find Jobs" class="button js-form-submit form-submit">
@@ -63,7 +68,7 @@ get_header();
                                                     <input type="checkbox" class="facets-checkbox" id="type-<?php echo $type->slug ?>" <?php if($current){echo 'checked=true';} ?> >
                                                     <label for="type-<?php echo $type->slug ?>">
                                                         <?php if($current) : 
-                                                            $link  = remove_query_arg('type');
+                                                            $link  = remove_query_arg('type', $base);
                                                             foreach ($selected_types as $key => $v) {
                                                                 if($v != $type->slug) {
                                                                     $link  = add_query_arg(array('type[]' => $v), $link );
@@ -72,7 +77,7 @@ get_header();
                                                         ?>
                                                             <a href="<?php echo esc_url($link); ?>">
                                                             <?php else : ?>
-                                                                <a href="<?php echo esc_url(add_query_arg('type[]', $type->slug)); ?>">
+                                                                <a href="<?php echo esc_url(add_query_arg('type[]', $type->slug , $base)); ?>">
                                                             <?php endif; ?>
                                                                 <span class="facet-item__value"><?php echo $type->name; ?></span>
                                                                 <span class="facet-item__count">
@@ -105,17 +110,17 @@ get_header();
                                                 <li class="facet-item ">
                                                     <input type="checkbox" class="facets-checkbox" id="location-<?php echo $location->slug ?>" <?php if($current){echo 'checked=true';} ?> >
                                                     <label for="location-<?php echo $location->slug ?>">
-                                                        <?php if($current) : 
-                                                            $link  = remove_query_arg('location');
-                                                            foreach ($selected_types as $key => $v) {
+                                                        <?php if($current) :
+                                                            $link  = remove_query_arg('location', $base);
+                                                            foreach ($selected_locations as $key => $v) {
                                                                 if($v != $location->slug) {
-                                                                    $link  = add_query_arg(array('location[]' => $v), $link );
+                                                                    $link  = add_query_arg('location[]', $v, $link );
                                                                 }
                                                             }
                                                         ?>
                                                             <a href="<?php echo esc_url($link); ?>">
                                                             <?php else : ?>
-                                                                <a href="<?php echo esc_url(add_query_arg('location[]', $location->slug)); ?>">
+                                                                <a href="<?php echo esc_url(add_query_arg('location[]', $location->slug, $base)); ?>">
                                                             <?php endif; ?>
                                                                 <span class="facet-item__value"><?php echo $location->name; ?></span>
                                                                 <span class="facet-item__count">

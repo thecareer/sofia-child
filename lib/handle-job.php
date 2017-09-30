@@ -241,7 +241,7 @@ class Dakachi_Jeg_Job
             $keyword = $_REQUEST['keyword'];
         }
 
-        if($keyword) {
+        if($keyword != '') {
             $query['s'] = $keyword;
         }
         // filter salary
