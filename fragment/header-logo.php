@@ -38,7 +38,7 @@
                     <a href="/" data-drupal-link-system-path="<front>">Home</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/job-list" data-drupal-link-system-path="jobs">Jobs</a>
+                    <a href="/jobs" data-drupal-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
                     <a href="/user/login">Saved</a>
@@ -90,7 +90,7 @@
 
             <ul class="menu">
                 <li class="nav-item jobs menu-item">
-                    <a href="/job-list"><span>Local Jobs</span></a>
+                    <a href="/jobs"><span>Local Jobs</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
@@ -373,7 +373,7 @@
                         <div class="nav-content-inner">
                             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
-                                <form action="/job-list" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
+                                <form action="/jobs" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                                     <div class="form--inline clearfix">
                                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                                             <label for="edit-s">Search |</label>
