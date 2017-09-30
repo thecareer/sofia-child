@@ -184,7 +184,6 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                     $query = array(
                                         'post_status' => 'publish',
                                         'post_type' => 'job',
-                                        'paged' => $currentpage,
                                         'meta_key' => 'company_id',
                                         'meta_value' => get_the_ID(),
                                         'showposts' => 10
@@ -207,6 +206,7 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                         </div>
                                         <div class="more-link"><a href="/" class="processed">View All Jobs</a></div>
                                     <?php endif; ?>
+                                    <?php wp_reset_query(); ?>
                                 </div>
                                 <div class="block block-bix-companies block-bix-companies-location">
 
@@ -302,12 +302,7 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                     </div>
 
                                 </div> -->
-
-                                <div class="views-element-container block block-views block-views-blockjob-opportunities-block-1">
-
-                                    <div>
-                                        <div class="job-opportunities view view-job-opportunities view-id-job_opportunities view-display-id-block_1 js-view-dom-id-633b3dd5208feb4dc04444b51fc4b4b441513ba4866ec143c0121a631880be9c" id="bix-companies-open-jobs">
-                                            <?php
+                                <?php
                                             $query = array(
                                                 'post_status' => 'publish',
                                                 'post_type' => 'job',
@@ -317,7 +312,12 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
 
                                             $result = new WP_Query($query);
                                             if($result->have_posts()) :
-                                            ?>
+                                ?>
+                                <div class="views-element-container block block-views block-views-blockjob-opportunities-block-1">
+
+                                    <div>
+                                        <div class="job-opportunities view view-job-opportunities view-id-job_opportunities view-display-id-block_1 js-view-dom-id-633b3dd5208feb4dc04444b51fc4b4b441513ba4866ec143c0121a631880be9c" id="bix-companies-open-jobs">
+
                                             <div class="box-title"><?php printf(__( "Jobs at %s<span>%d open jobs</span>" , "enginethemes" ), get_the_title(), $result->found_posts) ?></div>
 
                                             <!-- <div class="job-categories">
@@ -367,13 +367,13 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                                 </div>
 
                                             </div>
-                                            <?php endif; ?>
-                                            <?php wp_reset_query(); ?>
                                         </div>
                                     </div>
 
                                 </div>
-                                <div class="views-element-container block block-views block-views-blockcompany-news-block-1">
+                                <?php endif; ?>
+                                <?php wp_reset_query(); ?>
+                                <!-- <div class="views-element-container block block-views block-views-blockcompany-news-block-1">
 
                                     <div>
                                         <div class="view view-company-news view-id-company_news view-display-id-block_1 js-view-dom-id-c8c97280278d16c9adde0d122b6c69b8f4247c4dbf4fe42f598938a381b99765">
@@ -513,7 +513,7 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                         </div>
                                     </div>
 
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

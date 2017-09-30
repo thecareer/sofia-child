@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-require_once dirname(__FILE__) .'/inc/company.php';
+require_once dirname(__FILE__) .'/lib/handle-company.php';
 
 function onix_add_cssjs_ver($src)
 {
@@ -257,3 +257,23 @@ function dakachi_jeg_pagemetabox_setup()
 }
 
 add_action('after_setup_theme', 'dakachi_jeg_pagemetabox_setup', 12);
+
+
+function dakachi_products_plugin_query_vars($vars)
+{
+    $vars[] = 'search';
+    $vars[] = 'keyword';
+    $vars[] = 'category';
+    $vars[] = 'type';
+    $vars[] = 'level';
+    $vars[] = 'tag';
+
+    $vars[] = 'funding';
+
+    $vars[] = 'size';
+    $vars[] = 'sortby';
+
+    return $vars;
+}
+//add plugin query vars (product_id) to wordpress
+add_filter('query_vars', 'dakachi_products_plugin_query_vars');

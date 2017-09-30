@@ -29,16 +29,16 @@ get_header();
                                 <option value="Salsify">Salsify</option>
                                 <option value="Ecosystem">Ecosystem</option>
                     </select> -->
-                    <input type="text" name="s" placeholder="job title or keyword" />
+                    <input type="text" name="keyword" placeholder="job title or keyword" />
                 </div>
             </div>
         </div>
         <div class="views-exposed-form block block-views block-views-exposed-filter-blockjobs-jobs-landing" data-drupal-selector="views-exposed-form-jobs-jobs-landing" id="block-exposedformjobsjobs-landing">
 
-            <form action="/jobs" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
+            <form action="/job-list" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
                 <div class="form--inline clearfix">
                     <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search-api-fulltext form-item-search-api-fulltext form-no-label">
-                        <input data-drupal-selector="edit-search-api-fulltext" type="text" id="edit-search-api-fulltext" name="search_api_fulltext" value="" size="30" maxlength="128" class="form-text">
+                        <input data-drupal-selector="edit-search-api-fulltext" type="text" id="edit-search-api-fulltext" name="keyword" value="" size="30" maxlength="128" class="form-text">
 
                     </div>
                     <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
@@ -235,7 +235,7 @@ get_header();
                                 $query = array(
                                     'post_status' => 'publish',
                                     'post_type' => 'job',
-                                    'posts_per_page' => 3,
+                                    'posts_per_page' => 9,
                                 );
                                 $jobs = new WP_Query($query);
                                 ?>
@@ -286,6 +286,7 @@ get_header();
                                             </div>
 
                                             <?php
+                                            if($jobs->max_num_pages > 1) {
                                                 $big = 999999999; // need an unlikely integer
 
                                                 $link =  paginate_links( array(
@@ -328,7 +329,7 @@ get_header();
                                                     <?php endif; ?>
                                                 </ul>
                                             </nav>
-
+                                            <?php } ?>
                                         </div>
                                     </div>
 

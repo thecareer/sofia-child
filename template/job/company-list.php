@@ -198,7 +198,7 @@ get_header();
                                     <div class="more-link"><span>Add Your Company</span></div>
                                     <a href="/node/add/company" class="link-above"></a>
                                 </div>
-                                <div class="views-element-container block block-views block-views-blockcompany-trending-articles-block-3">
+                                <!-- <div class="views-element-container block block-views block-views-blockcompany-trending-articles-block-3">
 
                                     <div>
                                         <div class="sidebar-listing view view-company-trending-articles view-id-company_trending_articles view-display-id-block_3 js-view-dom-id-9446dc39fdeed907c92526efa60cbaf050c083739ae1b47a1fc13b3de718a81d">
@@ -239,18 +239,16 @@ get_header();
                                         </div>
                                     </div>
 
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php 
-                $query = array(
-                    'post_status' => 'publish',
-                    'post_type' => 'company',
-                    'posts_per_page' => 3,
-                );
-                $companies = new WP_Query($query);
+                <?php
+                $perpage = vp_option('joption.job_per_page', 9);
+                $currentpage = get_query_var('paged') ? get_query_var('paged') : 1;
+
+                $companies = apply_filters('build_company_seach_query', null, $perpage, $currentpage);
 
                 ?>
                 <div class="l-content left">
@@ -297,6 +295,7 @@ get_header();
                                                 </div>
                                             <?php endwhile; ?>
                                             <?php
+                                            if($companies->max_num_pages > 1) {
                                                 $big = 999999999; // need an unlikely integer
 
                                                 $link =  paginate_links( array(
@@ -339,7 +338,7 @@ get_header();
                                                     <?php endif; ?>
                                                 </ul>
                                             </nav>
-
+                                            <?php } ?>
                                         </div>
                                     </div>
 

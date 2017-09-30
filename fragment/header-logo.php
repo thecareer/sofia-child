@@ -3,7 +3,7 @@
         <div class="region region-header">
             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
-                <form action="/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
+                <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                             <label for="edit-s">Search |</label>
@@ -68,7 +68,7 @@
 
             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
-                <form action="/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
+                <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                             <label for="edit-s">Search |</label>
@@ -373,11 +373,11 @@
                         <div class="nav-content-inner">
                             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
-                                <form action="/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
+                                <form action="/job-list" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                                     <div class="form--inline clearfix">
                                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                                             <label for="edit-s">Search |</label>
-                                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
+                                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="keyword" value="" size="30" maxlength="128" autocomplete="off">
 
                                         </div>
                                         <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
