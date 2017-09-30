@@ -14,43 +14,19 @@ get_header();
                 </div>
             </div>
         </div>
+        <form action="/job-list" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
         <div id="block-searchjob" class="block block-bix-jobs block-bix-jobs-search-job">
 
             <div class="search-bar"><span class="label">Search |</span>
                 <div class="job-search-wrapper">
-                    <!-- <select id="job-search-list" multiple="multiple" style="margin: 0px; padding: 0px; border: 0px; display: none;">
-                        <option value="" all="" wheel="" drive "=" " senior=" " software=" " engineer:=" " salsify=" " ecosystem=" " team"="">"All Wheel Drive" Senior Software Engineer: Salsify Ecosystem Team</option>
-                        <option value="" all "=" ">"All</option>
-                            <option value="Wheel">Wheel</option>
-                            <option value="Drive" "=" ">Drive"</option>
-                                <option value="Senior">Senior</option>
-                                <option value="Software">Software</option>
-                                <option value="Engineer:">Engineer:</option>
-                                <option value="Salsify">Salsify</option>
-                                <option value="Ecosystem">Ecosystem</option>
-                    </select> -->
-                    <input type="text" name="keyword" placeholder="job title or keyword" />
+                    <input type="text" name="keyword" placeholder="job title or keyword" value="<?php echo urldecode(stripslashes(esc_html(get_query_var( 'keyword' ))));  ?>" />
+                </div>
+                <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                    <input data-drupal-selector="edit-submit-jobs" type="submit" id="edit-submit-jobs" value="Find Jobs" class="button js-form-submit form-submit">
                 </div>
             </div>
         </div>
-        <div class="views-exposed-form block block-views block-views-exposed-filter-blockjobs-jobs-landing" data-drupal-selector="views-exposed-form-jobs-jobs-landing" id="block-exposedformjobsjobs-landing">
-
-            <form action="/job-list" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
-                <div class="form--inline clearfix">
-                    <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search-api-fulltext form-item-search-api-fulltext form-no-label">
-                        <input data-drupal-selector="edit-search-api-fulltext" type="text" id="edit-search-api-fulltext" name="keyword" value="" size="30" maxlength="128" class="form-text">
-
-                    </div>
-                    <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                        <input data-drupal-selector="edit-submit-jobs" type="submit" id="edit-submit-jobs" value="Find Jobs" class="button js-form-submit form-submit">
-                    </div>
-
-                </div>
-
-            </form>
-
-        </div>
-
+        </form>
     </div>
 </div>
 
@@ -232,12 +208,10 @@ get_header();
 
                                 </div> -->
                                 <?php 
-                                $query = array(
-                                    'post_status' => 'publish',
-                                    'post_type' => 'job',
-                                    'posts_per_page' => 9,
-                                );
-                                $jobs = new WP_Query($query);
+                                $perpage = vp_option('joption.job_per_page', 10);
+                                $currentpage = get_query_var('paged') ? get_query_var('paged') : 1;
+
+                                $jobs = apply_filters('build_job_seach_query', null, $perpage, $currentpage);
                                 ?>
                                 <div class="views-element-container block block-views block-views-blockjobs-jobs-landing">
 

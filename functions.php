@@ -5,6 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 require_once dirname(__FILE__) .'/lib/handle-company.php';
+require_once dirname(__FILE__) .'/lib/handle-job.php';
 
 function onix_add_cssjs_ver($src)
 {
@@ -269,7 +270,7 @@ function dakachi_products_plugin_query_vars($vars)
     $vars[] = 'tag';
 
     $vars[] = 'funding';
-
+    $vars[] = 'location';
     $vars[] = 'size';
     $vars[] = 'sortby';
 

@@ -60,3 +60,14 @@ a.page-numbers{
     display: inline-block;
     line-height: 33px;
 }
+
+.job-search-wrapper input{
+    border: none !important;
+    background: rgba(255, 255, 255, 0.0);
+    margin-top: 12px;
+    box-shadow: none;
+    padding: 5px 10px;
+}
+#block-searchjob .search-bar {
+    padding-right: 25px;
+}
