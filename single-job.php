@@ -158,8 +158,9 @@ $company_name = get_the_title($company_id);
                                                 <?php
                                                 $id = get_the_ID();
                                                 $jobtype = get_the_terms(get_the_ID(), 'job-type');
+                                                $location = get_the_terms(get_the_ID(), 'job-location');
                                                 ?>
-                                                <div class="category-wrapper-developer views-row" style="margin-right:1%;">
+                                                <div class="category-wrapper-developer views-row" style="margin-righ">
 
                                                     <div class="category">
                                                         <?php  echo $jobtype[0]->name; ?>
@@ -172,7 +173,7 @@ $company_name = get_the_title($company_id);
                                                     </div>
 
                                                     <div class="location">
-                                                        <div class=""><?php echo $company_name; ?></div>
+                                                        <div class=""><?php echo $location[0]->name; ?></div>
                                                     </div>
 
                                                     <div class="link">

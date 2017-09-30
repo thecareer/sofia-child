@@ -76,7 +76,7 @@ function job_filter_body_class($classes) {
 	}
 
 	if(is_singular( 'company' )) {
-		$classes[] = 'active-slideshow tall-header premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
+		$classes[] = 'active-slideshow premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
 	}
 
 	return $classes;
@@ -224,3 +224,36 @@ function dakachi_add_company_cover_photo()
 
 }
 add_action('init', 'dakachi_add_company_cover_photo');
+
+remove_action('after_setup_theme', 'jeg_pagemetabox_setup');
+function dakachi_jeg_pagemetabox_setup()
+{
+    if (!class_exists('VP_Metabox')) {
+        return;
+    }
+
+    if (!defined('JOBPLANET_PLUGIN_DIR')) {
+        return;
+    }
+
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/blog-metabox.php');
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/page-metabox.php');
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/page-landing-metabox.php');
+
+    new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/companies-metabox.php');
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR. '/lib/metabox/job-metabox.php');
+    // new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/university-metabox.php');
+    // new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/jobfair-metabox.php');
+
+
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/application-metabox.php');
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/application-status-metabox.php');
+
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/resume-metabox.php');
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/resume-detail-metabox.php');
+
+    new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/alert-metabox.php');
+
+}
+
+add_action('after_setup_theme', 'dakachi_jeg_pagemetabox_setup', 12);
