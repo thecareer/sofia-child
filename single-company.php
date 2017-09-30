@@ -174,60 +174,39 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                     <div class="center">
                                         <div class="logo-wrapper-medium">
                                             <div class="centered">
-                                                <a href="/company/cargurus"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/company_logos/12235061_10156326091175599_2062674886615066039_n.png" width="512" height="512" alt="">
-
+                                                <a href="<?php the_permalink() ?>">
+                                                <img src="<?php echo $company_image; ?>" width="512" height="512" alt="">
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="processed">We're<br>Hiring</h3>
-                                    <div class="item-list">
-                                        <ul>
-                                            <li class="odd first">
-                                                <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-developer">
-                                                    <div class="category" id="category-12"><span class="arrow">Developer Jobs</span></div>
-                                                    <div class="number"><span>13</span></div>
-                                                </a>
-                                            </li>
-                                            <li class="even">
-                                                <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-design">
-                                                    <div class="category" id="category-13"><span class="arrow">Design + UX Jobs</span></div>
-                                                    <div class="number"><span>2</span></div>
-                                                </a>
-                                            </li>
-                                            <li class="odd">
-                                                <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-product">
-                                                    <div class="category" id="category-14"><span class="arrow">Product Jobs</span></div>
-                                                    <div class="number"><span>4</span></div>
-                                                </a>
-                                            </li>
-                                            <li class="even">
-                                                <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-marketing">
-                                                    <div class="category" id="category-16"><span class="arrow">Marketing Jobs</span></div>
-                                                    <div class="number"><span>5</span></div>
-                                                </a>
-                                            </li>
-                                            <li class="odd">
-                                                <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-operations">
-                                                    <div class="category" id="category-18"><span class="arrow">Operations Jobs</span></div>
-                                                    <div class="number"><span>3</span></div>
-                                                </a>
-                                            </li>
-                                            <li class="even">
-                                                <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-sales">
-                                                    <div class="category" id="category-19"><span class="arrow">Sales Jobs</span></div>
-                                                    <div class="number"><span>4</span></div>
-                                                </a>
-                                            </li>
-                                            <li class="odd last">
-                                                <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-data-analytics">
-                                                    <div class="category" id="category-85"><span class="arrow">Data + Analytics Jobs</span></div>
-                                                    <div class="number"><span>5</span></div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="more-link"><a href="/" class="processed">View All 41 Jobs</a></div>
+                                    <?php
+                                    $query = array(
+                                        'post_status' => 'publish',
+                                        'post_type' => 'job',
+                                        'paged' => $currentpage,
+                                        'meta_key' => 'company_id',
+                                        'meta_value' => get_the_ID(),
+                                        'showposts' => 10
+                                    );
+
+                                    $result = new WP_Query($query);
+                                    if($result->have_posts()) :
+                                    ?>
+                                        <h3 class="processed">We're<br>Hiring</h3>
+                                        <div class="item-list">
+                                            <ul>
+                                            <?php while($result->have_posts()) : $result->the_post(); ?>
+                                                <li class="odd first">
+                                                    <a href="<?php the_permalink(); ?>" class="category-wrapper item processed" data-category=".category-wrapper-developer">
+                                                        <div class="category" ><span class="arrow"><?php the_title(); ?></span></div>
+                                                    </a>
+                                                </li>
+                                            <?php endwhile; ?>
+                                            </ul>
+                                        </div>
+                                        <div class="more-link"><a href="/" class="processed">View All Jobs</a></div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="block block-bix-companies block-bix-companies-location">
 
@@ -332,7 +311,6 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                             $query = array(
                                                 'post_status' => 'publish',
                                                 'post_type' => 'job',
-                                                'paged' => $currentpage,
                                                 'meta_key' => 'company_id',
                                                 'meta_value' => get_the_ID(),
                                             );
@@ -550,60 +528,40 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                         <div class="center">
                                             <div class="logo-wrapper-medium">
                                                 <div class="centered">
-                                                    <a href="/company/cargurus"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/company_logos/12235061_10156326091175599_2062674886615066039_n.png" width="512" height="512" alt="">
+                                                    <a href="<?php the_permalink( ); ?>"> 
+                                                        <img src="<?php echo $company_image; ?>" width="512" height="512" alt="">
 
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
+                                <?php
+                                    $query = array(
+                                        'post_status' => 'publish',
+                                        'post_type' => 'job',
+                                        'paged' => $currentpage,
+                                        'meta_key' => 'company_id',
+                                        'meta_value' => get_the_ID(),
+                                        'showposts' => 10
+                                    );
+
+                                    $result = new WP_Query($query);
+                                    if($result->have_posts()) :
+                                    ?>
                                         <h3 class="processed">We're<br>Hiring</h3>
                                         <div class="item-list">
                                             <ul>
+                                            <?php while($result->have_posts()) : $result->the_post(); ?>
                                                 <li class="odd first">
-                                                    <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-developer">
-                                                        <div class="category" id="category-12"><span class="arrow">Developer Jobs</span></div>
-                                                        <div class="number"><span>13</span></div>
+                                                    <a href="<?php the_permalink(); ?>" class="category-wrapper item processed" data-category=".category-wrapper-developer">
+                                                        <div class="category" ><span class="arrow"><?php the_title(); ?></span></div>
                                                     </a>
                                                 </li>
-                                                <li class="even">
-                                                    <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-design">
-                                                        <div class="category" id="category-13"><span class="arrow">Design + UX Jobs</span></div>
-                                                        <div class="number"><span>2</span></div>
-                                                    </a>
-                                                </li>
-                                                <li class="odd">
-                                                    <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-product">
-                                                        <div class="category" id="category-14"><span class="arrow">Product Jobs</span></div>
-                                                        <div class="number"><span>4</span></div>
-                                                    </a>
-                                                </li>
-                                                <li class="even">
-                                                    <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-marketing">
-                                                        <div class="category" id="category-16"><span class="arrow">Marketing Jobs</span></div>
-                                                        <div class="number"><span>5</span></div>
-                                                    </a>
-                                                </li>
-                                                <li class="odd">
-                                                    <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-operations">
-                                                        <div class="category" id="category-18"><span class="arrow">Operations Jobs</span></div>
-                                                        <div class="number"><span>3</span></div>
-                                                    </a>
-                                                </li>
-                                                <li class="even">
-                                                    <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-sales">
-                                                        <div class="category" id="category-19"><span class="arrow">Sales Jobs</span></div>
-                                                        <div class="number"><span>4</span></div>
-                                                    </a>
-                                                </li>
-                                                <li class="odd last">
-                                                    <a href="#" class="category-wrapper item processed" data-category=".category-wrapper-data-analytics">
-                                                        <div class="category" id="category-85"><span class="arrow">Data + Analytics Jobs</span></div>
-                                                        <div class="number"><span>5</span></div>
-                                                    </a>
-                                                </li>
+                                            <?php endwhile; ?>
                                             </ul>
                                         </div>
-                                        <div class="more-link"><a href="/" class="processed">View All 41 Jobs</a></div>
+                                        <div class="more-link"><a href="/" class="processed">View All Jobs</a></div>
+                                    <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
