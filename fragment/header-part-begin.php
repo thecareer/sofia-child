@@ -14,7 +14,7 @@
 <body <?php body_class(); ?>>
 
 <!-- wrapper page -->
-<div class="layout-container">
+<div class="layout-container <?php if(is_404()) { echo "layout-container-404";} ?>">
 	<?php if(is_singular( 'company' )) : ?>
 		<div class="region region-background">
 	    	<div id="block-bixcompanypremiumbackground" class="block block-bix-companies block-bix-companies-premium-background">

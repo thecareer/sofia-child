@@ -38,6 +38,10 @@ function startup_add_scripts_styles() {
 		wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom-post-job.css', array('main'));
 	}
 
+    if(is_404()) {
+        wp_enqueue_style('404', get_stylesheet_directory_uri() . '/css/404.css', array('main'));
+    }
+
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 
 	wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
