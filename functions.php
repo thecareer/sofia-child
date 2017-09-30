@@ -76,7 +76,7 @@ function job_filter_body_class($classes) {
 	}
 
 	if(is_singular( 'company' )) {
-		$classes[] = 'active-slideshow premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
+		$classes[] = 'active-slideshow tall-header  premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
 	}
 
 	return $classes;

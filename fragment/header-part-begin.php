@@ -15,7 +15,17 @@
 
 <!-- wrapper page -->
 <div class="layout-container">
+	<?php if(is_singular( 'company' )) : ?>
+		<div class="region region-background">
+	    	<div id="block-bixcompanypremiumbackground" class="block block-bix-companies block-bix-companies-premium-background">
+	  
+	    
+	      		<div class="company-background" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/img/PENDING_Company_Profile_Premium.jpg);"></div>
+	  		</div>
 
+	  	</div>
+
+  	<?php endif; ?>
     <!-- main-header -->
     <div class="header">
 
