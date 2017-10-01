@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_header(); 
 the_post();
 
 $company_id = vp_metabox('jobplanet_job.company_id');
