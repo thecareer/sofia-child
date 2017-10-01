@@ -52,7 +52,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     $selected_types = isset($_GET['type']) ? $_GET['type'] : array();
                                     ?>
 
-                                    <h2 class="box-title <?php if(!empty($selected_types)) {echo 'active';} ?>">Type</h2>
+                                    <h2 class="box-title active">Type</h2>
 
                                     <div class="item-list" <?php if(!empty($selected_types)) {echo 'style="display:block"';} ?>>
                                         <ul data-drupal-facet-id="company_types_aggregate_type_type" data-drupal-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
