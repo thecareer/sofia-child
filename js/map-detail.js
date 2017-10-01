@@ -52,7 +52,35 @@
             }
         });
 
-
+        var blog_page = 1;
+        $('#load-more-blog').click(function(e){
+            e.preventDefault();
+            var button = $(e.currentTarget);
+            var exclude = $(this).attr('data-exclude');
+            $.ajax({
+                type : 'get',
+                url : global.ajax_url,
+                data : {
+                    current : blog_page,
+                    exclude : exclude,
+                    action : 'load-more-post'
+                },
+                beforeSend :function() {
+                    blog_page++;
+                    button.text('Loading ...');
+                },
+                success : function(res) {
+                    if(res.content) {
+                        $('#list-post').append(res.content);
+                    }
+                    if(res.the_last) {
+                        button.remove();
+                    }else {
+                        button.text('VIEW MORE');
+                    }
+                }
+            });
+        });
 
     });
 })(jQuery);

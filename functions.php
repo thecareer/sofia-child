@@ -6,6 +6,7 @@ if (!defined('ABSPATH')) {
 
 require_once dirname(__FILE__) .'/lib/handle-company.php';
 require_once dirname(__FILE__) .'/lib/handle-job.php';
+require_once dirname(__FILE__) .'/lib/blog.php';
 
 function onix_add_cssjs_ver($src)
 {
@@ -42,6 +43,8 @@ function startup_add_scripts_styles() {
         wp_enqueue_style('404', get_stylesheet_directory_uri() . '/css/404.css', array('main'));
     }
 
+    // wp_enqueue_style('blog', get_stylesheet_directory_uri() . '/css/blog.css', array('main'));
+
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 
     wp_enqueue_script( 'jquery' );
@@ -52,6 +55,8 @@ function startup_add_scripts_styles() {
 
     wp_enqueue_script( 'jeg-gmap', get_stylesheet_directory_uri(). '/js/gmap.js"');
     wp_enqueue_script( 'jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js"');
+
+    wp_localize_script( 'jeg-detail', 'global', array('ajax_url' => admin_url( 'admin-ajax.php' )) );
 
 }
 add_action( 'wp_enqueue_scripts', 'startup_add_scripts_styles' );
@@ -81,6 +86,10 @@ function job_filter_body_class($classes) {
 	if(is_singular( 'job' )) {
 		$classes[] = 'path-node page-node-type-job';
 	}
+
+    if(is_singular( 'post' )) {
+        $classes[] = 'path-node page-node-type-blog blog-regular';
+    }
 
 	if(is_singular( 'company' )) {
 		$classes[] = 'active-slideshow tall-header  premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
