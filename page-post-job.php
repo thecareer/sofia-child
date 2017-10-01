@@ -150,7 +150,7 @@ solutions to deliver top talent</p>
             <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>PREMIUM COMPANY PROFILE<br>
 FEATURED JOB SLOTS</h2>
 
-<p>Introduce your company to the Built In Boston community with an engaging detailed profile that highlights your culture. Day one you’ll start recruiting with targeted premium job slots that easily integrate with your ATS.<br>
+<p>Introduce your company to the Built In Vietnam community with an engaging detailed profile that highlights your culture. Day one you’ll start recruiting with targeted premium job slots that easily integrate with your ATS.<br>
 &nbsp;</p></div>
       
       <div class="clearfix text-formatted field field--name-field-premium-box-percents field--type-text-long field--label-hidden field__items">
@@ -191,7 +191,7 @@ profiles each month</p></div>
             <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>EMPLOYER BRANDED CONTENT<br>
 COMMUNITY EVENTS</h2>
 
-<p>Our content will help you tell your story and highlight everything that makes you a dream destination for prospective candidates. Get infront of the right audience by hosting or participating in recruitment events at Boston’s coolest workspaces.</p>
+<p>Our content will help you tell your story and highlight everything that makes you a dream destination for prospective candidates. Get infront of the right audience by hosting or participating in recruitment events at Vietnam’s coolest workspaces.</p>
 
 <p>&nbsp;</p></div>
       
@@ -251,7 +251,7 @@ introduction acceptance rate</p></div>
       <h2 class="box-title">Our Community</h2>
     
       
-            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Built In Boston’s <span>targeted</span><br><span>recruiting</span> appeals to highly<br>
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Built In Vietnam’s <span>targeted</span><br><span>recruiting</span> appeals to highly<br>
 skilled talent in the heart of<br>
 the tech community.</p>
 <div class="item premium-category-it-ops"><span>13%</span><br>
@@ -275,7 +275,7 @@ Project MGMT</div>
   </div>
 <div class="block block-block-content block-block-content86226a2f-5e7c-4d2f-8858-4fe43348ff11">
   
-      <h2 class="box-title">The Built In Boston Effect</h2>
+      <h2 class="box-title">The Built In Vietnam Effect</h2>
     
       
       <div class="field field--name-field-collection-testimonial field--type-field-collection field--label-hidden field__items">
@@ -286,7 +286,7 @@ Project MGMT</div>
 
 </div>
       
-            <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">We have&nbsp;had successful hires&nbsp;in Sales and Engineering.&nbsp;Built In has been impactful for us to communicate our culture to the Boston community.</div>
+            <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">We have&nbsp;had successful hires&nbsp;in Sales and Engineering.&nbsp;Built In has been impactful for us to communicate our culture to the Vietnam community.</div>
       
             <div class="field field--name-field-testimonial-name field--type-string field--label-hidden field__item">Bruce</div>
       
