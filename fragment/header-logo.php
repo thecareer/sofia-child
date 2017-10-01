@@ -186,12 +186,12 @@
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/best-companies-work-boston.jpg" width="265" height="200" alt=" Best Companies to Work for in Boston" class="image-style-navigation-image">
+                                                        <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/best-companies-work-boston.jpg" width="265" height="200" alt=" Best Companies to Work for in Vietnam" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Boston</a></span></div>
+                                                <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Vietnam</a></span></div>
                                                 <div class="link"><span><a href="/guides/best-companies-work-boston" hreflang="en">View more</a></span></div>
                                             </div>
                                             <div class="views-row">
@@ -202,18 +202,18 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">Inside Boston's Best Software Engineer Jobs</a></span></div>
+                                                <div class="title"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">Inside Vietnam's Best Software Engineer Jobs</a></span></div>
                                                 <div class="link"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">View more</a></span></div>
                                             </div>
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/coolest-offices-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/coolest-offices-boston.jpg" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Boston" class="image-style-navigation-image">
+                                                        <a href="/guides/coolest-offices-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/coolest-offices-boston.jpg" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Vietnam" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/coolest-offices-boston" hreflang="en">Tour Boston's Coolest Tech &amp; Startup Offices</a></span></div>
+                                                <div class="title"><span><a href="/guides/coolest-offices-boston" hreflang="en">Tour Vietnam's Coolest Tech &amp; Startup Offices</a></span></div>
                                                 <div class="link"><span><a href="/guides/coolest-offices-boston" hreflang="en">View more</a></span></div>
                                             </div>
 
@@ -254,9 +254,9 @@
 
                                                     </div>
                                                 </div>
-                                                <div class="title"><span>ODSC East • Boston 2017 Data Science Conference &amp; AI Expo (PAID EVENT)</span></div>
+                                                <div class="title"><span>ODSC East • Vietnam 2017 Data Science Conference &amp; AI Expo (PAID EVENT)</span></div>
                                                 <div class="organized-by">
-                                                    <div>Boston Data Mining</div>
+                                                    <div>Vietnam Data Mining</div>
                                                 </div>
                                                 <a class="view-page" href="/event/odsc-east-boston-2017-data-science-conference-ai-expo-paid-event"></a>
                                             </div>
@@ -272,7 +272,7 @@
                                                 </div>
                                                 <div class="title"><span>Healing Diseases By Sharing Info. Supporting One Another</span></div>
                                                 <div class="organized-by">
-                                                    <div> Boston Hacking Predictive Analytics App</div>
+                                                    <div> Vietnam Hacking Predictive Analytics App</div>
                                                 </div>
                                                 <a class="view-page" href="/event/healing-diseases-sharing-info-supporting-one-another"></a>
                                             </div>
@@ -286,9 +286,9 @@
 
                                                     </div>
                                                 </div>
-                                                <div class="title"><span>HackerNest Boston May Tech Social</span></div>
+                                                <div class="title"><span>HackerNest Vietnam May Tech Social</span></div>
                                                 <div class="organized-by">
-                                                    <div>HackerNest Boston Tech Socials</div>
+                                                    <div>HackerNest Vietnam Tech Socials</div>
                                                 </div>
                                                 <a class="view-page" href="/event/hackernest-boston-may-tech-social"></a>
                                             </div>
@@ -312,7 +312,7 @@
                                     <a href="/blogs"><span>All News</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/guides"><span>Boston Tech Guides</span></a>
+                                    <a href="/guides"><span>Vietnam Tech Guides</span></a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/tech-reports"><span>Industry Reports</span></a>
@@ -355,8 +355,8 @@
 
                                                     </a>
                                                 </div>
-                                                <div class="title"><a href="/blog">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
-                                                <div class="link"><a href="/blog">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
+                                                <div class="title"><a href="/blog">Cybersecurity in Vietnam: Your Guide to Cool Jobs &amp; Companies</a></div>
+                                                <div class="link"><a href="/blog">Cybersecurity in Vietnam: Your Guide to Cool Jobs &amp; Companies</a></div>
                                             </div>
 
                                         </div>
