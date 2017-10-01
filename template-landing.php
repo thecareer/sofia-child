@@ -112,7 +112,7 @@ get_header('landing');
                                                         $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
                                                         $cover_image_src = $cover_image_src['0'];
                                                     }else {
-                                                        $cover_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+                                                        $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
                                                     }
                                                     $terms = wp_get_post_terms( get_the_ID(), 'company-industry');
                                                     $term = $terms[0];
@@ -164,7 +164,7 @@ get_header('landing');
                                     <h2 class="box-title">The startup scene is growing.<br>Grow along with it.</h2>
                                     <a class="view-more-button" href="/companies">View All Companies</a></div>
                                 <div class="bg-image-wrapper">
-                                    <div class="bg-image" style="background-image: url('//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/optimize/public/frontpage/bix_frontpage_startups_3.jpg');"></div>
+                                    <div class="bg-image" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/bix_frontpage_startups_3.jpg');"></div>
                                 </div>
                                 <div class="block-content">
                                     <?php
@@ -189,7 +189,7 @@ get_header('landing');
                                                         $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
                                                         $cover_image_src = $cover_image_src['0'];
                                                     }else {
-                                                        $cover_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+                                                        $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
                                                     }
                                                     $terms = wp_get_post_terms( get_the_ID(), 'company-industry');
                                                     $term = $terms[0];
@@ -236,7 +236,7 @@ get_header('landing');
                                                     <div class="views-row">
                                                         <div class="image">
                                                             <div>
-                                                                <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/best-companies-work-boston.jpg" width="400" height="400" alt=" Best Companies to Work for in Vietnam" class="image-style-tech-series">
+                                                                <a href="/guides/best-companies-work-boston"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="400" height="400" alt=" Best Companies to Work for in Vietnam" class="image-style-tech-series">
 
                                                                 </a>
                                                             </div>
@@ -247,7 +247,7 @@ get_header('landing');
                                                     <div class="views-row">
                                                         <div class="image">
                                                             <div>
-                                                                <a href="/guides/your-guide-best-perks-boston-tech-companies"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-companies-best-perks-benefits.jpg" width="400" height="400" alt="boston tech perks" class="image-style-tech-series">
+                                                                <a href="/guides/your-guide-best-perks-boston-tech-companies"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="400" height="400" alt="boston tech perks" class="image-style-tech-series">
 
                                                                 </a>
                                                             </div>
@@ -258,7 +258,7 @@ get_header('landing');
                                                     <div class="views-row">
                                                         <div class="image">
                                                             <div>
-                                                                <a href="/guides/boston-food-tech"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-food-tech.jpg" width="400" height="400" alt="boston food tech guide" class="image-style-tech-series">
+                                                                <a href="/guides/boston-food-tech"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="400" height="400" alt="boston food tech guide" class="image-style-tech-series">
 
                                                                 </a>
                                                             </div>
@@ -269,7 +269,7 @@ get_header('landing');
                                                     <div class="views-row">
                                                         <div class="image">
                                                             <div>
-                                                                <a href="/guides/boston-healthtech"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-health-tech-guide.jpg" width="400" height="400" alt="Vietnam Healthtech" class="image-style-tech-series">
+                                                                <a href="/guides/boston-healthtech"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="400" height="400" alt="Vietnam Healthtech" class="image-style-tech-series">
 
                                                                 </a>
                                                             </div>
@@ -387,7 +387,7 @@ get_header('landing');
 </h2>
                                     <a class="view-more-button" href="/events">View All Events</a></div>
                                 <div class="bg-image-wrapper">
-                                    <div class="bg-image" style="background-image: url('//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/optimize/public/frontpage/bix_frontpage_events_2.jpg');"></div>
+                                    <div class="bg-image" style="background-image: url('<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>');"></div>
                                 </div>
                                 <div class="block-content">
                                     <div>
@@ -402,7 +402,7 @@ get_header('landing');
                                                                 <br>Sep 26</div>
                                                         </div>
                                                         <div class="cover-image">
-                                                            <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-07/Bench%20to%20Bedside%20Ads%20800x400%204.png" width="270" height="345" alt="" class="image-style-event-card">
+                                                            <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="270" height="345" alt="" class="image-style-event-card">
 
                                                             </div>
                                                         </div>
@@ -421,7 +421,7 @@ get_header('landing');
                                                                 <br>Sep 28</div>
                                                         </div>
                                                         <div class="cover-image">
-                                                            <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-09/Vietnam%20New.png" width="270" height="345" alt="" class="image-style-event-card">
+                                                            <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="270" height="345" alt="" class="image-style-event-card">
 
                                                             </div>
                                                         </div>
@@ -440,7 +440,7 @@ get_header('landing');
                                                                 <br>Oct 3</div>
                                                         </div>
                                                         <div class="cover-image">
-                                                            <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-09/2017-07-deep-email-block-13.png" width="270" height="345" alt="" class="image-style-event-card">
+                                                            <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="270" height="345" alt="" class="image-style-event-card">
 
                                                             </div>
                                                         </div>
@@ -459,7 +459,7 @@ get_header('landing');
                                                                 <br>Oct 7</div>
                                                         </div>
                                                         <div class="cover-image">
-                                                            <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-08/HTVN_2017_EventbrightBanner_v01.jpg" width="270" height="345" alt="" class="image-style-event-card">
+                                                            <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="270" height="345" alt="" class="image-style-event-card">
 
                                                             </div>
                                                         </div>
@@ -485,7 +485,7 @@ get_header('landing');
                                                 <div class="view-content">
                                                     <div class="views-row">
                                                         <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/2017-07/si.jpg" width="470" height="350" alt="Startup Institute Logo">
+                                                            <div class="centered"> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="470" height="350" alt="Startup Institute Logo">
 
                                                             </div>
                                                         </div>
@@ -497,7 +497,7 @@ get_header('landing');
                                                     </div>
                                                     <div class="views-row">
                                                         <div class="logo-wrapper-small">
-                                                            <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/2017-05/general_assembly_logo.png" width="268" height="224" alt="General Assembly Logo ">
+                                                            <div class="centered"> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="268" height="224" alt="General Assembly Logo ">
 
                                                             </div>
                                                         </div>

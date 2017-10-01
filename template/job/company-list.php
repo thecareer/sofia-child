@@ -68,7 +68,6 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                             <?php
                                                 $current = false;
-                                                
                                                 if(in_array($industry->slug, $selected_industry)) {
                                                     $current = true;
                                                 }
@@ -94,7 +93,6 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                               </span>
                                                         </a>
                                                     </label>
-                                                
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
@@ -219,7 +217,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                             <div class="view-content">
                                                 <div class="views-row">
                                                     <div class="image">
-                                                        <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/news_card/public/2017-05/Volunteer.jpg" width="250" height="190" alt="5 Vietnam tech companies where employees get time off to volunteer" class="image-style-news-card">
+                                                        <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="250" height="190" alt="5 Vietnam tech companies where employees get time off to volunteer" class="image-style-news-card">
 
                                                         </div>
                                                     </div>
@@ -228,7 +226,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 </div>
                                                 <div class="views-row">
                                                     <div class="image">
-                                                        <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/news_card/public/2017-07/zagster_pup-min.png" width="250" height="190" alt="dog" class="image-style-news-card">
+                                                        <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="250" height="190" alt="dog" class="image-style-news-card">
 
                                                         </div>
                                                     </div>
@@ -237,7 +235,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 </div>
                                                 <div class="views-row">
                                                     <div class="image">
-                                                        <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/news_card/public/2017-05/shutterstock_404972962.jpg" width="250" height="190" alt="diversity" class="image-style-news-card">
+                                                        <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="250" height="190" alt="diversity" class="image-style-news-card">
 
                                                         </div>
                                                     </div>

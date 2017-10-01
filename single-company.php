@@ -13,7 +13,7 @@ if($company_cover_id) {
     $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
     $cover_image_src = $cover_image_src['0'];
 }else {
-    $cover_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+    $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
 }
 
 $company_head_id = get_post_meta( get_the_ID(), 'company_company-head_thumbnail_id', true );
@@ -21,7 +21,7 @@ if($company_head_id) {
     $head_image_src = wp_get_attachment_image_src($company_head_id, 'full');
     $head_image_src = $head_image_src['0'];
 }else {
-    $head_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+    $head_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
 }
 
 ?>

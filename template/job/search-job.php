@@ -236,12 +236,12 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                             <div class="view-content">
                                                 <div class="views-row">
                                                     <div class="cover-image">
-                                                        <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card/public/cargurus.png" width="480" height="360" alt="" class="image-style-company-card">
+                                                        <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="480" height="360" alt="" class="image-style-company-card">
 
                                                         </div>
                                                     </div>
                                                     <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/12235061_10156326091175599_2062674886615066039_n.png" width="300" height="300" alt="" class="image-style-company-logo">
+                                                        <div class="centered"> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="300" height="300" alt="" class="image-style-company-logo">
 
                                                         </div>
                                                     </div>
@@ -255,12 +255,12 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 </div>
                                                 <div class="views-row">
                                                     <div class="cover-image">
-                                                        <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card/public/2017-05/RS278A5450.jpg" width="480" height="360" alt="" class="image-style-company-card">
+                                                        <div> <img src="/RS278A5450.jpg" width="480" height="360" alt="" class="image-style-company-card">
 
                                                         </div>
                                                     </div>
                                                     <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaavuaaaajde0mjg1zgu0ltmzzjgtndi2mc05ogjkltu5nmu1zguyntcxzg.png" width="200" height="200" alt="" class="image-style-company-logo">
+                                                        <div class="centered"> <img src="/aaeaaqaaaaaaaavuaaaajde0mjg1zgu0ltmzzjgtndi2mc05ogjkltu5nmu1zguyntcxzg.png" width="200" height="200" alt="" class="image-style-company-logo">
 
                                                         </div>
                                                     </div>
@@ -274,12 +274,12 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 </div>
                                                 <div class="views-row">
                                                     <div class="cover-image">
-                                                        <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card/public/ezcater-2.jpg" width="480" height="360" alt="" class="image-style-company-card">
+                                                        <div> <img src="/ezcater-2.jpg" width="480" height="360" alt="" class="image-style-company-card">
 
                                                         </div>
                                                     </div>
                                                     <div class="logo-wrapper-small">
-                                                        <div class="centered"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/company_logos/aaeaaqaaaaaaaaptaaaajddhyzlhzwuylwu3nwmtndvhmi1hntm3ltk1zmzkyjnjmznknq.png" width="200" height="200" alt="" class="image-style-company-logo">
+                                                        <div class="centered"> <img src="/aaeaaqaaaaaaaaptaaaajddhyzlhzwuylwu3nwmtndvhmi1hntm3ltk1zmzkyjnjmznknq.png" width="200" height="200" alt="" class="image-style-company-logo">
 
                                                         </div>
                                                     </div>

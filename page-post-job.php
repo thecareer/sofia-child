@@ -133,11 +133,11 @@ solutions to deliver top talent</p>
 <div class="block block-block-content block-block-content5abab5f6-2e8f-44ef-8f0d-857925d7a031 block-left">
   <div class="gallery-wrapper">
     <div class="lSSlideOuter "><div class="lSSlideWrapper usingCss"><ul class="gallery processed lightSlider lSFade lsGrab" style="height: 0px; padding-bottom: 105.263%;">
-              <li class="item-1 lslide active">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/premium_box/public/2017-07/placeit-18.jpg" width="570" height="600" alt="" class="image-style-premium-box">
+              <li class="item-1 lslide active">  <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="570" height="600" alt="" class="image-style-premium-box">
 
 
 </li>
-              <li class="item-2 lslide">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/premium_box/public/2017-07/placeit-19.jpg" width="570" height="600" alt="" class="image-style-premium-box">
+              <li class="item-2 lslide">  <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="570" height="600" alt="" class="image-style-premium-box">
 
 
 </li>
@@ -170,15 +170,15 @@ profiles each month</p></div>
 <div class="block block-block-content block-block-content60942300-17d0-472d-a7c7-d215379d245a block-right">
   <div class="gallery-wrapper">
     <div class="lSSlideOuter "><div class="lSSlideWrapper usingCss"><ul class="gallery processed lightSlider lSFade lsGrab" style="height: 0px; padding-bottom: 105.263%;">
-              <li class="item-1 lslide active">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/premium_box/public/2017-07/placeit-20_0.jpg" width="570" height="600" alt="" class="image-style-premium-box">
+              <li class="item-1 lslide active">  <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="570" height="600" alt="" class="image-style-premium-box">
 
 
 </li>
-              <li class="item-2 lslide">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/premium_box/public/2017-07/screen-shot-2017-03-21-at-12-26-16-pm_0.jpg" width="570" height="600" alt="" class="image-style-premium-box">
+              <li class="item-2 lslide">  <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="570" height="600" alt="" class="image-style-premium-box">
 
 
 </li>
-              <li class="item-3 lslide">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/premium_box/public/2017-07/screen-shot-2017-03-21-at-12-12-09-pm_0.jpg" width="570" height="600" alt="" class="image-style-premium-box">
+              <li class="item-3 lslide">  <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="570" height="600" alt="" class="image-style-premium-box">
 
 
 </li>
@@ -214,11 +214,11 @@ our content</p></div>
 <div class="block block-block-content block-block-content34483675-9f8b-4edd-8c82-41666b4e213d block-left">
   <div class="gallery-wrapper">
     <div class="lSSlideOuter "><div class="lSSlideWrapper usingCss"><ul class="gallery processed lightSlider lSFade lsGrab" style="height: 0px; padding-bottom: 105.263%;">
-              <li class="item-1 lslide active">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/premium_box/public/2017-07/placeit-21.jpg" width="570" height="600" alt="placeit" class="image-style-premium-box">
+              <li class="item-1 lslide active">  <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="570" height="600" alt="placeit" class="image-style-premium-box">
 
 
 </li>
-              <li class="item-2 lslide">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/premium_box/public/2017-07/placeit-3-copy.jpg" width="570" height="600" alt="placeit" class="image-style-premium-box">
+              <li class="item-2 lslide">  <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="570" height="600" alt="placeit" class="image-style-premium-box">
 
 
 </li>
@@ -282,7 +282,7 @@ Project MGMT</div>
               <div class="field__item"><div class="field-collection-item field-collection-item--name-field-collection-testimonial field-collection-item--view-mode-default">
   <div class="content">
     
-            <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/2017-07/bruce.png" width="100" height="100" alt="Bruce">
+            <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item">  <img src="<img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="100" height="100" alt="Bruce">
 
 </div>
       
@@ -300,7 +300,7 @@ Project MGMT</div>
               <div class="field__item"><div class="field-collection-item field-collection-item--name-field-collection-testimonial field-collection-item--view-mode-default">
   <div class="content">
     
-            <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/2017-07/maria.png" width="100" height="100" alt="maria">
+            <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item">  <img src="<img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="100" height="100" alt="maria">
 
 </div>
       
@@ -318,7 +318,7 @@ Project MGMT</div>
               <div class="field__item"><div class="field-collection-item field-collection-item--name-field-collection-testimonial field-collection-item--view-mode-default">
   <div class="content">
     
-            <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item">  <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/2017-07/kelli.png" width="100" height="100" alt="kelli">
+            <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item">  <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="100" height="100" alt="kelli">
 
 </div>
       

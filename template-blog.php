@@ -17,7 +17,7 @@ get_header();
                         <div class="views-row">
 
                             <div class="node-header node--header--series">
-                                <div class="node-header--image" style="background-image: url('//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/optimize/public/2017-05/startups-cambridge.jpg');">
+                                <div class="node-header--image" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/startups-cambridge.jpg');">
                                 </div>
                                 <div class="node-header--info-wrapper">
                                     <div class="node-header--info">
@@ -179,7 +179,7 @@ $post_3 = $news[2];
                                                             $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
                                                             $cover_image_src = $cover_image_src['0'];
                                                         }else {
-                                                            $cover_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+                                                            $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
                                                         }
                                                         $terms = wp_get_post_terms( get_the_ID(), 'company-industry');
                                                         $term = $terms[0];
