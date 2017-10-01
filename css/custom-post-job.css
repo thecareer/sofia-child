@@ -618,7 +618,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-weight: 700;
 }
 h1.heading1 {
@@ -2399,10 +2399,10 @@ body {
     margin: 0;
     margin-top: 77px !important;
     color: #3A3B41;
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-size: 1em;
     line-height: 1.5;
-    background: url(../img/bg.png) repeat left top transparent;
+    background: url(../img/bg.jpg) repeat left top transparent;
     font-weight: 300;
 }
 body .toolbar-fixed {
@@ -2461,7 +2461,7 @@ input[type="submit"] {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
     font-weight: 600;
@@ -2517,7 +2517,7 @@ input,
 select,
 textarea {
     display: block;
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-size: 1em;
 }
 input[type="color"],
@@ -2702,7 +2702,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-size: 1.333em;
     line-height: 1.2;
     margin: 0 0 0.75em;
@@ -4778,7 +4778,7 @@ h6 {
     border-bottom: 1px solid #4FE2C1;
 }
 .block-region-middle .block-entity-viewnode h2 {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     color: #04003F;
     font-size: 28px;
     font-weight: bold;
@@ -4790,7 +4790,7 @@ h6 {
 }
 .block-region-middle .block-entity-viewnode blockquote,
 .block-region-middle .block-entity-viewnode blockquote p {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     color: #4FE2C1;
     padding: 0;
     font-size: 36px;
@@ -4820,7 +4820,7 @@ h6 {
     border-radius: 5px;
 }
 .block-region-middle .block-entity-viewnode figcaption {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     color: #B7BAC9;
     margin-top: 10px;
     font-size: 6px;
@@ -9652,7 +9652,7 @@ header .site-slogan:last-child {
     line-height: 1.2;
     padding: 10px;
     overflow: hidden;
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
 }
 .block-bix-series-more-hiring-articles .series-hiring-articles .series-hiring-articles-main .title a {
     font-size: 20px;
@@ -9700,7 +9700,7 @@ header .site-slogan:last-child {
     padding: 10px;
     margin-bottom: 20px;
     overflow: hidden;
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
 }
 .block-bix-series-more-hiring-articles .series-hiring-articles .series-hiring-articles-sidebar .title a {
     color: #000;
@@ -22440,7 +22440,7 @@ form input[type="week"],
 form input:not([type]),
 form textarea {
     border: 2px solid #28386F;
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
 }
 form input[type="color"]:focus,
 form input[type="date"]:focus,
@@ -22758,14 +22758,14 @@ form input[type="submit"]:active:hover {
     display: block;
 }
 .ui-widget {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-size: 14px;
 }
 .ui-widget input,
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-size: 14px;
 }
 .ui-dialog {
@@ -27109,7 +27109,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
     font-weight: 700;
 }
 h1.heading1 {
