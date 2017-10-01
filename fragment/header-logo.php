@@ -228,7 +228,7 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <li class="nav-item events menu-item menu-item--expanded">
+                <!-- <li class="nav-item events menu-item menu-item--expanded">
                     <a href="/events"><span>Events</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -301,7 +301,7 @@
                         </div>
                         <div class="underlay"></div>
                     </div>
-                </li>
+                </li> -->
                 <li class="nav-item news menu-item menu-item--expanded">
                     <a href="/blogs"><span>News</span></a>
                     <div class="nav-content" style="display: none;">

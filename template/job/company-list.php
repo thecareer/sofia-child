@@ -38,7 +38,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                     <div class="row">
                         <div class="">
                             <div class="block-region-left">
-                                <div class="block-facets block block-bix-companies block-bix-companies-landing-sort">
+                                <!-- <div class="block-facets block block-bix-companies block-bix-companies-landing-sort">
 
                                     <h4 class="box-title active">Filter Your Results</h4>
 
@@ -49,7 +49,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                             <li class="inactive"><a href="echo esc_url(add_query_arg('orderby', 'date'));">Recently Launched</a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
                                 <?php
                                 $industries = get_terms( array('taxonomy' => 'company-industry','hide_empty' => false) );
                                 $selected_industry = isset($_GET['type']) ? $_GET['type'] : array();
