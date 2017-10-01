@@ -5,10 +5,10 @@
         <div class="region region-footer-first">
             <div id="block-footerbuiltinchicago" class="block block-block-content block-block-content767deb42-b900-4191-b543-398d5b805cd3">
 
-                <h2 class="box-title">Built in Chicago</h2>
+                <h2 class="box-title">Startups in Vietnam</h2>
 
                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                    <p>BuiltIn Boston is the online community
+                    <p>StartupsIn Boston is the online community
                         <br> for startups and tech companies.
                         <br> Find startup jobs, company and startup blog.</p>
                     <p>© Startup.JOBS 2017</p>
@@ -85,19 +85,19 @@
 
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="http://www.builtinaustin.com/" target="_blank">Built In Austin</a>
+                        <a href="/sg" target="_blank">Startups In Singapore</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://www.builtinchicago.com/" target="_blank">Built In Chicago</a>
+                        <a href="/vn" target="_blank">Startups In Vietnam</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://www.builtincolorado.com/" target="_blank">Built In Colorado</a>
+                        <a href="/id" target="_blank">Startups In Indonesia</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://www.builtinla.com/" target="_blank">Built In LA</a>
+                        <a href="/my" target="_blank">Startups In Malaysia</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://www.builtinnyc.com/" target="_blank">Built In NYC</a>
+                        <a href="/th" target="_blank">Startups In Thailand</a>
                     </li>
                 </ul>
 
@@ -108,7 +108,7 @@
     </div>
 </footer>
 <div class="overlay"></div>
-<div class="basement">Love Boston <span></span> Love your job</div>
+<div class="basement">Love Startup <span></span> Love your job</div>
 </div>
     <?php wp_footer() ?>
     </body>
