@@ -229,7 +229,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                             <div class="block-region-middle">
                                 <!--<div class="block block-bix-jobs block-bix-jobs-landing-page-featured-views">
 
-                                    <h2 class="box-title">Boston Startups and Companies hiring</h2>
+                                    <h2 class="box-title">Vietnam Startups and Companies hiring</h2>
                                     <div class="views-element-container">
                                         <div class="view view-featured-companies view-id-featured_companies view-display-id-block_1 js-view-dom-id-8596e67c623c57090870162c80dfbb6058f72057a01c38e93cb41adb10a1f4fa">
 
@@ -309,7 +309,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     <div>
                                         <div class="view view-jobs view-id-jobs view-display-id-jobs_landing js-view-dom-id-ae7974363fff15483cbc0325289ab751ccc487df96697d0a4be18cef7d4b2628">
 
-                                            <h1 class="box-title">Boston startup jobs and tech jobs</h1>
+                                            <h1 class="box-title">Vietnam startup jobs and tech jobs</h1>
 
                                             <div class="view-content">
                                             <?php while($jobs->have_posts()) : $jobs->the_post(); ?>
