@@ -48,7 +48,7 @@ function startup_add_scripts_styles() {
     wp_enqueue_script('sticky', get_stylesheet_directory_uri() . '/js/jquery.sticky.js');
 	wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
 	wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js');
-	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js');
+	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery', 'sticky'));
 
     wp_enqueue_script( 'jeg-gmap', get_stylesheet_directory_uri(). '/js/gmap.js"');
     wp_enqueue_script( 'jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js"');
@@ -99,6 +99,12 @@ function dakachi_add_company_cover_photo()
         new MultiPostThumbnails(array(
             'label'     => 'Company Cover Photo',
             'id'        => 'company-cover',
+            'post_type' => 'company',
+        ));
+
+        new MultiPostThumbnails(array(
+            'label'     => 'Company Head Photo',
+            'id'        => 'company-head',
             'post_type' => 'company',
         ));
 

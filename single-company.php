@@ -4,6 +4,26 @@ the_post();
 $industry = get_the_terms(get_the_ID(), 'company-industry');
 $company_image = get_the_post_thumbnail_url();
 $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
+
+
+$gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => get_the_ID()) );
+
+$company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
+if($company_cover_id) {
+    $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
+    $cover_image_src = $cover_image_src['0'];
+}else {
+    $cover_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+}
+
+$company_head_id = get_post_meta( get_the_ID(), 'company_company-head_thumbnail_id', true );
+if($company_head_id) {
+    $head_image_src = wp_get_attachment_image_src($company_head_id, 'full');
+    $head_image_src = $head_image_src['0'];
+}else {
+    $head_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+}
+
 ?>
 
 <main role="main">
@@ -82,14 +102,14 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                                     <div class="company-overview-content">
                                                         <div class="row first-child">
                                                             <div class="col-1">
-                                                                <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_overview/public/2017-06/klaviyo%201.jpg" width="435" height="320" alt="" class="image-style-company-overview">
+                                                                <img src="<?php echo $head_image_src; ?>" width="435" height="320" alt="" class="image-style-company-overview">
 
                                                                 <div class="company-gallery-dots"><span class="item"></span><span class="item"></span><span class="item"></span></div>
                                                             </div>
                                                             <div class="col-2">
                                                                 <!-- <h2 class="title"><?php printf(__( "Hello, we're %s" , "enginethemes" ), get_the_title()); ?></h2> -->
                                                                 <div class="description">
-                                                                    <?php the_content(  ); ?>
+                                                                    <?php the_content(); ?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -101,7 +121,7 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                                                 </div>
                                                             </div>
                                                             <div class="col-2">
-                                                                <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_overview/public/company_photo.jpg" width="435" height="320" alt="" class="image-style-company-overview">
+                                                                <img src="<?php echo $cover_image_src; ?>" width="435" height="320" alt="" class="image-style-company-overview">
 
                                                                 <div class="culture-words">
                                                                     <div class="company-adjectives-title">We are</div>
@@ -130,10 +150,13 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                                 <div>
 
                                                     <ul id="company-slideshow">
-
-                                                        <li data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_overview_slide/public/2017-06/klaviyo%201.jpg"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_overview_slide/public/2017-06/klaviyo%201.jpg"></li>
-                                                        <li data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_overview_slide/public/2017-06/klav%202.jpg"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_overview_slide/public/2017-06/klav%202.jpg"></li>
-                                                        <li data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_overview_slide/public/2017-06/klaviyo.jpeg"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_overview_slide/public/2017-06/klaviyo.jpeg"></li>
+                                                    <?php foreach($gallery as $attachment) : ?>
+                                                        <?php 
+                                                        $thumb = wp_get_attachment_image_src( $attachment->ID,'thumbnail' );
+                                                        $full = wp_get_attachment_image_src( $attachment->ID,'large' );
+                                                        ?>
+                                                        <li data-thumb="<?php echo $thumb[0]; ?>"><img src="<?php echo $full[0]; ?>"></li>
+                                                    <?php endforeach; ?>
                                                     </ul>
 
                                                 </div>

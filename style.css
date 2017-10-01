@@ -196,3 +196,13 @@ a.page-numbers{
     background: #476c80;
     color : #fff;
 }
+#company-slideshow img {
+    max-height: 450px;
+}
+
+.is-fixed {
+    width: 266px;
+    position: fixed;
+    top: 81px;
+    z-index: inherit;
+}
