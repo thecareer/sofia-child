@@ -1,16 +1,17 @@
 <div class="header-wrapper">
     <header role="banner">
         <div class="region region-header">
-            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1"  id="block-exposedformsearchpage-1">
+            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
+
                 <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                             <label for="edit-s">Search |</label>
-                            <input  class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
+                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
 
                         </div>
-                        <div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                            <input  type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                         </div>
 
                     </div>
@@ -34,48 +35,48 @@
 
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="/">Home</a>
+                    <a href="/" data-drupal-link-system-path="<front>">Home</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/jobs">Jobs</a>
+                    <a href="/jobs" data-drupal-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
                     <a href="/user/login">Saved</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/blogs">News</a>
+                    <a href="/blogs" data-drupal-link-system-path="blogs">News</a>
                 </li>
                 <li class="menu-item menu-item--expanded">
-                    <a href="/">More</a>
+                    <a href="/" data-drupal-link-system-path="<front>">More</a>
                     <ul class="menu">
                         <li class="button menu-item">
-                            <a href="/user/register">Sign Up</a>
+                            <a href="/user/register" data-drupal-link-system-path="user/register">Sign Up</a>
                         </li>
                         <li class="button menu-item">
-                            <a href="/user/login">Log In</a>
+                            <a href="/user/login" data-drupal-link-system-path="user/login">Log In</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/companies">Startups</a>
+                            <a href="/companies" data-drupal-link-system-path="companies">Startups</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/events">Events</a>
+                            <a href="/events" data-drupal-link-system-path="events">Events</a>
                         </li>
                     </ul>
 
                 </li>
             </ul>
 
-            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1"  id="block-exposedformsearchpage-1">
+            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
                 <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                             <label for="edit-s">Search |</label>
-                            <input  class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
+                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
 
                         </div>
-                        <div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                            <input  type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                         </div>
 
                     </div>
@@ -89,18 +90,18 @@
 
             <ul class="menu">
                 <li class="nav-item jobs menu-item">
-                    <a href="/jobs"><span>Job Search</span></a>
+                    <a href="/jobs"><span>Local Jobs</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
-                                <a href="//employer.startup.jobs">
+                                <a href="/node/add/job">
                                     <h3 class="title">Looking<br>to hire?</h3>
                                     <div class="headline">Give the community
                                         <br>something worth
                                         <br>applying for.</div>
                                 </a>
                                 <div class="more-link">
-                                    <a href="//employer.startup.jobs">Post a job</a>
+                                    <a href="/node/add/job">Post a job</a>
                                 </div>
                             </div>
                             <div class="views-element-container">
@@ -160,7 +161,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded">
-                    <a href="/companies"><span>Companies</span></a>
+                    <a href="/companies"><span>Startups</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -168,7 +169,7 @@
                                     <a href="/companies"><span>All Companies</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/companies?solrsort=is_company_hiring%20desc"><span>Featured Company</span></a>
+                                    <a href="/companies?solrsort=is_company_hiring%20desc"><span>Hiring Now</span></a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/companies?solrsort=ds_field_year_founded%20desc"><span>New Startups</span></a>
@@ -186,12 +187,12 @@
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/best-companies-work-boston.jpg" width="265" height="200" alt=" Best Companies to Work for in Vietnam" class="image-style-navigation-image">
+                                                        <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/best-companies-work-boston.jpg" width="265" height="200" alt=" Best Companies to Work for in Boston" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Vietnam</a></span></div>
+                                                <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Boston</a></span></div>
                                                 <div class="link"><span><a href="/guides/best-companies-work-boston" hreflang="en">View more</a></span></div>
                                             </div>
                                             <div class="views-row">
@@ -202,18 +203,18 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">Inside Vietnam's Best Software Engineer Jobs</a></span></div>
+                                                <div class="title"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">Inside Boston's Best Software Engineer Jobs</a></span></div>
                                                 <div class="link"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">View more</a></span></div>
                                             </div>
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/coolest-offices-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/coolest-offices-boston.jpg" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Vietnam" class="image-style-navigation-image">
+                                                        <a href="/guides/coolest-offices-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/coolest-offices-boston.jpg" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Boston" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/coolest-offices-boston" hreflang="en">Tour Vietnam's Coolest Tech &amp; Startup Offices</a></span></div>
+                                                <div class="title"><span><a href="/guides/coolest-offices-boston" hreflang="en">Tour Boston's Coolest Tech &amp; Startup Offices</a></span></div>
                                                 <div class="link"><span><a href="/guides/coolest-offices-boston" hreflang="en">View more</a></span></div>
                                             </div>
 
@@ -227,9 +228,7 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <?php
-                /*
-                <li class="nav-item events menu-item menu-item--expanded">
+                <!-- <li class="nav-item events menu-item menu-item--expanded">
                     <a href="/events"><span>Events</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -238,11 +237,9 @@
                                     <a href="/events"><span>All Events</span></a>
                                 </li>
                             </ul>
-
                             <div class="nav-content-view">
                                 <div class="views-element-container">
                                     <div class="view view-navigation-events view-id-navigation_events view-display-id-block_1 js-view-dom-id-b60555ba8da64394653cfef7ffce084474d85c3c34be3602cbb5db1fd5afd89f">
-
                                         <div class="view-content">
                                             <div class="views-row">
                                                 <div class="date">
@@ -251,12 +248,11 @@
                                                 </div>
                                                 <div class="cover-image">
                                                     <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-05/Meetup_Temp_6.png" width="270" height="345" alt="" class="image-style-event-card">
-
                                                     </div>
                                                 </div>
-                                                <div class="title"><span>ODSC East • Vietnam 2017 Data Science Conference &amp; AI Expo (PAID EVENT)</span></div>
+                                                <div class="title"><span>ODSC East • Boston 2017 Data Science Conference &amp; AI Expo (PAID EVENT)</span></div>
                                                 <div class="organized-by">
-                                                    <div>Vietnam Data Mining</div>
+                                                    <div>Boston Data Mining</div>
                                                 </div>
                                                 <a class="view-page" href="/event/odsc-east-boston-2017-data-science-conference-ai-expo-paid-event"></a>
                                             </div>
@@ -267,12 +263,11 @@
                                                 </div>
                                                 <div class="cover-image">
                                                     <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-05/Meetup_Temp.png" width="270" height="345" alt="" class="image-style-event-card">
-
                                                     </div>
                                                 </div>
                                                 <div class="title"><span>Healing Diseases By Sharing Info. Supporting One Another</span></div>
                                                 <div class="organized-by">
-                                                    <div> Vietnam Hacking Predictive Analytics App</div>
+                                                    <div> Boston Hacking Predictive Analytics App</div>
                                                 </div>
                                                 <a class="view-page" href="/event/healing-diseases-sharing-info-supporting-one-another"></a>
                                             </div>
@@ -283,28 +278,24 @@
                                                 </div>
                                                 <div class="cover-image">
                                                     <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-05/Meetup_Temp_1.png" width="270" height="345" alt="" class="image-style-event-card">
-
                                                     </div>
                                                 </div>
-                                                <div class="title"><span>HackerNest Vietnam May Tech Social</span></div>
+                                                <div class="title"><span>HackerNest Boston May Tech Social</span></div>
                                                 <div class="organized-by">
-                                                    <div>HackerNest Vietnam Tech Socials</div>
+                                                    <div>HackerNest Boston Tech Socials</div>
                                                 </div>
                                                 <a class="view-page" href="/event/hackernest-boston-may-tech-social"></a>
                                             </div>
-
                                         </div>
-
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="underlay"></div>
                     </div>
-                </li> */ ?>
+                </li> -->
                 <li class="nav-item news menu-item menu-item--expanded">
-                    <a href="/blogs"><span>Startup Blog</span></a>
+                    <a href="/blogs"><span>News</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -312,7 +303,7 @@
                                     <a href="/blogs"><span>All News</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/guides"><span>Vietnam Tech Guides</span></a>
+                                    <a href="/guides"><span>Boston Tech Guides</span></a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/tech-reports"><span>Industry Reports</span></a>
@@ -325,7 +316,6 @@
                             $news = new WP_Query(
                                 array('post_type' => 'post', 'post_status' => 'publish', 'tag' => 'navi-featured', 'showposts' => 2)
                             );
-
                             ?>
                             <div class="nav-content-view">
                                 <div class="views-element-container">
@@ -355,8 +345,8 @@
 
                                                     </a>
                                                 </div>
-                                                <div class="title"><a href="/blog">Cybersecurity in Vietnam: Your Guide to Cool Jobs &amp; Companies</a></div>
-                                                <div class="link"><a href="/blog">Cybersecurity in Vietnam: Your Guide to Cool Jobs &amp; Companies</a></div>
+                                                <div class="title"><a href="/blog">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
+                                                <div class="link"><a href="/blog">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
                                             </div>
 
                                         </div>
@@ -373,17 +363,17 @@
                     <a href="/"><span>Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
-                            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1"  id="block-exposedformsearchpage-1">
+                            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
                                 <form action="/jobs" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                                     <div class="form--inline clearfix">
                                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                                             <label for="edit-s">Search |</label>
-                                            <input  class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="keyword" value="" size="30" maxlength="128" autocomplete="off">
+                                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="keyword" value="" size="30" maxlength="128" autocomplete="off">
 
                                         </div>
-                                        <div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                                            <input  type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                                         </div>
 
                                     </div>
@@ -399,7 +389,8 @@
 
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-            <a href="https://employer.startup.jobs" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post job</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
+
+            <a href="/job-slots" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Join</a> | <a href="/user/login">Login</a></span>
         </div>
 
     </div>

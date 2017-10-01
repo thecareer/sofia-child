@@ -1,5 +1,7 @@
 <?php
 get_header();
+the_post();
+global $post;
 ?>
 
 <main role="main">
@@ -15,7 +17,7 @@ get_header();
 
                                     <div class="sponsored-blog-content"> </div>
 
-                                    <h1 class="node-title"><span class="field field--name-title field--type-string field--label-hidden">Holy funding: Indigo becomes Boston tech’s latest unicorn with $156M Series D</span>
+                                    <h1 class="node-title"><span class="field field--name-title field--type-string field--label-hidden"><?php the_title(); ?></span>
 </h1>
 
                                     <article role="article" class="node node--type-blog node--view-mode-default">
@@ -24,16 +26,16 @@ get_header();
                                             <div class="author">
                                                 <div class="col-left">
                                                     <div class="picture">
-                                                        <a href="/member/justine"></a>
-                                                        <a href="/member/justine">
-                                                            <div class="field field--name-field-profile-pic field--type-image field--label-hidden field__item"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/employee_picture/public/pictures/justine.jpg" width="265" height="265" alt="" class="image-style-employee-picture">
-
+                                                        <a href="<?php echo get_author_posts_url($post->post_author); ?>"></a>
+                                                        <a href="<?php echo get_author_posts_url($post->post_author); ?>">
+                                                            <div class="field field--name-field-profile-pic field--type-image field--label-hidden field__item"> 
+                                                                <?php echo get_avatar( $post->post_author, 265 ); ?>
                                                             </div>
                                                         </a>
                                                     </div>
                                                     <div class="info">
-                                                        <div class="name">by <a href="/member/justine">Justine  Hofherr</a></div>
-                                                        <div class="date">September 26, 2017</div>
+                                                        <div class="name">by <a href="#"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></a></div>
+                                                        <div class="date"><?php echo get_the_date(); ?></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-right">
@@ -43,32 +45,7 @@ get_header();
                                             <div class="teaser"></div>
 
                                             <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                <figure role="group" class="caption caption-img"><img alt="indigo" data-entity-type="file" data-entity-uuid="260b6c23-2d56-4c10-bec6-8b97ee3caf85" src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/optimize/public/inline-images/16640800_704234489747668_726526766038492624_n.jpg" class=" b-lazy b-loaded">
-                                                    <figcaption>Photo via Indigo</figcaption>
-                                                </figure>
-                                                <p dir="ltr">There’s a new unicorn in town.</p>
-
-                                                <p dir="ltr">Agtech startup <a href="https://www.indigoag.com" target="_blank">Indigo</a> announced the closing of a $156M Series D round this week, bringing the company’s valuation to $1.4 billion.</p>
-
-                                                <p dir="ltr">The last Boston startup to achieve this status was 3D printing startup Desktop Metal, which raised $115 million in July.</p>
-
-                                                <p>New investors Baillie Gifford and Activant Capital participated in the round, as did existing investors Flagship Pioneering and the Alaska Permanent Fund.</p>
-
-                                                <p dir="ltr">This recent round, which brought Indigo’s total funding to over $300 million, will be used to “support Indigo's commitment to building a new kind of agriculture company — one that is focused on improving farmer profitability, environmental sustainability and consumer health,” a press release stated.</p>
-
-                                                <p dir="ltr">The latest round also made Indigo the top funded agtech startup of all time.</p>
-
-                                                <p dir="ltr">Founded in 2014, Indigo is a leader in the study and application of the plant microbiome in agriculture. It works to identify beneficial microbes that naturally reside within plants, and apply those microbes to modern seeds to increase crop productivity and resilience in the face of environmental stressors, pests and diseases.</p>
-
-                                                <p dir="ltr">Addressing nitrogen use is one of the company’s top priorities for Indigo’s research and development. By harnessing natural microbes and leveraging data-based agronomic practices, Indigo hopes to improve nitrogen uptake and efficiency in crops, with the goal of dramatically reducing nitrogen use in agriculture.</p>
-
-                                                <p dir="ltr">The startup also creates software that helps farmers improve profitability, offering insight into farmers’ yield results, as well as delivering advice for future growing seasons.</p>
-
-                                                <p dir="ltr">"With climate change an active threat, consumers are calling for a new environmental standard in the agriculture industry and beyond," said Dr. Mehmood Khan, Indigo's board director, in a statement. "Indigo is responding to this call by developing a paradigm in which growers are able to respond to these consumer demands while increasing their profits."</p>
-
-                                                <p dir="ltr">Indigo's team is divided between their&nbsp;Charlestown headquarters, their&nbsp;commercial and marketing base in Memphis, their&nbsp;sales office in Yoder, Kansas, and&nbsp;two new international offices in Argentina and Australia. In the past year they&nbsp;have more than doubled, going from 75 to more than&nbsp;200 employees, with 75 percent&nbsp;of their&nbsp;workforce&nbsp;in&nbsp;Boston.</p>
-
-                                                <p dir="ltr">As growers around the world start using Indigo's seed treatments and digital technologies, the company plans on establishing its presence in key agricultural regions, acting as an in-market resource. In the coming months, Indigo will grow its international teams, as well as continue hiring for local roles in software engineering and data science.</p>
+                                                <?php the_content() ;?>
                                             </div>
 
                                             <div class="field field--name-field-company field--type-entity-reference field--label-hidden field__items">
@@ -80,7 +57,7 @@ get_header();
                                                             <div class="centered">
 
                                                                 <div class="field field--name-field-company-logo field--type-image field--label-hidden field__item">
-                                                                    <a href="/company/indigo"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_logo/public/2017-09/igpqrwusko1aow1nwkig.jpg" width="140" height="140" alt="" class="image-style-company-logo">
+                                                                    <a href="/company/indigo"><?php echo get_avatar( $post->post_author, 265 ); ?>
 
                                                                     </a>
                                                                 </div>
@@ -88,12 +65,14 @@ get_header();
                                                             </div>
                                                         </div>
 
-                                                        <h2 class="company-title"><a href="/company/indigo"><span class="field field--name-title field--type-string field--label-hidden">Indigo</span>
+                                                        <h2 class="company-title"><a href="#"><span class="field field--name-title field--type-string field--label-hidden"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
 </a></h2>
+                                                        
+                                                        <?php /*
+
                                                         <div class="view-profile"><a href="/company/indigo">View profile</a></div>
-
                                                         <div class="job-alert"><a href="/bix-job-newsletter/company-alerts/10366" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:700}">Follow</a></div>
-
+                                                        */ ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,6 +97,9 @@ get_header();
                             </div>
                         </div>
                     </div>
+                    <?php 
+                    $companies = new WP_Query(array('post_type' => 'company', 'post_status' => 'publish', 'showposts' => 9));
+                    ?>
                     <div class="row">
                         <div class="">
                             <div class="block-region-bottom">
@@ -130,177 +112,47 @@ get_header();
 
                                             <div class="view-content">
                                                 <div data-drupal-views-infinite-scroll-content-wrapper="" class="views-infinite-scroll-content-wrapper clearfix">
+                                                <?php while($companies->have_posts()) : $companies->the_post(); ?>
+                                                    <?php
+                                                    $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
+                                                    if($company_cover_id) {
+                                                        $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
+                                                        $cover_image_src = $cover_image_src['0'];
+                                                    }else {
+                                                        $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
+                                                    }
+                                                    ?>
                                                     <div class="views-row">
                                                         <div class="title">
-                                                            <div><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Tech Companies to Work for in Boston</a></div>
+                                                            <div><a href="<?php the_permalink(); ?>" hreflang="en"><?php the_title(); ?></a></div>
                                                         </div>
                                                         <div class="image">
                                                             <div>
-                                                                <a href="/guides/best-companies-work-boston">
+                                                                <a href="<?php the_permalink(); ?>">
 
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/best-companies-work-boston.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/best-companies-work-boston.jpg" alt=" Best Companies to Work for in Boston" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                                                                    <div data-thumb="<?php echo $cover_image_src; ?>" class="media media--blazy media--loading media--image">
+                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="<?php echo $cover_image_src; ?>" alt="<?php the_title(); ?>" src="<?php echo $cover_image_src; ?>">
 
                                                                     </div>
 
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                        <div class="link"><span><a href="/guides/best-companies-work-boston" hreflang="en">View</a></span></div>
+                                                        <div class="link"><span><a href="<?php the_permalink(); ?>" hreflang="en">View</a></span></div>
                                                     </div>
-                                                    <div class="views-row">
-                                                        <div class="title">
-                                                            <div><a href="/guides/your-guide-best-perks-boston-tech-companies" hreflang="en">Your Guide to the Best Perks at Boston Tech Companies</a></div>
-                                                        </div>
-                                                        <div class="image">
-                                                            <div>
-                                                                <a href="/guides/your-guide-best-perks-boston-tech-companies">
-
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-companies-best-perks-benefits.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-companies-best-perks-benefits.jpg" alt="boston tech perks" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                                                                    </div>
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="link"><span><a href="/guides/your-guide-best-perks-boston-tech-companies" hreflang="en">View</a></span></div>
-                                                    </div>
-                                                    <div class="views-row">
-                                                        <div class="title">
-                                                            <div><a href="/guides/boston-food-tech" hreflang="en">Your Guide to Food Tech in Boston</a></div>
-                                                        </div>
-                                                        <div class="image">
-                                                            <div>
-                                                                <a href="/guides/boston-food-tech">
-
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-food-tech.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-food-tech.jpg" alt="boston food tech guide" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                                                                    </div>
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="link"><span><a href="/guides/boston-food-tech" hreflang="en">View</a></span></div>
-                                                    </div>
-                                                    <div class="views-row">
-                                                        <div class="title">
-                                                            <div><a href="/guides/boston-healthtech" hreflang="en">Your Guide to Healthtech in Boston</a></div>
-                                                        </div>
-                                                        <div class="image">
-                                                            <div>
-                                                                <a href="/guides/boston-healthtech">
-
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-health-tech-guide.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-health-tech-guide.jpg" alt="Boston Healthtech" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                                                                    </div>
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="link"><span><a href="/guides/boston-healthtech" hreflang="en">View</a></span></div>
-                                                    </div>
-                                                    <div class="views-row">
-                                                        <div class="title">
-                                                            <div><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">Inside the Best Software Engineer Jobs In Boston</a></div>
-                                                        </div>
-                                                        <div class="image">
-                                                            <div>
-                                                                <a href="/guides/best-software-engineer-jobs-boston">
-
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-06/software-engineer-jobs-boston.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-06/software-engineer-jobs-boston.jpg" alt="software engineer jobs boston" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                                                                    </div>
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="link"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">View</a></span></div>
-                                                    </div>
-                                                    <div class="views-row">
-                                                        <div class="title">
-                                                            <div><a href="/guides/cyber-security-boston" hreflang="en">Your Guide to Cybersecurity in Boston</a></div>
-                                                        </div>
-                                                        <div class="image">
-                                                            <div>
-                                                                <a href="/guides/cyber-security-boston">
-
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-06/cyber-security-boston_0.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-06/cyber-security-boston_0.jpg" alt="cyber security boston" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                                                                    </div>
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="link"><span><a href="/guides/cyber-security-boston" hreflang="en">View</a></span></div>
-                                                    </div>
-                                                    <div class="views-row">
-                                                        <div class="title">
-                                                            <div><a href="/guides/best-data-scientist-data-analyst-jobs-boston" hreflang="en">Best Data Scientist &amp; Data Analyst Jobs in Boston</a></div>
-                                                        </div>
-                                                        <div class="image">
-                                                            <div>
-                                                                <a href="/guides/best-data-scientist-data-analyst-jobs-boston">
-
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/best-data-analyst-jobs-data-scientist-jobs-boston.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/best-data-analyst-jobs-data-scientist-jobs-boston.jpg" alt="Best Data Scientist &amp; Data Analyst Jobs in Boston" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                                                                    </div>
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="link"><span><a href="/guides/best-data-scientist-data-analyst-jobs-boston" hreflang="en">View</a></span></div>
-                                                    </div>
-                                                    <div class="views-row">
-                                                        <div class="title">
-                                                            <div><a href="/guides/best-boston-design-jobs" hreflang="en">Inside the Best Design Jobs in Boston</a></div>
-                                                        </div>
-                                                        <div class="image">
-                                                            <div>
-                                                                <a href="/guides/best-boston-design-jobs">
-
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/design-jobs-boston.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/design-jobs-boston.jpg" alt="Best Boston Design Jobs" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                                                                    </div>
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="link"><span><a href="/guides/best-boston-design-jobs" hreflang="en">View</a></span></div>
-                                                    </div>
-                                                    <div class="views-row">
-                                                        <div class="title">
-                                                            <div><a href="/guides/coolest-offices-boston" hreflang="en">Tour the Coolest Tech Offices in Boston</a></div>
-                                                        </div>
-                                                        <div class="image">
-                                                            <div>
-                                                                <a href="/guides/coolest-offices-boston">
-
-                                                                    <div data-thumb="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/coolest-offices-boston.jpg" class="media media--blazy media--loading media--image">
-                                                                        <img height="400" width="400" class="b-lazy media__image media__element" data-src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/coolest-offices-boston.jpg" alt="Coolest Tech &amp; Startup Offices in Boston" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                                                                    </div>
-
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="link"><span><a href="/guides/coolest-offices-boston" hreflang="en">View</a></span></div>
-                                                    </div>
+                                                <?php endwhile; ?>
+                                                <?php wp_reset_query(); ?>
                                                 </div>
 
                                             </div>
-
+                                            <?php /*
                                             <ul class="js-pager__items pager" data-drupal-views-infinite-scroll-pager="">
                                                 <li class="pager__item">
                                                     <a class="button" href="/2017/09/26/agtech-startup-indigo-boston-tech-unicorn?page=0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C1" title="Go to next page" rel="next">Load More</a>
                                                 </li>
                                             </ul>
+
+                                            */ ?>
 
                                         </div>
                                     </div>

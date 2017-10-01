@@ -234,8 +234,6 @@ $post_3 = $news[2];
                                 <div class="block block-bix-series block-bix-series-jobs">
                                     <?php 
                                     $companies = new WP_Query(array('post_type' => 'company', 'post_status' => 'publish', 'showposts' => 12));
-                                    $terms = wp_get_post_terms( get_the_ID(), 'company-industry');
-                                    $term = $terms[0];
                                     ?>
                                     <h2 class="box-title">Cambridge Startup Jobs</h2>
 
@@ -244,6 +242,10 @@ $post_3 = $news[2];
 
                                             <div class="view-content">
                                             <?php while($companies->have_posts()) : $companies->the_post(); ?>
+                                            <?php 
+                                                $terms = wp_get_post_terms( get_the_ID(), 'company-industry');
+                                                $term = $terms[0];
+                                            ?>
                                                 <div class="views-row">
                                                     <div class="logo-wrapper-small">
                                                         <div class="centered">

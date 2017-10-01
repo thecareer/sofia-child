@@ -3189,7 +3189,7 @@
 });
 (function() {
     'use strict';
-    var settingsElement = document.querySelector('head > script[type="application/json"][], body > script[type="application/json"][]');
+    var settingsElement = document.querySelector('head > script[type="application/json"][data-drupal-selector="drupal-settings-json"], body > script[type="application/json"][data-drupal-selector="drupal-settings-json"]');
     window.drupalSettings = {};
     if (settingsElement !== null) window.drupalSettings = JSON.parse(settingsElement.textContent)
 })();
@@ -7859,7 +7859,7 @@ document.documentElement.className += ' js';
             var target = false;
 
             for (var n = elementParents.length - 1; !target && n > 0; n--) {
-                target = document.querySelector('[]');
+                target = document.querySelector('[data-drupal-selector="' + elementParents[n].getAttribute('data-drupal-selector') + '"]');
             }
 
             if (target) {

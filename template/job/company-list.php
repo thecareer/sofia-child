@@ -280,7 +280,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
                                                 $cover_image_src = $cover_image_src['0'];
                                             }else {
-                                                $cover_image_src = '//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/company_card_thumbnail/public/cover_photo_3.png';
+                                                $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
                                             }
                                             $terms = wp_get_post_terms( get_the_ID(), 'company-industry');
                                             $term = $terms[0];
