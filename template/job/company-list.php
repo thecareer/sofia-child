@@ -17,7 +17,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                     <div class="node-header--info">
                         <h1 class="node-header--title">
                             <div class="field field--name-field-header-subheadline field--type-string field--label-hidden field__item">
-                                Boston Startup and Tech Companies
+                                Vietnam Startup and Tech Companies
                             </div>
                         </h1>
                     </div>
@@ -196,7 +196,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 </div>
                                 <div class="block block-bix-global block-bix-global-add-company">
 
-                                    <h5 class="title">Are you a<br>new Boston<br>startup?</h5>
+                                    <h5 class="title">Are you a<br>new Vietnam<br>startup?</h5>
                                     <div class="headline">Our community
                                         <br>isn’t the same
                                         <br>without you in it.</div>
@@ -213,11 +213,11 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                             <div class="view-content">
                                                 <div class="views-row">
                                                     <div class="image">
-                                                        <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/news_card/public/2017-05/Volunteer.jpg" width="250" height="190" alt="5 Boston tech companies where employees get time off to volunteer" class="image-style-news-card">
+                                                        <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/news_card/public/2017-05/Volunteer.jpg" width="250" height="190" alt="5 Vietnam tech companies where employees get time off to volunteer" class="image-style-news-card">
 
                                                         </div>
                                                     </div>
-                                                    <div class="title"><span>5 Boston tech companies where employees get time off to volunteer</span></div>
+                                                    <div class="title"><span>5 Vietnam tech companies where employees get time off to volunteer</span></div>
                                                     <a href="/2017/04/07/get-paid-volunteer-boston-tech-companies" class="link-above"></a>
                                                 </div>
                                                 <div class="views-row">
@@ -226,7 +226,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                                         </div>
                                                     </div>
-                                                    <div class="title"><span>Pooches as perks: 5 Boston tech offices where dogs are part of the team</span></div>
+                                                    <div class="title"><span>Pooches as perks: 5 Vietnam tech offices where dogs are part of the team</span></div>
                                                     <a href="/2017/04/11/dog-friendly-offices-0" class="link-above"></a>
                                                 </div>
                                                 <div class="views-row">
@@ -235,7 +235,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                                         </div>
                                                     </div>
-                                                    <div class="title"><span>Diversity in tech: How 5 Boston companies are fighting for more inclusive work...</span></div>
+                                                    <div class="title"><span>Diversity in tech: How 5 Vietnam companies are fighting for more inclusive work...</span></div>
                                                     <a href="/2017/05/18/how-boston-companies-fighting-diversity-tech" class="link-above"></a>
                                                 </div>
 
