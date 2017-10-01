@@ -2,7 +2,6 @@
     <header role="banner">
         <div class="region region-header">
             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
-
                 <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
@@ -90,7 +89,7 @@
 
             <ul class="menu">
                 <li class="nav-item jobs menu-item">
-                    <a href="/jobs"><span>Việc làm</span></a>
+                    <a href="/jobs"><span>Job Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
@@ -161,7 +160,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded">
-                    <a href="/companies"><span>Công ty</span></a>
+                    <a href="/companies"><span>Company</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -305,7 +304,7 @@
                     </div>
                 </li> */ ?>
                 <li class="nav-item news menu-item menu-item--expanded">
-                    <a href="/blogs"><span>Bài viết</span></a>
+                    <a href="/blogs"><span>Startup Blog</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -371,7 +370,7 @@
                     </div>
                 </li>
                 <li class="nav-item search menu-item">
-                    <a href="/"><span>Tìm kiếm</span></a>
+                    <a href="/"><span>Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
@@ -400,7 +399,7 @@
 
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-            <a href="https://employer.startup.jobs" class="post-job ga-event-processed" data-ga-event="customers-post-job">Đăng tuyển</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Nhà tuyển dụng</a></span>
+            <a href="https://employer.startup.jobs" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post job</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
         </div>
 
     </div>
