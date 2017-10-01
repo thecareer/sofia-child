@@ -160,7 +160,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded">
-                    <a href="/companies"><span>Company</span></a>
+                    <a href="/companies"><span>Companies</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -168,7 +168,7 @@
                                     <a href="/companies"><span>All Companies</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/companies?solrsort=is_company_hiring%20desc"><span>Hiring Now</span></a>
+                                    <a href="/companies?solrsort=is_company_hiring%20desc"><span>Featured Company</span></a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/companies?solrsort=ds_field_year_founded%20desc"><span>New Startups</span></a>

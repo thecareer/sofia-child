@@ -20,21 +20,25 @@ get_header('landing');
                                     </div>
                                     <div class="node-header--info-wrapper">
                                         <div class="node-header--info">
-                                            <div class="node-header--title">A community of 11,513 local techies</div>
+                                            <div class="node-header--title">A job site posting for startup on the world</div>
                                             <h1 class="node-header--headline">
                                                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>We are the hub for<br>
                                                     Vietnam&nbsp;<span>startups + tech</span></p>
                                                 </div>
                                             </h1>
+                                            <?php
+                                            /*
                                             <div class="">
                                                 <span class="google-sign-up-link"><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;access_type=online&amp;client_id=137993173015-af10p25it867hd9b31ah43mjm45318de.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2Fwww.builtinboston.com%2Fbix-google-login-callback&amp;state&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login%20email%20profile&amp;approval_prompt=auto" data-ga-event="user-acq-homepage-signup-google" class="ga-event-processed">Join with Google</a></span>
                                                 <span class="facebook-sign-up-link"><a href="/user/simple-fb-connect" data-ga-event="user-acq-homepage-signup-facebook" class="ga-event-processed">Join with Facebook</a></span>
                                             </div>
+                                            */
+                                            ?>
                                         </div>
                                         <div class="field--name-field-links-list field__items">
                                             <a href="/jobs" class="field__item">
                                                 <div class="title">We connect you with
-                                                    <br>sweet jobs in Vietnam</div>
+                                                    <br>great jobs in Vietnam</div>
                                                 <div class="title_link">VIEW OPEN JOBS</div>
                                             </a>
                                             <a href="/blogs" class="field__item">
@@ -45,7 +49,7 @@ get_header('landing');
                                             <a href="/companies" class="field__item">
                                                 <div class="title">We highlight the coolest
                                                     <br>startups in Vietnam</div>
-                                                <div class="title_link">READ NEWS</div>
+                                                <div class="title_link">READ BLOG</div>
                                             </a>
                                         </div>
                                     </div>
@@ -59,8 +63,7 @@ get_header('landing');
                     <div class="">
                         <div class="block-region-middle">
                             <div class="boston block block-bix-frontpage block-bix-frontpage-job-categories">
-
-                                <div> <a href="/desktop/jobs" class="title">Get your dream job</a></div>
+                                <div> <a href="/jobs" class="title">Get your dream job</a></div>
                                 <div class="views-row category-wrapper-developer">
                                     <div class="category category-developer">
                                         <div>Developer Jobs</div><a href="/jobs?f[0]=job-category_developer-engineer">View 477 jobs</a></div>
@@ -99,7 +102,7 @@ get_header('landing');
                                 $companies = new WP_Query($query);
                                 ?>
                                 <div>
-                                    <div class="view view-frontpage-news view-id-frontpage_news view-display-id-block_3 js-view-dom-id-745f3ce16b198a7d9059049f89b9a000cc3d648360103c4be06f8aa341fcb786">
+                                    <div class="view view-frontpage-news view-id-frontpage_news view-display-id-block_3 js-view-dom-id">
                                         <div class="view-content">
                                             <?php while ($companies->have_posts()) : $companies->the_post(); ?>
                                                 <?php
@@ -223,8 +226,8 @@ get_header('landing');
 
                                             </div>
                                         </div>
-
-                                        <!-- 
+                                        <?php
+                                        /*
                                         <h3> <a href="/guides" class="box-title">Our most popular Vietnam guides</a></h3>
                                         <div class="views-element-container">
                                             <div class="overlay-grid view view-frontpage-series view-id-frontpage_series view-display-id-block_1 js-view-dom-id-4f003ab68b6690462bd95c4cd9acf408ca50b77a6f7149a29c6b5371d4145257">
@@ -278,7 +281,9 @@ get_header('landing');
                                                 </div>
 
                                             </div>
-                                        </div> -->
+                                        </div>
+                                        */
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -303,10 +308,10 @@ get_header('landing');
                                     <div>
                                         <div class="views-element-container">
                                             <div class="job-opportunities view view-frontpage-jobs view-id-frontpage_jobs view-display-id-block_2 js-view-dom-id-1dc1a51b145990187b4978d84bd751127c3d7a509a48a15c46ddceeb0ccdeed9">
-
                                                 <h3><a href="/jobs" class="box-title">Job opportunities in Vietnam</a></h3>
-
-                                                <!-- <div class="job-categories">
+                                                <?php
+                                                /*
+                                                <div class="job-categories">
                                                     <div class="category active processed" data-category=".all-categories"><span>All</span></div>
                                                     <div class="category processed" data-category=".category-wrapper-data-analytics"><span>Data + Analytics</span></div>
                                                     <div class="category processed" data-category=".category-wrapper-design"><span>Design + UX</span></div>
@@ -321,8 +326,9 @@ get_header('landing');
                                                     <div class="category processed" data-category=".category-wrapper-project-mgmt"><span>Project Mgmt</span></div>
                                                     <div class="category processed" data-category=".category-wrapper-sales"><span>Sales</span></div>
                                                     <div class="category processed" data-category=".category-wrapper-content"><span>Content</span></div>
-                                                </div> -->
-
+                                                </div>
+                                                */
+                                                ?>
                                                 <div class="view-content processed home-jobs" style="position: relative; height: 416px;">
 
                                                 <?php while($jobs->have_posts()) : $jobs->the_post(); ?>
@@ -373,7 +379,9 @@ get_header('landing');
                                     </div>
                                 </div>
                             </div>
-                          <!--   <div class="boston block block-bix-frontpage block-bix-frontpage-events">
+                            <?php
+                            /*
+                            <div class="boston block block-bix-frontpage block-bix-frontpage-events">
                                 <div class="title">
                                     <h2 class="box-title">Techies, Geeks,<br>Designy folks—unite!
 </h2>
@@ -514,7 +522,9 @@ get_header('landing');
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
+                            */
+                            ?>
                         </div>
                     </div>
                 </div>

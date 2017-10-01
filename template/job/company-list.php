@@ -9,7 +9,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 <div class="region region-featured-top">
     <div class="region-inner">
 
-        <div id="block-companiesheader" class="block block-block-content block-block-content1799b2a1-fb95-41d4-aecd-f60979c65325 block--narrow">
+        <div id="block-companiesheader" class="block block-block-content block--narrow">
             <div class="node-header">
                 <div class="node-header--image" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/img/Webp.net-compress-image.jpg');">
                 </div>
@@ -38,8 +38,9 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                     <div class="row">
                         <div class="">
                             <div class="block-region-left">
-                                <!-- <div class="block-facets block block-bix-companies block-bix-companies-landing-sort">
-
+                                <div class="block-facets block block-bix-companies block-bix-companies-landing-sort">
+                                <?php
+                                /*
                                     <h4 class="box-title active">Filter Your Results</h4>
 
                                     <div class="item-list">
@@ -49,7 +50,9 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                             <li class="inactive"><a href="echo esc_url(add_query_arg('orderby', 'date'));">Recently Launched</a></li>
                                         </ul>
                                     </div>
-                                </div> -->
+                                </div>
+                                */
+                                ?>
                                 <?php
                                 $industries = get_terms( array('taxonomy' => 'company-industry','hide_empty' => false) );
                                 $selected_industry = isset($_GET['type']) ? $_GET['type'] : array();
@@ -201,9 +204,11 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                         <br>isn’t the same
                                         <br>without you in it.</div>
                                     <div class="more-link"><span>Add Your Company</span></div>
-                                    <a href="/node/add/company" class="link-above"></a>
+                                    <a href="//employer.startup.jobs" class="link-above"></a>
                                 </div>
-                                <!-- <div class="views-element-container block block-views block-views-blockcompany-trending-articles-block-3">
+                                <?php
+                                /*
+                                <div class="views-element-container block block-views block-views-blockcompany-trending-articles-block-3">
 
                                     <div>
                                         <div class="sidebar-listing view view-company-trending-articles view-id-company_trending_articles view-display-id-block_3 js-view-dom-id-9446dc39fdeed907c92526efa60cbaf050c083739ae1b47a1fc13b3de718a81d">
@@ -243,8 +248,9 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                         </div>
                                     </div>
-
-                                </div> -->
+                                </div>
+                                */
+                                ?>
                             </div>
                         </div>
                     </div>
