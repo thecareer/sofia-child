@@ -108,7 +108,7 @@
 
     </div>
 </footer>
-
+<div class="overlay"></div>
 <div class="basement">Love Boston <span></span> Love your job</div>
 </div>
     <?php wp_footer() ?>
