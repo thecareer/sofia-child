@@ -146,8 +146,8 @@ get_header('landing');
                 <div class="row">
                     <div class="">
                         <div class="block-region-bottom">
+                            <?php /*
                             <div class="block block-block-content block-block-content363f917e-f565-4ef2-8f8b-4994d93350fc">
-
                                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                     <h2>Get an Inside&nbsp;View</h2>
                                     <p>Go behind the scenes of Vietnam company's tech, culture + teams</p>
@@ -158,7 +158,7 @@ get_header('landing');
                                 </div>
 
                             </div>
-
+                            */?>
                             <div class="block block-bix-frontpage block-bix-frontpage-startups">
                                 <div class="title">
                                     <h2 class="box-title">The startup scene is growing.<br>Grow along with it.</h2>
