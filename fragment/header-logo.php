@@ -2,7 +2,6 @@
     <header role="banner">
         <div class="region region-header">
             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
-
                 <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
@@ -90,7 +89,7 @@
 
             <ul class="menu">
                 <li class="nav-item jobs menu-item">
-                    <a href="/jobs"><span>Local Jobs</span></a>
+                    <a href="/jobs"><span>Job Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
@@ -161,7 +160,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded">
-                    <a href="/companies"><span>Startups</span></a>
+                    <a href="/companies"><span>Companies</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -169,7 +168,7 @@
                                     <a href="/companies"><span>All Companies</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/companies?solrsort=is_company_hiring%20desc"><span>Hiring Now</span></a>
+                                    <a href="/companies?solrsort=is_company_hiring%20desc"><span>Featured Company</span></a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/companies?solrsort=ds_field_year_founded%20desc"><span>New Startups</span></a>
@@ -187,12 +186,12 @@
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/best-companies-work-boston.jpg" width="265" height="200" alt=" Best Companies to Work for in Boston" class="image-style-navigation-image">
+                                                        <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/best-companies-work-boston.jpg" width="265" height="200" alt=" Best Companies to Work for in Vietnam" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Boston</a></span></div>
+                                                <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Vietnam</a></span></div>
                                                 <div class="link"><span><a href="/guides/best-companies-work-boston" hreflang="en">View more</a></span></div>
                                             </div>
                                             <div class="views-row">
@@ -203,18 +202,18 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">Inside Boston's Best Software Engineer Jobs</a></span></div>
+                                                <div class="title"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">Inside Vietnam's Best Software Engineer Jobs</a></span></div>
                                                 <div class="link"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">View more</a></span></div>
                                             </div>
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/coolest-offices-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/coolest-offices-boston.jpg" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Boston" class="image-style-navigation-image">
+                                                        <a href="/guides/coolest-offices-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-05/coolest-offices-boston.jpg" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Vietnam" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/coolest-offices-boston" hreflang="en">Tour Boston's Coolest Tech &amp; Startup Offices</a></span></div>
+                                                <div class="title"><span><a href="/guides/coolest-offices-boston" hreflang="en">Tour Vietnam's Coolest Tech &amp; Startup Offices</a></span></div>
                                                 <div class="link"><span><a href="/guides/coolest-offices-boston" hreflang="en">View more</a></span></div>
                                             </div>
 
@@ -228,7 +227,9 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <!-- <li class="nav-item events menu-item menu-item--expanded">
+                <?php
+                /*
+                <li class="nav-item events menu-item menu-item--expanded">
                     <a href="/events"><span>Events</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -253,9 +254,9 @@
 
                                                     </div>
                                                 </div>
-                                                <div class="title"><span>ODSC East • Boston 2017 Data Science Conference &amp; AI Expo (PAID EVENT)</span></div>
+                                                <div class="title"><span>ODSC East • Vietnam 2017 Data Science Conference &amp; AI Expo (PAID EVENT)</span></div>
                                                 <div class="organized-by">
-                                                    <div>Boston Data Mining</div>
+                                                    <div>Vietnam Data Mining</div>
                                                 </div>
                                                 <a class="view-page" href="/event/odsc-east-boston-2017-data-science-conference-ai-expo-paid-event"></a>
                                             </div>
@@ -271,7 +272,7 @@
                                                 </div>
                                                 <div class="title"><span>Healing Diseases By Sharing Info. Supporting One Another</span></div>
                                                 <div class="organized-by">
-                                                    <div> Boston Hacking Predictive Analytics App</div>
+                                                    <div> Vietnam Hacking Predictive Analytics App</div>
                                                 </div>
                                                 <a class="view-page" href="/event/healing-diseases-sharing-info-supporting-one-another"></a>
                                             </div>
@@ -285,9 +286,9 @@
 
                                                     </div>
                                                 </div>
-                                                <div class="title"><span>HackerNest Boston May Tech Social</span></div>
+                                                <div class="title"><span>HackerNest Vietnam May Tech Social</span></div>
                                                 <div class="organized-by">
-                                                    <div>HackerNest Boston Tech Socials</div>
+                                                    <div>HackerNest Vietnam Tech Socials</div>
                                                 </div>
                                                 <a class="view-page" href="/event/hackernest-boston-may-tech-social"></a>
                                             </div>
@@ -301,9 +302,9 @@
                         </div>
                         <div class="underlay"></div>
                     </div>
-                </li> -->
+                </li> */ ?>
                 <li class="nav-item news menu-item menu-item--expanded">
-                    <a href="/blogs"><span>News</span></a>
+                    <a href="/blogs"><span>Startup Blog</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -311,7 +312,7 @@
                                     <a href="/blogs"><span>All News</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/guides"><span>Boston Tech Guides</span></a>
+                                    <a href="/guides"><span>Vietnam Tech Guides</span></a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/tech-reports"><span>Industry Reports</span></a>
@@ -354,8 +355,8 @@
 
                                                     </a>
                                                 </div>
-                                                <div class="title"><a href="/blog">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
-                                                <div class="link"><a href="/blog">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
+                                                <div class="title"><a href="/blog">Cybersecurity in Vietnam: Your Guide to Cool Jobs &amp; Companies</a></div>
+                                                <div class="link"><a href="/blog">Cybersecurity in Vietnam: Your Guide to Cool Jobs &amp; Companies</a></div>
                                             </div>
 
                                         </div>
@@ -398,8 +399,7 @@
 
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-
-            <a href="/job-slots" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Join</a> | <a href="/user/login">Login</a></span>
+            <a href="https://employer.startup.jobs" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post job</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
         </div>
 
     </div>

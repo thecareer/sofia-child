@@ -1,18 +1,17 @@
 
-
    <footer role="contentinfo" class="footer-boston">
     <div class="footer-wrapper">
 
         <div class="region region-footer-first">
             <div id="block-footerbuiltinchicago" class="block block-block-content block-block-content767deb42-b900-4191-b543-398d5b805cd3">
 
-                <h2 class="box-title">Built in Chicago</h2>
+                <h2 class="box-title">Startups in Vietnam</h2>
 
                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                    <p>BuiltIn Boston is the online community
-                        <br> for Boston startups and tech companies.
-                        <br> Find startup jobs, tech news and events.</p>
-                    <p>© Built In 2017</p>
+                    <p>Startup.JOBS is the job post site
+                        <br> for startups and tech companies.
+                        <br> Find startup jobs, company and startup blog.</p>
+                    <p>© Startup.JOBS 2017</p>
                 </div>
 
             </div>
@@ -26,13 +25,14 @@
 
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="http://www.go.builtin.com/bostondemo" target="_blank">Recruit With Built In</a>
+                        <a href="#" target="_blank">Recruit With Startup.JOBS</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/send-us-tip" target="_blank">Send Us a Tip</a>
+                        <a href="#" target="_blank">Send Us a Tip</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/contact-us" target="_blank">Contact Us</a>
+                        <a href="#" target="_blank">Contact Us</a>
+
                     </li>
                 </ul>
 
@@ -47,13 +47,13 @@
 
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="https://boards.greenhouse.io/builtin" target="_blank">Careers</a>
+                        <a href="#" target="_blank">Careers</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                        <a href="#" target="_blank">Privacy Policy</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/terms-use" target="_blank">Terms of Use</a>
+                        <a href="#" target="_blank">Terms of Use</a>
                     </li>
                 </ul>
 
@@ -68,10 +68,10 @@
 
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="https://www.facebook.com/builtinbos" target="_blank">Facebook</a>
+                        <a href="https://www.facebook.com/go.startup.jobs" target="_blank">Facebook</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://twitter.com/builtinbos" target="_blank">Twitter</a>
+                        <a href="http://twitter.com/gostartupjobs" target="_blank">Twitter</a>
                     </li>
                 </ul>
 
@@ -86,19 +86,19 @@
 
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="http://www.builtinaustin.com/" target="_blank">Built In Austin</a>
+                        <a href="//startup.jobs/sg" target="_blank">Startup.JOBS In Singapore</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://www.builtinchicago.com/" target="_blank">Built In Chicago</a>
+                        <a href="//startup.jobs/vn" target="_blank">Startup.JOBS In Vietnam</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://www.builtincolorado.com/" target="_blank">Built In Colorado</a>
+                        <a href="//startup.jobs/id" target="_blank">Startup.JOBS In Indonesia</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://www.builtinla.com/" target="_blank">Built In LA</a>
+                        <a href="//startup.jobs/my" target="_blank">Startup.JOBS In Malaysia</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://www.builtinnyc.com/" target="_blank">Built In NYC</a>
+                        <a href="//startup.jobs/th" target="_blank">Startup.JOBS In Thailand</a>
                     </li>
                 </ul>
 
@@ -109,7 +109,7 @@
     </div>
 </footer>
 <div class="overlay"></div>
-<div class="basement">Love Boston <span></span> Love your job</div>
+<div class="basement">Love your Startup <span></span> Love your job</div>
 </div>
     <?php wp_footer() ?>
     </body>

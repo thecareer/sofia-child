@@ -20,32 +20,36 @@ get_header('landing');
                                     </div>
                                     <div class="node-header--info-wrapper">
                                         <div class="node-header--info">
-                                            <div class="node-header--title">A community of 11,513 local techies</div>
+                                            <div class="node-header--title">A job site posting for startup on the world</div>
                                             <h1 class="node-header--headline">
                                                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>We are the hub for<br>
-                                                    Boston&nbsp;<span>startups + tech</span></p>
+                                                    Vietnam&nbsp;<span>startups + tech</span></p>
                                                 </div>
                                             </h1>
+                                            <?php
+                                            /*
                                             <div class="">
                                                 <span class="google-sign-up-link"><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;access_type=online&amp;client_id=137993173015-af10p25it867hd9b31ah43mjm45318de.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2Fwww.builtinboston.com%2Fbix-google-login-callback&amp;state&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login%20email%20profile&amp;approval_prompt=auto" data-ga-event="user-acq-homepage-signup-google" class="ga-event-processed">Join with Google</a></span>
                                                 <span class="facebook-sign-up-link"><a href="/user/simple-fb-connect" data-ga-event="user-acq-homepage-signup-facebook" class="ga-event-processed">Join with Facebook</a></span>
                                             </div>
+                                            */
+                                            ?>
                                         </div>
                                         <div class="field--name-field-links-list field__items">
                                             <a href="/jobs" class="field__item">
                                                 <div class="title">We connect you with
-                                                    <br>sweet jobs in Boston</div>
+                                                    <br>great jobs in Vietnam</div>
                                                 <div class="title_link">VIEW OPEN JOBS</div>
                                             </a>
                                             <a href="/blogs" class="field__item">
                                                 <div class="title">We share the stories behind
-                                                    <br>Boston's tech scene</div>
+                                                    <br>Vietnam's tech scene</div>
                                                 <div class="title_link">EXPLORE COMPANIES</div>
                                             </a>
                                             <a href="/companies" class="field__item">
                                                 <div class="title">We highlight the coolest
-                                                    <br>startups in Boston</div>
-                                                <div class="title_link">READ NEWS</div>
+                                                    <br>startups in Vietnam</div>
+                                                <div class="title_link">READ BLOG</div>
                                             </a>
                                         </div>
                                     </div>
@@ -59,8 +63,7 @@ get_header('landing');
                     <div class="">
                         <div class="block-region-middle">
                             <div class="boston block block-bix-frontpage block-bix-frontpage-job-categories">
-
-                                <div> <a href="/desktop/jobs" class="title">Find your dream job</a></div>
+                                <div> <a href="/jobs" class="title">Get your dream job</a></div>
                                 <div class="views-row category-wrapper-developer">
                                     <div class="category category-developer">
                                         <div>Developer Jobs</div><a href="/jobs?f[0]=job-category_developer-engineer">View 477 jobs</a></div>
@@ -85,11 +88,11 @@ get_header('landing');
                                     <div class="category category-data">
                                         <div>Data Jobs</div><a href="/jobs?f[0]=job-category_data-analytics">View 63 jobs</a></div>
                                 </div>
-                                <div class="more-link"><a href="/desktop/jobs">View all Boston jobs</a></div>
+                                <div class="more-link"><a href="/desktop/jobs">View all Vietnam jobs</a></div>
                             </div>
                             <div class="views-element-container block block-views block-views-blockfrontpage-news-block-3 home-top-company">
 
-                                <h2><a href="/companies" class="box-title">Boston Startup and Tech Companies</a><span class="view-all-block-head"><a href="/blogs">View all companies</a></span></h2>
+                                <h2><a href="/companies" class="box-title">Vietnam Startup and Tech Companies</a><span class="view-all-block-head"><a href="/blogs">View all companies</a></span></h2>
                                 <?php
                                 $query = array(
                                     'post_status' => 'publish',
@@ -99,7 +102,7 @@ get_header('landing');
                                 $companies = new WP_Query($query);
                                 ?>
                                 <div>
-                                    <div class="view view-frontpage-news view-id-frontpage_news view-display-id-block_3 js-view-dom-id-745f3ce16b198a7d9059049f89b9a000cc3d648360103c4be06f8aa341fcb786">
+                                    <div class="view view-frontpage-news view-id-frontpage_news view-display-id-block_3 js-view-dom-id">
                                         <div class="view-content">
                                             <?php while ($companies->have_posts()) : $companies->the_post(); ?>
                                                 <?php
@@ -147,7 +150,7 @@ get_header('landing');
 
                                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                     <h2>Get an Inside&nbsp;View</h2>
-                                    <p>Go behind the scenes of Boston company's tech, culture + teams</p>
+                                    <p>Go behind the scenes of Vietnam company's tech, culture + teams</p>
                                 </div>
 
                                 <div class="field field--name-field-links-list field--type-link field--label-hidden field__items">
@@ -173,7 +176,7 @@ get_header('landing');
                                     $companies = new WP_Query($query);
                                     ?>
                                     <div>
-                                        <h3><a href="/companies" class="box-title">Boston startups hiring now</a></h3>
+                                        <h3><a href="/companies" class="box-title">Vietnam startups hiring now</a></h3>
                                         <div class="views-element-container">
                                             <div class="view view-frontpage-companies view-id-frontpage_companies view-display-id-block_1 js-view-dom-id-892388419d38ef44f0cdc3b5290d44cd161e0e79f564cc185ee11674889c74de">
 
@@ -223,9 +226,9 @@ get_header('landing');
 
                                             </div>
                                         </div>
-
-                                        <!-- 
-                                        <h3> <a href="/guides" class="box-title">Our most popular Boston guides</a></h3>
+                                        <?php
+                                        /*
+                                        <h3> <a href="/guides" class="box-title">Our most popular Vietnam guides</a></h3>
                                         <div class="views-element-container">
                                             <div class="overlay-grid view view-frontpage-series view-id-frontpage_series view-display-id-block_1 js-view-dom-id-4f003ab68b6690462bd95c4cd9acf408ca50b77a6f7149a29c6b5371d4145257">
 
@@ -233,12 +236,12 @@ get_header('landing');
                                                     <div class="views-row">
                                                         <div class="image">
                                                             <div>
-                                                                <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/best-companies-work-boston.jpg" width="400" height="400" alt=" Best Companies to Work for in Boston" class="image-style-tech-series">
+                                                                <a href="/guides/best-companies-work-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-05/best-companies-work-boston.jpg" width="400" height="400" alt=" Best Companies to Work for in Vietnam" class="image-style-tech-series">
 
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                        <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Boston</a></span></div>
+                                                        <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Vietnam</a></span></div>
                                                         <div class="link"><span><a href="/guides/best-companies-work-boston" hreflang="en">View more</a></span></div>
                                                     </div>
                                                     <div class="views-row">
@@ -249,7 +252,7 @@ get_header('landing');
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                        <div class="title"><span><a href="/guides/your-guide-best-perks-boston-tech-companies" hreflang="en">Your Guide to the Best Perks at Boston Tech Companies</a></span></div>
+                                                        <div class="title"><span><a href="/guides/your-guide-best-perks-boston-tech-companies" hreflang="en">Your Guide to the Best Perks at Vietnam Tech Companies</a></span></div>
                                                         <div class="link"><span><a href="/guides/your-guide-best-perks-boston-tech-companies" hreflang="en">View more</a></span></div>
                                                     </div>
                                                     <div class="views-row">
@@ -260,25 +263,27 @@ get_header('landing');
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                        <div class="title"><span><a href="/guides/boston-food-tech" hreflang="en">Food Tech in Boston: Your Guide to Cool Jobs &amp; Companies</a></span></div>
+                                                        <div class="title"><span><a href="/guides/boston-food-tech" hreflang="en">Food Tech in Vietnam: Your Guide to Cool Jobs &amp; Companies</a></span></div>
                                                         <div class="link"><span><a href="/guides/boston-food-tech" hreflang="en">View more</a></span></div>
                                                     </div>
                                                     <div class="views-row">
                                                         <div class="image">
                                                             <div>
-                                                                <a href="/guides/boston-healthtech"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-health-tech-guide.jpg" width="400" height="400" alt="Boston Healthtech" class="image-style-tech-series">
+                                                                <a href="/guides/boston-healthtech"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/tech_series/public/2017-09/boston-health-tech-guide.jpg" width="400" height="400" alt="Vietnam Healthtech" class="image-style-tech-series">
 
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                        <div class="title"><span><a href="/guides/boston-healthtech" hreflang="en">Healthtech in Boston: Your Guide to Cool Jobs &amp; Companies</a></span></div>
+                                                        <div class="title"><span><a href="/guides/boston-healthtech" hreflang="en">Healthtech in Vietnam: Your Guide to Cool Jobs &amp; Companies</a></span></div>
                                                         <div class="link"><span><a href="/guides/boston-healthtech" hreflang="en">View more</a></span></div>
                                                     </div>
 
                                                 </div>
 
                                             </div>
-                                        </div> -->
+                                        </div>
+                                        */
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -294,7 +299,7 @@ get_header('landing');
 
                             <div class="block block-bix-frontpage block-bix-frontpage-jobs">
                                 <div class="title">
-                                    <h2 class="box-title">Boston techies, meet these<br>sweet job opportunities</h2>
+                                    <h2 class="box-title">Vietnam techies, meet these<br>sweet job opportunities</h2>
                                     <a class="view-more-button" href="/jobs">View All Jobs</a></div>
                                 <div class="bg-image-wrapper">
                                     <div class="bg-image" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/bix_frontpage_jobs_1.jpg');"></div>
@@ -303,10 +308,10 @@ get_header('landing');
                                     <div>
                                         <div class="views-element-container">
                                             <div class="job-opportunities view view-frontpage-jobs view-id-frontpage_jobs view-display-id-block_2 js-view-dom-id-1dc1a51b145990187b4978d84bd751127c3d7a509a48a15c46ddceeb0ccdeed9">
-
-                                                <h3><a href="/jobs" class="box-title">Job opportunities in Boston</a></h3>
-
-                                                <!-- <div class="job-categories">
+                                                <h3><a href="/jobs" class="box-title">Job opportunities in Vietnam</a></h3>
+                                                <?php
+                                                /*
+                                                <div class="job-categories">
                                                     <div class="category active processed" data-category=".all-categories"><span>All</span></div>
                                                     <div class="category processed" data-category=".category-wrapper-data-analytics"><span>Data + Analytics</span></div>
                                                     <div class="category processed" data-category=".category-wrapper-design"><span>Design + UX</span></div>
@@ -321,8 +326,9 @@ get_header('landing');
                                                     <div class="category processed" data-category=".category-wrapper-project-mgmt"><span>Project Mgmt</span></div>
                                                     <div class="category processed" data-category=".category-wrapper-sales"><span>Sales</span></div>
                                                     <div class="category processed" data-category=".category-wrapper-content"><span>Content</span></div>
-                                                </div> -->
-
+                                                </div>
+                                                */
+                                                ?>
                                                 <div class="view-content processed home-jobs" style="position: relative; height: 416px;">
 
                                                 <?php while($jobs->have_posts()) : $jobs->the_post(); ?>
@@ -373,7 +379,9 @@ get_header('landing');
                                     </div>
                                 </div>
                             </div>
-                          <!--   <div class="boston block block-bix-frontpage block-bix-frontpage-events">
+                            <?php
+                            /*
+                            <div class="boston block block-bix-frontpage block-bix-frontpage-events">
                                 <div class="title">
                                     <h2 class="box-title">Techies, Geeks,<br>Designy folks—unite!
 </h2>
@@ -413,11 +421,11 @@ get_header('landing');
                                                                 <br>Sep 28</div>
                                                         </div>
                                                         <div class="cover-image">
-                                                            <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-09/Boston%20New.png" width="270" height="345" alt="" class="image-style-event-card">
+                                                            <div> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/event_card/public/2017-09/Vietnam%20New.png" width="270" height="345" alt="" class="image-style-event-card">
 
                                                             </div>
                                                         </div>
-                                                        <div class="title"><span>Boston Tech And Startup Networking Mixer</span></div>
+                                                        <div class="title"><span>Vietnam Tech And Startup Networking Mixer</span></div>
                                                         <div class="organized-by">
                                                             <div>knw media</div>
                                                         </div>
@@ -472,7 +480,7 @@ get_header('landing');
                                         <div class="views-element-container">
                                             <div class="view view-frontpage-coding-schools view-id-frontpage_coding_schools view-display-id-block_1 js-view-dom-id-8319791072801693915702701756d993dedc10d82b8a25143dedb3cd937adb70">
 
-                                                <h2><a href="/coding-schools" class="box-title">Boston Coding Schools</a><span class="view-all-block-head"><a href="/coding-schools" class="box-title">View all schools</a></span></h2>
+                                                <h2><a href="/coding-schools" class="box-title">Vietnam Coding Schools</a><span class="view-all-block-head"><a href="/coding-schools" class="box-title">View all schools</a></span></h2>
 
                                                 <div class="view-content">
                                                     <div class="views-row">
@@ -506,7 +514,7 @@ get_header('landing');
                                         </div>
                                         <div class="events-signup-block">
                                             <div>
-                                                <div class="events-signup-block-title">The Boston startup scene moves fast. Keep up.</div>
+                                                <div class="events-signup-block-title">The Vietnam startup scene moves fast. Keep up.</div>
                                                 <div class="events-signup-block-upper-links"><span>weekly meetups</span><span>latest tech news</span><span>jobs in your inbox</span></div>
                                                 <div class="events-signup-block-google-login"><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;access_type=online&amp;client_id=137993173015-af10p25it867hd9b31ah43mjm45318de.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2Fwww.builtinboston.com%2Fbix-google-login-callback&amp;state&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login%20email%20profile&amp;approval_prompt=auto" data-ga-event="user-acq-ad-homepage-signup-google" class="ga-event-processed">Join with Google</a></div>
                                                 <div class="events-signup-block-facebook-login"><a href="/user/simple-fb-connect" data-ga-event="user-acq-ad-homepage-signup-facebook" class="ga-event-processed">Join with Facebook</a></div>
@@ -514,7 +522,9 @@ get_header('landing');
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
+                            */
+                            ?>
                         </div>
                     </div>
                 </div>

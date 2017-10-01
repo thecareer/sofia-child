@@ -76,6 +76,7 @@ $post_3 = $news[2];
                                                                         </a>
                                                                     </div>
                                                                 </div>
+<<<<<<< HEAD
                                                                 <div class="views-field views-field-nothing">
                                                                     <span class="field-content"><div class="title">
                                                                         <a href="<?php echo get_permalink( $post_1->ID ); ?>" hreflang="en"><?php echo get_the_title($post_1->ID); ?></a>
@@ -85,6 +86,12 @@ $post_3 = $news[2];
                                                                         </div>
                                                                     </span>
                                                                 </div>
+=======
+                                                                <div class="views-field views-field-nothing"><span class="field-content"><div class="title">
+<a href="/2017/04/21/startups-in-cambridge-you-should-know" hreflang="en">16 startups in Cambridge you should know</a>
+<div class="teaser"><p>Known for being the home of two the world's most renowned educational institutions, Cambridge is full of great ideas and innovative attitudes. Situated just across the Charles River from the heart of Vietnam, Cambridge is quickly becoming a popular playground for tech companies and startups. We've rounded up 16 startups and tech companies in Cambridge that are at the heart of the city's expanding tech scene.</p></div>
+</div></span></div>
+>>>>>>> 86fe40968e2b90aaf286af67eeef518db54c48b2
                                                             </div>
 
                                                         </div>
@@ -143,7 +150,11 @@ $post_3 = $news[2];
                                                                 </a>
                                                             </div>
                                                         </div>
+<<<<<<< HEAD
                                                         <div class="title"><span><a href="<?php the_permalink() ?>" hreflang="en"><?php the_title(); ?></a></span></div>
+=======
+                                                        <div class="title"><span><a href="/2016/12/16/boston-startups-share-why-they-chose-cic-home" hreflang="en">4 fast-growing Vietnam startups operating out of the CIC</a></span></div>
+>>>>>>> 86fe40968e2b90aaf286af67eeef518db54c48b2
                                                     </div>
                                                 <?php endwhile; ?>
                                                 </div>
@@ -254,8 +265,10 @@ $post_3 = $news[2];
                                                     <div class="title"><span><a href="<?php the_permalink(); ?>" hreflang="en"><?php the_title(); ?></a></span></div>
                                                     <div class="company-title"><span><a href="<?php the_permalink(); ?>" hreflang="en"><?php echo $term->name; ?></a></span></div>
                                                 </div>
+
                                             <?php endwhile; ?>
                                             <?php wp_reset_query(); ?>
+
                                             </div>
 
                                         </div>
@@ -264,7 +277,7 @@ $post_3 = $news[2];
                                 </div>
                                 <!-- <div class="block block-bix-global block-bix-global-sign-up">
 
-                                    <h5 class="title">The Boston startup scene moves fast. Keep up. </h5>
+                                    <h5 class="title">The Vietnam startup scene moves fast. Keep up. </h5>
                                     <div class="more-link"><a href="/user/register">Sign Up</a></div>
                                 </div> -->
                             </div>
