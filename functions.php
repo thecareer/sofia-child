@@ -212,11 +212,11 @@ function dakachi_add_company_cover_photo()
         )
     );
 
-    register_taxonomy('company-funding', array('company'),
+    register_taxonomy('company-location', array('company'),
         array(
             'hierarchical'   => true,
-            'label'          => __("Company Funding", "jobplanet-themes"),
-            'singular_label' => __("Company Funding", "jobplanet-themes"),
+            'label'          => __("Company location", "jobplanet-themes"),
+            'singular_label' => __("Company location", "jobplanet-themes"),
             'rewrite'        => false,
             'query_var'      => true,
             'public'         => true,
@@ -228,6 +228,18 @@ function dakachi_add_company_cover_photo()
             'hierarchical'   => true,
             'label'          => __("Company Size", "jobplanet-themes"),
             'singular_label' => __("Company Size", "jobplanet-themes"),
+            'rewrite'        => false,
+            'query_var'      => true,
+            'public'         => true,
+            'show_ui'        => true,
+        )
+    );
+
+    register_taxonomy('company-tag', array('company'),
+        array(
+            'hierarchical'   => fasle,
+            'label'          => __("Company Tag", "jobplanet-themes"),
+            'singular_label' => __("Company TAg", "jobplanet-themes"),
             'rewrite'        => false,
             'query_var'      => true,
             'public'         => true,

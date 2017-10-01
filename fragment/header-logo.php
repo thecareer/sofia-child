@@ -320,41 +320,42 @@
                                     <a href="/spotlights"><span>Insider Spotlights</span></a>
                                 </li>
                             </ul>
+                            <?php
+                            $news = new WP_Query(
+                                array('post_type' => 'post', 'post_status' => 'publish', 'tag' => 'navi-featured', 'showposts' => 2)
+                            );
 
+                            ?>
                             <div class="nav-content-view">
                                 <div class="views-element-container">
                                     <div class="view view-navigation-news view-id-navigation_news view-display-id-block_1 js-view-dom-id-3674a625132b29eeb71d44d12895767158e56bd5d2095d8a9e044e1f80c81b9b">
-
+                                        
                                         <div class="view-content">
+
+                                            <?php while($news->have_posts()) : $news->the_post(); ?>
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/2017/09/21/life-fast-lane-how-4-companies-fast-track-employees-success"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-09/278a5801_0.jpg" width="265" height="200" alt="" class="image-style-navigation-image">
+                                                        <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>" width="265" height="200" alt="" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/2017/09/21/life-fast-lane-how-4-companies-fast-track-employees-success">Life in the fast lane: How 4 companies fast-track...</a></span></div>
-                                            </div>
-                                            <div class="views-row">
-                                                <div class="image">
-                                                    <div>
-                                                        <a href="/2017/09/20/tech-roundup"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-09/unnamed-13_2.jpg" width="265" height="200" alt="" class="image-style-navigation-image">
-
-                                                        </a>
-                                                    </div>
+                                                <div class="title"><span><a href="<?php the_permalink(0); ?>">
+                                                    <?php the_title(); ?></a></span>
                                                 </div>
-                                                <div class="title"><span><a href="/2017/09/20/tech-roundup">Tech roundup: MIT’s The Engine reveals first 7...</a></span></div>
                                             </div>
+                                            <?php endwhile; ?>
+                                            <?php wp_reset_query(); ?>
 
                                             <div class="views-row">
                                                 <div class="image">
-                                                    <a href="/guides/cyber-security-boston"><img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/styles/navigation_image/public/2017-06/cyber-security-boston_0.jpg" width="265" height="200" alt="" class="image-style-navigation-image">
+                                                    <a href="/blog"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/cyber-security-boston_0.jpg" width="265" height="200" alt="" class="image-style-navigation-image">
 
                                                     </a>
                                                 </div>
-                                                <div class="title"><a href="/guides/cyber-security-boston">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
-                                                <div class="link"><a href="/guides/cyber-security-boston">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
+                                                <div class="title"><a href="/blog">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
+                                                <div class="link"><a href="/blog">Cybersecurity in Boston: Your Guide to Cool Jobs &amp; Companies</a></div>
                                             </div>
 
                                         </div>

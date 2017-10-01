@@ -56,9 +56,9 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 ?>
                                 <div class="block-facet--checkbox block block-facets block-facet-blockcompany-types-aggregate-type-industry">
 
-                                    <h2 class="box-title <?php if(!empty($selected_industry)) {echo 'active';} ?>">Type</h2>
+                                    <h2 class="box-title <?php if(!empty($selected_industry)) {echo 'active';} ?>">Category</h2>
 
-                                    <div class="item-list" <?php if(!empty($selected_industry)) {echo 'style="display:block"';} ?>>
+                                    <div class="item-list" style="display:block">
                                         <ul data-drupal-facet-id="company_types_aggregate_type_industry" data-drupal-facet-alias="company_types_aggregate_type_industry" class="js-facets-checkbox-links">
                                             <?php foreach ($industries as $key => $industry) : ?>
 
@@ -146,45 +146,45 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
 
                                 <?php
-                                $fundings = get_terms( array('taxonomy' => 'company-funding','hide_empty' => false) );
-                                $selected_funding = isset($_GET['funding']) ? $_GET['funding'] : array();
+                                $locationss = get_terms( array('taxonomy' => 'company-location','hide_empty' => false) );
+                                $selected_locations = isset($_GET['location']) ? $_GET['location'] : array();
                                 ?>
 
-                                <div class="block-facet--bix-facets-checkboxes block block-facets block-facet-blockfield-funding-amount last">
+                                <div class="block-facet--bix-facets-checkboxes block block-facets block-facet-blockfield-location-amount last">
 
-                                    <h2 class="box-title <?php if(!empty($selected_funding)) {echo 'active';} ?>">Funding</h2>
+                                    <h2 class="box-title <?php if(!empty($selected_locations)) {echo 'active';} ?>">Location</h2>
 
-                                    <div class="item-list" <?php if(!empty($selected_industry)) {echo 'style="display:block"';} ?>>
-                                        <ul data-drupal-facet-id="field_funding_amount" data-drupal-facet-alias="field_funding_amount" class="js-facets-checkbox-links">
-                                            <?php foreach ($fundings as $key => $funding) : ?>
+                                    <div class="item-list" <?php if(!empty($selected_locations)) {echo 'style="display:block"';} ?>>
+                                        <ul data-drupal-facet-id="field_locations_amount" data-drupal-facet-alias="field_locations_amount" class="js-facets-checkbox-links">
+                                            <?php foreach ($locationss as $key => $locations) : ?>
 
                                             <?php
                                                 $current = false;
                                                 
-                                                if(in_array($funding->slug, $selected_funding)) {
+                                                if(in_array($locations->slug, $selected_locations)) {
                                                     $current = true;
                                                 }
                                             ?>
                                                 <li class="facet-item facet-item--collapsed odd first">
                                                 
                                                 
-                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php echo $funding->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="type-<?php echo $funding->slug ?>">
+                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php echo $locations->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <label for="type-<?php echo $locations->slug ?>">
                                                         <?php if($current) : 
-                                                            $link  = remove_query_arg('funding', $base );
-                                                            foreach ($selected_funding as $key => $v) {
-                                                                if($v != $funding->slug) {
-                                                                    $link  = add_query_arg(array('funding[]' => $v), $link );
+                                                            $link  = remove_query_arg('locations', $base );
+                                                            foreach ($selected_locations as $key => $v) {
+                                                                if($v != $locations->slug) {
+                                                                    $link  = add_query_arg(array('locations[]' => $v), $link );
                                                                 }
                                                             }
                                                         ?>
                                                             <a href="<?php echo esc_url($link); ?>">
                                                         <?php else : ?>
-                                                            <a href="<?php echo esc_url(add_query_arg('funding[]', $funding->slug , $base )); ?>">
+                                                            <a href="<?php echo esc_url(add_query_arg('locations[]', $locations->slug , $base )); ?>">
                                                         <?php endif; ?>
-                                                            <span class="facet-item__value"><?php echo $funding->name; ?></span>
+                                                            <span class="facet-item__value"><?php echo $locations->name; ?></span>
                                                             <span class="facet-item__count">
-                                                              <?php echo $funding->count ?>
+                                                              <?php echo $locations->count ?>
                                                         </span>
                                                       </a>
                                                     </label>
