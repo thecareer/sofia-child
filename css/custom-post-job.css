@@ -23649,7 +23649,7 @@ body.open-ui-autocomplete {
         display: block;
     }
     .page-node-type-job .node__content .job-description {
-        height: 210px;
+        height: 410px;
         overflow: hidden;
     }
     .page-node-type-job .node__content .job-description.fade-out {
