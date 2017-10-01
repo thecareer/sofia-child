@@ -72,7 +72,7 @@
     padding-right: 0.5em;
 }
 .collapse-processed > summary:before {
-    background: url(/core/themes/classy/css/components/../../../../misc/menu-expanded.png) 0px 100% no-repeat;
+    background: url(../img/menu-expanded.png) 0px 100% no-repeat;
     content: "";
     float: left;
     height: 1em;
@@ -380,15 +380,15 @@ ul.menu {
     text-align: right;
 }
 .menu-item--expanded {
-    list-style-image: url(/core/themes/classy/css/components/../../../../misc/menu-expanded.png);
+    list-style-image: url(../img/menu-expanded.png);
     list-style-type: circle;
 }
 .menu-item--collapsed {
-    list-style-image: url(/core/themes/classy/css/components/../../../../misc/menu-collapsed.png);
+    list-style-image: url(../img/menu-collapsed.png);
     list-style-type: disc;
 }
 [dir="rtl"] .menu-item--collapsed {
-    list-style-image: url(/core/themes/classy/css/components/../../../../misc/menu-collapsed-rtl.png);
+    list-style-image: url(../img/menu-collapsed-rtl.png);
 }
 .menu-item {
     padding-top: 0.2em;
@@ -2175,7 +2175,7 @@ h6 {
     display: block;
     top: 50%;
     height: 32px;
-    background-image: url('/profiles/builtin/themes/bix/libraries/lightslider/src/css/../img/controls.png');
+    background-image: url('../img/controls.png');
     cursor: pointer;
     position: absolute;
     z-index: 9999;
