@@ -1000,14 +1000,14 @@ h6 {
 }
 .nav-item.events .view-navigation-events .views-row .date {
     background-color: #4FE2C1;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -1037,7 +1037,7 @@ h6 {
     background: #FFF;
     border: 2px solid #F0F2FA;
     color: #4FE2C1;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .nav-item.events .view-navigation-events .views-row .title {
     position: relative;
@@ -1832,14 +1832,14 @@ h6 {
 #block-accountmenunavigation ul.profile-menu img.profile-pic {
     width: 50px;
     height: auto;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
 }
 #block-accountmenunavigation ul.company-menu {
     display: inline-block;
@@ -1925,7 +1925,7 @@ h6 {
 .global-search-row-item .global-search-row-item-logo .logo-wrapper .centered {
     background-color: #FFF;
     border: 1px solid #d8d8d8;
-    border-radius: 50%;
+    border-radius: 25%;
     display: table-cell;
     height: 90px;
     overflow: hidden;
@@ -3175,7 +3175,7 @@ h6 {
     max-width: 100px;
 }
 .node-header .picture img {
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .node-header .full-name {
     margin-top: 10px;
@@ -3185,7 +3185,7 @@ h6 {
     width: 45px;
     height: 45px;
     background-color: #FFF;
-    border-radius: 50%;
+    border-radius: 25%;
     position: absolute;
     z-index: 5;
     bottom: -20px;
@@ -3286,14 +3286,14 @@ h6 {
     border: 1px solid #F0F2FA;
     height: 100px;
     width: 100px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
     padding: 19.6446609407px;
     overflow: hidden;
     vertical-align: middle;
@@ -3627,7 +3627,7 @@ h6 {
     display: table;
     height: 1.55em;
     width: 1.55em;
-    border-radius: 50%;
+    border-radius: 25%;
     float: left;
     border: 0.2em solid #F0F2FA;
 }
@@ -3688,7 +3688,7 @@ h6 {
     left: 0;
     display: block;
     content: " ";
-    border-radius: 50%;
+    border-radius: 25%;
     width: 1.15em;
     height: 1.15em;
     -webkit-transition-property: all;
@@ -3715,7 +3715,7 @@ h6 {
     width: 1.15em;
     height: 1.15em;
     clip: rect(0em, 0.775em, 1.55em, 0em);
-    border-radius: 50%;
+    border-radius: 25%;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -3728,7 +3728,7 @@ h6 {
     width: 1.15em;
     height: 1.15em;
     clip: rect(0em, 0.775em, 1.55em, 0em);
-    border-radius: 50%;
+    border-radius: 25%;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -3741,7 +3741,7 @@ h6 {
     width: 1.15em;
     height: 1.15em;
     clip: rect(0em, 0.775em, 1.55em, 0em);
-    border-radius: 50%;
+    border-radius: 25%;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -3754,7 +3754,7 @@ h6 {
     width: 1.15em;
     height: 1.15em;
     clip: rect(0em, 0.775em, 1.55em, 0em);
-    border-radius: 50%;
+    border-radius: 25%;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -3767,7 +3767,7 @@ h6 {
     width: 1.15em;
     height: 1.15em;
     clip: rect(0em, 0.775em, 1.55em, 0em);
-    border-radius: 50%;
+    border-radius: 25%;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -3780,7 +3780,7 @@ h6 {
     width: 1.15em;
     height: 1.15em;
     clip: rect(0em, 0.775em, 1.55em, 0em);
-    border-radius: 50%;
+    border-radius: 25%;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -4584,14 +4584,14 @@ h6 {
 }
 .pager__items.js-pager__items .pager__item a {
     background-color: #FFF;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -4609,14 +4609,14 @@ h6 {
 }
 .pager__items.js-pager__items .pager__item.is-active a {
     background-color: #F0F2FA;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -4854,7 +4854,7 @@ h6 {
     margin-top: -13px;
 }
 .bix-embed-people .bix-embed-people-image img {
-    border-radius: 50%;
+    border-radius: 25%;
     max-width: 100%;
 }
 .embedded-entity {
@@ -5457,14 +5457,14 @@ header .site-slogan:last-child {
 }
 .empty-block a {
     background-color: #F0F2FA;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -5877,14 +5877,14 @@ header .site-slogan:last-child {
     border: 1px solid #F0F2FA;
     height: 100px;
     width: 100px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
     padding: 19.6446609407px;
     overflow: hidden;
     vertical-align: middle;
@@ -6071,7 +6071,7 @@ header .site-slogan:last-child {
     height: 10px;
     box-sizing: border-box;
     border: 2px solid #FFF;
-    border-radius: 50%;
+    border-radius: 25%;
     margin: 2px;
 }
 .company-overview-content .company-gallery-dots .item:first-child {
@@ -6441,7 +6441,7 @@ header .site-slogan:last-child {
 .company-culture .views-field .employee-image {
     position: relative;
     z-index: 10;
-    border-radius: 50%;
+    border-radius: 25%;
     border: 4px solid transparent;
     overflow: hidden;
     margin-bottom: 30px;
@@ -6469,7 +6469,7 @@ header .site-slogan:last-child {
 }
 .company-culture .views-field .employee-image img {
     border: 5px solid transparent;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .company-culture .views-field .employee-image.active {
     border: 4px solid #4FE2C1;
@@ -6565,7 +6565,7 @@ header .site-slogan:last-child {
     margin-bottom: 5px;
 }
 .company-culture .employee-info img {
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .company-culture h3 {
     font-weight: 800;
@@ -7193,14 +7193,14 @@ header .site-slogan:last-child {
 }
 .block-views-blockcompany-employee-testimonials-block-1 .testimonials-slideshow .field--name-field-employee-image {
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 25%;
     max-width: 110px;
     margin: 0 auto;
 }
 .block-views-blockcompany-employee-testimonials-block-1 .testimonials-slideshow .field--name-field-employee-image img {
     float: left;
     width: 100%;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .block-views-blockcompany-employee-testimonials-block-1 .testimonials-slideshow .field--name-field-quote-employee {
     margin-top: 25px;
@@ -8507,7 +8507,7 @@ header .site-slogan:last-child {
 }
 .page-node-type-blog .author .picture img {
     display: block;
-    border-radius: 50%;
+    border-radius: 25%;
     width: 50px;
 }
 .page-node-type-blog .author .info {
@@ -9200,7 +9200,7 @@ header .site-slogan:last-child {
 }
 .node--type-blog.node--view-mode-spotlight .author .picture img {
     display: block;
-    border-radius: 50%;
+    border-radius: 25%;
     width: 50px;
 }
 .node--type-blog.node--view-mode-spotlight .author .info {
@@ -10059,7 +10059,7 @@ header .site-slogan:last-child {
     text-decoration: underline;
 }
 .block-bix-series-sponsored-1 .logo-wrapper-small .centered {
-    border-radius: 50%;
+    border-radius: 25%;
     width: 100px;
     height: 100px;
 }
@@ -10175,7 +10175,7 @@ header .site-slogan:last-child {
     text-decoration: underline;
 }
 .block-bix-series-sponsored-2 .logo-wrapper-small .centered {
-    border-radius: 50%;
+    border-radius: 25%;
     width: 100px;
     height: 100px;
 }
@@ -10353,14 +10353,14 @@ header .site-slogan:last-child {
 }
 .page-node-type-event .field--name-field-event-date {
     background-color: #4FE2C1;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -10386,7 +10386,7 @@ header .site-slogan:last-child {
     background: #FFF;
     border: 2px solid #F0F2FA;
     color: #4FE2C1;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .page-node-type-event .event-time,
 .page-node-type-event .event-category {
@@ -12445,14 +12445,14 @@ header .site-slogan:last-child {
 }
 .block-bix-frontpage-events .view-frontpage-events .views-row .date {
     background-color: #4FE2C1;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -12482,7 +12482,7 @@ header .site-slogan:last-child {
     background: #FFF;
     border: 2px solid #F0F2FA;
     color: #4FE2C1;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .block-bix-frontpage-events .view-frontpage-events .views-row .title {
     position: relative;
@@ -14299,7 +14299,7 @@ header .site-slogan:last-child {
 }
 .block-bix-frontpage-profile .col-1 img {
     max-width: 200px;
-    border-radius: 50%;
+    border-radius: 25%;
     float: left;
 }
 .block-bix-frontpage-profile .col-2 {
@@ -19181,7 +19181,7 @@ header .site-slogan:last-child {
     position: absolute;
 }
 .view-bix-profile-blocks .profile-card-photo img {
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .view-bix-profile-blocks .profile-card-content .profile-card-name {
     border-bottom: 4px solid #04003F;
@@ -20100,14 +20100,14 @@ header .site-slogan:last-child {
 }
 .view-search .views-row .date > span {
     background-color: #4FE2C1;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -20133,7 +20133,7 @@ header .site-slogan:last-child {
     background: #FFF;
     border: 2px solid #F0F2FA;
     color: #4FE2C1;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .view-search .views-row .description {
     font-size: 10px;
@@ -20286,14 +20286,14 @@ header .site-slogan:last-child {
 }
 .block-views-blockmembers-block-1 .views-row .profile-pic img {
     background-color: #F0F2FA;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -20461,14 +20461,14 @@ header .site-slogan:last-child {
 }
 .block-views-blockevents-landing-events .views-row .date {
     background-color: #4FE2C1;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -20494,7 +20494,7 @@ header .site-slogan:last-child {
     background: #FFF;
     border: 2px solid #F0F2FA;
     color: #4FE2C1;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .block-views-blockevents-landing-events .views-row .title {
     font-size: 16px;
@@ -20985,14 +20985,14 @@ header .site-slogan:last-child {
 }
 .block-views-blockevents-blocks-block-1 .views-row .date {
     background-color: #4FE2C1;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
     display: block;
     clear: both;
     overflow: hidden;
@@ -21022,7 +21022,7 @@ header .site-slogan:last-child {
     background: #FFF;
     border: 2px solid #F0F2FA;
     color: #4FE2C1;
-    border-radius: 50%;
+    border-radius: 25%;
 }
 .block-views-blockevents-blocks-block-1 .views-row .title {
     position: relative;
@@ -21145,14 +21145,14 @@ header .site-slogan:last-child {
     display: inline-block;
     margin-bottom: -23px;
     cursor: pointer;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
 }
 .path-recruitment .block-region-top-wrapper .block-region-top .block-bix-recruitment-bottom .bottom:before {
     position: relative;
@@ -21479,14 +21479,14 @@ header .site-slogan:last-child {
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-1 img {
     width: 90px;
     height: auto;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
 }
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-2 {
     width: 584px;
@@ -21811,14 +21811,14 @@ header .site-slogan:last-child {
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-1 .views-field-field-professional-experience .company-logo img {
     width: 30px;
     height: auto;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
 }
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-1 .views-field-field-professional-experience .info {
     display: inline-block;
@@ -22127,14 +22127,14 @@ header .site-slogan:last-child {
 .path-recruitment .contact-message-introduction-form-form .requestee-wrapper .col-left img {
     width: 90px;
     height: auto;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
 }
 .path-recruitment .contact-message-introduction-form-form .requestee-wrapper .col-right {
     display: inline-block;
@@ -24728,7 +24728,7 @@ body.open-ui-autocomplete {
         margin-right: 0;
     }
     .view-bix-profile-blocks .profile-card-photo img {
-        border-radius: 50%;
+        border-radius: 25%;
         float: left;
     }
     .view-bix-profile-blocks .profile-card-content {
