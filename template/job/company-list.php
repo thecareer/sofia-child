@@ -38,9 +38,10 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                     <div class="row">
                         <div class="">
                             <div class="block-region-left">
-                                <div class="block-facets block block-bix-companies block-bix-companies-landing-sort">
                                 <?php
                                 /*
+                                <div class="block-facets block block-bix-companies block-bix-companies-landing-sort">
+                                
                                     <h4 class="box-title active">Filter Your Results</h4>
 
                                     <div class="item-list">
