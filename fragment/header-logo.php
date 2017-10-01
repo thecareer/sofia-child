@@ -90,7 +90,7 @@
 
             <ul class="menu">
                 <li class="nav-item jobs menu-item">
-                    <a href="/jobs"><span>Local Jobs</span></a>
+                    <a href="/jobs"><span>Việc làm</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
@@ -161,7 +161,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded">
-                    <a href="/companies"><span>Startups</span></a>
+                    <a href="/companies"><span>Công ty</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -228,7 +228,9 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <!-- <li class="nav-item events menu-item menu-item--expanded">
+                <?php
+                /*
+                <li class="nav-item events menu-item menu-item--expanded">
                     <a href="/events"><span>Events</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -301,9 +303,9 @@
                         </div>
                         <div class="underlay"></div>
                     </div>
-                </li> -->
+                </li> */ ?>
                 <li class="nav-item news menu-item menu-item--expanded">
-                    <a href="/blogs"><span>News</span></a>
+                    <a href="/blogs"><span>Bài viết</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -369,7 +371,7 @@
                     </div>
                 </li>
                 <li class="nav-item search menu-item">
-                    <a href="/"><span>Search</span></a>
+                    <a href="/"><span>Tìm kiếm</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
@@ -398,8 +400,7 @@
 
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-
-            <a href="/job-slots" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Join</a> | <a href="/user/login">Login</a></span>
+            <a href="https://employer.startup.jobs" class="post-job ga-event-processed" data-ga-event="customers-post-job">Đăng tuyển</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Nhà tuyển dụng</a></span>
         </div>
 
     </div>
