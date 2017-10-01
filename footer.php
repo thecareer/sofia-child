@@ -1,5 +1,4 @@
 
-
    <footer role="contentinfo" class="footer-boston">
     <div class="footer-wrapper">
 
@@ -10,9 +9,9 @@
 
                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                     <p>BuiltIn Boston is the online community
-                        <br> for Boston startups and tech companies.
-                        <br> Find startup jobs, tech news and events.</p>
-                    <p>© Built In 2017</p>
+                        <br> for startups and tech companies.
+                        <br> Find startup jobs, company and startup blog.</p>
+                    <p>© Startup.JOBS 2017</p>
                 </div>
 
             </div>
@@ -26,13 +25,13 @@
 
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="http://www.go.builtin.com/bostondemo" target="_blank">Recruit With Built In</a>
+                        <a href="#" target="_blank">Recruit With Startup.JOBS</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/send-us-tip" target="_blank">Send Us a Tip</a>
+                        <a href="#" target="_blank">Send Us a Tip</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/contact-us" target="_blank">Contact Us</a>
+                        <a href="#" target="_blank">Contact Us</a>
                     </li>
                 </ul>
 
@@ -47,13 +46,13 @@
 
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="https://boards.greenhouse.io/builtin" target="_blank">Careers</a>
+                        <a href="#" target="_blank">Careers</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                        <a href="#" target="_blank">Privacy Policy</a>
                     </li>
                     <li class="menu-item">
-                        <a href="/terms-use" target="_blank">Terms of Use</a>
+                        <a href="#" target="_blank">Terms of Use</a>
                     </li>
                 </ul>
 
@@ -68,10 +67,10 @@
 
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="https://www.facebook.com/builtinbos" target="_blank">Facebook</a>
+                        <a href="https://www.facebook.com/go.startup.jobs" target="_blank">Facebook</a>
                     </li>
                     <li class="menu-item">
-                        <a href="http://twitter.com/builtinbos" target="_blank">Twitter</a>
+                        <a href="http://twitter.com/gostartupjobs" target="_blank">Twitter</a>
                     </li>
                 </ul>
 
