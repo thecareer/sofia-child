@@ -60,7 +60,7 @@ get_header('landing');
                         <div class="block-region-middle">
                             <div class="boston block block-bix-frontpage block-bix-frontpage-job-categories">
 
-                                <div> <a href="/desktop/jobs" class="title">Find your dream job</a></div>
+                                <div> <a href="/desktop/jobs" class="title">Get your dream job</a></div>
                                 <div class="views-row category-wrapper-developer">
                                     <div class="category category-developer">
                                         <div>Developer Jobs</div><a href="/jobs?f[0]=job-category_developer-engineer">View 477 jobs</a></div>
