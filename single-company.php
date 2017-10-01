@@ -31,9 +31,9 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                             <div class="company-card-content">
                                                 <div class="company-card-title">
                                                     <h1><?php the_title(); ?></h1>
-                                                    <div class="buttons">
+                                                    <!-- <div class="buttons">
                                                         <div id="create-job-alert-wrapper"><a href="/bix-job-newsletter/company-alerts/874/job-alert-company-lp" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:555}">Create job alert</a></div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="company-card-info">
                                                     <div class="col-1">

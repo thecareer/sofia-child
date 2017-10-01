@@ -171,3 +171,19 @@ a.page-numbers{
     position: relative;
     z-index: 1;
 }
+
+
+.block-bix-jobs-apply .flag-save_job.facebook, .block-bix-jobs-apply-bottom .save-job a.facebook {
+    background: #4267b2;
+}
+.block-bix-jobs-apply .flag-save_job.facebook:hover, .block-bix-jobs-apply-bottom .save-job a.facebook:hover{
+    background: #5d88de;
+    color : #fff;
+}
+.block-bix-jobs-apply .flag-save_job.linkedin, .block-bix-jobs-apply-bottom .save-job a.linkedin {
+    background: #283e4a;
+}
+.block-bix-jobs-apply .flag-save_job.linkedin:hover, .block-bix-jobs-apply-bottom .save-job a.linkedin:hover {
+    background: #476c80;
+    color : #fff;
+}

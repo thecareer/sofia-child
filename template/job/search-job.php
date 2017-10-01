@@ -90,6 +90,92 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="block-facet--bix-facets-jobs-checkbox block block-facets block-facet-blockjob-category">
+                                    <?php
+                                    $categorys = get_terms( array('taxonomy' => 'job-category','hide_empty' => false) );
+                                    $selected_categorys = isset($_GET['category']) ? $_GET['category'] : array();
+                                    ?>
+                                    <h2 class="box-title <?php if(!empty($selected_categorys)) {echo 'active';} ?>">Category</h2>
+
+                                    <div class="item-list" <?php if(!empty($selected_categorys)) {echo 'style="display:block"';} ?>>
+                                        <ul data-drupal-facet-id="company_types_aggregate_type_type" data-drupal-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
+                                            <?php foreach ($categorys as $key => $category) : ?>
+
+                                            <?php
+                                                $current = false;
+                                                if(in_array($category->slug, $selected_categorys)) {
+                                                    $current = true;
+                                                }
+                                            ?>
+                                                <li class="facet-item ">
+                                                    <input type="checkbox" class="facets-checkbox" id="category-<?php echo $category->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <label for="category-<?php echo $category->slug ?>">
+                                                        <?php if($current) :
+                                                            $link  = remove_query_arg('category', $base);
+                                                            foreach ($selected_categorys as $key => $v) {
+                                                                if($v != $category->slug) {
+                                                                    $link  = add_query_arg('category[]', $v, $link );
+                                                                }
+                                                            }
+                                                        ?>
+                                                            <a href="<?php echo esc_url($link); ?>">
+                                                            <?php else : ?>
+                                                                <a href="<?php echo esc_url(add_query_arg('category[]', $category->slug, $base)); ?>">
+                                                            <?php endif; ?>
+                                                                <span class="facet-item__value"><?php echo $category->name; ?></span>
+                                                                <span class="facet-item__count">
+                                                                  <?php echo $category->count ?>
+                                                              </span>
+                                                        </a>
+                                                    </label>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="block-facet--bix-facets-jobs-checkbox block block-facets block-facet-blockjob-level">
+                                <?php
+                                $levels = get_terms( array('taxonomy' => 'job_level','hide_empty' => false) );
+                                $selected_levels = isset($_GET['level']) ? $_GET['level'] : array();
+                                ?>
+                                <h2 class="box-title <?php if(!empty($selected_levels)) {echo 'active';} ?>">level</h2>
+
+                                <div class="item-list" <?php if(!empty($selected_levels)) {echo 'style="display:block"';} ?>>
+                                    <ul data-drupal-facet-id="company_types_aggregate_type_type" data-drupal-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
+                                        <?php foreach ($levels as $key => $level) : ?>
+
+                                        <?php
+                                            $current = false;
+                                            if(in_array($level->slug, $selected_levels)) {
+                                                $current = true;
+                                            }
+                                        ?>
+                                            <li class="facet-item ">
+                                                <input type="checkbox" class="facets-checkbox" id="level-<?php echo $level->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                <label for="level-<?php echo $level->slug ?>">
+                                                    <?php if($current) :
+                                                        $link  = remove_query_arg('level', $base);
+                                                        foreach ($selected_levels as $key => $v) {
+                                                            if($v != $level->slug) {
+                                                                $link  = add_query_arg('level[]', $v, $link );
+                                                            }
+                                                        }
+                                                    ?>
+                                                        <a href="<?php echo esc_url($link); ?>">
+                                                        <?php else : ?>
+                                                            <a href="<?php echo esc_url(add_query_arg('level[]', $level->slug, $base)); ?>">
+                                                        <?php endif; ?>
+                                                            <span class="facet-item__value"><?php echo $level->name; ?></span>
+                                                            <span class="facet-item__count">
+                                                              <?php echo $level->count ?>
+                                                          </span>
+                                                    </a>
+                                                </label>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            </div>
                                 <div class="block-facet--bix-facets-jobs-checkbox block block-facets block-facet-blockjob-location last">
                                     <?php
                                     $locations = get_terms( array('taxonomy' => 'job-location','hide_empty' => false) );
@@ -248,10 +334,10 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                     <div class="center">
                                                         <h2 class="title"><?php the_title(); ?></h2>
                                                         <div class="company-title"><?php echo get_the_title($company_id); ?></div>
-                                                        <div class="description"><?php the_excerpt(); ?></div>
+                                                        <div class="description"><?php echo vp_metabox('jobplanet_job.short_desc'); ?></div>
                                                     </div>
                                                     <div class="right">
-                                                        <div class="job-save"><a href="/user/login" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">save job</a></div>
+                                                        <div class="job-save"><a href="<?php the_permalink(); ?>" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">apply</a></div>
                                                         <div class="job-date"><?php echo human_time_diff( strtotime(get_the_date()) ); ?></div>
                                                         <div class="job-location"><?php echo $term->name; ?></div>
                                                         <div class="link"><i></i></div>

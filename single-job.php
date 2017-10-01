@@ -88,24 +88,14 @@ $company_name = get_the_title($company_id);
                                         <input data-drupal-selector="edit-bix-jobs-apply-job-form-2" type="hidden" name="form_id" value="bix_jobs_apply_job_form">
 
                                     </form>
-                                    <div class="save-job"><a title="" href="/flag/flag/save_job/6133?destination=node/6133&amp;token=oAurx8v8ibLwEuXlGAw63pnkIa4YvbGhZbcy74b6_NI" class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed" data-ga-event="job-save-job-description" rel="nofollow">Save</a></div>
-                                    <form data-drupal-selector="bix-jobs-email-job-form-2" action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-email-job-form--2" accept-charset="UTF-8">
-                                        <div class="email-for-later">Email For Later</div>
-                                        <div class="js-form-item form-item js-form-type-email form-type-email js-form-item-email form-item-email form-no-label">
-                                            <input placeholder="Email for later" data-drupal-selector="edit-email" type="email" id="edit-email--2" name="email" value="" size="60" maxlength="254" class="form-email">
 
-                                        </div>
-                                        <input data-ga-event="job-email-job-description" data-drupal-selector="edit-submit" type="submit" id="edit-submit--4" name="op" value="Send" class="button js-form-submit form-submit ga-event-processed">
-                                        <div class="form-submit-icon"><span></span></div>
-                                        <div class="new-button" job-nid="6133" company-nid="950"></div>
-                                        <div class="error-message"></div>
-                                        <div class="loading">loading ...</div>
-                                        <div class="succeed">Emailed</div>
-                                        <input data-drupal-selector="form-erg8k68sg1u3-1ttjqvcrxpiqair1yeboo7mvfjhrsg" type="hidden" name="form_build_id" value="form-eRG8k68SG1u3-1TtjQvcRxPiQaIR1yEBoo7mVFjHRsg">
-                                        <input data-drupal-selector="edit-bix-jobs-email-job-form-form-token-2" type="hidden" name="form_token" value="Ckt__QAZv1NYWU0EhoUqFbafsVS6KA3Cu7s0SDGo0yY">
-                                        <input data-drupal-selector="edit-bix-jobs-email-job-form-2" type="hidden" name="form_id" value="bix_jobs_email_job_form">
+                                    <div class="save-job">
 
-                                    </form>
+                                        <a title="" target="_blank" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" data-ga-event="job-save-job-description" rel="nofollow">Share to Facebook</a></div>
+                                    <div class="save-job">    
+                                        <a title="" target="_blank" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=<?php vp_metabox('jobplanet_job.short_desc'); ?>" data-ga-event="job-save-job-description" rel="nofollow">Share to LinkedIn</a></div>
+
+                                    
 
                                 </div>
                             </div>
@@ -223,24 +213,11 @@ $company_name = get_the_title($company_id);
                                             <input data-drupal-selector="edit-bix-jobs-apply-job-form" type="hidden" name="form_id" value="bix_jobs_apply_job_form">
 
                                         </form>
-                                        <a title="" href="/flag/flag/save_job/6133?destination=node/6133&amp;token=oAurx8v8ibLwEuXlGAw63pnkIa4YvbGhZbcy74b6_NI" class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed" data-ga-event="job-save-right-rail" rel="nofollow">Save</a>
-                                        <form data-drupal-selector="bix-jobs-email-job-form" action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-email-job-form" accept-charset="UTF-8">
-                                            <div class="email-for-later">Email For Later</div>
-                                            <div class="js-form-item form-item js-form-type-email form-type-email js-form-item-email form-item-email form-no-label">
-                                                <input placeholder="enter your email" data-drupal-selector="edit-email" type="email" id="edit-email" name="email" value="" size="60" maxlength="254" class="form-email">
 
-                                            </div>
-                                            <input data-ga-event="job-email-job-description" data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" name="op" value="" class="button js-form-submit form-submit ga-event-processed">
-                                            <div class="form-submit-icon"><span></span></div>
-                                            <div class="new-button" job-nid="6133" company-nid="950"></div>
-                                            <div class="error-message"></div>
-                                            <div class="loading">loading ...</div>
-                                            <div class="succeed">Emailed</div>
-                                            <input data-drupal-selector="form-phjpsmeahiwsmcqn5inlpqmjb4ytyiz7ebizjiu31ik" type="hidden" name="form_build_id" value="form-PhJPsMEAhIwsMcqn5InlPqmjB4YTyiZ7EBIZJIu31ik">
-                                            <input data-drupal-selector="edit-bix-jobs-email-job-form-form-token" type="hidden" name="form_token" value="Ckt__QAZv1NYWU0EhoUqFbafsVS6KA3Cu7s0SDGo0yY">
-                                            <input data-drupal-selector="edit-bix-jobs-email-job-form" type="hidden" name="form_id" value="bix_jobs_email_job_form">
+                                            <a title="Share to Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed facebook" data-ga-event="job-save-right-rail" rel="nofollow">Share to Facebook</a>
 
-                                        </form>
+                                            <a title="Share to Facebook" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=<?php vp_metabox('jobplanet_job.short_desc'); ?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed linkedin" data-ga-event="job-save-right-rail" rel="nofollow">Share to LinkedIn</a>
+
                                         <a href="<?php echo get_the_permalink( $company_id ); ?>" class="view-profile">View <?php echo get_the_title($company_id); ?>'s full profile</a>
                                         <a href="<?php echo get_the_permalink( $company_id ); ?>#seemorejobs" class="job-category">See more <?php echo get_the_title($company_id); ?> jobs</a>
                                     </div>

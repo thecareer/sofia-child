@@ -224,6 +224,24 @@ class Dakachi_Jeg_Job
             );
         }
 
+        if (!empty(get_query_var('level'))) {
+            $tax_query[] = array(
+                'taxonomy' => 'job_level',
+                'field'    => 'slug',
+                'terms'    => get_query_var('level'),
+                // 'compare'  => 'IN',
+            );
+        }
+
+        if (!empty(get_query_var('category'))) {
+            $tax_query[] = array(
+                'taxonomy' => 'job-category',
+                'field'    => 'slug',
+                'terms'    => get_query_var('category'),
+                // 'compare'  => 'IN',
+            );
+        }
+
         // filter by type
         if (!empty(get_query_var('type'))) {
             $tax_query[] = array(

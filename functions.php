@@ -139,7 +139,7 @@ function dakachi_add_company_cover_photo()
             'menu_position'         => 6,
             'capability_type'       => 'post',
             'hierarchical'          => false,
-            'supports'              => array('title' , 'editor', 'author', 'revisions'),
+            'supports'              => array('title' , 'editor', 'author', 'revisions', ),
             'taxonomies'            => array('job-type', 'job-location', 'job-category'),
             'rewrite'               => array(
                 'slug'  =>  $slug
@@ -248,7 +248,7 @@ function dakachi_jeg_pagemetabox_setup()
     new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/page-landing-metabox.php');
 
     new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/companies-metabox.php');
-    new VP_Metabox(JOBPLANET_PLUGIN_DIR. '/lib/metabox/job-metabox.php');
+    new VP_Metabox(get_stylesheet_directory(). '/lib/metabox/job-metabox.php');
     // new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/university-metabox.php');
     // new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/jobfair-metabox.php');
 
