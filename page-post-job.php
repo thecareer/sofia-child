@@ -28,10 +28,10 @@ get_header();
         <li>Employer Branded Content</li>
         <li>Recruitment Events</li>
         <li>Sourcing Database</li>
-</ul></div></div><div class="views-field views-field-variations"><div class="field-content"><form class="commerce-order-item-add-to-cart-form-commerce-product-1 commerce-order-item-add-to-cart-form" data-drupal-selector="commerce-order-item-add-to-cart-form-commerce-product-1" action="/job-slots" method="post" id="commerce-order-item-add-to-cart-form-commerce-product-1" accept-charset="UTF-8">
-  <input data-drupal-selector="form-rnzmmde4lro4j57keykw4azbeziyet-de0jc6lrnpso" type="hidden" name="form_build_id" value="form-rNZmMDE4LRO4J57KeYkw4AZBeZIyeT-De0JC6LrnpSo">
-<input data-drupal-selector="edit-commerce-order-item-add-to-cart-form-commerce-product-1" type="hidden" name="form_id" value="commerce_order_item_add_to_cart_form_commerce_product_1">
-<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" name="op" value="Select" class="button button--primary js-form-submit form-submit">
+</ul></div></div><div class="views-field views-field-variations"><div class="field-content"><form class="commerce-order-item-add-to-cart-form-commerce-product-1 commerce-order-item-add-to-cart-form"  action="/job-slots" method="post" id="commerce-order-item-add-to-cart-form-commerce-product-1" accept-charset="UTF-8">
+  <input  type="hidden" name="form_build_id" value="form-rNZmMDE4LRO4J57KeYkw4AZBeZIyeT-De0JC6LrnpSo">
+<input  type="hidden" name="form_id" value="commerce_order_item_add_to_cart_form_commerce_product_1">
+<div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input  type="submit" id="edit-submit--2" name="op" value="Select" class="button button--primary js-form-submit form-submit">
 </div>
 
 </form>
@@ -58,10 +58,10 @@ get_header();
         <li>Employer Branded Content</li>
         <li>Recruitment Events</li>
         <li>Sourcing Database</li>
-</ul></div></div><div class="views-field views-field-variations"><div class="field-content"><form class="commerce-order-item-add-to-cart-form-commerce-product-2 commerce-order-item-add-to-cart-form" data-drupal-selector="commerce-order-item-add-to-cart-form-commerce-product-2" action="/job-slots" method="post" id="commerce-order-item-add-to-cart-form-commerce-product-2" accept-charset="UTF-8">
-  <input data-drupal-selector="form-9u8apmd7mpw02owagjxbca5imdrcbraaxpzfechheie" type="hidden" name="form_build_id" value="form-9U8apMd7mPw02OwAgJXBCa5IMdRCbrAaxPZFEChheIE">
-<input data-drupal-selector="edit-commerce-order-item-add-to-cart-form-commerce-product-2" type="hidden" name="form_id" value="commerce_order_item_add_to_cart_form_commerce_product_2">
-<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Select" class="button button--primary js-form-submit form-submit">
+</ul></div></div><div class="views-field views-field-variations"><div class="field-content"><form class="commerce-order-item-add-to-cart-form-commerce-product-2 commerce-order-item-add-to-cart-form"  action="/job-slots" method="post" id="commerce-order-item-add-to-cart-form-commerce-product-2" accept-charset="UTF-8">
+  <input  type="hidden" name="form_build_id" value="form-9U8apMd7mPw02OwAgJXBCa5IMdRCbrAaxPZFEChheIE">
+<input  type="hidden" name="form_id" value="commerce_order_item_add_to_cart_form_commerce_product_2">
+<div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input  type="submit" id="edit-submit" name="op" value="Select" class="button button--primary js-form-submit form-submit">
 </div>
 
 </form>

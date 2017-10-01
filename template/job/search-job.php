@@ -24,10 +24,10 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
             <div class="search-bar"><span class="label">Search |</span>
                 <div class="job-search-wrapper">
-                    <input type="text" required name="keyword" placeholder="job title or keyword" value="<?php echo urldecode(stripslashes(esc_html(get_query_var( 'keyword' ))));  ?>" />
+                    <input type="text" required name="keyword" placeholder="Enter your keyword" value="<?php echo urldecode(stripslashes(esc_html(get_query_var( 'keyword' ))));  ?>" />
                 </div>
-                <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                    <input data-drupal-selector="edit-submit-jobs" type="submit" id="edit-submit-jobs" value="Find Jobs" class="button js-form-submit form-submit">
+                <div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                    <input  type="submit" id="edit-submit-jobs" value="Go Search" class="button js-form-submit form-submit">
                 </div>
             </div>
         </div>

@@ -1,16 +1,16 @@
 <div class="header-wrapper">
     <header role="banner">
         <div class="region region-header">
-            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
+            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1"  id="block-exposedformsearchpage-1">
                 <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                             <label for="edit-s">Search |</label>
-                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
+                            <input  class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
 
                         </div>
-                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                        <div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                            <input  type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                         </div>
 
                     </div>
@@ -34,48 +34,48 @@
 
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="/" data-drupal-link-system-path="<front>">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/jobs" data-drupal-link-system-path="jobs">Jobs</a>
+                    <a href="/jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
                     <a href="/user/login">Saved</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/blogs" data-drupal-link-system-path="blogs">News</a>
+                    <a href="/blogs">News</a>
                 </li>
                 <li class="menu-item menu-item--expanded">
-                    <a href="/" data-drupal-link-system-path="<front>">More</a>
+                    <a href="/">More</a>
                     <ul class="menu">
                         <li class="button menu-item">
-                            <a href="/user/register" data-drupal-link-system-path="user/register">Sign Up</a>
+                            <a href="/user/register">Sign Up</a>
                         </li>
                         <li class="button menu-item">
-                            <a href="/user/login" data-drupal-link-system-path="user/login">Log In</a>
+                            <a href="/user/login">Log In</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/companies" data-drupal-link-system-path="companies">Startups</a>
+                            <a href="/companies">Startups</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/events" data-drupal-link-system-path="events">Events</a>
+                            <a href="/events">Events</a>
                         </li>
                     </ul>
 
                 </li>
             </ul>
 
-            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
+            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1"  id="block-exposedformsearchpage-1">
 
                 <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                             <label for="edit-s">Search |</label>
-                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
+                            <input  class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
 
                         </div>
-                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                        <div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                            <input  type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                         </div>
 
                     </div>
@@ -93,14 +93,14 @@
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
-                                <a href="/node/add/job">
+                                <a href="//employer.startup.jobs">
                                     <h3 class="title">Looking<br>to hire?</h3>
                                     <div class="headline">Give the community
                                         <br>something worth
                                         <br>applying for.</div>
                                 </a>
                                 <div class="more-link">
-                                    <a href="/node/add/job">Post a job</a>
+                                    <a href="//employer.startup.jobs">Post a job</a>
                                 </div>
                             </div>
                             <div class="views-element-container">
@@ -373,17 +373,17 @@
                     <a href="/"><span>Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
-                            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
+                            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1"  id="block-exposedformsearchpage-1">
 
                                 <form action="/jobs" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                                     <div class="form--inline clearfix">
                                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                                             <label for="edit-s">Search |</label>
-                                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="keyword" value="" size="30" maxlength="128" autocomplete="off">
+                                            <input  class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="keyword" value="" size="30" maxlength="128" autocomplete="off">
 
                                         </div>
-                                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                                        <div  class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                                            <input  type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                                         </div>
 
                                     </div>

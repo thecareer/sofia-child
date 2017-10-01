@@ -92,7 +92,7 @@ get_header('landing');
                             </div>
                             <div class="views-element-container block block-views block-views-blockfrontpage-news-block-3 home-top-company">
 
-                                <h2><a href="/companies" class="box-title">Vietnam Startup and Tech Companies</a><span class="view-all-block-head"><a href="/blogs">View all companies</a></span></h2>
+                                <h2><a href="/companies" class="box-title">Vietnam Startup and Tech Companies</a><span class="view-all-block-head"><a href="/companies">View All Companies</a></span></h2>
                                 <?php
                                 $query = array(
                                     'post_status' => 'publish',

@@ -55,12 +55,12 @@ $company_name = get_the_title($company_id);
                                         </div>
 
                                         <div class="block block-bix-jobs-apply-bottom-only-apply">
-                                            <form class="bix-jobs-apply-job-form" data-drupal-selector="bix-jobs-apply-job-form-4" action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--4" accept-charset="UTF-8">
+                                            <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--4" accept-charset="UTF-8">
                                                 <div class="apply-now-result"><a href="http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam" target="_blank">http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam</a></div>
                                                 <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
-                                                <input data-drupal-selector="form-mhyujcgrsgkka-qqdrh4ypt2dadluvpaupfyysodwze" type="hidden" name="form_build_id" value="form-mHYuJcgrsGkKA-QQdrH4ypT2DadLuvpaupfYYsOdwzE">
-                                                <input data-drupal-selector="edit-bix-jobs-apply-job-form-form-token-4" type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
-                                                <input data-drupal-selector="edit-bix-jobs-apply-job-form-4" type="hidden" name="form_id" value="bix_jobs_apply_job_form">
+                                                <input  type="hidden" name="form_build_id" value="form-mHYuJcgrsGkKA-QQdrH4ypT2DadLuvpaupfYYsOdwzE">
+                                                <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
+                                                <input  type="hidden" name="form_id" value="bix_jobs_apply_job_form">
 
                                             </form>
                                             <div class="save-job"><a title="" href="#" class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed" data-ga-event="job-save-job-description" rel="nofollow">Save</a></div>
@@ -80,12 +80,12 @@ $company_name = get_the_title($company_id);
                                 </div>
                                 <div class="block block-bix-jobs block-bix-jobs-apply-bottom">
 
-                                    <form class="bix-jobs-apply-job-form" data-drupal-selector="bix-jobs-apply-job-form-2" action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--2" accept-charset="UTF-8">
+                                    <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--2" accept-charset="UTF-8">
                                         <div class="apply-now-result"><a href="http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam" target="_blank">http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam</a></div>
                                         <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
-                                        <input data-drupal-selector="form-l3amphhem-m99tcveo0t63ftrvmhsqpb59uzkczukpu" type="hidden" name="form_build_id" value="form-l3AMPHHEm_m99tCVeo0T63ftRVmhsQpb59uzkcZukpU">
-                                        <input data-drupal-selector="edit-bix-jobs-apply-job-form-form-token-2" type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
-                                        <input data-drupal-selector="edit-bix-jobs-apply-job-form-2" type="hidden" name="form_id" value="bix_jobs_apply_job_form">
+                                        <input  type="hidden" name="form_build_id" value="form-l3AMPHHEm_m99tCVeo0T63ftRVmhsQpb59uzkcZukpU">
+                                        <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
+                                        <input  type="hidden" name="form_id" value="bix_jobs_apply_job_form">
 
                                     </form>
 
@@ -205,12 +205,12 @@ $company_name = get_the_title($company_id);
                                                 </a>
                                             </div>
                                         </div>
-                                        <form class="bix-jobs-apply-job-form" data-drupal-selector="bix-jobs-apply-job-form" action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form" accept-charset="UTF-8">
+                                        <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form" accept-charset="UTF-8">
                                             <div class="apply-now-result"><a href="http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam" target="_blank">http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam</a></div>
                                             <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-right-rail" tid="12">Apply now</div>
-                                            <input data-drupal-selector="form-bqgz10qsnmbbs28elpogykexwwiumj9aqjixcaixwh0" type="hidden" name="form_build_id" value="form-bqgz10QSnMBbS28elpOGYkExwwiUmj9AqjIxcAIxwH0">
-                                            <input data-drupal-selector="edit-bix-jobs-apply-job-form-form-token" type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
-                                            <input data-drupal-selector="edit-bix-jobs-apply-job-form" type="hidden" name="form_id" value="bix_jobs_apply_job_form">
+                                            <input  type="hidden" name="form_build_id" value="form-bqgz10QSnMBbS28elpOGYkExwwiUmj9AqjIxcAIxwH0">
+                                            <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
+                                            <input  type="hidden" name="form_id" value="bix_jobs_apply_job_form">
 
                                         </form>
 
