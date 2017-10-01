@@ -126,10 +126,6 @@ get_header('landing');
                                                             </div>
                                                         </div>
                                                         <h3 class="title"><span><?php the_title(); ?></span></h3>
-                                                        <div class="company-type">
-                                                            <div><?php echo $term->name; ?></div>
-                                                        </div>
-                                                        <div class="open-jobs"><span><a href="<?php the_permalink(); ?>#bix-companies-open-jobs">View Open Jobs</a></span></div>
                                                         <div class="link"><i></i></div>
                                                         <a href="<?php the_permalink(); ?>" class="view-page"></a>
                                                     </div>

@@ -63,7 +63,7 @@ $company_name = get_the_title($company_id);
                                                 <input data-drupal-selector="edit-bix-jobs-apply-job-form-4" type="hidden" name="form_id" value="bix_jobs_apply_job_form">
 
                                             </form>
-                                            <div class="save-job"><a title="" href="/flag/flag/save_job/6133?destination=node/6133&amp;token=oAurx8v8ibLwEuXlGAw63pnkIa4YvbGhZbcy74b6_NI" class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed" data-ga-event="job-save-job-description" rel="nofollow">Save</a></div>
+                                            <div class="save-job"><a title="" href="#" class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed" data-ga-event="job-save-job-description" rel="nofollow">Save</a></div>
                                         </div>
 
                                         <div class="node__content">

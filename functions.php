@@ -44,6 +44,8 @@ function startup_add_scripts_styles() {
 
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script('sticky', get_stylesheet_directory_uri() . '/js/jquery.sticky.js');
 	wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
 	wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js');
 	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js');
