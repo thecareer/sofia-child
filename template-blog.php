@@ -80,7 +80,7 @@ $query = new WP_Query($statement);
                                                                 </div>
                                                                 <div class="views-field views-field-nothing"><span class="field-content"><div class="title">
 <a href="/2017/04/21/startups-in-cambridge-you-should-know" hreflang="en">16 startups in Cambridge you should know</a>
-<div class="teaser"><p>Known for being the home of two the world's most renowned educational institutions, Cambridge is full of great ideas and innovative attitudes. Situated just across the Charles River from the heart of Boston, Cambridge is quickly becoming a popular playground for tech companies and startups. We've rounded up 16 startups and tech companies in Cambridge that are at the heart of the city's expanding tech scene.</p></div>
+<div class="teaser"><p>Known for being the home of two the world's most renowned educational institutions, Cambridge is full of great ideas and innovative attitudes. Situated just across the Charles River from the heart of Vietnam, Cambridge is quickly becoming a popular playground for tech companies and startups. We've rounded up 16 startups and tech companies in Cambridge that are at the heart of the city's expanding tech scene.</p></div>
 </div></span></div>
                                                             </div>
 
@@ -150,7 +150,7 @@ $query = new WP_Query($statement);
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                        <div class="title"><span><a href="/2016/12/16/boston-startups-share-why-they-chose-cic-home" hreflang="en">4 fast-growing Boston startups operating out of the CIC</a></span></div>
+                                                        <div class="title"><span><a href="/2016/12/16/boston-startups-share-why-they-chose-cic-home" hreflang="en">4 fast-growing Vietnam startups operating out of the CIC</a></span></div>
                                                     </div>
                                                 </div>
 
@@ -474,7 +474,7 @@ $query = new WP_Query($statement);
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <div class="title"><span><a href="/job/field-implementation-engineer-boston" hreflang="en">Field Implementation Engineer - Boston</a></span></div>
+                                                    <div class="title"><span><a href="/job/field-implementation-engineer-boston" hreflang="en">Field Implementation Engineer - Vietnam</a></span></div>
                                                     <div class="company-title"><span><a href="/company/toast" hreflang="en">Toast</a></span></div>
                                                 </div>
                                                 <div class="views-row">
@@ -526,7 +526,7 @@ $query = new WP_Query($statement);
                                 </div>
                                 <div class="block block-bix-global block-bix-global-sign-up">
 
-                                    <h5 class="title">The Boston startup scene moves fast. Keep up. </h5>
+                                    <h5 class="title">The Vietnam startup scene moves fast. Keep up. </h5>
                                     <div class="more-link"><a href="/user/register">Sign Up</a></div>
                                 </div>
                             </div>
