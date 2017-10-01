@@ -172,6 +172,15 @@ a.page-numbers{
     z-index: 1;
 }
 
+.home-top-company .views-row .view-page {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 
 .block-bix-jobs-apply .flag-save_job.facebook, .block-bix-jobs-apply-bottom .save-job a.facebook {
     background: #4267b2;

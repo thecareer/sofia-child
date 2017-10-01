@@ -199,6 +199,7 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                                 <li class="odd first">
                                                     <a href="<?php the_permalink(); ?>" class="category-wrapper item processed" data-category=".category-wrapper-developer">
                                                         <div class="category" ><span class="arrow"><?php the_title(); ?></span></div>
+                                                        <div class="number"><span><?php echo (vp_metabox('jobplanet_job.number_vacancy')) ? vp_metabox('jobplanet_job.number_vacancy') : 1; ?></span></div>
                                                     </a>
                                                 </li>
                                             <?php endwhile; ?>
@@ -555,6 +556,7 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
                                                 <li class="odd first">
                                                     <a href="<?php the_permalink(); ?>" class="category-wrapper item processed" data-category=".category-wrapper-developer">
                                                         <div class="category" ><span class="arrow"><?php the_title(); ?></span></div>
+                                                        <div class="number"><span><?php echo (vp_metabox('jobplanet_job.number_vacancy')) ? vp_metabox('jobplanet_job.number_vacancy') : 1; ?></span></div>
                                                     </a>
                                                 </li>
                                             <?php endwhile; ?>
