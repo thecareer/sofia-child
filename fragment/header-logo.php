@@ -24,6 +24,17 @@
                 <a href="/" title="Home" rel="home" class="site-logo">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/startup.jobs.logo.svg" alt="Startup.JOBS">
                 </a>
+
+                <ul class="selectcountrymenu nav" id="yw8">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Asia <span class="caret"></span></a>
+                        <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                    </li>
+                    </ul>
             </div>
 
         </div>
