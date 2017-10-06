@@ -187,7 +187,7 @@
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/best-companies-work-boston"><img src="<img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt=" Best Companies to Work for in Boston" class="image-style-navigation-image">
+                                                        <a href="/guides/best-companies-work-boston"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt=" Best Companies to Work for in Boston" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
@@ -198,7 +198,7 @@
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/best-software-engineer-jobs-boston"><img src="<img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt="software engineer jobs boston" class="image-style-navigation-image">
+                                                        <a href="/guides/best-software-engineer-jobs-boston"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt="software engineer jobs boston" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
@@ -209,7 +209,7 @@
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/coolest-offices-boston"><img src="<img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Boston" class="image-style-navigation-image">
+                                                        <a href="/guides/coolest-offices-boston"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Boston" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
