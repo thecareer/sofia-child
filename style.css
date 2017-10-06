@@ -203,6 +203,22 @@ a.page-numbers{
 .is-fixed {
     width: 266px;
     position: fixed;
-    top: 81px;
+    top: 145px;
     z-index: inherit;
+}
+
+.single-job .node--type-job .job-description p,
+.single-job .node--type-job .job-description ul li {
+    font-size: 16px !important;
+}
+
+.single-job .node--type-job .job-description h1 {
+    font-size: 20px;
+}
+.single-job .node--type-job .job-description h2,
+.single-job .node--type-job .job-description h3,
+.single-job .node--type-job .job-description h4,
+.single-job .node--type-job .job-description h5,
+.single-job .node--type-job .job-description h6{
+    font-size: 18px;
 }
