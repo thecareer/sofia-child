@@ -6,6 +6,8 @@ if (!defined('ABSPATH')) {
 
 require_once dirname(__FILE__) .'/lib/handle-company.php';
 require_once dirname(__FILE__) .'/lib/handle-job.php';
+require_once dirname(__FILE__) .'/lib/dakachi-upload.php';
+require_once dirname(__FILE__) .'/lib/apply-job.php';
 require_once dirname(__FILE__) .'/lib/blog.php';
 
 function onix_add_cssjs_ver($src)
@@ -52,6 +54,9 @@ function startup_add_scripts_styles() {
 	wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
 	wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js');
 	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery', 'sticky'));
+
+
+    wp_enqueue_script('jfileuploader', get_stylesheet_directory_uri() . '/js/jfileuploader.js');
 
     wp_enqueue_script( 'jeg-gmap', get_stylesheet_directory_uri(). '/js/gmap.js"');
     wp_enqueue_script( 'jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js"');

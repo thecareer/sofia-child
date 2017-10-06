@@ -61,7 +61,7 @@
             } else {
                 $('.block-bix-jobs-apply').removeClass('is-fixed');
             }
-            if ($(window).scrollTop() >= main_conent_height - 200) {
+            if ($(window).scrollTop() >= main_conent_height - 300) {
                 $('.block-bix-jobs-apply').removeClass('is-fixed');
             }
         });
@@ -91,6 +91,32 @@
                     } else {
                         button.text('VIEW MORE');
                     }
+                }
+            });
+        });
+
+        $('.btn-submit-apply').click(function(e) {
+            e.preventDefault();
+            var button = $(this),
+                form   = button.parents('form');
+
+            $.ajax({
+                type: 'post',
+                url: global.ajax_url,
+                data: {
+                    data : form.serialize(),
+                    action: 'apply-job'
+                },
+                beforeSend: function() {
+                    button.text('Loading ...');
+                },
+                success: function(res) {
+                    if (res.success) {
+                        var modal = document.getElementById('apply-modal');
+                        modal.style.display = "none";
+                        alert ('You have successfully applied');
+                    }
+                    button.text('SEND YOUR APPLICATION');
                 }
             });
         });

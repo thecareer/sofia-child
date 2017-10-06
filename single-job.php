@@ -1,20 +1,20 @@
 <?php
-get_header();
+get_header(); 
 the_post();
 
-$company_id        = vp_metabox('jobplanet_job.company_id');
-$company_image_id  = get_post_thumbnail_id($company_id);
+$company_id = vp_metabox('jobplanet_job.company_id');
+$company_image_id = get_post_thumbnail_id($company_id);
 $company_image_src = wp_get_attachment_image_src($company_image_id, 'full');
 
-$locations = wp_get_post_terms(get_the_ID(), 'job-location');
-$location  = $locations[0];
+$locations = wp_get_post_terms( get_the_ID(), 'job-location');
+$location = $locations[0];
 
-$latlng       = explode(',', vp_metabox('jobplanet_job.map_location'));
+$latlng = explode(',', vp_metabox('jobplanet_job.map_location'));
 $company_name = get_the_title($company_id);
 
 ?>
 <div class="region region-help">
-
+    
 
 
   </div>
@@ -34,21 +34,21 @@ $company_name = get_the_title($company_id);
                                         <div class="job-info-wrapper">
                                             <div class="logo-wrapper-small">
                                                 <div class="centered">
-                                                    <a href="<?php echo get_the_permalink($company_id); ?>">
+                                                    <a href="<?php echo get_the_permalink( $company_id ); ?>"> 
                                                         <img src="<?php echo $company_image_src[0] ?>" width="300" height="300" alt="<?php echo get_the_title($company_id); ?>">
                                                     </a>
                                                 </div>
                                             </div>
 
                                             <h1 class="node-title">
-                                                <span class="field field--name-title field--type-string field--label-hidden"><?php the_title();?></span>
+                                                <span class="field field--name-title field--type-string field--label-hidden"><?php the_title(); ?></span>
                                             </h1>
 
                                             <div class="job-info">
 
                                                 <div class="field field--name-field-company field--type-entity-reference field--label-hidden field__items">
                                                     <div class="field__item">
-                                                        <a href="<?php echo get_the_permalink($company_id); ?>" hreflang="en"><?php echo $company_name; ?></a>
+                                                        <a href="<?php echo get_the_permalink( $company_id ); ?>" hreflang="en"><?php echo $company_name; ?></a>
                                                     </div>
                                                 </div>
                                                 | <span class="company-address"><?php echo $location->name; ?></span> </div>
@@ -69,7 +69,7 @@ $company_name = get_the_title($company_id);
                                         <div class="node__content">
                                             <div class="job-description fade-out">
                                                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                                    <?php the_content();?>
+                                                    <?php the_content(  ) ; ?>
                                                 </div>
                                             </div>
                                             <div id="read-more-description-toggle"><span data-ga-event="job-read-description" class="ga-event-processed">Read Full Job Description</span></div>
@@ -91,11 +91,11 @@ $company_name = get_the_title($company_id);
 
                                     <div class="save-job">
 
-                                        <a title="" target="_blank" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" data-ga-event="job-save-job-description" rel="nofollow">Share to Facebook</a></div>
-                                    <div class="save-job">
-                                        <a title="" target="_blank" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink();?>&title=<?php the_title();?>&summary=<?php vp_metabox('jobplanet_job.short_desc');?>" data-ga-event="job-save-job-description" rel="nofollow">Share to LinkedIn</a></div>
+                                        <a title="" target="_blank" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" data-ga-event="job-save-job-description" rel="nofollow">Share to Facebook</a></div>
+                                    <div class="save-job">    
+                                        <a title="" target="_blank" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=<?php vp_metabox('jobplanet_job.short_desc'); ?>" data-ga-event="job-save-job-description" rel="nofollow">Share to LinkedIn</a></div>
 
-
+                                    
 
                                 </div>
                             </div>
@@ -105,34 +105,34 @@ $company_name = get_the_title($company_id);
                         <div class="">
                             <div class="block-region-bottom">
                                 <div class="block block-bix-companies block-bix-companies-location">
-
+  
                                     <h2 class="box-title">Location</h2>
-
+                                
                                     <div class="gmap_location_widget company_location">
                                         <div class="gmap_location_widget_description company_description"><?php echo esc_html(vp_metabox('jobplanet_job.address')); ?></div>
                                         <div id="gmap_location_widget_map" style="position: relative; overflow: hidden;" data-lat="<?php echo esc_html(trim($latlng[0])); ?>" data-lng="<?php echo esc_html(trim($latlng[1])); ?>">
                                         </div>
                                     </div>
                                 </div>
-
+                               
                                 <div class="views-element-container block block-views block-views-blockjob-opportunities-block-1">
 
                                     <div>
                                         <div class="job-opportunities view view-job-opportunities view-id-job_opportunities view-display-id-block_1 js-view-dom-id-633b3dd5208feb4dc04444b51fc4b4b441513ba4866ec143c0121a631880be9c" id="bix-companies-open-jobs">
                                             <?php
-$query = array(
-    'post_status' => 'publish',
-    'post_type'   => 'job',
-    'paged'       => $currentpage,
-    'meta_key'    => 'company_id',
-    'meta_value'  => $company_id,
-    'exclude'     => array(get_the_ID()),
-);
+                                            $query = array(
+                                                'post_status' => 'publish',
+                                                'post_type' => 'job',
+                                                'paged' => $currentpage,
+                                                'meta_key' => 'company_id',
+                                                'meta_value' => $company_id,
+                                                'exclude' => array(get_the_ID())
+                                            );
 
-$result = new WP_Query($query);
-if ($result->have_posts()):
-?>
-                                            <div class="box-title"><?php printf(__("More Jobs at %s<span>%d open jobs</span>", "enginethemes"), $company_name, $result->found_posts)?></div>
+                                            $result = new WP_Query($query);
+                                            if($result->have_posts()) :
+                                            ?>
+                                            <div class="box-title"><?php printf(__( "More Jobs at %s<span>%d open jobs</span>" , "enginethemes" ), $company_name, $result->found_posts) ?></div>
 
                                             <!-- <div class="job-categories">
                                                 <div class="category processed" data-category="all"><span>All</span></div>
@@ -144,34 +144,34 @@ if ($result->have_posts()):
 
                                                 <div class="grid-sizer"></div>
                                                 <div class="gutter-sizer"></div>
-                                                <?php while ($result->have_posts()): $result->the_post();?>
-                                                    <?php
-    $id       = get_the_ID();
-    $jobtype  = get_the_terms(get_the_ID(), 'job-type');
-    $location = get_the_terms(get_the_ID(), 'job-location');
-    ?>
-                                                    <div class="category-wrapper-developer views-row" style="margin-right: 1%;">
+                                                <?php while($result->have_posts()) : $result->the_post(); ?>
+                                                <?php
+                                                $id = get_the_ID();
+                                                $jobtype = get_the_terms(get_the_ID(), 'job-type');
+                                                $location = get_the_terms(get_the_ID(), 'job-location');
+                                                ?>
+                                                <div class="category-wrapper-developer views-row" style="margin-right: 1%;">
 
-                                                        <div class="category">
-                                                            <?php echo $jobtype[0]->name; ?>
-                                                        </div>
-
-                                                        <div class="title">
-                                                            <a href="<?php the_permalink();?>" hreflang="en">
-                                                            <?php the_title();?>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="location">
-                                                            <div class=""><?php echo $location[0]->name; ?></div>
-                                                        </div>
-
-                                                        <div class="link">
-                                                            <a href="<?php the_permalink();?>">View</a>
-                                                        </div>
-
+                                                    <div class="category">
+                                                        <?php  echo $jobtype[0]->name; ?>
                                                     </div>
-                                                    <?php endwhile;?>
+
+                                                    <div class="title">
+                                                        <a href="<?php the_permalink(); ?>" hreflang="en">
+                                                        <?php the_title(); ?>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="location">
+                                                        <div class=""><?php echo $location[0]->name; ?></div>
+                                                    </div>
+
+                                                    <div class="link">
+                                                        <a href="<?php the_permalink(); ?>">View</a>
+                                                    </div>
+
+                                                </div>
+                                                <?php endwhile; ?>
                                                 <div class="views-row views-row-more" style="">
                                                     <h3 class="title">Get notified<br>when new<br>jobs pop up.</h3>
                                                     <div class="more-link"><span>Create job alert</span></div>
@@ -181,8 +181,8 @@ if ($result->have_posts()):
                                                 </div>
 
                                             </div>
-                                            <?php endif;?>
-                                            <?php wp_reset_query();?>
+                                            <?php endif; ?>
+                                            <?php wp_reset_query(); ?>
                                         </div>
                                     </div>
 
@@ -200,7 +200,7 @@ if ($result->have_posts()):
 
                                         <div class="logo-wrapper-medium">
                                             <div class="centered">
-                                                <a href="<?php echo get_the_permalink($company_id); ?>">
+                                                <a href="<?php echo get_the_permalink( $company_id ); ?>"> 
                                                     <img src="<?php echo $company_image_src[0]; ?>" width="300" height="300" alt="">
                                                 </a>
                                             </div>
@@ -214,12 +214,12 @@ if ($result->have_posts()):
 
                                         </form>
 
-                                            <a title="Share to Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed facebook" data-ga-event="job-save-right-rail" rel="nofollow">Share to Facebook</a>
+                                            <a title="Share to Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed facebook" data-ga-event="job-save-right-rail" rel="nofollow">Share to Facebook</a>
 
-                                            <a title="Share to Facebook" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink();?>&title=<?php the_title();?>&summary=<?php vp_metabox('jobplanet_job.short_desc');?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed linkedin" data-ga-event="job-save-right-rail" rel="nofollow">Share to LinkedIn</a>
+                                            <a title="Share to Facebook" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=<?php vp_metabox('jobplanet_job.short_desc'); ?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed linkedin" data-ga-event="job-save-right-rail" rel="nofollow">Share to LinkedIn</a>
 
-                                        <a href="<?php echo get_the_permalink($company_id); ?>" class="view-profile">View <?php echo get_the_title($company_id); ?>'s full profile</a>
-                                        <a href="<?php echo get_the_permalink($company_id); ?>#seemorejobs" class="job-category">See more <?php echo get_the_title($company_id); ?> jobs</a>
+                                        <a href="<?php echo get_the_permalink( $company_id ); ?>" class="view-profile">View <?php echo get_the_title($company_id); ?>'s full profile</a>
+                                        <a href="<?php echo get_the_permalink( $company_id ); ?>#seemorejobs" class="job-category">See more <?php echo get_the_title($company_id); ?> jobs</a>
                                     </div>
                                 </div>
                             </div>
@@ -233,49 +233,5 @@ if ($result->have_posts()):
     </div>
 
 </main>
-<div id="apply-modal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Apply Now</h2>
-    </div>
-    <div class="modal-body">
-        <form>
-          <div class="message-wraper">
-                <label>Message to Employer</label>
-                <textarea name="message" required="true"></textarea>
-          </div>
-          <div class="info">
-              <div class="width-50">
-                    <label>First name</label>
-                    <input type="text" name="first_name" required="true" />
-              </div>
-
-              <div class="width-50">
-                    <label>Last name</label>
-                    <input type="text" name="last_name" required="true" />
-              </div>
-                <div class="width-50">
-                  <label>Email</label>
-                    <input type="email" name="email" required="true" />
-                </div>
-                <div class="width-50">
-                  <label>Phone</label>
-                    <input type="text" name="phone" required="true" />
-                </div>
-                <div class="width-100">
-                     <label>Your cv</label>
-                    <input type="file" name="cv">
-                </div>
-                <button type="submit" class="btn-submit-apply">SEND YOUR APPLICATION</button>
-                <div class="clearfix"></div>
-            </div>
-        </form>
-    </div>
-  </div>
-
-</div>
 <?php
 get_footer();

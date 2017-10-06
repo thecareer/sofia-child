@@ -29,3 +29,4 @@ function startup_ajax_load_more_post() {
 }
 add_action( 'wp_ajax_load-more-post', 'startup_ajax_load_more_post' );
 add_action( 'wp_ajax_nopriv_load-more-post', 'startup_ajax_load_more_post' );
+
