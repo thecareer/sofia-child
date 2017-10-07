@@ -478,3 +478,137 @@ li .uploading-progress {
     border-bottom-color: #fff;
     border-width: 6px;
 }
+
+.grid-listing .teaser {
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+@media(max-width: 767px){
+    .page-frontpage .node-header .node-header--headline,
+    .block-bix-frontpage-startups > .title h2,
+    .block-bix-frontpage-jobs > .title h2 {
+        font-size: 28px;
+    }
+    .page-frontpage .node-header .field--name-field-links-list {
+        display: none;
+    }
+    body {
+        margin-top: 60px !important;
+    }
+    .page-frontpage .block-region-middle .block-bix-frontpage-job-categories,
+    .page-frontpage .block-region-middle .block-views-blockfrontpage-news-block-3 {
+        width: 100%;
+    }
+    .page-frontpage .block-region-middle .block-views-blockfrontpage-news-block-3 .view-all-block-head a {
+        display: none;
+    }
+    .block-bix-frontpage-startups > .title .view-more-button,
+    .block-bix-frontpage-jobs > .title .view-more-button{
+        display: block;
+        position: relative;
+        bottom: 15px;
+    }
+    .block-bix-frontpage-startups,.block-bix-frontpage-jobs {
+        padding-top: 20px;
+    }
+    .block-bix-frontpage-startups > .title, .block-bix-frontpage-jobs > .title{
+        padding-left: 20px;
+    }
+    .block-bix-frontpage-startups .view-frontpage-companies .views-row:last-child {
+        display: block;
+        width: 100%;
+    }
+    .block-bix-frontpage-jobs .view-content .views-row{
+        width: 49%;
+    }
+    /*job*/
+    #block-searchjob .search-bar .label{
+        display: none;
+    }
+    #block-searchjob .search-bar{
+        width: 90%;
+        padding:  0 10px;
+    }
+    .block-views-blockjobs-jobs-landing, .block-views-blockcompanies-landing-companies-landing-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .block-views-blockjobs-jobs-landing .views-row .left{
+        width: 30%;
+    }
+    .logo-wrapper-small .centered {
+        height: 80px;
+        width: 80px;
+        padding: 5px;
+    }
+    .block-views-blockjobs-jobs-landing .views-row .center {
+        width: 65%;
+    }
+    .block-views-blockjobs-jobs-landing .views-row .right {
+        width: 100%;
+    }
+    .block-views-blockjobs-jobs-landing .views-row .link{
+        display: inline-block;
+        bottom: 25px;
+    }
+    .block-views-blockjobs-jobs-landing .views-row .job-save ,
+    .block-views-blockjobs-jobs-landing .views-row .job-date, 
+    .block-views-blockjobs-jobs-landing .views-row .job-location{
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .pager__items.js-pager__items .pager__item, .pager__items.js-pager__items .pager__item.pager__item--next a{
+        border-radius: 0;
+    }
+    .block-bix-jobs-apply-bottom{
+        display: none;
+    }
+    .l-right-column, .block-bix-jobs-apply-bottom-only-apply .save-job {
+        display: none;
+    }
+    .modal-header,.message-wraper,.modal .info {
+        padding: 20px;
+    }
+    .block-bix-jobs-apply-bottom-only-apply .apply-button:not(.status-continue){
+        width: 90%;
+    }
+    .node--type-job.node--view-mode-default .node__content{
+        margin: 20px 0;
+    }
+    .page-node-type-job .block-region-middle, .premium-company .company-overview-content .row.first-child .col-2 {
+        padding: 20px 5px;
+    }
+    .company-overview-content .description{
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .block-views-blockseries-news-block-1,
+    .block-bix-series-companies,
+    .block-views-blockjob-opportunities-block-1, 
+    .block-views-blockjob-opportunities-block-2, 
+    .block-views-blockjob-opportunities-block-4,
+    .page-node-type-blog .block-region-bottom .block-views-blocktech-series-block-1, 
+    .page-node-type-blog .block-region-bottom .block-views-blocktech-series-block-2,
+    .page-node-type-blog .block-region-bottom .block-bix-blogs-job-opportunities {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .grid-listing .teaser{
+        display: none;
+    }
+    .grid-listing .views-row .title a{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .grid-listing .title {
+        height: 70px;
+        overflow: hidden;
+    }
+    .block-region-middle .block-entity-viewnode .node-title {
+        font-size: 22px;
+    }
+    .page-node-type-blog .block-region-middle {
+        padding: 0 5px;
+    }
+}
