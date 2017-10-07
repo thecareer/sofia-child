@@ -101,7 +101,7 @@
         <?php global $post; ?>
             <ul class="menu">
                 <li class="nav-item jobs menu-item <?php if( $post->ID == vp_option('joption.job_page') ) {echo 'active';} ?>">
-                    <a href="/jobs"><span>Local Jobs</span></a>
+                    <a href="/search"><span>Local Jobs</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
