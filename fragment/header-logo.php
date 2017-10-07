@@ -49,7 +49,7 @@
                     <a href="/" data-drupal-link-system-path="<front>">Home</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/jobs" data-drupal-link-system-path="jobs">Jobs</a>
+                    <a href="/search" data-drupal-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
                     <a href="/user/login">Saved</a>
@@ -98,9 +98,9 @@
 
         </nav>
         <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main">
-
+        <?php global $post; ?>
             <ul class="menu">
-                <li class="nav-item jobs menu-item">
+                <li class="nav-item jobs menu-item <?php if( $post->ID == vp_option('joption.job_page') ) {echo 'active';} ?>">
                     <a href="/jobs"><span>Local Jobs</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -171,7 +171,7 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <li class="nav-item startups menu-item menu-item--expanded">
+                <li class="nav-item startups menu-item menu-item--expanded <?php if( $post->ID == vp_option('joption.company_list_page') ) {echo 'active';} ?>">
                     <a href="/companies"><span>Startups</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -305,7 +305,7 @@
                         <div class="underlay"></div>
                     </div>
                 </li> -->
-                <li class="nav-item news menu-item menu-item--expanded">
+                <li class="nav-item news menu-item menu-item--expanded <?php if(is_page_template( 'template-blog.php' )) {echo 'active';} ?>">
                     <a href="/blogs"><span>News</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -376,7 +376,7 @@
                         <div class="nav-content-inner">
                             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
-                                <form action="/jobs" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
+                                <form action="/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                                     <div class="form--inline clearfix">
                                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                                             <label for="edit-s">Search |</label>
