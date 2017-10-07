@@ -76,7 +76,7 @@
                     </ul>
 
                 </li>
-                * / ?>
+                */ ?>
             </ul>
 
             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-sofia-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">

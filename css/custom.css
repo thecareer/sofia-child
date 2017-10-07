@@ -22704,14 +22704,14 @@ form input[type="submit"]:active:hover {
 .block-facets li:nth-child(even) {
     background: #F0F2FA;
 }
-.block-facets li label {
+.block-facets li label, .block-facets li div.label {
     display: block;
     cursor: pointer;
     position: relative;
     padding: 0 0 0 30px;
     margin: 5px;
 }
-.block-facets li label:before {
+.block-facets li label:before, .block-facets li div.label:before {
     width: 20px;
     height: 20px;
     background-position: -555px 0;
@@ -22725,13 +22725,13 @@ form input[type="submit"]:active:hover {
     left: 0;
     top: 0;
 }
-.svg .block-facets li label:before {
+.svg .block-facets li label:before, .svg .block-facets li div.label:before {
     background-image: url("../img/icons-icons-sprite.svg");
 }
 .block-facets li input[type="checkbox"] {
     display: none;
 }
-.block-facets li input[type="checkbox"]:checked + label:before {
+.block-facets li input[type="checkbox"]:checked + label:before, .block-facets li input[type="checkbox"]:checked + div.label:before {
     width: 20px;
     height: 20px;
     background-position: -580px 0;
@@ -22741,7 +22741,7 @@ form input[type="submit"]:active:hover {
     display: inline-block;
     content: " ";
 }
-.svg .block-facets li input[type="checkbox"]:checked + label:before {
+.svg .block-facets li input[type="checkbox"]:checked + label:before, .svg .block-facets li input[type="checkbox"]:checked + div.label:before {
     background-image: url("../img/icons-icons-sprite.svg");
 }
 .block-facets .facet-item__count {

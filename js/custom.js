@@ -3189,65 +3189,65 @@
 });
 (function() {
     'use strict';
-    var settingsElement = document.querySelector('head > script[type="application/json"][data-sofia-selector="drupal-settings-json"], body > script[type="application/json"][data-sofia-selector="drupal-settings-json"]');
-    window.drupalSettings = {};
-    if (settingsElement !== null) window.drupalSettings = JSON.parse(settingsElement.textContent)
+    var settingsElement = document.querySelector('head > script[type="application/json"][data-sofia-selector="Sofia-settings-json"], body > script[type="application/json"][data-sofia-selector="Sofia-settings-json"]');
+    window.SofiaSettings = {};
+    if (settingsElement !== null) window.SofiaSettings = JSON.parse(settingsElement.textContent)
 })();
-window.Drupal = {
+window.Sofia = {
     behaviors: {},
     locale: {}
 };
-(function(Drupal, drupalSettings, drupalTranslations) {
+(function(Sofia, SofiaSettings, SofiaTranslations) {
     'use strict';
-    Drupal.throwError = function(error) {
+    Sofia.throwError = function(error) {
         setTimeout(function() {
             throw error
         }, 0)
     };
-    Drupal.attachBehaviors = function(context, settings) {
+    Sofia.attachBehaviors = function(context, settings) {
         context = context || document;
-        settings = settings || drupalSettings;
-        var behaviors = Drupal.behaviors;
+        settings = settings || SofiaSettings;
+        var behaviors = Sofia.behaviors;
         for (var i in behaviors)
             if (behaviors.hasOwnProperty(i) && typeof behaviors[i].attach === 'function') try {
                 behaviors[i].attach(context, settings)
             } catch (e) {
-                Drupal.throwError(e)
+                Sofia.throwError(e)
             }
     };
-    Drupal.detachBehaviors = function(context, settings, trigger) {
+    Sofia.detachBehaviors = function(context, settings, trigger) {
         context = context || document;
-        settings = settings || drupalSettings;
+        settings = settings || SofiaSettings;
         trigger = trigger || 'unload';
-        var behaviors = Drupal.behaviors;
+        var behaviors = Sofia.behaviors;
         for (var i in behaviors)
             if (behaviors.hasOwnProperty(i) && typeof behaviors[i].detach === 'function') try {
                 behaviors[i].detach(context, settings, trigger)
             } catch (e) {
-                Drupal.throwError(e)
+                Sofia.throwError(e)
             }
     };
-    Drupal.checkPlain = function(str) {
+    Sofia.checkPlain = function(str) {
         str = str.toString().replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         return str
     };
-    Drupal.formatString = function(str, args) {
+    Sofia.formatString = function(str, args) {
         var processedArgs = {};
         for (var key in args)
             if (args.hasOwnProperty(key)) switch (key.charAt(0)) {
                 case '@':
-                    processedArgs[key] = Drupal.checkPlain(args[key]);
+                    processedArgs[key] = Sofia.checkPlain(args[key]);
                     break;
                 case '!':
                     processedArgs[key] = args[key];
                     break;
                 default:
-                    processedArgs[key] = Drupal.theme('placeholder', args[key]);
+                    processedArgs[key] = Sofia.theme('placeholder', args[key]);
                     break
             };
-        return Drupal.stringReplace(str, processedArgs, null)
+        return Sofia.stringReplace(str, processedArgs, null)
     };
-    Drupal.stringReplace = function(str, args, keys) {
+    Sofia.stringReplace = function(str, args, keys) {
         if (str.length === 0) return str;
         if (!Array.isArray(keys)) {
             keys = [];
@@ -3261,20 +3261,20 @@ window.Drupal = {
         var key = keys.pop(),
             fragments = str.split(key);
         if (keys.length)
-            for (var i = 0; i < fragments.length; i++) fragments[i] = Drupal.stringReplace(fragments[i], args, keys.slice(0));
+            for (var i = 0; i < fragments.length; i++) fragments[i] = Sofia.stringReplace(fragments[i], args, keys.slice(0));
         return fragments.join(args[key])
     };
-    Drupal.t = function(str, args, options) {
+    Sofia.t = function(str, args, options) {
         options = options || {};
         options.context = options.context || '';
-        if (typeof drupalTranslations !== 'undefined' && drupalTranslations.strings && drupalTranslations.strings[options.context] && drupalTranslations.strings[options.context][str]) str = drupalTranslations.strings[options.context][str];
-        if (args) str = Drupal.formatString(str, args);
+        if (typeof SofiaTranslations !== 'undefined' && SofiaTranslations.strings && SofiaTranslations.strings[options.context] && SofiaTranslations.strings[options.context][str]) str = SofiaTranslations.strings[options.context][str];
+        if (args) str = Sofia.formatString(str, args);
         return str
     };
-    Drupal.url = function(path) {
-        return drupalSettings.path.baseUrl + drupalSettings.path.pathPrefix + path
+    Sofia.url = function(path) {
+        return SofiaSettings.path.baseUrl + SofiaSettings.path.pathPrefix + path
     };
-    Drupal.url.toAbsolute = function(url) {
+    Sofia.url.toAbsolute = function(url) {
         var urlParsingNode = document.createElement('a');
         try {
             url = decodeURIComponent(url)
@@ -3282,11 +3282,11 @@ window.Drupal = {
         urlParsingNode.setAttribute('href', url);
         return urlParsingNode.cloneNode(false).href
     };
-    Drupal.url.isLocal = function(url) {
-        var absoluteUrl = Drupal.url.toAbsolute(url),
+    Sofia.url.isLocal = function(url) {
+        var absoluteUrl = Sofia.url.toAbsolute(url),
             protocol = location.protocol;
         if (protocol === 'http:' && absoluteUrl.indexOf('https:') === 0) protocol = 'https:';
-        var baseUrl = protocol + '//' + location.host + drupalSettings.path.baseUrl.slice(0, -1);
+        var baseUrl = protocol + '//' + location.host + SofiaSettings.path.baseUrl.slice(0, -1);
         try {
             absoluteUrl = decodeURIComponent(absoluteUrl)
         } catch (e) {};
@@ -3295,36 +3295,36 @@ window.Drupal = {
         } catch (e) {};
         return absoluteUrl === baseUrl || absoluteUrl.indexOf(baseUrl + '/') === 0
     };
-    Drupal.formatPlural = function(count, singular, plural, args, options) {
+    Sofia.formatPlural = function(count, singular, plural, args, options) {
         args = args || {};
         args['@count'] = count;
-        var pluralDelimiter = drupalSettings.pluralDelimiter,
-            translations = Drupal.t(singular + pluralDelimiter + plural, args, options).split(pluralDelimiter),
+        var pluralDelimiter = SofiaSettings.pluralDelimiter,
+            translations = Sofia.t(singular + pluralDelimiter + plural, args, options).split(pluralDelimiter),
             index = 0;
-        if (typeof drupalTranslations !== 'undefined' && drupalTranslations.pluralFormula) {
-            index = count in drupalTranslations.pluralFormula ? drupalTranslations.pluralFormula[count] : drupalTranslations.pluralFormula['default']
+        if (typeof SofiaTranslations !== 'undefined' && SofiaTranslations.pluralFormula) {
+            index = count in SofiaTranslations.pluralFormula ? SofiaTranslations.pluralFormula[count] : SofiaTranslations.pluralFormula['default']
         } else if (args['@count'] !== 1) index = 1;
         return translations[index]
     };
-    Drupal.encodePath = function(item) {
+    Sofia.encodePath = function(item) {
         return window.encodeURIComponent(item).replace(/%2F/g, '/')
     };
-    Drupal.theme = function(func) {
+    Sofia.theme = function(func) {
         var args = Array.prototype.slice.apply(arguments, [1]);
-        if (func in Drupal.theme) return Drupal.theme[func].apply(this, args)
+        if (func in Sofia.theme) return Sofia.theme[func].apply(this, args)
     };
-    Drupal.theme.placeholder = function(str) {
-        return '<em class="placeholder">' + Drupal.checkPlain(str) + '</em>'
+    Sofia.theme.placeholder = function(str) {
+        return '<em class="placeholder">' + Sofia.checkPlain(str) + '</em>'
     }
-})(Drupal, window.drupalSettings, window.drupalTranslations);
+})(Sofia, window.SofiaSettings, window.SofiaTranslations);
 if (window.jQuery) jQuery.noConflict();
 document.documentElement.className += ' js';
-(function(domready, Drupal, drupalSettings) {
+(function(domready, Sofia, SofiaSettings) {
     'use strict';
     domready(function() {
-        Drupal.attachBehaviors(document, drupalSettings)
+        Sofia.attachBehaviors(document, SofiaSettings)
     })
-})(domready, Drupal, window.drupalSettings);
+})(domready, Sofia, window.SofiaSettings);
 /*!
  * jQuery UI Core 1.11.4
  * http://jqueryui.com
@@ -3711,38 +3711,38 @@ document.documentElement.className += ' js';
         }
     }), e.widget
 });;
-(function(drupalSettings) {
+(function(SofiaSettings) {
     setTimeout(function() {
         var a = document.createElement("script"),
             b = document.getElementsByTagName('script')[0];
-        a.src = document.location.protocol + "//script.crazyegg.com/" + "pages/scripts/0011/8062.js"/*drupalSettings.crazyegg.crazyegg.account_path*/ + "?" + Math.floor(new Date().getTime() / 36e5);
+        a.src = document.location.protocol + "//script.crazyegg.com/" + "pages/scripts/0011/8062.js"/*SofiaSettings.crazyegg.crazyegg.account_path*/ + "?" + Math.floor(new Date().getTime() / 36e5);
         a.async = true;
         a.type = "text/javascript";
         b.parentNode.insertBefore(a, b)
     }, 1)
-})(drupalSettings);
-(function($, Drupal, drupalSettings) {
+})(SofiaSettings);
+(function($, Sofia, SofiaSettings) {
     'use strict';
-    Drupal.google_analytics = {};
+    Sofia.google_analytics = {};
     // $(document).ready(function() {
     //     $(document.body).on('mousedown keyup touchstart', function(event) {
     //         $(event.target).closest('a,area').each(function() {
-    //             if (Drupal.google_analytics.isInternal(this.href)) {
-    //                 if ($(this).is('.colorbox') && (drupalSettings.google_analytics.trackColorbox));
-    //                 else if (drupalSettings.google_analytics.trackDownload && Drupal.google_analytics.isDownload(this.href)) {
+    //             if (Sofia.google_analytics.isInternal(this.href)) {
+    //                 if ($(this).is('.colorbox') && (SofiaSettings.google_analytics.trackColorbox));
+    //                 else if (SofiaSettings.google_analytics.trackDownload && Sofia.google_analytics.isDownload(this.href)) {
     //                     ga('send', {
     //                         hitType: 'event',
     //                         eventCategory: 'Downloads',
-    //                         eventAction: Drupal.google_analytics.getDownloadExtension(this.href).toUpperCase(),
-    //                         eventLabel: Drupal.google_analytics.getPageUrl(this.href),
+    //                         eventAction: Sofia.google_analytics.getDownloadExtension(this.href).toUpperCase(),
+    //                         eventLabel: Sofia.google_analytics.getPageUrl(this.href),
     //                         transport: 'beacon'
     //                     })
-    //                 } else if (Drupal.google_analytics.isInternalSpecial(this.href)) ga('send', {
+    //                 } else if (Sofia.google_analytics.isInternalSpecial(this.href)) ga('send', {
     //                     hitType: 'pageview',
-    //                     page: Drupal.google_analytics.getPageUrl(this.href),
+    //                     page: Sofia.google_analytics.getPageUrl(this.href),
     //                     transport: 'beacon'
     //                 })
-    //             } else if (drupalSettings.google_analytics.trackMailto && $(this).is("a[href^='mailto:'],area[href^='mailto:']")) {
+    //             } else if (SofiaSettings.google_analytics.trackMailto && $(this).is("a[href^='mailto:'],area[href^='mailto:']")) {
     //                 ga('send', {
     //                     hitType: 'event',
     //                     eventCategory: 'Mails',
@@ -3750,8 +3750,8 @@ document.documentElement.className += ' js';
     //                     eventLabel: this.href.substring(7),
     //                     transport: 'beacon'
     //                 })
-    //             } else if (drupalSettings.google_analytics.trackOutbound && this.href.match(/^\w+:\/\//i))
-    //                 if (drupalSettings.google_analytics.trackDomainMode !== 2 || (drupalSettings.google_analytics.trackDomainMode === 2 && !Drupal.google_analytics.isCrossDomain(this.hostname, drupalSettings.google_analytics.trackCrossDomains))) ga('send', {
+    //             } else if (SofiaSettings.google_analytics.trackOutbound && this.href.match(/^\w+:\/\//i))
+    //                 if (SofiaSettings.google_analytics.trackDomainMode !== 2 || (SofiaSettings.google_analytics.trackDomainMode === 2 && !Sofia.google_analytics.isCrossDomain(this.hostname, SofiaSettings.google_analytics.trackCrossDomains))) ga('send', {
     //                     hitType: 'event',
     //                     eventCategory: 'Outbound links',
     //                     eventAction: 'Click',
@@ -3760,45 +3760,45 @@ document.documentElement.className += ' js';
     //                 })
     //         })
     //     });
-        // if (drupalSettings.google_analytics.trackUrlFragments) window.onhashchange = function() {
+        // if (SofiaSettings.google_analytics.trackUrlFragments) window.onhashchange = function() {
         //     ga('send', {
         //         hitType: 'pageview',
         //         page: location.pathname + location.search + location.hash
         //     })
         // };
-        // if (drupalSettings.google_analytics.trackColorbox) $(document).on('cbox_complete', function() {
+        // if (SofiaSettings.google_analytics.trackColorbox) $(document).on('cbox_complete', function() {
         //     var href = $.colorbox.element().attr('href');
         //     if (href) ga('send', {
         //         hitType: 'pageview',
-        //         page: Drupal.google_analytics.getPageUrl(href)
+        //         page: Sofia.google_analytics.getPageUrl(href)
         //     })
         // })
     // });
-    Drupal.google_analytics.isCrossDomain = function(hostname, crossDomains) {
+    Sofia.google_analytics.isCrossDomain = function(hostname, crossDomains) {
         return $.inArray(hostname, crossDomains) > -1 ? true : false
     };
-    Drupal.google_analytics.isDownload = function(url) {
-        var isDownload = new RegExp('\\.(' + drupalSettings.google_analytics.trackDownloadExtensions + ')([\?#].*)?$', 'i');
+    Sofia.google_analytics.isDownload = function(url) {
+        var isDownload = new RegExp('\\.(' + SofiaSettings.google_analytics.trackDownloadExtensions + ')([\?#].*)?$', 'i');
         return isDownload.test(url)
     };
-    Drupal.google_analytics.isInternal = function(url) {
+    Sofia.google_analytics.isInternal = function(url) {
         var isInternal = new RegExp('^(https?):\/\/' + window.location.host, 'i');
         return isInternal.test(url)
     };
-    Drupal.google_analytics.isInternalSpecial = function(url) {
+    Sofia.google_analytics.isInternalSpecial = function(url) {
         var isInternalSpecial = new RegExp('(\/go\/.*)$', 'i');
         return isInternalSpecial.test(url)
     };
-    Drupal.google_analytics.getPageUrl = function(url) {
+    Sofia.google_analytics.getPageUrl = function(url) {
         var extractInternalUrl = new RegExp('^(https?):\/\/' + window.location.host, 'i');
         return url.replace(extractInternalUrl, '')
     };
-    Drupal.google_analytics.getDownloadExtension = function(url) {
-        var extractDownloadextension = new RegExp('\\.(' + drupalSettings.google_analytics.trackDownloadExtensions + ')([\?#].*)?$', 'i'),
+    Sofia.google_analytics.getDownloadExtension = function(url) {
+        var extractDownloadextension = new RegExp('\\.(' + SofiaSettings.google_analytics.trackDownloadExtensions + ')([\?#].*)?$', 'i'),
             extension = extractDownloadextension.exec(url);
         return (extension === null) ? '' : extension[1]
     }
-})(jQuery, Drupal, drupalSettings);
+})(jQuery, Sofia, SofiaSettings);
 (function($) {
     var defaults = {
             slideSpeed: 500,
@@ -4699,9 +4699,9 @@ document.documentElement.className += ' js';
         return this
     }
 }(jQuery));
-(function($, Drupal) {
+(function($, Sofia) {
     'use strict';
-    Drupal.behaviors.goNextfront = {
+    Sofia.behaviors.goNextfront = {
         attach: function(content, settings) {
             $('.page-frontpage').on('click', '.icon-go-next', function() {
                 var top = $('.block-region-middle').offset().top - 101;
@@ -4711,7 +4711,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.goNextSlots = {
+    Sofia.behaviors.goNextSlots = {
         attach: function(content, settings) {
             $('.path-job-slots').on('click', '#block-pricingfooter .field--name-body div', function() {
                 var top = $('.block-region-middle').offset().top - 101;
@@ -4721,7 +4721,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.initMegaMenu = {
+    Sofia.behaviors.initMegaMenu = {
         attach: function(content, settings) {
             $('#block-mainnavigation').once().booNavigation({
                 slideSpeed: 'fast',
@@ -4730,7 +4730,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.seeMoreOpenJobs = {
+    Sofia.behaviors.seeMoreOpenJobs = {
         attach: function(content, settings) {
             $('#bix-companies-open-jobs').once().each(function() {
                 var fragment = window.location.hash.substr(1);
@@ -4743,7 +4743,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.Sticky = {
+    Sofia.behaviors.Sticky = {
         attach: function(content, settings) {
             if (!$.fn.sticky) return;
             var heightHeight = $('.layout-container > .header').outerHeight(),
@@ -4780,7 +4780,7 @@ document.documentElement.className += ' js';
             }
         }
     };
-    Drupal.behaviors.accordionTabs = {
+    Sofia.behaviors.accordionTabs = {
         attach: function(context, settings) {
             $('.accordion-tabs-wrapper').each(function() {
                 var accordionTabs = $('.accordion-tabs', $(this)),
@@ -4808,7 +4808,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.lightsSlider = {
+    Sofia.behaviors.lightsSlider = {
         attach: function(context, settings) {
             var slider = $("#company-slideshow:not(.processed)").addClass('processed').lightSlider({
                 gallery: true,
@@ -4834,7 +4834,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.lightsSliderCompanySlider = {
+    Sofia.behaviors.lightsSliderCompanySlider = {
         attach: function(context, settings) {
             $('.view-id-company_news.view-display-id-block_1 .items').lightSlider({
                 item: 3,
@@ -4854,7 +4854,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.lightsSliderCompanySliderFunding = {
+    Sofia.behaviors.lightsSliderCompanySliderFunding = {
         attach: function(context, settings) {
             $('.view-id-company_funding.view-display-id-block_1 .items').lightSlider({
                 item: 3,
@@ -4880,7 +4880,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.lightsSliderPartnerInsider = {
+    Sofia.behaviors.lightsSliderPartnerInsider = {
         attach: function(context, settings) {
             $('.partner-insight-slider').lightSlider({
                 item: 4,
@@ -4907,7 +4907,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.UserLogin = {
+    Sofia.behaviors.UserLogin = {
         attach: function(context, settings) {
             $('#edit-bix-email-login-text').click(function(e) {
                 e.preventDefault();
@@ -4916,7 +4916,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.JobsDescription = {
+    Sofia.behaviors.JobsDescription = {
         attach: function(context, settings) {
             var job_description_toggle = $('#read-more-description-toggle');
             job_description_toggle.click(function(e) {
@@ -4926,7 +4926,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.mobileMainNav = {
+    Sofia.behaviors.mobileMainNav = {
         attach: function(context, settings) {
             $('.menu--main-mobile .menu-item--expanded > a').click(function(e) {
                 $(this).parent().find('.menu').toggle();
@@ -4935,7 +4935,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.testimonialsSlideshow = {
+    Sofia.behaviors.testimonialsSlideshow = {
         attach: function(context, settings) {
             if ($('.testimonials-slideshow').size() > 0) $('.testimonials-slideshow').lightSlider({
                 adaptiveHeight: false,
@@ -4951,7 +4951,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.cultureSlideshow = {
+    Sofia.behaviors.cultureSlideshow = {
         attach: function(context, settings) {
             var plus_width = 185;
             if ($(window).width() >= 768 && $(window).width() <= 1023) plus_width = 150;
@@ -4968,7 +4968,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.initFacets = {
+    Sofia.behaviors.initFacets = {
         attach: function(context, settings) {
             var body = $('body').not('.path-recruitment'),
                 facetElement = body.find('.block-facets');
@@ -4992,7 +4992,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.googleAnalyticsEvents = {
+    Sofia.behaviors.googleAnalyticsEvents = {
         attach: function(context, settings) {
             $('[data-ga-event]:not(.ga-event-processed)', context).addClass('ga-event-processed').each(function() {
                 var eventTrigger = $(this);
@@ -5010,7 +5010,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.fieldImageUploadExtra = {
+    Sofia.behaviors.fieldImageUploadExtra = {
         attach: function(context, settings) {
             $('.form-type-managed-file').each(function() {
                 if ($('.image-preview', $(this)).length > 0) {
@@ -5023,7 +5023,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.bixScrollToBlock = {
+    Sofia.behaviors.bixScrollToBlock = {
         attach: function(context, settings) {
             $(window).load(function() {
                 var hash = window.location.hash,
@@ -5042,7 +5042,7 @@ document.documentElement.className += ' js';
             })
         }
     };
-    Drupal.behaviors.bixAutocompliteFixedWindow = {
+    Sofia.behaviors.bixAutocompliteFixedWindow = {
         attach: function(context, settings) {
             $('.block-views-exposed-filter-blocksearch-page-1').on('focus', '.ui-autocomplete-input', function() {
                 $('body').addClass('open-ui-autocomplete')
@@ -5052,7 +5052,7 @@ document.documentElement.className += ' js';
             })
         }
     }
-})(jQuery, Drupal);
+})(jQuery, Sofia);
 (function(window, factory) {
     if (typeof define == 'function' && define.amd) {
         define('jquery-bridget/jquery-bridget', ['jquery'], function(jQuery) {
@@ -6843,9 +6843,9 @@ document.documentElement.className += ' js';
     };
     return Isotope
 }));
-(function($, Drupal) {
+(function($, Sofia) {
     'use strict';
-    Drupal.behaviors.initIsotope = {
+    Sofia.behaviors.initIsotope = {
         attach: function(content, settings) {
             var $container = $('.job-opportunities .view-content:not(.processed)');
             $container.addClass('processed').isotope({
@@ -6902,20 +6902,20 @@ document.documentElement.className += ' js';
             if ($(this).data('category') == 'all') $(this).click()
         })
     })
-})(jQuery, Drupal);
-(function($, Drupal) {
+})(jQuery, Sofia);
+(function($, Sofia) {
     'use strict';
-    Drupal.theme.progressBar = function(id) {
+    Sofia.theme.progressBar = function(id) {
         return '<div id="' + id + '" class="progress" aria-live="polite"><div class="progress__label">&nbsp;</div><div class="progress__track"><div class="progress__bar"></div></div><div class="progress__percentage"></div><div class="progress__description">&nbsp;</div></div>'
     };
-    Drupal.ProgressBar = function(id, updateCallback, method, errorCallback) {
+    Sofia.ProgressBar = function(id, updateCallback, method, errorCallback) {
         this.id = id;
         this.method = method || 'GET';
         this.updateCallback = updateCallback;
         this.errorCallback = errorCallback;
-        this.element = $(Drupal.theme('progressBar', id))
+        this.element = $(Sofia.theme('progressBar', id))
     };
-    $.extend(Drupal.ProgressBar.prototype, {
+    $.extend(Sofia.ProgressBar.prototype, {
         setProgress: function(percentage, message, label) {
             if (percentage >= 0 && percentage <= 100) {
                 $(this.element).find('div.progress__bar').css('width', percentage + '%');
@@ -6959,7 +6959,7 @@ document.documentElement.className += ' js';
                         }, pb.delay)
                     },
                     error: function(xmlhttp) {
-                        var e = new Drupal.AjaxError(xmlhttp, pb.uri);
+                        var e = new Sofia.AjaxError(xmlhttp, pb.uri);
                         pb.displayError('<pre>' + e.message + '</pre>')
                     }
                 })
@@ -6971,7 +6971,7 @@ document.documentElement.className += ' js';
             if (this.errorCallback) this.errorCallback(this)
         }
     })
-})(jQuery, Drupal);
+})(jQuery, Sofia);
 /**
  * @file
  * Provides Ajax page updating via jQuery $.ajax.
@@ -6980,29 +6980,29 @@ document.documentElement.className += ' js';
  * page. The request returns an array of commands encoded in JSON, which is
  * then executed to make any changes that are necessary to the page.
  *
- * Drupal uses this file to enhance form elements with `#ajax['url']` and
+ * Sofia uses this file to enhance form elements with `#ajax['url']` and
  * `#ajax['wrapper']` properties. If set, this file will automatically be
  * included to provide Ajax capabilities.
  */
 
-(function($, window, Drupal, drupalSettings) {
+(function($, window, Sofia, SofiaSettings) {
 
     'use strict';
 
     /**
      * Attaches the Ajax behavior to each Ajax form element.
      *
-     * @type {Drupal~behavior}
+     * @type {Sofia~behavior}
      *
-     * @prop {Drupal~behaviorAttach} attach
-     *   Initialize all {@link Drupal.Ajax} objects declared in
-     *   `drupalSettings.ajax` or initialize {@link Drupal.Ajax} objects from
+     * @prop {Sofia~behaviorAttach} attach
+     *   Initialize all {@link Sofia.Ajax} objects declared in
+     *   `SofiaSettings.ajax` or initialize {@link Sofia.Ajax} objects from
      *   DOM elements having the `use-ajax-submit` or `use-ajax` css class.
-     * @prop {Drupal~behaviorDetach} detach
-     *   During `unload` remove all {@link Drupal.Ajax} objects related to
+     * @prop {Sofia~behaviorDetach} detach
+     *   During `unload` remove all {@link Sofia.Ajax} objects related to
      *   the removed content.
      */
-    Drupal.behaviors.AJAX = {
+    Sofia.behaviors.AJAX = {
         attach: function(context, settings) {
 
             function loadAjaxBehavior(base) {
@@ -7010,10 +7010,10 @@ document.documentElement.className += ' js';
                 if (typeof element_settings.selector === 'undefined') {
                     element_settings.selector = '#' + base;
                 }
-                $(element_settings.selector).once('drupal-ajax').each(function() {
+                $(element_settings.selector).once('Sofia-ajax').each(function() {
                     element_settings.element = this;
                     element_settings.base = base;
-                    Drupal.ajax(element_settings);
+                    Sofia.ajax(element_settings);
                 });
             }
 
@@ -7043,7 +7043,7 @@ document.documentElement.className += ' js';
                 element_settings.dialog = $(this).data('dialog-options');
                 element_settings.base = $(this).attr('id');
                 element_settings.element = this;
-                Drupal.ajax(element_settings);
+                Sofia.ajax(element_settings);
             });
 
             // This class means to submit the form to the action using Ajax.
@@ -7066,16 +7066,16 @@ document.documentElement.className += ' js';
                 element_settings.base = $(this).attr('id');
                 element_settings.element = this;
 
-                Drupal.ajax(element_settings);
+                Sofia.ajax(element_settings);
             });
         },
 
         detach: function(context, settings, trigger) {
             if (trigger === 'unload') {
-                Drupal.ajax.expired().forEach(function(instance) {
+                Sofia.ajax.expired().forEach(function(instance) {
                     // Set this to null and allow garbage collection to reclaim
                     // the memory.
-                    Drupal.ajax.instances[instance.instanceIndex] = null;
+                    Sofia.ajax.instances[instance.instanceIndex] = null;
                 });
             }
         }
@@ -7095,7 +7095,7 @@ document.documentElement.className += ' js';
      * @param {string} customMessage
      *   The custom message.
      */
-    Drupal.AjaxError = function(xmlhttp, uri, customMessage) {
+    Sofia.AjaxError = function(xmlhttp, uri, customMessage) {
 
         var statusCode;
         var statusText;
@@ -7103,14 +7103,14 @@ document.documentElement.className += ' js';
         var responseText;
         var readyStateText;
         if (xmlhttp.status) {
-            statusCode = '\n' + Drupal.t('An AJAX HTTP error occurred.') + '\n' + Drupal.t('HTTP Result Code: !status', {
+            statusCode = '\n' + Sofia.t('An AJAX HTTP error occurred.') + '\n' + Sofia.t('HTTP Result Code: !status', {
                 '!status': xmlhttp.status
             });
         } else {
-            statusCode = '\n' + Drupal.t('An AJAX HTTP request terminated abnormally.');
+            statusCode = '\n' + Sofia.t('An AJAX HTTP request terminated abnormally.');
         }
-        statusCode += '\n' + Drupal.t('Debugging information follows.');
-        pathText = '\n' + Drupal.t('Path: !uri', {
+        statusCode += '\n' + Sofia.t('Debugging information follows.');
+        pathText = '\n' + Sofia.t('Path: !uri', {
             '!uri': uri
         });
         statusText = '';
@@ -7119,7 +7119,7 @@ document.documentElement.className += ' js';
         // catch that and the test causes an exception. So we need to catch the
         // exception here.
         try {
-            statusText = '\n' + Drupal.t('StatusText: !statusText', {
+            statusText = '\n' + Sofia.t('StatusText: !statusText', {
                 '!statusText': $.trim(xmlhttp.statusText)
             });
         } catch (e) {
@@ -7130,7 +7130,7 @@ document.documentElement.className += ' js';
         // Again, we don't have a way to know for sure whether accessing
         // xmlhttp.responseText is going to throw an exception. So we'll catch it.
         try {
-            responseText = '\n' + Drupal.t('ResponseText: !responseText', {
+            responseText = '\n' + Sofia.t('ResponseText: !responseText', {
                 '!responseText': $.trim(xmlhttp.responseText)
             });
         } catch (e) {
@@ -7142,11 +7142,11 @@ document.documentElement.className += ' js';
         responseText = responseText.replace(/[\n]+\s+/g, '\n');
 
         // We don't need readyState except for status == 0.
-        readyStateText = xmlhttp.status === 0 ? ('\n' + Drupal.t('ReadyState: !readyState', {
+        readyStateText = xmlhttp.status === 0 ? ('\n' + Sofia.t('ReadyState: !readyState', {
             '!readyState': xmlhttp.readyState
         })) : '';
 
-        customMessage = customMessage ? ('\n' + Drupal.t('CustomMessage: !customMessage', {
+        customMessage = customMessage ? ('\n' + Sofia.t('CustomMessage: !customMessage', {
             '!customMessage': customMessage
         })) : '';
 
@@ -7165,29 +7165,29 @@ document.documentElement.className += ' js';
         this.name = 'AjaxError';
     };
 
-    Drupal.AjaxError.prototype = new Error();
-    Drupal.AjaxError.prototype.constructor = Drupal.AjaxError;
+    Sofia.AjaxError.prototype = new Error();
+    Sofia.AjaxError.prototype.constructor = Sofia.AjaxError;
 
     /**
      * Provides Ajax page updating via jQuery $.ajax.
      *
      * This function is designed to improve developer experience by wrapping the
-     * initialization of {@link Drupal.Ajax} objects and storing all created
-     * objects in the {@link Drupal.ajax.instances} array.
+     * initialization of {@link Sofia.Ajax} objects and storing all created
+     * objects in the {@link Sofia.ajax.instances} array.
      *
      * @example
-     * Drupal.behaviors.myCustomAJAXStuff = {
+     * Sofia.behaviors.myCustomAJAXStuff = {
      *   attach: function (context, settings) {
      *
      *     var ajaxSettings = {
      *       url: 'my/url/path',
-     *       // If the old version of Drupal.ajax() needs to be used those
+     *       // If the old version of Sofia.ajax() needs to be used those
      *       // properties can be added
      *       base: 'myBase',
      *       element: $(context).find('.someElement')
      *     };
      *
-     *     var myAjaxObject = Drupal.ajax(ajaxSettings);
+     *     var myAjaxObject = Sofia.ajax(ajaxSettings);
      *
      *     // Declare a new Ajax command specifically for this Ajax object.
      *     myAjaxObject.commands.insert = function (ajax, response, status) {
@@ -7197,7 +7197,7 @@ document.documentElement.className += ' js';
      *
      *     // This command will remove this Ajax object from the page.
      *     myAjaxObject.commands.destroyObject = function (ajax, response, status) {
-     *       Drupal.ajax.instances[this.instanceIndex] = null;
+     *       Sofia.ajax.instances[this.instanceIndex] = null;
      *     };
      *
      *     // Programmatically trigger the Ajax request.
@@ -7206,24 +7206,24 @@ document.documentElement.className += ' js';
      * };
      *
      * @param {object} settings
-     *   The settings object passed to {@link Drupal.Ajax} constructor.
+     *   The settings object passed to {@link Sofia.Ajax} constructor.
      * @param {string} [settings.base]
-     *   Base is passed to {@link Drupal.Ajax} constructor as the 'base'
+     *   Base is passed to {@link Sofia.Ajax} constructor as the 'base'
      *   parameter.
      * @param {HTMLElement} [settings.element]
-     *   Element parameter of {@link Drupal.Ajax} constructor, element on which
+     *   Element parameter of {@link Sofia.Ajax} constructor, element on which
      *   event listeners will be bound.
      *
-     * @return {Drupal.Ajax}
+     * @return {Sofia.Ajax}
      *   The created Ajax object.
      *
-     * @see Drupal.AjaxCommands
+     * @see Sofia.AjaxCommands
      */
-    Drupal.ajax = function(settings) {
+    Sofia.ajax = function(settings) {
         if (arguments.length !== 1) {
-            throw new Error('Drupal.ajax() function must be called with one configuration object only');
+            throw new Error('Sofia.ajax() function must be called with one configuration object only');
         }
-        // Map those config keys to variables for the old Drupal.ajax function.
+        // Map those config keys to variables for the old Sofia.ajax function.
         var base = settings.base || false;
         var element = settings.element || false;
         delete settings.base;
@@ -7234,9 +7234,9 @@ document.documentElement.className += ' js';
             settings.progress = false;
         }
 
-        var ajax = new Drupal.Ajax(base, element, settings);
-        ajax.instanceIndex = Drupal.ajax.instances.length;
-        Drupal.ajax.instances.push(ajax);
+        var ajax = new Sofia.Ajax(base, element, settings);
+        ajax.instanceIndex = Sofia.ajax.instances.length;
+        Sofia.ajax.instances.push(ajax);
 
         return ajax;
     };
@@ -7244,21 +7244,21 @@ document.documentElement.className += ' js';
     /**
      * Contains all created Ajax objects.
      *
-     * @type {Array.<Drupal.Ajax|null>}
+     * @type {Array.<Sofia.Ajax|null>}
      */
-    Drupal.ajax.instances = [];
+    Sofia.ajax.instances = [];
 
     /**
      * List all objects where the associated element is not in the DOM
      *
-     * This method ignores {@link Drupal.Ajax} objects not bound to DOM elements
-     * when created with {@link Drupal.ajax}.
+     * This method ignores {@link Sofia.Ajax} objects not bound to DOM elements
+     * when created with {@link Sofia.ajax}.
      *
-     * @return {Array.<Drupal.Ajax>}
-     *   The list of expired {@link Drupal.Ajax} objects.
+     * @return {Array.<Sofia.Ajax>}
+     *   The list of expired {@link Sofia.Ajax} objects.
      */
-    Drupal.ajax.expired = function() {
-        return Drupal.ajax.instances.filter(function(instance) {
+    Sofia.ajax.expired = function() {
+        return Sofia.ajax.instances.filter(function(instance) {
             return instance && instance.element !== false && !document.body.contains(instance.element);
         });
     };
@@ -7266,7 +7266,7 @@ document.documentElement.className += ' js';
     /**
      * Settings for an Ajax object.
      *
-     * @typedef {object} Drupal.Ajax~element_settings
+     * @typedef {object} Sofia.Ajax~element_settings
      *
      * @prop {string} url
      *   Target of the Ajax request.
@@ -7276,7 +7276,7 @@ document.documentElement.className += ' js';
      *   Triggers a request on keypress events.
      * @prop {?string} selector
      *   jQuery selector targeting the element to bind events to or used with
-     *   {@link Drupal.AjaxCommands}.
+     *   {@link Sofia.AjaxCommands}.
      * @prop {string} [effect='none']
      *   Name of the jQuery method to use for displaying new Ajax content.
      * @prop {string|number} [speed='none']
@@ -7289,14 +7289,14 @@ document.documentElement.className += ' js';
      * @prop {string} [progress.type='throbber']
      *   Type of progress element, core provides `'bar'`, `'throbber'` and
      *   `'fullscreen'`.
-     * @prop {string} [progress.message=Drupal.t('Please wait...')]
+     * @prop {string} [progress.message=Sofia.t('Please wait...')]
      *   Custom message to be used with the bar indicator.
      * @prop {object} [submit]
      *   Extra data to be sent with the Ajax request.
      * @prop {bool} [submit.js=true]
      *   Allows the PHP side to know this comes from an Ajax request.
      * @prop {object} [dialog]
-     *   Options for {@link Drupal.dialog}.
+     *   Options for {@link Sofia.dialog}.
      * @prop {string} [dialogType]
      *   One of `'modal'` or `'dialog'`.
      * @prop {string} [prevent]
@@ -7309,21 +7309,21 @@ document.documentElement.className += ' js';
      * The Ajax request returns an array of commands encoded in JSON, which is
      * then executed to make any changes that are necessary to the page.
      *
-     * Drupal uses this file to enhance form elements with `#ajax['url']` and
+     * Sofia uses this file to enhance form elements with `#ajax['url']` and
      * `#ajax['wrapper']` properties. If set, this file will automatically be
      * included to provide Ajax capabilities.
      *
      * @constructor
      *
      * @param {string} [base]
-     *   Base parameter of {@link Drupal.Ajax} constructor
+     *   Base parameter of {@link Sofia.Ajax} constructor
      * @param {HTMLElement} [element]
-     *   Element parameter of {@link Drupal.Ajax} constructor, element on which
+     *   Element parameter of {@link Sofia.Ajax} constructor, element on which
      *   event listeners will be bound.
-     * @param {Drupal.Ajax~element_settings} element_settings
+     * @param {Sofia.Ajax~element_settings} element_settings
      *   Settings for this Ajax object.
      */
-    Drupal.Ajax = function(base, element, element_settings) {
+    Sofia.Ajax = function(base, element, element_settings) {
         var defaults = {
             event: element ? 'mousedown' : null,
             keypress: true,
@@ -7333,7 +7333,7 @@ document.documentElement.className += ' js';
             method: 'replaceWith',
             progress: {
                 type: 'throbber',
-                message: Drupal.t('Please wait...')
+                message: Sofia.t('Please wait...')
             },
             submit: {
                 js: true
@@ -7343,9 +7343,9 @@ document.documentElement.className += ' js';
         $.extend(this, defaults, element_settings);
 
         /**
-         * @type {Drupal.AjaxCommands}
+         * @type {Sofia.AjaxCommands}
          */
-        this.commands = new Drupal.AjaxCommands();
+        this.commands = new Sofia.AjaxCommands();
 
         /**
          * @type {bool|number}
@@ -7370,7 +7370,7 @@ document.documentElement.className += ' js';
         this.element = element;
 
         /**
-         * @type {Drupal.Ajax~element_settings}
+         * @type {Sofia.Ajax~element_settings}
          */
         this.element_settings = element_settings;
 
@@ -7411,8 +7411,8 @@ document.documentElement.className += ' js';
         this.url = this.url.replace(/\/nojs(\/|$|\?|#)/g, '/ajax$1');
         // If the 'nojs' version of the URL is trusted, also trust the 'ajax'
         // version.
-        // if (drupalSettings.ajaxTrustedUrl[originalUrl]) {
-        //     drupalSettings.ajaxTrustedUrl[this.url] = true;
+        // if (SofiaSettings.ajaxTrustedUrl[originalUrl]) {
+        //     SofiaSettings.ajaxTrustedUrl[this.url] = true;
         // }
 
         // Set the options for the ajaxSubmit function.
@@ -7422,7 +7422,7 @@ document.documentElement.className += ' js';
         /**
          * Options for the jQuery.ajax function.
          *
-         * @name Drupal.Ajax#options
+         * @name Sofia.Ajax#options
          *
          * @type {object}
          *
@@ -7432,16 +7432,16 @@ document.documentElement.className += ' js';
          *   Ajax payload.
          * @prop {function} beforeSerialize
          *   Implement jQuery beforeSerialize function to call
-         *   {@link Drupal.Ajax#beforeSerialize}.
+         *   {@link Sofia.Ajax#beforeSerialize}.
          * @prop {function} beforeSubmit
          *   Implement jQuery beforeSubmit function to call
-         *   {@link Drupal.Ajax#beforeSubmit}.
+         *   {@link Sofia.Ajax#beforeSubmit}.
          * @prop {function} beforeSend
          *   Implement jQuery beforeSend function to call
-         *   {@link Drupal.Ajax#beforeSend}.
+         *   {@link Sofia.Ajax#beforeSend}.
          * @prop {function} success
          *   Implement jQuery success function to call
-         *   {@link Drupal.Ajax#success}.
+         *   {@link Sofia.Ajax#success}.
          * @prop {function} complete
          *   Implement jQuery success function to clean up ajax state and trigger an
          *   error if needed.
@@ -7473,7 +7473,7 @@ document.documentElement.className += ' js';
 
                 // Prior to invoking the response's commands, verify that they can be
                 // trusted by checking for a response header. See
-                // \Drupal\Core\EventSubscriber\AjaxResponseSubscriber for details.
+                // \Sofia\Core\EventSubscriber\AjaxResponseSubscriber for details.
                 // - Empty responses are harmless so can bypass verification. This
                 //   avoids an alert message for server-generated no-op responses that
                 //   skip Ajax rendering.
@@ -7481,9 +7481,9 @@ document.documentElement.className += ' js';
                 //   #ajax) can bypass header verification. This is especially useful
                 //   for Ajax with multipart forms. Because IFRAME transport is used,
                 //   the response headers cannot be accessed for verification.
-                // if (response !== null && !drupalSettings.ajaxTrustedUrl[ajax.url]) {
+                // if (response !== null && !SofiaSettings.ajaxTrustedUrl[ajax.url]) {
                 //     if (xmlhttprequest.getResponseHeader('X-sofia-Ajax-Token') !== '1') {
-                //         var customMessage = Drupal.t('The response failed verification so will not be processed.');
+                //         var customMessage = Sofia.t('The response failed verification so will not be processed.');
                 //         return ajax.error(xmlhttprequest, ajax.url, customMessage);
                 //     }
                 // }
@@ -7511,12 +7511,12 @@ document.documentElement.className += ' js';
         } else {
             ajax.options.url += '&';
         }
-        ajax.options.url += Drupal.ajax.WRAPPER_FORMAT + '=drupal_' + (element_settings.dialogType || 'ajax');
+        ajax.options.url += Sofia.ajax.WRAPPER_FORMAT + '=Sofia_' + (element_settings.dialogType || 'ajax');
 
         // Bind the ajaxSubmit function to the element event.
         // $(ajax.element).on(element_settings.event, function(event) {
-        //     if (!drupalSettings.ajaxTrustedUrl[ajax.url] && !Drupal.url.isLocal(ajax.url)) {
-        //         throw new Error(Drupal.t('The callback URL is not local and not trusted: !url', {
+        //     if (!SofiaSettings.ajaxTrustedUrl[ajax.url] && !Sofia.url.isLocal(ajax.url)) {
+        //         throw new Error(Sofia.t('The callback URL is not local and not trusted: !url', {
         //             '!url': ajax.url
         //         }));
         //     }
@@ -7550,16 +7550,16 @@ document.documentElement.className += ' js';
      *
      * @default
      */
-    Drupal.ajax.WRAPPER_FORMAT = '_wrapper_format';
+    Sofia.ajax.WRAPPER_FORMAT = '_wrapper_format';
 
     /**
-     * Request parameter to indicate that a request is a Drupal Ajax request.
+     * Request parameter to indicate that a request is a Sofia Ajax request.
      *
      * @const {string}
      *
      * @default
      */
-    Drupal.Ajax.AJAX_REQUEST_PARAMETER = '_drupal_ajax';
+    Sofia.Ajax.AJAX_REQUEST_PARAMETER = '_Sofia_ajax';
 
     /**
      * Execute the ajax request.
@@ -7572,7 +7572,7 @@ document.documentElement.className += ' js';
      *   pre-serialization fails, the Deferred will be returned in the rejected
      *   state.
      */
-    Drupal.Ajax.prototype.execute = function() {
+    Sofia.Ajax.prototype.execute = function() {
         // Do not perform another ajax command if one is already in progress.
         if (this.ajaxing) {
             return;
@@ -7608,7 +7608,7 @@ document.documentElement.className += ' js';
      * @param {jQuery.Event} event
      *   Triggered event.
      */
-    Drupal.Ajax.prototype.keypressResponse = function(element, event) {
+    Sofia.Ajax.prototype.keypressResponse = function(element, event) {
         // Create a synonym for this to reduce code confusion.
         var ajax = this;
 
@@ -7638,7 +7638,7 @@ document.documentElement.className += ' js';
      * @param {jQuery.Event} event
      *   Triggered event.
      */
-    Drupal.Ajax.prototype.eventResponse = function(element, event) {
+    Sofia.Ajax.prototype.eventResponse = function(element, event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -7686,26 +7686,26 @@ document.documentElement.className += ' js';
      * @param {object} options
      *   jQuery.ajax options.
      */
-    Drupal.Ajax.prototype.beforeSerialize = function(element, options) {
+    Sofia.Ajax.prototype.beforeSerialize = function(element, options) {
         // Allow detaching behaviors to update field values before collecting them.
         // This is only needed when field values are added to the POST data, so only
         // when there is a form such that this.$form.ajaxSubmit() is used instead of
         // $.ajax(). When there is no form and $.ajax() is used, beforeSerialize()
         // isn't called, but don't rely on that: explicitly check this.$form.
         if (this.$form) {
-            var settings = this.settings || drupalSettings;
-            Drupal.detachBehaviors(this.$form.get(0), settings, 'serialize');
+            var settings = this.settings || SofiaSettings;
+            Sofia.detachBehaviors(this.$form.get(0), settings, 'serialize');
         }
 
-        // Inform Drupal that this is an AJAX request.
-        options.data[Drupal.Ajax.AJAX_REQUEST_PARAMETER] = 1;
+        // Inform Sofia that this is an AJAX request.
+        options.data[Sofia.Ajax.AJAX_REQUEST_PARAMETER] = 1;
 
-        // Allow Drupal to return new JavaScript and CSS files to load without
+        // Allow Sofia to return new JavaScript and CSS files to load without
         // returning the ones already loaded.
-        // @see \Drupal\Core\Theme\AjaxBasePageNegotiator
-        // @see \Drupal\Core\Asset\LibraryDependencyResolverInterface::getMinimalRepresentativeSubset()
+        // @see \Sofia\Core\Theme\AjaxBasePageNegotiator
+        // @see \Sofia\Core\Asset\LibraryDependencyResolverInterface::getMinimalRepresentativeSubset()
         // @see system_js_settings_alter()
-        var pageState = drupalSettings.ajaxPageState;
+        var pageState = SofiaSettings.ajaxPageState;
         options.data['ajax_page_state[theme]'] = pageState.theme;
         options.data['ajax_page_state[theme_token]'] = pageState.theme_token;
         options.data['ajax_page_state[libraries]'] = pageState.libraries;
@@ -7721,7 +7721,7 @@ document.documentElement.className += ' js';
      * @param {object} options
      *   jQuery.ajax options.
      */
-    Drupal.Ajax.prototype.beforeSubmit = function(form_values, element, options) {
+    Sofia.Ajax.prototype.beforeSubmit = function(form_values, element, options) {
         // This function is left empty to make it simple to override for modules
         // that wish to add functionality here.
     };
@@ -7734,7 +7734,7 @@ document.documentElement.className += ' js';
      * @param {object} options
      *   jQuery.ajax options.
      */
-    Drupal.Ajax.prototype.beforeSend = function(xmlhttprequest, options) {
+    Sofia.Ajax.prototype.beforeSend = function(xmlhttprequest, options) {
         // For forms without file inputs, the jQuery Form plugin serializes the
         // form values, and then calls jQuery's $.ajax() function, which invokes
         // this handler. In this circumstance, options.extraData is never used. For
@@ -7784,8 +7784,8 @@ document.documentElement.className += ' js';
     /**
      * Sets the progress bar progress indicator.
      */
-    Drupal.Ajax.prototype.setProgressIndicatorBar = function() {
-        var progressBar = new Drupal.ProgressBar('ajax-progress-' + this.element.id, $.noop, this.progress.method, $.noop);
+    Sofia.Ajax.prototype.setProgressIndicatorBar = function() {
+        var progressBar = new Sofia.ProgressBar('ajax-progress-' + this.element.id, $.noop, this.progress.method, $.noop);
         if (this.progress.message) {
             progressBar.setProgress(-1, this.progress.message);
         }
@@ -7800,7 +7800,7 @@ document.documentElement.className += ' js';
     /**
      * Sets the throbber progress indicator.
      */
-    Drupal.Ajax.prototype.setProgressIndicatorThrobber = function() {
+    Sofia.Ajax.prototype.setProgressIndicatorThrobber = function() {
         this.progress.element = $('<div class="ajax-progress ajax-progress-throbber"><div class="throbber">&nbsp;</div></div>');
         if (this.progress.message) {
             this.progress.element.find('.throbber').after('<div class="message">' + this.progress.message + '</div>');
@@ -7811,7 +7811,7 @@ document.documentElement.className += ' js';
     /**
      * Sets the fullscreen progress indicator.
      */
-    Drupal.Ajax.prototype.setProgressIndicatorFullscreen = function() {
+    Sofia.Ajax.prototype.setProgressIndicatorFullscreen = function() {
         this.progress.element = $('<div class="ajax-progress ajax-progress-fullscreen">&nbsp;</div>');
         $('body').after(this.progress.element);
     };
@@ -7819,12 +7819,12 @@ document.documentElement.className += ' js';
     /**
      * Handler for the form redirection completion.
      *
-     * @param {Array.<Drupal.AjaxCommands~commandDefinition>} response
-     *   Drupal Ajax response.
+     * @param {Array.<Sofia.AjaxCommands~commandDefinition>} response
+     *   Sofia Ajax response.
      * @param {number} status
      *   XMLHttpRequest status.
      */
-    Drupal.Ajax.prototype.success = function(response, status) {
+    Sofia.Ajax.prototype.success = function(response, status) {
         // Remove the progress element.
         if (this.progress.element) {
             $(this.progress.element).remove();
@@ -7872,8 +7872,8 @@ document.documentElement.className += ' js';
         // commands is not sufficient, because behaviors from the entire form need
         // to be reattached.
         if (this.$form) {
-            var settings = this.settings || drupalSettings;
-            Drupal.attachBehaviors(this.$form.get(0), settings);
+            var settings = this.settings || SofiaSettings;
+            Sofia.attachBehaviors(this.$form.get(0), settings);
         }
 
         // Remove any response-specific settings so they don't get used on the next
@@ -7885,17 +7885,17 @@ document.documentElement.className += ' js';
      * Build an effect object to apply an effect when adding new HTML.
      *
      * @param {object} response
-     *   Drupal Ajax response.
+     *   Sofia Ajax response.
      * @param {string} [response.effect]
-     *   Override the default value of {@link Drupal.Ajax#element_settings}.
+     *   Override the default value of {@link Sofia.Ajax#element_settings}.
      * @param {string|number} [response.speed]
-     *   Override the default value of {@link Drupal.Ajax#element_settings}.
+     *   Override the default value of {@link Sofia.Ajax#element_settings}.
      *
      * @return {object}
      *   Returns an object with `showEffect`, `hideEffect` and `showSpeed`
      *   properties.
      */
-    Drupal.Ajax.prototype.getEffect = function(response) {
+    Sofia.Ajax.prototype.getEffect = function(response) {
         var type = response.effect || this.effect;
         var speed = response.speed || this.speed;
 
@@ -7927,7 +7927,7 @@ document.documentElement.className += ' js';
      * @param {string} [customMessage]
      *   Extra message to print with the Ajax error.
      */
-    Drupal.Ajax.prototype.error = function(xmlhttprequest, uri, customMessage) {
+    Sofia.Ajax.prototype.error = function(xmlhttprequest, uri, customMessage) {
         // Remove the progress element.
         if (this.progress.element) {
             $(this.progress.element).remove();
@@ -7941,14 +7941,14 @@ document.documentElement.className += ' js';
         $(this.element).prop('disabled', false);
         // Reattach behaviors, if they were detached in beforeSerialize().
         if (this.$form) {
-            var settings = this.settings || drupalSettings;
-            Drupal.attachBehaviors(this.$form.get(0), settings);
+            var settings = this.settings || SofiaSettings;
+            Sofia.attachBehaviors(this.$form.get(0), settings);
         }
-        throw new Drupal.AjaxError(xmlhttprequest, uri, customMessage);
+        throw new Sofia.AjaxError(xmlhttprequest, uri, customMessage);
     };
 
     /**
-     * @typedef {object} Drupal.AjaxCommands~commandDefinition
+     * @typedef {object} Sofia.AjaxCommands~commandDefinition
      *
      * @prop {string} command
      * @prop {string} [method]
@@ -7967,7 +7967,7 @@ document.documentElement.className += ' js';
      * @prop {bool} [merge]
      * @prop {Array} [args]
      *
-     * @see Drupal.AjaxCommands
+     * @see Sofia.AjaxCommands
      */
 
     /**
@@ -7975,14 +7975,14 @@ document.documentElement.className += ' js';
      *
      * @constructor
      */
-    Drupal.AjaxCommands = function() {};
-    Drupal.AjaxCommands.prototype = {
+    Sofia.AjaxCommands = function() {};
+    Sofia.AjaxCommands.prototype = {
 
         /**
          * Command to insert new content into the DOM.
          *
-         * @param {Drupal.Ajax} ajax
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} ajax
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {string} response.data
@@ -8022,7 +8022,7 @@ document.documentElement.className += ' js';
             // parents), we check if the new content satisfies the requirement
             // of a single top-level element, and only use the container <div> created
             // above when it doesn't. For more information, please see
-            // https://www.drupal.org/node/736066.
+            // https://www.Sofia.org/node/736066.
             if ($new_content.length !== 1 || $new_content.get(0).nodeType !== 1) {
                 $new_content = $new_content_wrapped;
             }
@@ -8034,8 +8034,8 @@ document.documentElement.className += ' js';
                 case 'replaceAll':
                 case 'empty':
                 case 'remove':
-                    settings = response.settings || ajax.settings || drupalSettings;
-                    Drupal.detachBehaviors($wrapper.get(0), settings);
+                    settings = response.settings || ajax.settings || SofiaSettings;
+                    Sofia.detachBehaviors($wrapper.get(0), settings);
             }
 
             // Add the new content to the page.
@@ -8061,16 +8061,16 @@ document.documentElement.className += ' js';
             // `#ajax['wrapper']` to be optional.
             if ($new_content.parents('html').length > 0) {
                 // Apply any settings from the returned JSON if available.
-                settings = response.settings || ajax.settings || drupalSettings;
-                Drupal.attachBehaviors($new_content.get(0), settings);
+                settings = response.settings || ajax.settings || SofiaSettings;
+                Sofia.attachBehaviors($new_content.get(0), settings);
             }
         },
 
         /**
          * Command to remove a chunk from the page.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {string} response.selector
@@ -8081,9 +8081,9 @@ document.documentElement.className += ' js';
          *   The XMLHttpRequest status.
          */
         remove: function(ajax, response, status) {
-            var settings = response.settings || ajax.settings || drupalSettings;
+            var settings = response.settings || ajax.settings || SofiaSettings;
             $(response.selector).each(function() {
-                    Drupal.detachBehaviors(this, settings);
+                    Sofia.detachBehaviors(this, settings);
                 })
                 .remove();
         },
@@ -8091,8 +8091,8 @@ document.documentElement.className += ' js';
         /**
          * Command to mark a chunk changed.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The JSON response object from the Ajax request.
          * @param {string} response.selector
@@ -8108,7 +8108,7 @@ document.documentElement.className += ' js';
             if (!$element.hasClass('ajax-changed')) {
                 $element.addClass('ajax-changed');
                 if (response.asterisk) {
-                    $element.find(response.asterisk).append(' <abbr class="ajax-changed" title="' + Drupal.t('Changed') + '">*</abbr> ');
+                    $element.find(response.asterisk).append(' <abbr class="ajax-changed" title="' + Sofia.t('Changed') + '">*</abbr> ');
                 }
             }
         },
@@ -8116,8 +8116,8 @@ document.documentElement.className += ' js';
         /**
          * Command to provide an alert.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The JSON response from the Ajax request.
          * @param {string} response.text
@@ -8132,8 +8132,8 @@ document.documentElement.className += ' js';
         /**
          * Command to set the window.location, redirecting the browser.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {string} response.url
@@ -8148,8 +8148,8 @@ document.documentElement.className += ' js';
         /**
          * Command to provide the jQuery css() function.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {string} response.selector
@@ -8166,10 +8166,10 @@ document.documentElement.className += ' js';
         /**
          * Command to set the settings used for other commands in this response.
          *
-         * This method will also remove expired `drupalSettings.ajax` settings.
+         * This method will also remove expired `SofiaSettings.ajax` settings.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {bool} response.merge
@@ -8181,12 +8181,12 @@ document.documentElement.className += ' js';
          *   The XMLHttpRequest status.
          */
         settings: function(ajax, response, status) {
-            var ajaxSettings = drupalSettings.ajax;
+            var ajaxSettings = SofiaSettings.ajax;
 
-            // Clean up drupalSettings.ajax.
+            // Clean up SofiaSettings.ajax.
             if (ajaxSettings) {
-                Drupal.ajax.expired().forEach(function(instance) {
-                    // If the Ajax object has been created through drupalSettings.ajax
+                Sofia.ajax.expired().forEach(function(instance) {
+                    // If the Ajax object has been created through SofiaSettings.ajax
                     // it will have a selector. When there is no selector the object
                     // has been initialized with a special class name picked up by the
                     // Ajax behavior.
@@ -8201,7 +8201,7 @@ document.documentElement.className += ' js';
             }
 
             if (response.merge) {
-                $.extend(true, drupalSettings, response.settings);
+                $.extend(true, SofiaSettings, response.settings);
             } else {
                 ajax.settings = response.settings;
             }
@@ -8210,8 +8210,8 @@ document.documentElement.className += ' js';
         /**
          * Command to attach data using jQuery's data API.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {string} response.name
@@ -8231,8 +8231,8 @@ document.documentElement.className += ' js';
         /**
          * Command to apply a jQuery method.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {Array} response.args
@@ -8252,8 +8252,8 @@ document.documentElement.className += ' js';
         /**
          * Command to restripe a table.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {string} response.selector
@@ -8274,8 +8274,8 @@ document.documentElement.className += ' js';
         /**
          * Command to update a form's build ID.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {string} response.old
@@ -8296,8 +8296,8 @@ document.documentElement.className += ' js';
          * support that method ignore @import statements in dynamically added
          * stylesheets.
          *
-         * @param {Drupal.Ajax} [ajax]
-         *   {@link Drupal.Ajax} object created by {@link Drupal.ajax}.
+         * @param {Sofia.Ajax} [ajax]
+         *   {@link Sofia.Ajax} object created by {@link Sofia.ajax}.
          * @param {object} response
          *   The response from the Ajax request.
          * @param {string} response.data
@@ -8321,7 +8321,7 @@ document.documentElement.className += ' js';
         }
     };
 
-})(jQuery, window, Drupal, drupalSettings);;
+})(jQuery, window, Sofia, SofiaSettings);;
 /*!
  * jQuery UI Position 1.11.4
  * http://jqueryui.com
@@ -9155,7 +9155,7 @@ document.documentElement.className += ' js';
         }
     }), e.ui.autocomplete
 });;
-(function($, Drupal, drupalSettings) {
+(function($, Sofia, SofiaSettings) {
     "use strict";
     var autocomplete
 
@@ -9301,7 +9301,7 @@ document.documentElement.className += ' js';
 
     function replaceInObject(stash, needle, replacement) {
         var regex = new RegExp(needle, "g"),
-            input = Drupal.checkPlain(replacement),
+            input = Sofia.checkPlain(replacement),
             result = [];
         $.each(stash, function(index, value) {
             if ($.type(value) === "string") {
@@ -9310,7 +9310,7 @@ document.documentElement.className += ' js';
         });
         return result
     };
-    Drupal.behaviors.autocomplete = {
+    Sofia.behaviors.autocomplete = {
         attach: function(context) {
             var $autocomplete = $(context).find('input.form-autocomplete');
             $.each(autocomplete.options.forms, function(key, value) {
@@ -9347,11 +9347,11 @@ document.documentElement.className += ' js';
             resizeMenu: resizeMenu,
             minLength: 1,
             firstCharacterBlacklist: '',
-            forms: drupalSettings.search_autocomplete ? drupalSettings.search_autocomplete : []
+            forms: SofiaSettings.search_autocomplete ? SofiaSettings.search_autocomplete : []
         },
         ajax: {
             dataType: 'json'
         }
     };
-    Drupal.autocomplete = autocomplete
-})(jQuery, Drupal, drupalSettings);
+    Sofia.autocomplete = autocomplete
+})(jQuery, Sofia, SofiaSettings);

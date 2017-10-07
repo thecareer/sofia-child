@@ -73,9 +73,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 }
                                             ?>
                                                 <li class="facet-item ">
-                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php echo $industry->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="type-<?php echo $industry->slug ?>">
-                                                        <?php if($current) : 
+                                                    <?php if($current) : 
                                                             $link  = remove_query_arg('type', $base );
                                                             foreach ($selected_industry as $key => $v) {
                                                                 if($v != $industry->slug) {
@@ -87,12 +85,15 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                             <?php else : ?>
                                                                 <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug, $base )); ?>">
                                                             <?php endif; ?>
+                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php echo $industry->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <div class="label" for="type-<?php echo $industry->slug ?>">
+                                                        
                                                                 <span class="facet-item__value"><?php echo $industry->name; ?></span>
                                                                 <span class="facet-item__count">
                                                                   <?php echo $industry->count ?>
                                                               </span>
-                                                        </a>
-                                                    </label>
+                                                    </div>
+                                                    </a>
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
@@ -120,8 +121,6 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 }
                                             ?>
                                             <li class="facet-item odd first">
-                                                <input type="checkbox" class="facets-checkbox" id="size-<?php echo $size->slug ?>" <?php if($current){echo 'checked=true';} ?>>
-                                                <label for="size-<?php echo $size->slug ?>">
                                                 <?php if($current) : 
                                                     $link  = remove_query_arg('size', $base );
                                                     foreach ($selected_size as $key => $v) {
@@ -134,12 +133,15 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 <?php else : ?>
                                                     <a href="<?php echo esc_url(add_query_arg('size[]', $size->slug, $base )); ?>">
                                                 <?php endif; ?>
+                                                <input type="checkbox" class="facets-checkbox" id="size-<?php echo $size->slug ?>" <?php if($current){echo 'checked=true';} ?>>
+                                                <div class="label" for="size-<?php echo $size->slug ?>">
                                                     <span class="facet-item__value"><?php echo $size->name; ?></span>
                                                         <span class="facet-item__count">
                                                         <?php echo $size->count ?>
                                                     </span>
+                                                
+                                                </div>
                                                 </a>
-                                                </label>
                                             </li>
                                             <?php endforeach;?>
                                         </ul>
@@ -149,7 +151,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                 <?php
                                 $locationss = get_terms( array('taxonomy' => 'company-location','hide_empty' => false) );
-                                $selected_locations = isset($_GET['location']) ? $_GET['location'] : array();
+                                $selected_locations = isset($_GET['locations']) ? $_GET['locations'] : array();
                                 ?>
 
                                 <div class="block-facet--bix-facets-checkboxes block block-facets block-facet-blockfield-location-amount last">
@@ -168,29 +170,29 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 }
                                             ?>
                                                 <li class="facet-item facet-item--collapsed odd first">
-                                                
+                                                <?php if($current) : 
+                                                        $link  = remove_query_arg('locations', $base );
+                                                        foreach ($selected_locations as $key => $v) {
+                                                            if($v != $locations->slug) {
+                                                                $link  = add_query_arg(array('locations[]' => $v), $link );
+                                                            }
+                                                        }
+                                                    ?>
+                                                        <a href="<?php echo esc_url($link); ?>">
+                                                    <?php else : ?>
+                                                        <a href="<?php echo esc_url(add_query_arg('locations[]', $locations->slug , $base )); ?>">
+                                                    <?php endif; ?>
                                                 
                                                     <input type="checkbox" class="facets-checkbox" id="type-<?php echo $locations->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="type-<?php echo $locations->slug ?>">
-                                                        <?php if($current) : 
-                                                            $link  = remove_query_arg('locations', $base );
-                                                            foreach ($selected_locations as $key => $v) {
-                                                                if($v != $locations->slug) {
-                                                                    $link  = add_query_arg(array('locations[]' => $v), $link );
-                                                                }
-                                                            }
-                                                        ?>
-                                                            <a href="<?php echo esc_url($link); ?>">
-                                                        <?php else : ?>
-                                                            <a href="<?php echo esc_url(add_query_arg('locations[]', $locations->slug , $base )); ?>">
-                                                        <?php endif; ?>
+                                                    <div class="label" for="type-<?php echo $locations->slug ?>">
+                                                        
                                                             <span class="facet-item__value"><?php echo $locations->name; ?></span>
                                                             <span class="facet-item__count">
                                                               <?php echo $locations->count ?>
                                                         </span>
-                                                      </a>
-                                                    </label>
-                                                
+                                                     
+                                                    </div>
+                                                    </a>
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>

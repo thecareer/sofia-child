@@ -65,9 +65,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 }
                                             ?>
                                                 <li class="facet-item ">
-                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php echo $type->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="type-<?php echo $type->slug ?>">
-                                                        <?php if($current) : 
+                                                    <?php if($current) : 
                                                             $link  = remove_query_arg('type', $base);
                                                             foreach ($selected_types as $key => $v) {
                                                                 if($v != $type->slug) {
@@ -79,12 +77,17 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                             <?php else : ?>
                                                                 <a href="<?php echo esc_url(add_query_arg('type[]', $type->slug , $base)); ?>">
                                                             <?php endif; ?>
+                                                    <input type="checkbox" class="facets-checkbox" id="type-<?php echo $type->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <div class="label" for="type-<?php echo $type->slug ?>">
+                                                        
                                                                 <span class="facet-item__value"><?php echo $type->name; ?></span>
                                                                 <span class="facet-item__count">
                                                                   <?php echo $type->count ?>
+                                                    
                                                               </span>
-                                                        </a>
-                                                    </label>
+                                                    </div>
+                                                    </a>
+                                                    
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
@@ -108,9 +111,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 }
                                             ?>
                                                 <li class="facet-item ">
-                                                    <input type="checkbox" class="facets-checkbox" id="category-<?php echo $category->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="category-<?php echo $category->slug ?>">
-                                                        <?php if($current) :
+                                                    <?php if($current) :
                                                             $link  = remove_query_arg('category', $base);
                                                             foreach ($selected_categorys as $key => $v) {
                                                                 if($v != $category->slug) {
@@ -122,12 +123,15 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                             <?php else : ?>
                                                                 <a href="<?php echo esc_url(add_query_arg('category[]', $category->slug, $base)); ?>">
                                                             <?php endif; ?>
+                                                    <input type="checkbox" class="facets-checkbox" id="category-<?php echo $category->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <div class="label" for="category-<?php echo $category->slug ?>">
                                                                 <span class="facet-item__value"><?php echo $category->name; ?></span>
                                                                 <span class="facet-item__count">
                                                                   <?php echo $category->count ?>
                                                               </span>
-                                                        </a>
-                                                    </label>
+                                                        
+                                                    </div>
+                                                    </a>
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
@@ -151,9 +155,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                             }
                                         ?>
                                             <li class="facet-item ">
-                                                <input type="checkbox" class="facets-checkbox" id="level-<?php echo $level->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                <label for="level-<?php echo $level->slug ?>">
-                                                    <?php if($current) :
+                                                <?php if($current) :
                                                         $link  = remove_query_arg('level', $base);
                                                         foreach ($selected_levels as $key => $v) {
                                                             if($v != $level->slug) {
@@ -165,12 +167,16 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                         <?php else : ?>
                                                             <a href="<?php echo esc_url(add_query_arg('level[]', $level->slug, $base)); ?>">
                                                         <?php endif; ?>
+                                                <input type="checkbox" class="facets-checkbox" id="level-<?php echo $level->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                <div class="label" for="level-<?php echo $level->slug ?>">
+                                                    
                                                             <span class="facet-item__value"><?php echo $level->name; ?></span>
                                                             <span class="facet-item__count">
                                                               <?php echo $level->count ?>
                                                           </span>
-                                                    </a>
-                                                </label>
+                                                    
+                                                </div>
+                                                </a>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
@@ -194,9 +200,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 }
                                             ?>
                                                 <li class="facet-item ">
-                                                    <input type="checkbox" class="facets-checkbox" id="location-<?php echo $location->slug ?>" <?php if($current){echo 'checked=true';} ?> >
-                                                    <label for="location-<?php echo $location->slug ?>">
-                                                        <?php if($current) :
+                                                    <?php if($current) :
                                                             $link  = remove_query_arg('location', $base);
                                                             foreach ($selected_locations as $key => $v) {
                                                                 if($v != $location->slug) {
@@ -208,12 +212,15 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                             <?php else : ?>
                                                                 <a href="<?php echo esc_url(add_query_arg('location[]', $location->slug, $base)); ?>">
                                                             <?php endif; ?>
+                                                    <input type="checkbox" class="facets-checkbox" id="location-<?php echo $location->slug ?>" <?php if($current){echo 'checked=true';} ?> >
+                                                    <div class="label" for="location-<?php echo $location->slug ?>">
+                                                        
                                                                 <span class="facet-item__value"><?php echo $location->name; ?></span>
                                                                 <span class="facet-item__count">
                                                                   <?php echo $location->count ?>
                                                               </span>
-                                                        </a>
-                                                    </label>
+                                                    </div>
+                                                    </a>
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
