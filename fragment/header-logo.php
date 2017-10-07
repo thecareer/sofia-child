@@ -52,11 +52,12 @@
                     <a href="/search" data-sofia-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/user/login">Saved</a>
+                    <a href="/companies">Startups</a>
                 </li>
                 <li class="menu-item">
                     <a href="/blogs" data-sofia-link-system-path="blogs">News</a>
                 </li>
+                <?php /*
                 <li class="menu-item menu-item--expanded">
                     <a href="/" data-sofia-link-system-path="<front>">More</a>
                     <ul class="menu">
@@ -75,6 +76,7 @@
                     </ul>
 
                 </li>
+                * / ?>
             </ul>
 
             <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-sofia-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
