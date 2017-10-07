@@ -227,7 +227,7 @@ a.page-numbers{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 100; /* Sit on top */
-    padding-top: 10%; /* Location of the box */
+    padding-top: 15%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -236,7 +236,9 @@ a.page-numbers{
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
+.modal-open {
+    overflow: hidden;
+}
 /* Modal Content */
 .modal-content {
     position: relative;
@@ -245,6 +247,7 @@ a.page-numbers{
     padding: 0;
     border: 1px solid #888;
     width: 570px;
+    max-width: 90%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -270,6 +273,7 @@ a.page-numbers{
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .close:hover,
