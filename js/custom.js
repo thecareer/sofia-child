@@ -3189,7 +3189,7 @@
 });
 (function() {
     'use strict';
-    var settingsElement = document.querySelector('head > script[type="application/json"][data-drupal-selector="drupal-settings-json"], body > script[type="application/json"][data-drupal-selector="drupal-settings-json"]');
+    var settingsElement = document.querySelector('head > script[type="application/json"][data-sofia-selector="drupal-settings-json"], body > script[type="application/json"][data-sofia-selector="drupal-settings-json"]');
     window.drupalSettings = {};
     if (settingsElement !== null) window.drupalSettings = JSON.parse(settingsElement.textContent)
 })();
@@ -7482,7 +7482,7 @@ document.documentElement.className += ' js';
                 //   for Ajax with multipart forms. Because IFRAME transport is used,
                 //   the response headers cannot be accessed for verification.
                 // if (response !== null && !drupalSettings.ajaxTrustedUrl[ajax.url]) {
-                //     if (xmlhttprequest.getResponseHeader('X-Drupal-Ajax-Token') !== '1') {
+                //     if (xmlhttprequest.getResponseHeader('X-sofia-Ajax-Token') !== '1') {
                 //         var customMessage = Drupal.t('The response failed verification so will not be processed.');
                 //         return ajax.error(xmlhttprequest, ajax.url, customMessage);
                 //     }
@@ -7838,7 +7838,7 @@ document.documentElement.className += ' js';
         // we can try to refocus one of its parents. Using addBack reverse the
         // result array, meaning that index 0 is the highest parent in the hierarchy
         // in this situation it is usually a <form> element.
-        var elementParents = $(this.element).parents('[data-drupal-selector]').addBack().toArray();
+        var elementParents = $(this.element).parents('[data-sofia-selector]').addBack().toArray();
 
         // Track if any command is altering the focus so we can avoid changing the
         // focus set by the Ajax command.
@@ -7859,7 +7859,7 @@ document.documentElement.className += ' js';
             var target = false;
 
             for (var n = elementParents.length - 1; !target && n > 0; n--) {
-                target = document.querySelector('[data-drupal-selector="' + elementParents[n].getAttribute('data-drupal-selector') + '"]');
+                target = document.querySelector('[data-sofia-selector="' + elementParents[n].getAttribute('data-sofia-selector') + '"]');
             }
 
             if (target) {

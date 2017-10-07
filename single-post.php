@@ -111,7 +111,7 @@ global $post;
                                         <div class="overlay-grid view view-tech-series view-id-tech_series view-display-id-block_1 js-view-dom-id-8b78f2ff2a231011b4b79d9f1460cbeee79d43d1c64ff8d4c5e75accfea6dc62">
 
                                             <div class="view-content">
-                                                <div data-drupal-views-infinite-scroll-content-wrapper="" class="views-infinite-scroll-content-wrapper clearfix">
+                                                <div data-sofia-views-infinite-scroll-content-wrapper="" class="views-infinite-scroll-content-wrapper clearfix">
                                                 <?php while($companies->have_posts()) : $companies->the_post(); ?>
                                                     <?php
                                                     $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
@@ -146,7 +146,7 @@ global $post;
 
                                             </div>
                                             <?php /*
-                                            <ul class="js-pager__items pager" data-drupal-views-infinite-scroll-pager="">
+                                            <ul class="js-pager__items pager" data-sofia-views-infinite-scroll-pager="">
                                                 <li class="pager__item">
                                                     <a class="button" href="/2017/09/26/agtech-startup-indigo-boston-tech-unicorn?page=0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C1" title="Go to next page" rel="next">Load More</a>
                                                 </li>

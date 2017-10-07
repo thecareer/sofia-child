@@ -133,7 +133,7 @@ $post_3 = $news[2];
                                             );
                                             ?>
                                             <div class="view-content">
-                                                <div data-drupal-views-infinite-scroll-content-wrapper="" id="list-post"class="views-infinite-scroll-content-wrapper clearfix">
+                                                <div data-sofia-views-infinite-scroll-content-wrapper="" id="list-post"class="views-infinite-scroll-content-wrapper clearfix">
                                                 <?php while($news->have_posts()) : $news->the_post(); ?>
                                                     <div class="views-row">
                                                         <div class="image">
@@ -150,7 +150,7 @@ $post_3 = $news[2];
 
                                             </div>
                                             <?php if($news->max_num_pages > 1) : ?>
-                                                <ul class="js-pager__items pager" data-drupal-views-infinite-scroll-pager="">
+                                                <ul class="js-pager__items pager" data-sofia-views-infinite-scroll-pager="">
                                                     <li class="pager__item">
                                                         <a id="load-more-blog" data-exclude="<?php echo join(',', array($post_1->ID, $post_2->ID, $post_3->ID)) ?>" class="button" href="#" title="Go to next page" rel="next">View More</a>
                                                     </li>
@@ -171,7 +171,7 @@ $post_3 = $news[2];
                                         <div class="view view-series-companies view-id-series_companies view-display-id-block_2 js-view-dom-id-159058167e850c3455ae9cc598822be15460549e8d84c3c3383e33a77dea6e8f">
 
                                             <div class="view-content">
-                                                <div data-drupal-views-infinite-scroll-content-wrapper="" class="views-infinite-scroll-content-wrapper clearfix">
+                                                <div data-sofia-views-infinite-scroll-content-wrapper="" class="views-infinite-scroll-content-wrapper clearfix">
                                                 <?php while($featured_company->have_posts()) : $featured_company->the_post(); ?>
                                                     <?php
                                                         $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
@@ -213,7 +213,7 @@ $post_3 = $news[2];
 
                                             </div>
 
-                                            <ul class="js-pager__items pager" data-drupal-views-infinite-scroll-pager="">
+                                            <ul class="js-pager__items pager" data-sofia-views-infinite-scroll-pager="">
                                                 <li class="pager__item">
                                                     <a class="button" href="/companies" title="Go to next page" rel="next">View More</a>
                                                 </li>

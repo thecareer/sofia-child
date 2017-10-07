@@ -63,7 +63,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     <h2 class="box-title <?php if(!empty($selected_industry)) {echo 'active';} ?>">Category</h2>
 
                                     <div class="item-list" style="display:block">
-                                        <ul data-drupal-facet-id="company_types_aggregate_type_industry" data-drupal-facet-alias="company_types_aggregate_type_industry" class="js-facets-checkbox-links">
+                                        <ul data-sofia-facet-id="company_types_aggregate_type_industry" data-sofia-facet-alias="company_types_aggregate_type_industry" class="js-facets-checkbox-links">
                                             <?php foreach ($industries as $key => $industry) : ?>
 
                                             <?php
@@ -109,7 +109,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     <h2 class="box-title <?php if(!empty($selected_size)) {echo 'active';} ?>">Size</h2>
 
                                     <div class="item-list" <?php if(!empty($selected_size)) {echo 'style="display:block"';} ?>>
-                                        <ul data-drupal-facet-id="local_employees" data-drupal-facet-alias="local_employees" class="js-facets-checkbox-links">
+                                        <ul data-sofia-facet-id="local_employees" data-sofia-facet-alias="local_employees" class="js-facets-checkbox-links">
                                         <?php foreach ($sizes as $key => $size) : ?>
 
                                             <?php
@@ -157,7 +157,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     <h2 class="box-title <?php if(!empty($selected_locations)) {echo 'active';} ?>">Location</h2>
 
                                     <div class="item-list" <?php if(!empty($selected_locations)) {echo 'style="display:block"';} ?>>
-                                        <ul data-drupal-facet-id="field_locations_amount" data-drupal-facet-alias="field_locations_amount" class="js-facets-checkbox-links">
+                                        <ul data-sofia-facet-id="field_locations_amount" data-sofia-facet-alias="field_locations_amount" class="js-facets-checkbox-links">
                                             <?php foreach ($locationss as $key => $locations) : ?>
 
                                             <?php

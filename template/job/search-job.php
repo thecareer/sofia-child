@@ -55,7 +55,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     <h2 class="box-title active">Type</h2>
 
                                     <div class="item-list" <?php if(!empty($selected_types)) {echo 'style="display:block"';} ?>>
-                                        <ul data-drupal-facet-id="company_types_aggregate_type_type" data-drupal-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
+                                        <ul data-sofia-facet-id="company_types_aggregate_type_type" data-sofia-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
                                             <?php foreach ($job_types as $key => $type) : ?>
 
                                             <?php
@@ -98,7 +98,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     <h2 class="box-title <?php if(!empty($selected_categorys)) {echo 'active';} ?>">Category</h2>
 
                                     <div class="item-list" <?php if(!empty($selected_categorys)) {echo 'style="display:block"';} ?>>
-                                        <ul data-drupal-facet-id="company_types_aggregate_type_type" data-drupal-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
+                                        <ul data-sofia-facet-id="company_types_aggregate_type_type" data-sofia-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
                                             <?php foreach ($categorys as $key => $category) : ?>
 
                                             <?php
@@ -141,7 +141,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 <h2 class="box-title <?php if(!empty($selected_levels)) {echo 'active';} ?>">level</h2>
 
                                 <div class="item-list" <?php if(!empty($selected_levels)) {echo 'style="display:block"';} ?>>
-                                    <ul data-drupal-facet-id="company_types_aggregate_type_type" data-drupal-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
+                                    <ul data-sofia-facet-id="company_types_aggregate_type_type" data-sofia-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
                                         <?php foreach ($levels as $key => $level) : ?>
 
                                         <?php
@@ -184,7 +184,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     <h2 class="box-title <?php if(!empty($selected_locations)) {echo 'active';} ?>">Location</h2>
 
                                     <div class="item-list" <?php if(!empty($selected_locations)) {echo 'style="display:block"';} ?>>
-                                        <ul data-drupal-facet-id="company_types_aggregate_type_type" data-drupal-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
+                                        <ul data-sofia-facet-id="company_types_aggregate_type_type" data-sofia-facet-alias="company_types_aggregate_type_type" class="js-facets-checkbox-links">
                                             <?php foreach ($locations as $key => $location) : ?>
 
                                             <?php

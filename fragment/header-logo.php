@@ -1,17 +1,17 @@
 <div class="header-wrapper">
     <header role="banner">
         <div class="region region-header">
-            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
+            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-sofia-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
                 <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                             <label for="edit-s">Search |</label>
-                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
+                            <input data-sofia-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
 
                         </div>
-                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                        <div data-sofia-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                            <input data-sofia-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                         </div>
 
                     </div>
@@ -46,48 +46,48 @@
 
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="/" data-drupal-link-system-path="<front>">Home</a>
+                    <a href="/" data-sofia-link-system-path="<front>">Home</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/search" data-drupal-link-system-path="jobs">Jobs</a>
+                    <a href="/search" data-sofia-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
                     <a href="/user/login">Saved</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/blogs" data-drupal-link-system-path="blogs">News</a>
+                    <a href="/blogs" data-sofia-link-system-path="blogs">News</a>
                 </li>
                 <li class="menu-item menu-item--expanded">
-                    <a href="/" data-drupal-link-system-path="<front>">More</a>
+                    <a href="/" data-sofia-link-system-path="<front>">More</a>
                     <ul class="menu">
                         <li class="button menu-item">
-                            <a href="/user/register" data-drupal-link-system-path="user/register">Sign Up</a>
+                            <a href="/user/register" data-sofia-link-system-path="user/register">Sign Up</a>
                         </li>
                         <li class="button menu-item">
-                            <a href="/user/login" data-drupal-link-system-path="user/login">Log In</a>
+                            <a href="/user/login" data-sofia-link-system-path="user/login">Log In</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/companies" data-drupal-link-system-path="companies">Startups</a>
+                            <a href="/companies" data-sofia-link-system-path="companies">Startups</a>
                         </li>
                         <li class="menu-item">
-                            <a href="/events" data-drupal-link-system-path="events">Events</a>
+                            <a href="/events" data-sofia-link-system-path="events">Events</a>
                         </li>
                     </ul>
 
                 </li>
             </ul>
 
-            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
+            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-sofia-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
                 <form action="/" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                     <div class="form--inline clearfix">
                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                             <label for="edit-s">Search |</label>
-                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
+                            <input data-sofia-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="s" value="" size="30" maxlength="128" autocomplete="off">
 
                         </div>
-                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                        <div data-sofia-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                            <input data-sofia-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                         </div>
 
                     </div>
@@ -100,7 +100,7 @@
         <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main">
         <?php global $post; ?>
             <ul class="menu">
-                <li class="nav-item jobs menu-item <?php if( $post->ID == vp_option('joption.job_page') ) {echo 'active';} ?>">
+                <li class="nav-item jobs menu-item <?php if( $post->ID == vp_option('joption.job_page') || is_singular( 'job' ) ) {echo 'active';} ?>">
                     <a href="/search"><span>Local Jobs</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -171,7 +171,7 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <li class="nav-item startups menu-item menu-item--expanded <?php if( $post->ID == vp_option('joption.company_list_page') ) {echo 'active';} ?>">
+                <li class="nav-item startups menu-item menu-item--expanded <?php if( $post->ID == vp_option('joption.company_list_page') || is_singular( 'company' ) ) {echo 'active';} ?>">
                     <a href="/companies"><span>Startups</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -189,45 +189,37 @@
                                     <a href="/companies?solrsort=ds_company_funding_max%20desc"><span>Recently Funded</span></a>
                                 </li>
                             </ul>
-
+                            <?php
+                            $companies = new WP_Query(
+                                array('post_type' => 'company', 'post_status' => 'publish', 'company-tag' => 'featured-company-menu', 'showposts' => 3)
+                            );
+                            ?>
                             <div class="nav-content-view">
                                 <div class="views-element-container">
                                     <div class="overlay-grid view view-navigation-series view-id-navigation_series view-display-id-block_1 js-view-dom-id-319cb1d3f6b7a4169eaeb92241b819b879356141f0b904e357cf1e50d4b291e3">
 
                                         <div class="view-content">
+                                        <?php while ($companies->have_posts()) : $companies->the_post(); 
+                                            $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
+                                            if($company_cover_id) {
+                                                $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
+                                                $cover_image_src = $cover_image_src['0'];
+                                            }else {
+                                                $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
+                                            }
+                                        ?>
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="/guides/best-companies-work-boston"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt=" Best Companies to Work for in Boston" class="image-style-navigation-image">
+                                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo $cover_image_src; ?>" width="265" height="200" alt="<?php the_title(); ?>" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="title"><span><a href="/guides/best-companies-work-boston" hreflang="en">Your Guide to the Best Companies to Work for in Boston</a></span></div>
-                                                <div class="link"><span><a href="/guides/best-companies-work-boston" hreflang="en">View more</a></span></div>
+                                                <div class="title"><span><a href="<?php the_permalink(); ?>" hreflang="en"><?php the_title(); ?></a></span></div>
+                                                <div class="link"><span><a href="<?php the_permalink(); ?>" hreflang="en">View more</a></span></div>
                                             </div>
-                                            <div class="views-row">
-                                                <div class="image">
-                                                    <div>
-                                                        <a href="/guides/best-software-engineer-jobs-boston"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt="software engineer jobs boston" class="image-style-navigation-image">
-
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="title"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">Inside Boston's Best Software Engineer Jobs</a></span></div>
-                                                <div class="link"><span><a href="/guides/best-software-engineer-jobs-boston" hreflang="en">View more</a></span></div>
-                                            </div>
-                                            <div class="views-row">
-                                                <div class="image">
-                                                    <div>
-                                                        <a href="/guides/coolest-offices-boston"><img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="265" height="200" alt="Coolest Tech &amp; Startup Offices in Boston" class="image-style-navigation-image">
-
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="title"><span><a href="/guides/coolest-offices-boston" hreflang="en">Tour Boston's Coolest Tech &amp; Startup Offices</a></span></div>
-                                                <div class="link"><span><a href="/guides/coolest-offices-boston" hreflang="en">View more</a></span></div>
-                                            </div>
+                                        <?php endwhile; ?>
 
                                         </div>
 
@@ -235,6 +227,7 @@
                                 </div>
 
                             </div>
+                            <?php wp_reset_query(); ?>
                         </div>
                         <div class="underlay"></div>
                     </div>
@@ -305,7 +298,7 @@
                         <div class="underlay"></div>
                     </div>
                 </li> -->
-                <li class="nav-item news menu-item menu-item--expanded <?php if(is_page_template( 'template-blog.php' )) {echo 'active';} ?>">
+                <li class="nav-item news menu-item menu-item--expanded <?php if(is_page_template( 'template-blog.php' ) || is_singular( 'post' )) {echo 'active';} ?>">
                     <a href="/blogs"><span>News</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -374,17 +367,17 @@
                     <a href="/"><span>Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
-                            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-drupal-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
+                            <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page-1" data-sofia-selector="views-exposed-form-search-page-1" id="block-exposedformsearchpage-1">
 
                                 <form action="/search" method="get" id="views-exposed-form-search-page-1" accept-charset="UTF-8">
                                     <div class="form--inline clearfix">
                                         <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-s form-item-s">
                                             <label for="edit-s">Search |</label>
-                                            <input data-drupal-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="keyword" value="" size="30" maxlength="128" autocomplete="off">
+                                            <input data-sofia-selector="edit-s" class="form-autocomplete form-text ui-autocomplete-input" data-autocomplete-path="/global-search-autocomplete/search_string" type="text" id="edit-s" name="keyword" value="" size="30" maxlength="128" autocomplete="off">
 
                                         </div>
-                                        <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
-                                            <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
+                                        <div data-sofia-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                                            <input data-sofia-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit">
                                         </div>
 
                                     </div>
