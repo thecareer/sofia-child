@@ -3612,6 +3612,10 @@ h6 {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     border-radius: 5px;
+    height: 195px;
+}
+.nav-item.news .view-navigation-news img {
+    height: 195px;
 }
 .rect-auto,
 .c100.p60 .slice,
