@@ -406,7 +406,8 @@ li .uploading-progress {
 .selectcountrymenu {
     position: absolute;
     top: 30px;
-    right: -60px;
+    left: 175px;
+    width: 110px;
 }
 
 .selectcountrymenu li a.dropdown-toggle{

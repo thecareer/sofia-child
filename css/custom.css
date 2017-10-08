@@ -4743,6 +4743,7 @@ h6 {
 }
 .block-region-middle .block-entity-viewnode {
     color: #3A3B41;
+    margin-bottom: 20px;
 }
 .block-region-middle .block-entity-viewnode .field--name-body ul {
     list-style-type: disc;

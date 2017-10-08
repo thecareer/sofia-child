@@ -24,14 +24,22 @@
                 <a href="/" title="Home" rel="home" class="site-logo">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/startup.jobs.logo.svg" alt="Startup.JOBS">
                 </a>
-
-                <ul class="selectcountrymenu nav" id="yw8">
+                <?php
+                $language_list = array(
+                    'vn' => "Vietnam",
+                    'sg' => "Singapore"
+                );
+                // ICL_LANGUAGE_CODE
+                ?>
+                <ul class="selectcountrymenu nav">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Asia <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $language_list[ICL_LANGUAGE_CODE]; ?> <span class="caret"></span></a>
                         <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
+                    <?php 
+                        unset($language_list[ICL_LANGUAGE_CODE]);
+                        foreach ($language_list as $key => $lang) : ?>
+                        <a href="/<?php echo $key ?>"><?php echo $lang; ?></a>
+                    <?php endforeach; ?>
                       </div>
                     </li>
                     </ul>
@@ -46,16 +54,16 @@
 
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="/" data-sofia-link-system-path="<front>">Home</a>
+                    <a href="<?php echo home_url(); ?>" data-sofia-link-system-path="<front>">Home</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/search" data-sofia-link-system-path="jobs">Jobs</a>
+                    <a href="<?php echo get_permalink( vp_option('joption.job_page') ); ?>" data-sofia-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/companies">Startups</a>
+                    <a href="<?php echo get_permalink( vp_option('joption.company_list_page') ); ?>">Startups</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/blogs" data-sofia-link-system-path="blogs">News</a>
+                    <a href="<?php echo home_url( '/blogs' ); ?>" data-sofia-link-system-path="blogs">News</a>
                 </li>
                 <?php /*
                 <li class="menu-item menu-item--expanded">
@@ -103,7 +111,7 @@
         <?php global $post; ?>
             <ul class="menu">
                 <li class="nav-item jobs menu-item <?php if( $post->ID == vp_option('joption.job_page') || is_singular( 'job' ) ) {echo 'active';} ?>">
-                    <a href="/search"><span>Local Jobs</span></a>
+                    <a href="<?php echo get_permalink( vp_option('joption.job_page') ); ?>"><span>Local Jobs</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
@@ -174,7 +182,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded <?php if( $post->ID == vp_option('joption.company_list_page') || is_singular( 'company' ) ) {echo 'active';} ?>">
-                    <a href="/companies"><span>Startups</span></a>
+                    <a href="<?php echo get_permalink( vp_option('joption.company_list_page')  ); ?>"><span>Startups</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -301,7 +309,7 @@
                     </div>
                 </li> -->
                 <li class="nav-item news menu-item menu-item--expanded <?php if(is_page_template( 'template-blog.php' ) || is_singular( 'post' )) {echo 'active';} ?>">
-                    <a href="/blogs"><span>News</span></a>
+                    <a href="<?php echo home_url( '/blogs' ); ?>"><span>News</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
