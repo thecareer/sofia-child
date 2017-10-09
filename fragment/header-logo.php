@@ -60,10 +60,10 @@
                     <a href="<?php echo get_permalink( vp_option('joption.job_page') ); ?>" data-sofia-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
-                    <a href="<?php echo get_permalink( vp_option('joption.company_list_page') ); ?>">Startups</a>
+                    <a href="<?php echo get_permalink( vp_option('joption.company_list_page') ); ?>">Companies</a>
                 </li>
                 <li class="menu-item">
-                    <a href="<?php echo home_url( '/blogs' ); ?>" data-sofia-link-system-path="blogs">News</a>
+                    <a href="<?php echo home_url( '/blogs' ); ?>" data-sofia-link-system-path="blogs">Blog</a>
                 </li>
                 <?php /*
                 <li class="menu-item menu-item--expanded">
