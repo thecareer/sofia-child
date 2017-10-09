@@ -39,9 +39,10 @@ get_header();
     </div>
 </div>
 <?php
-$news = get_posts(
+$news = new WP_Query(
     array('post_type' => 'post', 'post_status' => 'publish', 'tag' => 'featured', 'showposts' => 3)
 );
+$news = $news->posts;
 $post_1 = $news[0];
 $post_2 = $news[1];
 $post_3 = $news[2];

@@ -3,6 +3,7 @@
 Template Name: Landing Page
  */
 get_header('landing');
+$language_list = startup_language_list();
 ?>
 <div class="region region-help">
 </div>
@@ -23,7 +24,7 @@ get_header('landing');
                                             <div class="node-header--title">A job site posting for startup on the world</div>
                                             <h1 class="node-header--headline">
                                                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>We are the hub for<br>
-                                                    Vietnam&nbsp;<span>startups + tech</span></p>
+                                                    <?php echo $language_list[ICL_LANGUAGE_CODE]; ?> &nbsp;<span>startups + tech</span></p>
                                                 </div>
                                             </h1>
                                             <?php
@@ -36,19 +37,19 @@ get_header('landing');
                                             ?>
                                         </div>
                                         <div class="field--name-field-links-list field__items">
-                                            <a href="/jobs" class="field__item">
+                                            <a href="<?php echo get_permalink( vp_option('joption.job_page') ); ?>" class="field__item">
                                                 <div class="title">We connect you with
-                                                    <br>great jobs in Vietnam</div>
+                                                    <br>great jobs in <?php echo $language_list[ICL_LANGUAGE_CODE]; ?></div>
                                                 <div class="title_link">VIEW OPEN JOBS</div>
                                             </a>
-                                            <a href="/blogs" class="field__item">
+                                            <a href="<?php echo home_url( '/blogs'); ?>" class="field__item">
                                                 <div class="title">We share the stories behind
-                                                    <br>Vietnam's tech scene</div>
+                                                    <br><?php echo $language_list[ICL_LANGUAGE_CODE]; ?>'s tech scene</div>
                                                 <div class="title_link">EXPLORE COMPANIES</div>
                                             </a>
-                                            <a href="/companies" class="field__item">
+                                            <a href="<?php echo get_permalink( vp_option('joption.company_list_page') ); ?>" class="field__item">
                                                 <div class="title">We highlight the coolest
-                                                    <br>startups in Vietnam</div>
+                                                    <br>startups in <?php echo $language_list[ICL_LANGUAGE_CODE]; ?></div>
                                                 <div class="title_link">READ BLOG</div>
                                             </a>
                                         </div>
@@ -88,11 +89,11 @@ get_header('landing');
                                     <div class="category category-data">
                                         <div>Data Jobs</div><a href="/jobs?f[0]=job-category_data-analytics">View 63 jobs</a></div>
                                 </div>
-                                <div class="more-link"><a href="/desktop/jobs">View all Vietnam jobs</a></div>
+                                <div class="more-link"><a href="/jobs">View all <?php echo $language_list[ICL_LANGUAGE_CODE]; ?> jobs</a></div>
                             </div>
                             <div class="views-element-container block block-views block-views-blockfrontpage-news-block-3 home-top-company">
 
-                                <h2><a href="/companies" class="box-title">Vietnam Startup and Tech Companies</a><span class="view-all-block-head"><a href="/companies">View All Companies</a></span></h2>
+                                <h2><a href="/companies" class="box-title"><?php echo $language_list[ICL_LANGUAGE_CODE]; ?> Startup and Tech Companies</a><span class="view-all-block-head"><a href="/companies">View All Companies</a></span></h2>
                                 <?php
                                 $query = array(
                                     'post_status' => 'publish',

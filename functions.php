@@ -4,11 +4,11 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-require_once dirname(__FILE__) .'/lib/handle-company.php';
-require_once dirname(__FILE__) .'/lib/handle-job.php';
-require_once dirname(__FILE__) .'/lib/dakachi-upload.php';
-require_once dirname(__FILE__) .'/lib/apply-job.php';
-require_once dirname(__FILE__) .'/lib/blog.php';
+require_once dirname(__FILE__) . '/lib/handle-company.php';
+require_once dirname(__FILE__) . '/lib/handle-job.php';
+require_once dirname(__FILE__) . '/lib/dakachi-upload.php';
+require_once dirname(__FILE__) . '/lib/apply-job.php';
+require_once dirname(__FILE__) . '/lib/blog.php';
 
 function onix_add_cssjs_ver($src)
 {
@@ -23,86 +23,88 @@ function onix_add_cssjs_ver($src)
 add_filter('style_loader_src', 'onix_add_cssjs_ver', 11, 2);
 add_filter('script_loader_src', 'onix_add_cssjs_ver', 11, 2);
 
-function remove_css_js() {
-	remove_action('wp_enqueue_scripts', 'jeg_init_style');
+function remove_css_js()
+{
+    remove_action('wp_enqueue_scripts', 'jeg_init_style');
 }
-add_action( 'after_setup_theme', 'remove_css_js' );
+add_action('after_setup_theme', 'remove_css_js');
 
 /**
  * Add bolton style
  */
-function startup_add_scripts_styles() {
+function startup_add_scripts_styles()
+{
 
-	wp_enqueue_style('main', get_stylesheet_directory_uri() . '/css/main.css');
-	
-	if(!is_page_template( 'page-post-job.php' )) {
-		wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom.css', array('main'));
-	}else {
-		wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom-post-job.css', array('main'));
-	}
+    wp_enqueue_style('main', get_stylesheet_directory_uri() . '/css/main.css');
 
-    if(is_404()) {
+    if (!is_page_template('page-post-job.php')) {
+        wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom.css', array('main'));
+    } else {
+        wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom-post-job.css', array('main'));
+    }
+
+    if (is_404()) {
         wp_enqueue_style('404', get_stylesheet_directory_uri() . '/css/404.css', array('main'));
     }
 
     // wp_enqueue_style('blog', get_stylesheet_directory_uri() . '/css/blog.css', array('main'));
 
-	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
+    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 
-    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script('jquery');
     wp_enqueue_script('sticky', get_stylesheet_directory_uri() . '/js/jquery.sticky.js');
-	wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
-	wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js');
-	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery', 'sticky'));
-
+    wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
+    wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js');
+    wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery', 'sticky'));
 
     wp_enqueue_script('jfileuploader', get_stylesheet_directory_uri() . '/js/jfileuploader.js');
 
-    wp_enqueue_script( 'jeg-gmap', get_stylesheet_directory_uri(). '/js/gmap.js"');
-    wp_enqueue_script( 'jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js"');
+    wp_enqueue_script('jeg-gmap', get_stylesheet_directory_uri() . '/js/gmap.js"');
+    wp_enqueue_script('jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js"');
 
-    wp_localize_script( 'jeg-detail', 'global', array('ajax_url' => admin_url( 'admin-ajax.php' )) );
+    wp_localize_script('jeg-detail', 'global', array('ajax_url' => admin_url('admin-ajax.php')));
 
 }
-add_action( 'wp_enqueue_scripts', 'startup_add_scripts_styles' );
+add_action('wp_enqueue_scripts', 'startup_add_scripts_styles');
 
-function job_filter_body_class($classes) {
-	global $post;
-	$classes[] = 'gorgias-loaded';
+function job_filter_body_class($classes)
+{
+    global $post;
+    $classes[] = 'gorgias-loaded';
 
-	if(is_page_template( 'page-post-job.php' ) ) {
-		$classes[] = 'path-job-slots';
-	}
+    if (is_page_template('page-post-job.php')) {
+        $classes[] = 'path-job-slots';
+    }
 
-	if(!is_user_logged_in()) {
-		$classes[] = 'page-user-role-anon';
-	}else {
-		$classes[] = 'user-logged-in';
-	}
+    if (!is_user_logged_in()) {
+        $classes[] = 'page-user-role-anon';
+    } else {
+        $classes[] = 'user-logged-in';
+    }
 
-	if(is_front_page()) {
-		$classes[] = 'page-frontpage path-desktop ';
-	}
+    if (is_front_page()) {
+        $classes[] = 'page-frontpage path-desktop ';
+    }
 
-	if(vp_option('joption.job_page') == get_the_ID()) {
-		$classes[] = 'page-jobs page-jobs-landing path-desktop';
-	}
+    if (vp_option('joption.job_page') == get_the_ID()) {
+        $classes[] = 'page-jobs page-jobs-landing path-desktop';
+    }
 
-	if(is_singular( 'job' )) {
-		$classes[] = 'path-node page-node-type-job';
-	}
+    if (is_singular('job')) {
+        $classes[] = 'path-node page-node-type-job';
+    }
 
-    if(is_singular( 'post' )) {
+    if (is_singular('post')) {
         $classes[] = 'path-node page-node-type-blog blog-regular';
     }
 
-	if(is_singular( 'company' )) {
-		$classes[] = 'active-slideshow tall-header  premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
-	}
+    if (is_singular('company')) {
+        $classes[] = 'active-slideshow tall-header  premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
+    }
 
-	return $classes;
+    return $classes;
 }
-add_filter( 'body_class', 'job_filter_body_class');
+add_filter('body_class', 'job_filter_body_class');
 
 function dakachi_add_company_cover_photo()
 {
@@ -137,36 +139,35 @@ function dakachi_add_company_cover_photo()
 
     $slug = apply_filters('jeg_check_ajax_option_save', vp_option('joption.job_slug', 'job'), 'job_slug');
     $args =
-        array(
-            'labels'    =>
-                array(
-                    'name'              => 'All Job',
-                    'singular_name'     => 'Job',
-                    'menu_name'         => 'Job Listings',
-                    'add_new'           => 'Add New Job',
-                    'add_new_item'      => 'Add New Job',
-                    'edit_item'         => 'Edit Job Entry',
-                    'new_item'          => 'New Job Entry',
-                    'view_item'         => 'View Job',
-                    'search_items'      => 'Search Jobs',
-                    'not_found'         => 'No job found',
-                    'not_found_in_trash'=> 'No job found in Trash',
-                    'parent_item_colon' => ''
-                ),
-            'description'           => 'Job Post type',
-            'public'                => true,
-            'show_ui'               => true,
-            'menu_position'         => 6,
-            'capability_type'       => 'post',
-            'hierarchical'          => false,
-            'supports'              => array('title' , 'editor', 'author', 'revisions', ),
-            'taxonomies'            => array('job-type', 'job-location', 'job-category'),
-            'rewrite'               => array(
-                'slug'  =>  $slug
-            )
-        );
+    array(
+        'labels'          => array(
+            'name'               => 'All Job',
+            'singular_name'      => 'Job',
+            'menu_name'          => 'Job Listings',
+            'add_new'            => 'Add New Job',
+            'add_new_item'       => 'Add New Job',
+            'edit_item'          => 'Edit Job Entry',
+            'new_item'           => 'New Job Entry',
+            'view_item'          => 'View Job',
+            'search_items'       => 'Search Jobs',
+            'not_found'          => 'No job found',
+            'not_found_in_trash' => 'No job found in Trash',
+            'parent_item_colon'  => '',
+        ),
+        'description'     => 'Job Post type',
+        'public'          => true,
+        'show_ui'         => true,
+        'menu_position'   => 6,
+        'capability_type' => 'post',
+        'hierarchical'    => false,
+        'supports'        => array('title', 'editor', 'author', 'revisions'),
+        'taxonomies'      => array('job-type', 'job-location', 'job-category'),
+        'rewrite'         => array(
+            'slug' => $slug,
+        ),
+    );
 
-    register_post_type( 'job', $args);
+    register_post_type('job', $args);
 
     $labels = array(
         'name'                  => _x('Job Level', 'Taxonomy plural name', 'jobplanet-plugin'),
@@ -280,10 +281,9 @@ function dakachi_jeg_pagemetabox_setup()
     new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/page-landing-metabox.php');
 
     new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/companies-metabox.php');
-    new VP_Metabox(get_stylesheet_directory(). '/lib/metabox/job-metabox.php');
+    new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/job-metabox.php');
     // new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/university-metabox.php');
     // new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/jobfair-metabox.php');
-
 
     new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/application-metabox.php');
     new VP_Metabox(JOBPLANET_PLUGIN_DIR . '/lib/metabox/application-status-metabox.php');
@@ -296,7 +296,6 @@ function dakachi_jeg_pagemetabox_setup()
 }
 
 add_action('after_setup_theme', 'dakachi_jeg_pagemetabox_setup', 12);
-
 
 function dakachi_products_plugin_query_vars($vars)
 {
@@ -316,3 +315,50 @@ function dakachi_products_plugin_query_vars($vars)
 }
 //add plugin query vars (product_id) to wordpress
 add_filter('query_vars', 'dakachi_products_plugin_query_vars');
+
+function startup_language_list()
+{
+    return array(
+        'en' => 'Global',
+        'vn' => "Vietnam",
+        'sg' => "Singapore",
+    );
+}
+
+function dakachi_filter_vp_option($temp, $key)
+{
+    $pages = dakachi_page_array(ICL_LANGUAGE_CODE);
+    return isset($pages[$key]) ? $pages[$key] : $temp;
+}
+add_filter('jeg_vp_option', 'dakachi_filter_vp_option', 10, 2);
+
+function dakachi_page_array($lang)
+{
+    if (defined('DAKACHI_DEVELOPMENT') && DAKACHI_DEVELOPMENT) {
+        $pages = array(
+            'vn' => array(
+                'job_page'          => 154,
+                'company_list_page' => 155,
+            ),
+            'sg' => array(
+                'job_page'          => 142,
+                'company_list_page' => 144,
+            ),
+
+        );
+    } else {
+        $pages = array(
+            'vn' => array(
+                'job_page'          => 204,
+                'company_list_page' => 200,
+            ),
+            'sg' => array(
+                'job_page'          => 175,
+                'company_list_page' => 158,
+            ),
+
+        );
+    }
+
+    return $pages[$lang];
+}

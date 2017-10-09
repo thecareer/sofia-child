@@ -25,10 +25,7 @@
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/startup.jobs.logo.svg" alt="Startup.JOBS">
                 </a>
                 <?php
-                $language_list = array(
-                    'vn' => "Vietnam",
-                    'sg' => "Singapore"
-                );
+                $language_list = startup_language_list();
                 // ICL_LANGUAGE_CODE
                 ?>
                 <ul class="selectcountrymenu nav">
