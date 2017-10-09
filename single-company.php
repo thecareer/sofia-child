@@ -104,10 +104,13 @@ if($company_head_id) {
                                                             <div class="col-1">
                                                                 <img src="<?php echo $head_image_src; ?>" width="435" height="320" alt="" class="image-style-company-overview">
 
-                                                                <div class="company-gallery-dots"><span class="item"></span><span class="item"></span><span class="item"></span></div>
+                                                                <div class="company-gallery-dots">
+                                                                    <?php for ($i=0; $i < count($gallery); $i++) : ?>
+                                                                        <span class="item"></span>
+                                                                    <?php endfor; ?>
+                                                                </div>
                                                             </div>
                                                             <div class="col-2">
-                                                                <!-- <h2 class="title"><?php printf(__( "Hello, we're %s" , "enginethemes" ), get_the_title()); ?></h2> -->
                                                                 <div class="description">
                                                                     <?php the_content(); ?>
                                                                 </div>

@@ -488,6 +488,17 @@ li .uploading-progress {
     padding: 0 10px;
 }
 
+#list-post .title a {
+    display: block;
+    height: 50px;
+    overflow: hidden;
+}
+#list-post .image a{
+    height: 170px;
+    overflow: hidden;
+    display: block;
+}
+
 @media(max-width: 767px){
     .page-frontpage .node-header .node-header--headline,
     .block-bix-frontpage-startups > .title h2,

@@ -1,5 +1,6 @@
 <?php
 get_header();
+$language_list = startup_language_list();
 $base = remove_query_arg( 'paged' );
 $base = preg_replace('%\/page/[0-9]+%', '', $base);
 if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
@@ -17,7 +18,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                     <div class="node-header--info">
                         <h1 class="node-header--title">
                             <div class="field field--name-field-header-subheadline field--type-string field--label-hidden field__item">
-                                Vietnam Startup and Tech Companies
+                                <?php echo $language_list[ICL_LANGUAGE_CODE]; ?> Startup and Tech Companies
                             </div>
                         </h1>
                     </div>

@@ -177,7 +177,7 @@ $language_list = startup_language_list();
                                     $companies = new WP_Query($query);
                                     ?>
                                     <div>
-                                        <h3><a href="/companies" class="box-title">Vietnam startups hiring now</a></h3>
+                                        <h3><a href="/companies" class="box-title"><?php echo $language_list[ICL_LANGUAGE_CODE]; ?> startups hiring now</a></h3>
                                         <div class="views-element-container">
                                             <div class="view view-frontpage-companies view-id-frontpage_companies view-display-id-block_1 js-view-dom-id-892388419d38ef44f0cdc3b5290d44cd161e0e79f564cc185ee11674889c74de">
 
@@ -300,7 +300,7 @@ $language_list = startup_language_list();
 
                             <div class="block block-bix-frontpage block-bix-frontpage-jobs">
                                 <div class="title">
-                                    <h2 class="box-title">Vietnam techies, meet these<br>sweet job opportunities</h2>
+                                    <h2 class="box-title"><?php echo $language_list[ICL_LANGUAGE_CODE]; ?> techies, meet these<br>sweet job opportunities</h2>
                                     <a class="view-more-button" href="/jobs">View All Jobs</a></div>
                                 <div class="bg-image-wrapper">
                                     <div class="bg-image" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/img/bix_frontpage_jobs_1.jpg');"></div>
@@ -309,7 +309,7 @@ $language_list = startup_language_list();
                                     <div>
                                         <div class="views-element-container">
                                             <div class="job-opportunities view view-frontpage-jobs view-id-frontpage_jobs view-display-id-block_2 js-view-dom-id-1dc1a51b145990187b4978d84bd751127c3d7a509a48a15c46ddceeb0ccdeed9">
-                                                <h3><a href="/jobs" class="box-title">Job opportunities in Vietnam</a></h3>
+                                                <h3><a href="/jobs" class="box-title">Job opportunities in <?php echo $language_list[ICL_LANGUAGE_CODE]; ?></a></h3>
                                                 <?php
                                                 /*
                                                 <div class="job-categories">

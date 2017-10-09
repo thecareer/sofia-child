@@ -1,5 +1,6 @@
 <?php
 get_header();
+$language_list = startup_language_list();
 $base = remove_query_arg( 'paged' );
 $base = preg_replace('%\/page/[0-9]+%', '', $base);
 if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
@@ -316,7 +317,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     <div>
                                         <div class="view view-jobs view-id-jobs view-display-id-jobs_landing js-view-dom-id-ae7974363fff15483cbc0325289ab751ccc487df96697d0a4be18cef7d4b2628">
 
-                                            <h1 class="box-title">Vietnam startup jobs and tech jobs</h1>
+                                            <h1 class="box-title"><?php echo $language_list[ICL_LANGUAGE_CODE]; ?> startup jobs and tech jobs</h1>
 
                                             <div class="view-content">
                                             <?php while($jobs->have_posts()) : $jobs->the_post(); ?>
