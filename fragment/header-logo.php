@@ -35,7 +35,7 @@
                     <?php 
                         unset($language_list[ICL_LANGUAGE_CODE]);
                         foreach ($language_list as $key => $lang) :
-                            if($key = 'en') {$key = '';}
+                            if($key == 'en') {$key = '';}
                          ?>
                         <a href="/<?php echo $key ?>"><?php echo $lang; ?></a>
                     <?php endforeach; ?>

@@ -366,10 +366,11 @@ function dakachi_page_array($lang)
 
 
 function search_filter($query) {
+
   if ( !is_admin() && ICL_LANGUAGE_CODE == 'en' ) {
-    if ($query->is_search) {
-      $query->set('suppress_filters', false);
-    }
+        
+      $query->set('suppress_filters', 1);
+     
   }
   return $query;
 }
