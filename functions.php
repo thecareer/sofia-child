@@ -362,3 +362,16 @@ function dakachi_page_array($lang)
 
     return $pages[$lang];
 }
+
+
+
+function search_filter($query) {
+  if ( !is_admin() && ICL_LANGUAGE_CODE == 'en' ) {
+    if ($query->is_search) {
+      $query->set('suppress_filters', false);
+    }
+  }
+  return $query;
+}
+
+add_action('pre_get_posts','search_filter');
