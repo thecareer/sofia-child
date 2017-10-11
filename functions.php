@@ -84,27 +84,33 @@ function job_filter_body_class($classes)
 
     if (is_front_page()) {
         $classes[] = 'page-frontpage path-desktop ';
+        return $classes;
     }
 
-    if (is_page_template( 'search-job.php' )) {
+    if (is_page_template('search-job.php')) {
         $classes[] = 'page-jobs page-jobs-landing path-desktop';
+        return $classes;
     }
 
     if (is_singular('job')) {
         $classes[] = 'path-node page-node-type-job';
+        return $classes;
     }
 
     if (is_singular('post')) {
         $classes[] = 'path-node page-node-type-blog blog-regular';
+        return $classes;
     }
 
     if (is_singular('company')) {
         $classes[] = 'active-slideshow tall-header  premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
+        return $classes;
     }
 
     return $classes;
 }
 add_filter('body_class', 'job_filter_body_class');
+
 
 function dakachi_add_company_cover_photo()
 {
@@ -341,7 +347,6 @@ function search_filter($query)
 
 add_action('pre_get_posts', 'search_filter');
 
-
 function dakachi_page_array($lang)
 {
     if (defined('DAKACHI_DEVELOPMENT') && DAKACHI_DEVELOPMENT) {
@@ -380,3 +385,5 @@ function dakachi_page_array($lang)
 
     return $pages[$lang];
 }
+
+
