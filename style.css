@@ -256,7 +256,7 @@ a.page-numbers{
     animation-name: animatetop;
     animation-duration: 0.4s;
     border-radius: 5px;
-    margin: 10% auto;
+    margin: 5% auto;
 }
 
 /* Add Animation */
@@ -497,6 +497,10 @@ li .uploading-progress {
     height: 170px;
     overflow: hidden;
     display: block;
+}
+
+.view-empty {
+    padding: 20px 0;
 }
 
 @media(max-width: 767px){

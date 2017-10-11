@@ -1528,7 +1528,7 @@ class Dakachi_Jeg_Job
 
     public function is_job_list_page()
     {
-        if (get_the_ID() == vp_option('joption.job_page')) {
+        if (is_page_template( 'search-job.php' )) {
             return true;
         }
         return false;

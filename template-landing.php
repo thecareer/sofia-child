@@ -104,6 +104,7 @@ $language_list = startup_language_list();
                                 ?>
                                 <div>
                                     <div class="view view-frontpage-news view-id-frontpage_news view-display-id-block_3 js-view-dom-id">
+                                        <?php if($companies->have_posts()) : ?>
                                         <div class="view-content">
                                             <?php while ($companies->have_posts()) : $companies->the_post(); ?>
                                                 <?php
@@ -134,9 +135,14 @@ $language_list = startup_language_list();
                                                         <a href="<?php the_permalink(); ?>" class="view-page"></a>
                                                     </div>
                                             <?php endwhile; ?>
-                                            <?php wp_reset_query(); ?>
                                         </div>
-
+                                    <?php else : ?>
+                                        <div class="view-empty">
+                                            <div class="job-list-no-results">No results found, check if your spelling is correct, or try removing   filters
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php wp_reset_query(); ?>
                                     </div>
                                 </div>
 

@@ -86,7 +86,7 @@ function job_filter_body_class($classes)
         $classes[] = 'page-frontpage path-desktop ';
     }
 
-    if (vp_option('joption.job_page') == get_the_ID()) {
+    if (is_page_template( 'search-job.php' )) {
         $classes[] = 'page-jobs page-jobs-landing path-desktop';
     }
 
@@ -252,7 +252,7 @@ function dakachi_add_company_cover_photo()
 
     register_taxonomy('company-tag', array('company'),
         array(
-            'hierarchical'   => fasle,
+            'hierarchical'   => false,
             'label'          => __("Company Tag", "jobplanet-themes"),
             'singular_label' => __("Company TAg", "jobplanet-themes"),
             'rewrite'        => false,
@@ -299,7 +299,6 @@ add_action('after_setup_theme', 'dakachi_jeg_pagemetabox_setup', 12);
 
 function dakachi_products_plugin_query_vars($vars)
 {
-    $vars[] = 'search';
     $vars[] = 'keyword';
     $vars[] = 'category';
     $vars[] = 'type';
@@ -325,17 +324,32 @@ function startup_language_list()
     );
 }
 
-function dakachi_filter_vp_option($temp, $key)
+function search_filter($query)
 {
-    $pages = dakachi_page_array(ICL_LANGUAGE_CODE);
-    return isset($pages[$key]) ? $pages[$key] : $temp;
+
+    if (isset($query->query_vars['post_type']) && !in_array($query->query_vars['post_type'], array('post', 'job', 'company'))) {
+        return $query;
+    }
+    if (!is_admin() && ICL_LANGUAGE_CODE == 'en') {
+
+        $query->set('suppress_filters', 1);
+
+    }
+    return $query;
+
 }
-add_filter('jeg_vp_option', 'dakachi_filter_vp_option', 10, 2);
+
+add_action('pre_get_posts', 'search_filter');
+
 
 function dakachi_page_array($lang)
 {
     if (defined('DAKACHI_DEVELOPMENT') && DAKACHI_DEVELOPMENT) {
         $pages = array(
+            'en' => array(
+                'job_page'          => 14,
+                'company_list_page' => 88,
+            ),
             'vn' => array(
                 'job_page'          => 154,
                 'company_list_page' => 155,
@@ -348,6 +362,10 @@ function dakachi_page_array($lang)
         );
     } else {
         $pages = array(
+            'en' => array(
+                'job_page'          => 12,
+                'company_list_page' => 2,
+            ),
             'vn' => array(
                 'job_page'          => 204,
                 'company_list_page' => 200,
@@ -362,17 +380,3 @@ function dakachi_page_array($lang)
 
     return $pages[$lang];
 }
-
-
-
-function search_filter($query) {
-
-  if ( !is_admin() && ICL_LANGUAGE_CODE == 'en' ) {
-        
-      $query->set('suppress_filters', 1);
-     
-  }
-  return $query;
-}
-
-add_action('pre_get_posts','search_filter');

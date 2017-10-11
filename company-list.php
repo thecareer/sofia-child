@@ -1,4 +1,8 @@
 <?php
+/**
+Template Name: Companies Page
+ */
+
 get_header();
 $language_list = startup_language_list();
 $base = remove_query_arg( 'paged' );

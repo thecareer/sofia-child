@@ -56,10 +56,10 @@
                     <a href="<?php echo home_url(); ?>" data-sofia-link-system-path="<front>">Home</a>
                 </li>
                 <li class="menu-item">
-                    <a href="<?php echo get_permalink( vp_option('joption.job_page') ); ?>" data-sofia-link-system-path="jobs">Jobs</a>
+                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['job_page'] ); ?>" data-sofia-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
-                    <a href="<?php echo get_permalink( vp_option('joption.company_list_page') ); ?>">Companies</a>
+                    <a href="<?php echo get_permalink(  dakachi_page_array(ICL_LANGUAGE_CODE)['company_list_page'] ); ?>">Companies</a>
                 </li>
                 <li class="menu-item">
                     <a href="<?php echo home_url( '/blogs' ); ?>" data-sofia-link-system-path="blogs">Blog</a>
@@ -109,8 +109,8 @@
         <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main">
         <?php global $post; ?>
             <ul class="menu">
-                <li class="nav-item jobs menu-item <?php if( $post->ID == vp_option('joption.job_page') || is_singular( 'job' ) ) {echo 'active';} ?>">
-                    <a href="<?php echo get_permalink( vp_option('joption.job_page') ); ?>"><span>Local Jobs</span></a>
+                <li class="nav-item jobs menu-item <?php if( is_page_template( 'search-job.php' ) || is_singular( 'job' ) ) {echo 'active';} ?>">
+                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['job_page'] ); ?>"><span>Local Jobs</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
@@ -180,8 +180,8 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <li class="nav-item startups menu-item menu-item--expanded <?php if( $post->ID == vp_option('joption.company_list_page') || is_singular( 'company' ) ) {echo 'active';} ?>">
-                    <a href="<?php echo get_permalink( vp_option('joption.company_list_page')  ); ?>"><span>Startups</span></a>
+                <li class="nav-item startups menu-item menu-item--expanded <?php if( is_page_template( 'company-list.php' ) || is_singular( 'company' ) ) {echo 'active';} ?>">
+                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['company_list_page'] ); ?>"><span>Startups</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
