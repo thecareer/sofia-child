@@ -98,7 +98,7 @@ $language_list = startup_language_list();
                                 $query = array(
                                     'post_status' => 'publish',
                                     'post_type' => 'company',
-                                    'posts_per_page' => 7
+                                    'posts_per_page' => 6
                                 );
                                 $companies = new WP_Query($query);
                                 ?>
