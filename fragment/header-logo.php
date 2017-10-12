@@ -110,18 +110,18 @@
         <?php global $post; ?>
             <ul class="menu">
                 <li class="nav-item jobs menu-item <?php if( is_page_template( 'search-job.php' ) || is_singular( 'job' ) ) {echo 'active';} ?>">
-                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['job_page'] ); ?>"><span>Local Jobs</span></a>
+                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['job_page'] ); ?>"><span>Job Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
-                                <a href="/node/add/job">
+                                <a href="https://employer.startup.jobs">
                                     <h3 class="title">Looking<br>to hire?</h3>
                                     <div class="headline">Give the community
                                         <br>something worth
                                         <br>applying for.</div>
                                 </a>
                                 <div class="more-link">
-                                    <a href="/node/add/job">Post a job</a>
+                                    <a href="https://employer.startup.jobs">Post a job</a>
                                 </div>
                             </div>
                             <div class="views-element-container">
@@ -181,7 +181,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded <?php if( is_page_template( 'company-list.php' ) || is_singular( 'company' ) ) {echo 'active';} ?>">
-                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['company_list_page'] ); ?>"><span>Startups</span></a>
+                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['company_list_page'] ); ?>"><span>Companies</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -241,7 +241,9 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <!-- <li class="nav-item events menu-item menu-item--expanded">
+                <?php
+                /*
+                <li class="nav-item events menu-item menu-item--expanded">
                     <a href="/events"><span>Events</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -306,14 +308,16 @@
                         </div>
                         <div class="underlay"></div>
                     </div>
-                </li> -->
+                </li>
+                */
+                ?>
                 <li class="nav-item news menu-item menu-item--expanded <?php if(is_page_template( 'template-blog.php' ) || is_singular( 'post' )) {echo 'active';} ?>">
-                    <a href="<?php echo home_url( '/blogs' ); ?>"><span>News</span></a>
+                    <a href="<?php echo home_url( '/blogs' ); ?>"><span>Blog</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
                                 <li class="menu-item">
-                                    <a href="/blogs"><span>All News</span></a>
+                                    <a href="/blogs"><span>All Blog</span></a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/guides"><span>Boston Tech Guides</span></a>
@@ -399,14 +403,10 @@
                     </div>
                 </li>
             </ul>
-
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-
-            <a href="/job-slots" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Join</a> | <a href="/user/login">Login</a></span>
+            <a href="https://employer.startup.jobs" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="https://employer.startup.jobs" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
         </div>
-
     </div>
-
 </div>
 </div>
