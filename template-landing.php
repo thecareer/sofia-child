@@ -71,19 +71,19 @@ $language_list = startup_language_list();
 								</div>
 								<div class="views-row category-wrapper-design">
 									<div class="category category-design">
-										<div>Design + UX Jobs</div><a href="/jobs?category[]=design-ux"></a></div>
+										<div>Design + UI/UX Jobs</div><a href="/jobs?category[]=design-ux"></a></div>
 								</div>
 								<div class="views-row category-wrapper-marketing">
 									<div class="category category-marketing">
-										<div>Marketing Jobs</div><a href="/jobs?category[]=marketing"></a></div>
+										<div>Creative & Marketing Jobs</div><a href="/jobs?category[]=creative-marketing"></a></div>
 								</div>
 								<div class="views-row category-wrapper-product">
 									<div class="category category-product">
-										<div>Product Jobs</div><a href="/jobs?category[]=product"></a></div>
+										<div>Product<br/> Jobs</div><a href="/jobs?category[]=product"></a></div>
 								</div>
 								<div class="views-row category-wrapper-sales">
 									<div class="category category-sales">
-										<div>Business Development & Sales Jobs</div><a href="/jobs?category[]=sales"></a></div>
+										<div>Biz Development & Sales Jobs</div><a href="/jobs?category[]=sales"></a></div>
 								</div>
 								<div class="views-row category-wrapper-data-analytics">
 									<div class="category category-data">
