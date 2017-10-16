@@ -64,31 +64,31 @@ $language_list = startup_language_list();
                     <div class="">
                         <div class="block-region-middle">
                             <div class="boston block block-bix-frontpage block-bix-frontpage-job-categories">
-                                <div> <a href="/jobs" class="title">Get your dream job</a></div>
-                                <div class="views-row category-wrapper-developer">
-                                    <div class="category category-developer">
-                                        <div>Developer Jobs</div><a href="/jobs?f[0]=job-category_developer-engineer">View 477 jobs</a></div>
-                                </div>
-                                <div class="views-row category-wrapper-design">
-                                    <div class="category category-design">
-                                        <div>Design + UX Jobs</div><a href="/jobs?f[0]=job-category_design-ux">View 48 jobs</a></div>
-                                </div>
-                                <div class="views-row category-wrapper-marketing">
-                                    <div class="category category-marketing">
-                                        <div>Marketing Jobs</div><a href="/jobs?f[0]=job-category_marketing">View 115 jobs</a></div>
-                                </div>
-                                <div class="views-row category-wrapper-product">
-                                    <div class="category category-product">
-                                        <div>Product Jobs</div><a href="/jobs?f[0]=job-category_product">View 77 jobs</a></div>
-                                </div>
-                                <div class="views-row category-wrapper-sales">
-                                    <div class="category category-sales">
-                                        <div>Sales Jobs</div><a href="/jobs?f[0]=job-category_sales">View 178 jobs</a></div>
-                                </div>
-                                <div class="views-row category-wrapper-data-analytics">
-                                    <div class="category category-data">
-                                        <div>Data Jobs</div><a href="/jobs?f[0]=job-category_data-analytics">View 63 jobs</a></div>
-                                </div>
+                                <div> <a href="/desktop/jobs" class="title">Find your dream job</a></div>
+								<div class="views-row category-wrapper-developer">
+									<div class="category category-developer">
+										<div>Developer & Engineer Jobs</div><a href="/jobs?category[]=developer-engineer"></a></div>
+								</div>
+								<div class="views-row category-wrapper-design">
+									<div class="category category-design">
+										<div>Design + UX Jobs</div><a href="/jobs?category[]=design-ux"></a></div>
+								</div>
+								<div class="views-row category-wrapper-marketing">
+									<div class="category category-marketing">
+										<div>Marketing Jobs</div><a href="/jobs?category[]=marketing"></a></div>
+								</div>
+								<div class="views-row category-wrapper-product">
+									<div class="category category-product">
+										<div>Product Jobs</div><a href="/jobs?category[]=product"></a></div>
+								</div>
+								<div class="views-row category-wrapper-sales">
+									<div class="category category-sales">
+										<div>Business Development & Sales Jobs</div><a href="/jobs?category[]=sales"></a></div>
+								</div>
+								<div class="views-row category-wrapper-data-analytics">
+									<div class="category category-data">
+										<div>Data & Analytics Jobs</div><a href="/jobs?category[]=data-analytics"></a></div>
+								</div>
                                 <div class="more-link"><a href="/jobs">View all <?php echo $language_list[ICL_LANGUAGE_CODE]; ?> jobs</a></div>
                             </div>
                             <div class="views-element-container block block-views block-views-blockfrontpage-news-block-3 home-top-company">
