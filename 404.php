@@ -11,7 +11,7 @@ get_header();
                 <li><a href="/jobs">View Job Openings</a></li>
                 <li><a href="/companies">Explore Companies</a></li>
                 <li><a href="/blogs">Read News</a></li>
-                <li><a href="/contact-us">Contact Us</a></li>
+                <li><a href="mailto:support@startup.jobs">Contact Us</a></li>
             </ul>
         </div>
     </main>
