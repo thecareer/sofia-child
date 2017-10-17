@@ -27188,3 +27188,41 @@ content:" ";
 .svg .view-navigation-job-categories .views-row.category-wrapper-data-analytics:after,.svg .view-navigation-job-categories .views-row.category-wrapper-finance:after,.svg .view-navigation-job-categories .views-row.category-wrapper-sales:after,.svg .view-navigation-job-categories .views-row.category-wrapper-product:after,.svg .view-navigation-job-categories .views-row.category-wrapper-marketing:after,.svg .view-navigation-job-categories .views-row.category-wrapper-project-mgmt:after {
 background-image:url(../img/category-category-sprite.svg);
 }
+
+
+.view-navigation-job-categories .views-row.category-wrapper-design:after {
+width:40px;
+height:36px;
+background-position:-90px 0;
+background-size:580px 50px;
+background-repeat:no-repeat;
+background-image:url(../img/category-category-sprite.png);
+display:inline-block;
+content:" ";
+}
+
+.view-navigation-job-categories .views-row.category-wrapper-operations:after {
+width:35px;
+height:39px;
+background-position:-405px 0;
+background-size:580px 50px;
+background-repeat:no-repeat;
+background-image:url(../img/category-category-sprite.png);
+display:inline-block;
+content:" ";
+}
+
+.view-navigation-job-categories .views-row.category-wrapper-data-analytics:after {
+width:40px;
+height:37px;
+background-position:-45px 0;
+background-size:580px 50px;
+background-repeat:no-repeat;
+background-image:url(../img/category-category-sprite.png);
+display:inline-block;
+content:" ";
+}
+
+.svg .view-navigation-job-categories .views-row.category-wrapper-developer:after,.svg .view-navigation-job-categories .views-row.category-wrapper-design:after,.svg .view-navigation-job-categories .views-row.category-wrapper-operations:after {
+background-image:url(../img/category-category-sprite.svg);
+}
