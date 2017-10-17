@@ -27128,3 +27128,63 @@ div.Tokenize ul.Dropdown li.Hover {
     background-repeat: repeat-x;
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
+
+
+.view-navigation-job-categories .views-row.category-wrapper-finance:after {
+width:41px;
+height:36px;
+background-position:-180px 0;
+background-size:580px 50px;
+background-repeat:no-repeat;
+background-image:url(../img/category-category-sprite.png);
+display:inline-block;
+content:" ";
+}
+
+.view-navigation-job-categories .views-row.category-wrapper-sales:after {
+width:39px;
+height:34px;
+background-position:-535px 0;
+background-size:580px 50px;
+background-repeat:no-repeat;
+background-image:url(../img/category-category-sprite.png);
+display:inline-block;
+content:" ";
+}
+
+.view-navigation-job-categories .views-row.category-wrapper-product:after {
+width:36px;
+height:43px;
+background-position:-445px 0;
+background-size:580px 50px;
+background-repeat:no-repeat;
+background-image:url(../img/category-category-sprite.png);
+display:inline-block;
+content:" ";
+}
+
+.view-navigation-job-categories .views-row.category-wrapper-marketing:after {
+width:38px;
+height:38px;
+background-position:-360px 0;
+background-size:580px 50px;
+background-repeat:no-repeat;
+background-image:url(../img/category-category-sprite.png);
+display:inline-block;
+content:" ";
+}
+
+.view-navigation-job-categories .views-row.category-wrapper-project-mgmt:after {
+width:40px;
+height:38px;
+background-position:-490px 0;
+background-size:580px 50px;
+background-repeat:no-repeat;
+background-image:url(../img/category-category-sprite.png);
+display:inline-block;
+content:" ";
+}
+
+.svg .view-navigation-job-categories .views-row.category-wrapper-data-analytics:after,.svg .view-navigation-job-categories .views-row.category-wrapper-finance:after,.svg .view-navigation-job-categories .views-row.category-wrapper-sales:after,.svg .view-navigation-job-categories .views-row.category-wrapper-product:after,.svg .view-navigation-job-categories .views-row.category-wrapper-marketing:after,.svg .view-navigation-job-categories .views-row.category-wrapper-project-mgmt:after {
+background-image:url(../img/category-category-sprite.svg);
+}
