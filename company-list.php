@@ -276,7 +276,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                     <div>
                                         <div class="view view-companies-landing view-id-companies_landing view-display-id-companies_landing_content js-view-dom-id-c4a6b0ee54cdd9791c927a0d29c75886840844819a78a248fdc18e00694ed383">
-
+                                        <?php if($companies->have_posts()) : ?>
                                             <div class="view-content">
                                                 <?php while($companies->have_posts()) : $companies->the_post(); ?>
                                                 <?php
@@ -357,11 +357,12 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 </ul>
                                             </nav>
                                             <?php } ?>
-                                        
+                                        <?php else : ?>
                                         <div class="view-empty">
                                             <div class="job-list-no-results">No results found, check if your spelling is correct, or try removing   filters
                                             </div>
                                         </div>
+                                        <?php endif; ?>
                                     </div>
 
                                 </div>
