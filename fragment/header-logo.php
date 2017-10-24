@@ -114,14 +114,14 @@
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
-                                <a href="https://employer.startup.jobs">
+                                <a href="https://company.startup.jobs">
                                     <h3 class="title">Looking<br>to hire?</h3>
                                     <div class="headline">Give the community
                                         <br>something worth
                                         <br>applying for.</div>
                                 </a>
                                 <div class="more-link">
-                                    <a href="https://employer.startup.jobs">Post a job</a>
+                                    <a href="https://app.jazz.co/app/v2/job/create">Post a job</a>
                                 </div>
                             </div>
                             <div class="views-element-container">
@@ -405,7 +405,7 @@
             </ul>
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-            <a href="https://employer.startup.jobs" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="https://employer.startup.jobs" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
+            <a href="https://app.jazz.co/app/v2/job/create" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="https://employer.startup.jobs" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
         </div>
     </div>
 </div>
