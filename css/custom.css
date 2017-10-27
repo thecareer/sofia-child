@@ -719,7 +719,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 700;
 }
 
@@ -2741,7 +2741,7 @@ body {
     margin: 0;
     margin-top: 77px !important;
     color: #3A3B41;
-    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1em;
     line-height: 1.5;
     background: url(../img/bg.jpg) repeat left top transparent;
@@ -2802,7 +2802,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
     font-weight: 600;
@@ -2850,7 +2850,7 @@ label {
 
 input, select, textarea {
     display: block;
-    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1em;
 }
 
@@ -2963,9 +2963,9 @@ td {
 tr, td, th {
     vertical-align: middle;
 }
-
+/*"Helvetica Neue", Helvetica,*/
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 1.333em;
     line-height: 1.2;
     margin: 0 0 0.75em;
