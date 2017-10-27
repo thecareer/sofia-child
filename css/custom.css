@@ -6579,8 +6579,8 @@ header .site-slogan:last-child {
     display: inline-block;
     color: #04003F;
     margin-bottom: 0;
-    line-height: 1;
-    font-size: 54px;
+    line-height: 50px;
+    font-size: 40px;
     position: relative;
     top: 13px;
 }
