@@ -3,7 +3,6 @@ get_header();
 the_post();
 global $post;
 ?>
-
 <main role="main">
     <a id="main-content" tabindex="-1"></a>
     <div class="layout-content">
@@ -14,12 +13,9 @@ global $post;
                         <div class="">
                             <div class="block-region-middle">
                                 <div class="block block-ctools block-entity-viewnode">
-
                                     <div class="sponsored-blog-content"> </div>
-
                                     <h1 class="node-title"><span class="field field--name-title field--type-string field--label-hidden"><?php the_title(); ?></span>
 </h1>
-
                                     <article role="article" class="node node--type-blog node--view-mode-default">
 
                                         <div class="node__content">
@@ -39,7 +35,6 @@ global $post;
                                                     </div>
                                                 </div>
                                                 <div class="col-right">
-
                                                 </div>
                                             </div>
                                             <div class="teaser"></div>
@@ -64,7 +59,6 @@ global $post;
 
                                                             </div>
                                                         </div>
-
                                                         <h2 class="company-title"><a href="#"><span class="field field--name-title field--type-string field--label-hidden"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
 </a></h2>
                                                         
@@ -151,12 +145,9 @@ global $post;
                                                     <a class="button" href="/2017/09/26/agtech-startup-indigo-boston-tech-unicorn?page=0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C1" title="Go to next page" rel="next">Load More</a>
                                                 </li>
                                             </ul>
-
                                             */ ?>
-
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -171,41 +162,37 @@ global $post;
                                     <div> <a href="/desktop/jobs" class="title">Find your dream job</a></div>
                                     <div class="views-row category-wrapper-developer">
                                         <div class="category category-developer">
-                                            <div>Developer Jobs</div><a href="/jobs?f[0]=job-category_developer-engineer">View 477 jobs</a></div>
+                                            <div>Developer & Engineer Jobs</div><a href="/jobs?category[]=developer-engineer"></a></div>
                                     </div>
                                     <div class="views-row category-wrapper-design">
                                         <div class="category category-design">
-                                            <div>Design + UX Jobs</div><a href="/jobs?f[0]=job-category_design-ux">View 47 jobs</a></div>
+                                            <div>Design + UX Jobs</div><a href="/jobs?category[]=design-ux"></a></div>
                                     </div>
                                     <div class="views-row category-wrapper-marketing">
                                         <div class="category category-marketing">
-                                            <div>Marketing Jobs</div><a href="/jobs?f[0]=job-category_marketing">View 109 jobs</a></div>
+                                            <div>Marketing Jobs</div><a href="/jobs?category[]=marketing"></a></div>
                                     </div>
                                     <div class="views-row category-wrapper-product">
                                         <div class="category category-product">
-                                            <div>Product Jobs</div><a href="/jobs?f[0]=job-category_product">View 76 jobs</a></div>
+                                            <div>Product Jobs</div><a href="/jobs?category[]=product"></a></div>
                                     </div>
                                     <div class="views-row category-wrapper-sales">
                                         <div class="category category-sales">
-                                            <div>Sales Jobs</div><a href="/jobs?f[0]=job-category_sales">View 174 jobs</a></div>
+                                            <div>Business Development & Sales Jobs</div><a href="/jobs?category[]=sales"></a></div>
                                     </div>
                                     <div class="views-row category-wrapper-data-analytics">
                                         <div class="category category-data">
-                                            <div>Data Jobs</div><a href="/jobs?f[0]=job-category_data-analytics">View 63 jobs</a></div>
+                                            <div>Data & Analytics Jobs</div><a href="/jobs?category[]=data-analytics"></a></div>
                                     </div>
-                                    <div class="more-link"><a href="/desktop/jobs">View all Boston jobs</a></div>
+                                    <div class="more-link"><a href="/jobs">View all jobs</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </main>
-
 <?php
 get_footer();

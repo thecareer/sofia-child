@@ -110,18 +110,18 @@
         <?php global $post; ?>
             <ul class="menu">
                 <li class="nav-item jobs menu-item <?php if( is_page_template( 'search-job.php' ) || is_singular( 'job' ) ) {echo 'active';} ?>">
-                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['job_page'] ); ?>"><span>Local Jobs</span></a>
+                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['job_page'] ); ?>"><span>Job Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
-                                <a href="/node/add/job">
+                                <a href="https://company.startup.jobs">
                                     <h3 class="title">Looking<br>to hire?</h3>
                                     <div class="headline">Give the community
                                         <br>something worth
                                         <br>applying for.</div>
                                 </a>
                                 <div class="more-link">
-                                    <a href="/node/add/job">Post a job</a>
+                                    <a href="https://app.jazz.co/app/v2/job/create">Post a job</a>
                                 </div>
                             </div>
                             <div class="views-element-container">
@@ -135,40 +135,40 @@
                                         </div>
 
                                         <div class="category-wrapper-data-analytics views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_data-analytics">Data + Analytics</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_data-analytics">Data + Analytics</a></div>
+                                            <div class="title"><a href="/jobs?category[]=data-analytics">Data + Analytics</a></div>
+                                            <div class="link"><a href="/jobs?category[]=data-analytics">Data + Analytics</a></div>
                                         </div>
                                         <div class="category-wrapper-design views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_design-ux">Design + UX</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_design-ux">Design + UX</a></div>
+                                            <div class="title"><a href="/jobs?category[]=design-ux">Design + UX</a></div>
+                                            <div class="link"><a href="/jobs?category[]=design-ux">Design + UX</a></div>
                                         </div>
                                         <div class="category-wrapper-developer views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_developer-engineer">Developer + Engineer</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_developer-engineer">Developer + Engineer</a></div>
+                                            <div class="title"><a href="/jobs?category[]=developer-engineer">Developer + Engineer</a></div>
+                                            <div class="link"><a href="/jobs?category[]=developer-engineer">Developer + Engineer</a></div>
                                         </div>
                                         <div class="category-wrapper-finance views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_finance">Finance</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_finance">Finance</a></div>
+                                            <div class="title"><a href="/jobs?category[]=finance">Finance</a></div>
+                                            <div class="link"><a href="/jobs?category[]=finance">Finance</a></div>
                                         </div>
                                         <div class="category-wrapper-marketing views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_marketing">Marketing</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_marketing">Marketing</a></div>
+                                            <div class="title"><a href="/jobs?category[]=marketing">Marketing</a></div>
+                                            <div class="link"><a href="/jobs?category[]=marketing">Marketing</a></div>
                                         </div>
                                         <div class="category-wrapper-operations views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_operations">Operations</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_operations">Operations</a></div>
+                                            <div class="title"><a href="/jobs?category[]=operations">Operations</a></div>
+                                            <div class="link"><a href="/jobs?category[]=operations">Operations</a></div>
                                         </div>
                                         <div class="category-wrapper-product views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_product">Product</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_product">Product</a></div>
+                                            <div class="title"><a href="/jobs?category[]=product">Product</a></div>
+                                            <div class="link"><a href="/jobs?category[]=product">Product</a></div>
                                         </div>
                                         <div class="category-wrapper-project-mgmt views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_project-management">Project Mgmt</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_project-management">Project Mgmt</a></div>
+                                            <div class="title"><a href="/jobs?category[]=project-management">Project Management</a></div>
+                                            <div class="link"><a href="/jobs?category[]=project-management">Project Management</a></div>
                                         </div>
                                         <div class="category-wrapper-sales views-row">
-                                            <div class="title"><a href="/jobs?f[0]=job-category_sales">Sales</a></div>
-                                            <div class="link"><a href="/jobs?f[0]=job-category_sales">Sales</a></div>
+                                            <div class="title"><a href="/jobs?category[]=sales">Sales</a></div>
+                                            <div class="link"><a href="/jobs?category[]=sales">Sales</a></div>
                                         </div>
 
                                     </div>
@@ -181,7 +181,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded <?php if( is_page_template( 'company-list.php' ) || is_singular( 'company' ) ) {echo 'active';} ?>">
-                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['company_list_page'] ); ?>"><span>Startups</span></a>
+                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['company_list_page'] ); ?>"><span>Companies</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
@@ -241,7 +241,9 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <!-- <li class="nav-item events menu-item menu-item--expanded">
+                <?php
+                /*
+                <li class="nav-item events menu-item menu-item--expanded">
                     <a href="/events"><span>Events</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -306,23 +308,25 @@
                         </div>
                         <div class="underlay"></div>
                     </div>
-                </li> -->
+                </li>
+                */
+                ?>
                 <li class="nav-item news menu-item menu-item--expanded <?php if(is_page_template( 'template-blog.php' ) || is_singular( 'post' )) {echo 'active';} ?>">
-                    <a href="<?php echo home_url( '/blogs' ); ?>"><span>News</span></a>
+                    <a href="<?php echo home_url( '/blogs' ); ?>"><span>Blog</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
                                 <li class="menu-item">
-                                    <a href="/blogs"><span>All News</span></a>
+                                    <a href="/blogs"><span>All Blog</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/guides"><span>Boston Tech Guides</span></a>
+                                    <a href="/blogs/guide"><span>Startup Tech Guides</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/tech-reports"><span>Industry Reports</span></a>
+                                    <a href="/blogs/reports"><span>Industry Reports</span></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/spotlights"><span>Insider Spotlights</span></a>
+                                    <a href="/blogs/insider"><span>Insider Spotlights</span></a>
                                 </li>
                             </ul>
                             <?php
@@ -399,14 +403,10 @@
                     </div>
                 </li>
             </ul>
-
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-
-            <a href="/job-slots" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="/user/register" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Join</a> | <a href="/user/login">Login</a></span>
+            <a href="https://app.jazz.co/app/v2/job/create" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="https://employer.startup.jobs" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
         </div>
-
     </div>
-
 </div>
 </div>

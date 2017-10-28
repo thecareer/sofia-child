@@ -2,7 +2,6 @@
 /**
 Template Name: Companies Page
  */
-
 get_header();
 $language_list = startup_language_list();
 $base = remove_query_arg( 'paged' );
@@ -48,7 +47,6 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 <div class="block-facets block block-bix-companies block-bix-companies-landing-sort">
                                 
                                     <h4 class="box-title active">Filter Your Results</h4>
-
                                     <div class="item-list">
                                         <ul>
                                             <li class="inactive"><a href="<?php echo esc_url(add_query_arg('orderby', 'hiring')); ?>">Hiring now</a></li>
@@ -215,17 +213,13 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 <?php
                                 /*
                                 <div class="views-element-container block block-views block-views-blockcompany-trending-articles-block-3">
-
                                     <div>
                                         <div class="sidebar-listing view view-company-trending-articles view-id-company_trending_articles view-display-id-block_3 js-view-dom-id-9446dc39fdeed907c92526efa60cbaf050c083739ae1b47a1fc13b3de718a81d">
-
                                             <h2 class="box-title">Most Popular Reads</h2>
-
                                             <div class="view-content">
                                                 <div class="views-row">
                                                     <div class="image">
                                                         <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="250" height="190" alt="5 Vietnam tech companies where employees get time off to volunteer" class="image-style-news-card">
-
                                                         </div>
                                                     </div>
                                                     <div class="title"><span>5 Vietnam tech companies where employees get time off to volunteer</span></div>
@@ -234,7 +228,6 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 <div class="views-row">
                                                     <div class="image">
                                                         <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="250" height="190" alt="dog" class="image-style-news-card">
-
                                                         </div>
                                                     </div>
                                                     <div class="title"><span>Pooches as perks: 5 Vietnam tech offices where dogs are part of the team</span></div>
@@ -243,15 +236,12 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 <div class="views-row">
                                                     <div class="image">
                                                         <div> <img src="<?php echo get_stylesheet_directory_uri(). '/img/cover_photo_3.png'; ?>" width="250" height="190" alt="diversity" class="image-style-news-card">
-
                                                         </div>
                                                     </div>
                                                     <div class="title"><span>Diversity in tech: How 5 Vietnam companies are fighting for more inclusive work...</span></div>
                                                     <a href="/2017/05/18/how-boston-companies-fighting-diversity-tech" class="link-above"></a>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -264,9 +254,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                 <?php
                 $perpage = vp_option('joption.job_per_page', 9);
                 $currentpage = get_query_var('paged') ? get_query_var('paged') : 1;
-
                 $companies = apply_filters('build_company_seach_query', null, $perpage, $currentpage);
-
                 ?>
                 <div class="l-content left">
                     <div class="row">
@@ -276,7 +264,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                     <div>
                                         <div class="view view-companies-landing view-id-companies_landing view-display-id-companies_landing_content js-view-dom-id-c4a6b0ee54cdd9791c927a0d29c75886840844819a78a248fdc18e00694ed383">
-
+                                        <?php if($companies->have_posts()) : ?>
                                             <div class="view-content">
                                                 <?php while($companies->have_posts()) : $companies->the_post(); ?>
                                                 <?php
@@ -315,7 +303,6 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                             <?php
                                             if($companies->max_num_pages > 1) {
                                                 $big = 999999999; // need an unlikely integer
-
                                                 $link =  paginate_links( array(
                                                     'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                                                     'format' => '?paged=%#%',
@@ -357,11 +344,12 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 </ul>
                                             </nav>
                                             <?php } ?>
-                                        
+                                        <?php else : ?>
                                         <div class="view-empty">
                                             <div class="job-list-no-results">No results found, check if your spelling is correct, or try removing   filters
                                             </div>
                                         </div>
+                                        <?php endif; ?>
                                     </div>
 
                                 </div>

@@ -92,6 +92,10 @@ function job_filter_body_class($classes)
         return $classes;
     }
 
+    if(is_page_template( 'company-list.php' )) {
+        $classes[] = 'path-companies';
+    }
+
     if (is_singular('job')) {
         $classes[] = 'path-node page-node-type-job';
         return $classes;
