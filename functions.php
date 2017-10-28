@@ -92,7 +92,7 @@ function job_filter_body_class($classes)
         return $classes;
     }
 
-    if(is_page_template( 'company-list.php' )) {
+    if (is_page_template('company-list.php')) {
         $classes[] = 'path-companies';
     }
 
@@ -114,7 +114,6 @@ function job_filter_body_class($classes)
     return $classes;
 }
 add_filter('body_class', 'job_filter_body_class');
-
 
 function dakachi_add_company_cover_photo()
 {
@@ -319,6 +318,7 @@ function dakachi_products_plugin_query_vars($vars)
     $vars[] = 'location';
     $vars[] = 'size';
     $vars[] = 'sortby';
+    $vars[] = 'link';
 
     return $vars;
 }
@@ -390,4 +390,8 @@ function dakachi_page_array($lang)
     return $pages[$lang];
 }
 
-
+function custom_rewrite_rule()
+{
+     add_rewrite_rule('link\/(.*)','index.php?pagename=link&link=$matches[1]','top'); 
+}
+add_action('init', 'custom_rewrite_rule', 10, 0);
