@@ -143,7 +143,7 @@ WEEKLY JOB EMAILS</h2>
                                         <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                             <p>Top talent can go anywhere.&nbsp;
                                                 <br> We bring it to you.</p>
-                                            <p><a href="http://www.go.builtin.com/l/323011/2017-07-11/2662n" target="_blank">Recruit with us</a></p>
+                                            <p><a href="/recruit-with-us" target="_blank">Recruit with us</a></p>
                                         </div>
                                     </div>
                                     <div class="block block-block-content block-block-content7de5294b-7423-473e-9cfd-fa34f852a1fe">
@@ -182,7 +182,7 @@ WEEKLY JOB EMAILS</h2>
                                             <div class="field__item">
                                                 <div class="field-collection-item field-collection-item--name-field-collection-testimonial field-collection-item--view-mode-default">
                                                     <div class="content">
-                                                        <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/2017-07/bruce.png" width="100" height="100" alt="Bruce">
+                                                        <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/bruce.png" width="100" height="100" alt="Bruce">
                                                         </div>
                                                         <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">We have&nbsp;had successful hires&nbsp;in Sales and Engineering.&nbsp;Built In has been impactful for us to communicate our culture to the Boston community.</div>
                                                         <div class="field field--name-field-testimonial-name field--type-string field--label-hidden field__item">Bruce</div>
@@ -194,7 +194,7 @@ WEEKLY JOB EMAILS</h2>
                                             <div class="field__item">
                                                 <div class="field-collection-item field-collection-item--name-field-collection-testimonial field-collection-item--view-mode-default">
                                                     <div class="content">
-                                                        <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/2017-07/maria.png" width="100" height="100" alt="maria">
+                                                        <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/maria.png" width="100" height="100" alt="maria">
                                                         </div>
                                                         <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">We used to post on Indeed and Dice but found that Built In was much better for filling our technical roles.</div>
                                                         <div class="field field--name-field-testimonial-name field--type-string field--label-hidden field__item">Maria</div>
@@ -206,7 +206,7 @@ WEEKLY JOB EMAILS</h2>
                                             <div class="field__item">
                                                 <div class="field-collection-item field-collection-item--name-field-collection-testimonial field-collection-item--view-mode-default">
                                                     <div class="content">
-                                                        <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="//cdn.builtinboston.com/sites/www.builtinboston.com/files/2017-07/kelli.png" width="100" height="100" alt="kelli">
+                                                        <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/kelli.png" width="100" height="100" alt="kelli">
                                                         </div>
                                                         <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">If you ever went out of business, I literally would not be able to live my life. We have made 40 hires in the past year and over half have come from Built In.</div>
                                                         <div class="field field--name-field-testimonial-name field--type-string field--label-hidden field__item">Kelli</div>
@@ -236,7 +236,7 @@ WEEKLY JOB EMAILS</h2>
                                         <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                             <p class="title">Top talent can go anywhere.
                                                 <br> We bring it to you.</p>
-                                            <p><a href="http://www.go.builtin.com/l/323011/2017-07-11/2662n" target="_blank">Recruit with us</a></p>
+                                            <p><a href="/recruit-with-us" target="_blank">Recruit with us</a></p>
                                             <div class="quote-wrapper">
                                                 <p class="quote">We have made 40
                                                     <br> hires in the past
