@@ -7,7 +7,7 @@
 </head>
 
 <body class="gorgias-loaded">
-    <form accept-charset="UTF-8" method="post" action="http://www.go.builtin.com/l/323011/2017-07-11/2662n" class="form" id="pardot-form">
+    <form accept-charset="UTF-8" method="post" action="" class="form" id="pardot-form">
 
         <style type="text/css">
             /*Overall Form Styling:*/

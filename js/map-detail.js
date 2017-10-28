@@ -18,6 +18,12 @@
         }
     }
     $(document).ready(function(e) {
+        $(".gallery").lightSlider({
+            adaptiveHeight: true,
+            item: 1,
+            slideMargin: 0,
+            loop: true
+        });
         // Get the modal
         var modal = document.getElementById('apply-modal');
         // Get the button that opens the modal
@@ -34,7 +40,6 @@
             modal.style.display = "none";
             $('body').removeClass('modal-open');
         }
-
         // Get the modal
         var alert_modal = document.getElementById('alert-modal');
         // Get the button that opens the modal
@@ -51,7 +56,6 @@
             alert_modal.style.display = "none";
             $('body').removeClass('modal-open');
         }
-
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
@@ -63,7 +67,6 @@
                 $('body').removeClass('modal-open');
             }
         }
-
         initMapDetail();
         $(window).scroll(function() {
             var heightHeader = $('.layout-container > .header').outerHeight(),
@@ -120,17 +123,15 @@
                 }
             });
         });
-
         $('.btn-submit-apply').click(function(e) {
             e.preventDefault();
             var button = $(this),
-                form   = button.parents('form');
-
+                form = button.parents('form');
             $.ajax({
                 type: 'post',
                 url: global.ajax_url,
                 data: {
-                    data : form.serialize(),
+                    data: form.serialize(),
                     action: 'apply-job'
                 },
                 beforeSend: function() {
@@ -140,7 +141,7 @@
                     if (res.success) {
                         var modal = document.getElementById('apply-modal');
                         modal.style.display = "none";
-                        alert ('You have successfully applied');
+                        alert('You have successfully applied');
                     }
                     button.text('SEND YOUR APPLICATION');
                 }

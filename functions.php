@@ -37,11 +37,14 @@ function startup_add_scripts_styles()
 
     wp_enqueue_style('main', get_stylesheet_directory_uri() . '/css/main.css');
 
-    if (!is_page_template('page-post-job.php')) {
-        wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom.css', array('main'));
-    } else {
-        wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom-post-job.css', array('main'));
-    }
+    // if (!is_page_template('page-post-job.php')) {
+    //     wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom.css', array('main'));
+    // } else {
+    //     wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom-post-job.css', array('main'));
+    // }
+
+    wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom-post-job.css', array('main'));
+
 
     if (is_404()) {
         wp_enqueue_style('404', get_stylesheet_directory_uri() . '/css/404.css', array('main'));
@@ -59,8 +62,9 @@ function startup_add_scripts_styles()
 
     wp_enqueue_script('jfileuploader', get_stylesheet_directory_uri() . '/js/jfileuploader.js');
 
-    wp_enqueue_script('jeg-gmap', get_stylesheet_directory_uri() . '/js/gmap.js"');
-    wp_enqueue_script('jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js"');
+    wp_enqueue_script('jeg-gmap', get_stylesheet_directory_uri() . '/js/gmap.js');
+    wp_enqueue_script('jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js');
+    wp_enqueue_script('owl', get_stylesheet_directory_uri() . '/js/owl.carousel.js');
 
     wp_localize_script('jeg-detail', 'global', array('ajax_url' => admin_url('admin-ajax.php')));
 
@@ -94,6 +98,10 @@ function job_filter_body_class($classes)
 
     if (is_page_template('company-list.php')) {
         $classes[] = 'path-companies';
+    }
+
+    if (is_page_template('page-employer.php')){
+        $classes[] = "path-premium";
     }
 
     if (is_singular('job')) {
