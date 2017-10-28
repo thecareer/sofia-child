@@ -24,6 +24,12 @@ return array(
         ),
 
         array(
+            'type' => 'textbox',
+            'name' => 'jazzid',
+            'label' => esc_html(__('JazzID', 'jobplanet-plugin')),
+        ),
+
+        array(
             'type' => 'textarea',
             'name' => 'short_desc',
             'label' => esc_html(__('Short description', 'jobplanet-plugin')),

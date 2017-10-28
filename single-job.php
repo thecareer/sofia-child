@@ -169,10 +169,7 @@ $company_name = get_the_title($company_id);
                                                 <?php endwhile; ?>
                                                 <div class="views-row views-row-more" style="">
                                                     <h3 class="title">Get notified<br>when new<br>jobs pop up.</h3>
-                                                    <div class="more-link"><span>Create job alert</span></div>
-                                                    <div id="create-job-alert-wrapper">
-                                                        <a href="/bix-job-newsletter/company-alerts/950/job-alert-job-card" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:555}"></a>
-                                                    </div>
+                                                    <div class="more-link create-alert"><span>Create job alert</span></div>
                                                 </div>
 
                                             </div>

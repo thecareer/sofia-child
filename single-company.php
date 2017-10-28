@@ -51,9 +51,6 @@ if($company_head_id) {
                                             <div class="company-card-content">
                                                 <div class="company-card-title">
                                                     <h1><?php the_title(); ?></h1>
-                                                    <!-- <div class="buttons">
-                                                        <div id="create-job-alert-wrapper"><a href="/bix-job-newsletter/company-alerts/874/job-alert-company-lp" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:555}">Create job alert</a></div>
-                                                    </div> -->
                                                 </div>
                                                 <div class="company-card-info">
                                                     <div class="col-1">
@@ -244,10 +241,7 @@ if($company_head_id) {
                                                 <?php endwhile; ?>
                                                 <div class="views-row views-row-more" style="">
                                                     <h3 class="title">Get notified<br>when new<br>jobs pop up.</h3>
-                                                    <div class="more-link"><span>Create job alert</span></div>
-                                                    <div id="create-job-alert-wrapper">
-                                                        <a href="/bix-job-newsletter/company-alerts/950/job-alert-job-card" class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:555}"></a>
-                                                    </div>
+                                                    <div class="more-link create-alert"><span>Create job alert</span></div>
                                                 </div>
 
                                             </div>

@@ -34,13 +34,36 @@
             modal.style.display = "none";
             $('body').removeClass('modal-open');
         }
+
+        // Get the modal
+        var alert_modal = document.getElementById('alert-modal');
+        // Get the button that opens the modal
+        var alert_btn = $(".create-alert");
+        // Get the <span> element that closes the modal
+        var alert_span = document.getElementsByClassName("alert-close")[0];
+        // When the user clicks the button, open the modal 
+        alert_btn.click(function() {
+            alert_modal.style.display = "block";
+            $('body').addClass('modal-open');
+        });
+        // When the user clicks on <span> (x), close the modal
+        alert_span.onclick = function() {
+            alert_modal.style.display = "none";
+            $('body').removeClass('modal-open');
+        }
+
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
                 $('body').removeClass('modal-open');
             }
+            if (event.target == alert_modal) {
+                alert_modal.style.display = "none";
+                $('body').removeClass('modal-open');
+            }
         }
+
         initMapDetail();
         $(window).scroll(function() {
             var heightHeader = $('.layout-container > .header').outerHeight(),
