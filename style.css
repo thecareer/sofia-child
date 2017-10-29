@@ -259,7 +259,7 @@ a.page-numbers{
     margin: 5% auto;
 }
 #apply-modal .modal-content {
-    height: 1090px;
+    height: 909px;
 }
 #apply-modal .modal-content iframe {
     width: 100%;
@@ -290,6 +290,16 @@ a.page-numbers{
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#apply-modal .close{
+    position: absolute;
+    top: 0px;
+    color: #000;
+    right: 20px;
+}
+#apply-modal .modal-header {
+    padding: 0;
 }
 
 .modal-header {
