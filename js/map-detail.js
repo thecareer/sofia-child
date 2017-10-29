@@ -67,6 +67,13 @@
                 $('body').removeClass('modal-open');
             }
         }
+
+        $('#mc-embedded-subscribe').click(function() {
+            alert_modal.style.display = "none";
+            $('body').removeClass('modal-open');
+        })
+
+
         initMapDetail();
         $(window).scroll(function() {
             var heightHeader = $('.layout-container > .header').outerHeight(),
