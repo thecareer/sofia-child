@@ -5353,15 +5353,13 @@ header .site-slogan:last-child {
     white-space: nowrap;
 }
 #block-footerbuiltinchicago > h2:after {
-    width: 84px;
+       width: 190px;
     height: 31px;
-    background-position: -415px 0;
-    background-size: 4675px 140px;
     background-repeat: no-repeat;
-    background-image: url("../img//icons-icons-sprite.png");
-    display: inline-block;
+    background-image: url(../img/startup.jobs.logo.svg);
     content: " ";
     display: block;
+    background-size: cover;
 }
 .svg #block-footerbuiltinchicago > h2:after {
     background-image: url("../img//icons-icons-sprite.svg");
