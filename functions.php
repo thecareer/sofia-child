@@ -43,7 +43,7 @@ function startup_add_scripts_styles()
     //     wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom-post-job.css', array('main'));
     // }
 
-    wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom-post-job.css', array('main'));
+    wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom.css', array('main'));
 
 
     if (is_404()) {
