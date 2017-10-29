@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template Name: welcome recruit 
+ */
+?>
 <html>
 
 <head>
@@ -224,18 +229,6 @@
         </script>
         <input type="hidden" name="hiddenDependentFields" id="hiddenDependentFields" value="">
     </form>
-
-    <span class="gorgias-qa-btn"><span class="gorgias-qa-btn-badge"></span></span>
-    <div class="gorgias-qa-tooltip">Search templates (CTRL+Space)</div>
-    <div class="qt-dropdown">
-        <input type="search" class="qt-dropdown-search" value="" placeholder="Search templates...">
-        <ul class="qt-dropdown-content">
-
-        </ul>
-        <div class="g-dropdown-toolbar">
-            <button class="g-new-template">New Template</button>
-        </div>
-    </div>
 </body>
 
 </html>
