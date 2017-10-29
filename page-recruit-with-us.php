@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template Name: recruit with us
+ */
+?>
 <html>
 
 <head>
