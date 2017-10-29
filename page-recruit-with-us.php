@@ -98,6 +98,7 @@ if ( is_plugin_active( 'employer-hubspot-integrate/employer-hubspot-integrate.ph
     <script src="<?php echo includes_url(); ?>js/jquery/jquery.js"></script>
     <script>
         var ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+        var redirecturl = '<?php echo get_site_url(); ?>/welcome-recruit';
     </script>
     <script src="<?php echo WP_PLUGIN_URL.'/employer-hubspot-integrate/script.js?v='.rand(); ?>"> </script>
     <?php
