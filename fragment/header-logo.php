@@ -405,7 +405,7 @@
             </ul>
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-            <a href="https://app.jazz.co/app/v2/job/create" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="https://employer.startup.jobs" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
+            <a href="https://app.jazz.co/app/v2/job/create" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="/employer" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
         </div>
     </div>
 </div>
