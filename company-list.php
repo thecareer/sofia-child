@@ -208,7 +208,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                         <br>isn’t the same
                                         <br>without you in it.</div>
                                     <div class="more-link"><span>Add Your Company</span></div>
-                                    <a href="//employer.startup.jobs" class="link-above"></a>
+                                    <a href="/employer" class="link-above"></a>
                                 </div>
                                 <?php
                                 /*
