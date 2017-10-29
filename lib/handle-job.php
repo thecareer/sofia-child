@@ -1164,7 +1164,7 @@ class Dakachi_Jeg_Job
                 }
 
                 // update meta
-                $fields = array('company_id', 'featured', 'application_email', 'salary_bottom', 'salary_top', 'salary_range', 'address', 'map_location', 'address', 'closing', 'expire');
+                $fields = array('company_id', 'featured', 'application_email', 'salary_bottom', 'salary_top', 'salary_range', 'address', 'map_location', 'address', 'closing', 'expire', 'jazzid', 'jazzcity', 'jazzstate', 'jazzzip', 'jazzcountry', 'jazzdepartment', 'jazzminsalary', 'jazzmaxsalary', 'jazztype', 'jazzstatus', 'hiringlead', 'embedcode');
 
                 if (str_replace('.', '', $_POST['salary_bottom']) > str_replace('.', '', $_POST['salary_top'])) {
                     $salarybottom           = $_POST['salary_bottom'];
