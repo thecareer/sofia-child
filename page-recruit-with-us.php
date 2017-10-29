@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <form accept-charset="UTF-8" method="post" action="/employ-success/" class="form" id="pardot-form">
+    <form accept-charset="UTF-8" method="post" action="/welcome-recruit" class="form" id="pardot-form">
 
         <style type="text/css">
             /*Overall Form Styling:*/
