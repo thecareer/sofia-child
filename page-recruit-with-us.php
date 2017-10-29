@@ -216,7 +216,7 @@
 
             <label class="field-label" for="work_email">Work Email</label>
 
-            <input type="text" name="work_email" id="work_email" value="" class="text" size="30" maxlength="255" onchange="piAjax.auditEmailField(this, 323011, 10411, 949549);">
+            <input type="text" name="work_email" id="work_email" value="" class="text" size="30" maxlength="255" required>
 
         </p>
         <div id="error_for_work_email" style="display:none"></div>
@@ -225,7 +225,7 @@
 
             <label class="field-label" for="first_name">First Name</label>
 
-            <input type="text" name="first_name" id="first_name" value="" class="text" size="30" maxlength="40" onchange="">
+            <input type="text" name="first_name" id="first_name" value="" class="text" size="30" maxlength="40" required>
 
         </p>
         <div id="error_for_first_name" style="display:none"></div>
@@ -234,7 +234,7 @@
 
             <label class="field-label" for="last_name">Last Name</label>
 
-            <input type="text" name="last_name" id="last_name" value="" class="text" size="30" maxlength="80" onchange="">
+            <input type="text" name="last_name" id="last_name" value="" class="text" size="30" maxlength="80" required>
 
         </p>
         <div id="error_for_last_name" style="display:none"></div>
@@ -243,7 +243,7 @@
 
             <label class="field-label" for="company">Company</label>
 
-            <input type="text" name="company" id="company" value="" class="text" size="30" maxlength="255" onchange="">
+            <input type="text" name="company" id="company" value="" class="text" size="30" maxlength="255" required>
 
         </p>
         <div id="error_for_company" style="display:none"></div>
@@ -252,7 +252,7 @@
 
             <label class="field-label" for="company_size">Company Size</label>
 
-            <select name="company_size" id="company_size" class="select" onchange="">
+            <select name="company_size" id="company_size" class="select" required>
                 <option value="" selected="selected"></option>
                 <option value="107969">&lt;20</option>
                 <option value="107971">20-100</option>
@@ -273,17 +273,21 @@
         <input name="_utf8" type="hidden" value="☃">
 
         <p class="submit">
-            <input type="submit" accesskey="s" value="Submit">
+            <input type="button" id="submit" accesskey="s" value="Submit">
         </p>
 
-        <input type="hidden" name="hiddenDependentFields" id="hiddenDependentFields" value="">
+        
     </form>
-<?php
+<?php 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-if ( is_plugin_active( 'employer-hubspot-integrate/employer-hubspot-integrate.php' ) ) {
+if ( is_plugin_active( 'employer-hubspot-integrate/employer-hubspot-integrate.php' ) ) {    
     ?>
-    <script src="<?php echo WP_PLUGIN_URL.'/employer-hubspot-integrate/script.js'; ?>"> </script>
+    <script src="<?php echo includes_url(); ?>js/jquery/jquery.js"></script>
+    <script>
+        var ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+    </script>
+    <script src="<?php echo WP_PLUGIN_URL.'/employer-hubspot-integrate/script.js?v='.rand(); ?>"> </script>
     <?php
   }
 ?>
