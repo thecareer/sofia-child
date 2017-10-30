@@ -132,7 +132,7 @@ $language_list = startup_language_list();
                                                         </div>
                                                         <h3 class="title"><span><?php the_title(); ?></span></h3>
                                                         <div class="link"><i></i></div>
-                                                        <a href="<?php the_permalink(); ?>" class="view-page"></a>
+                                                        <a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>" class="view-page"></a>
                                                     </div>
                                             <?php endwhile; ?>
                                         </div>
@@ -355,7 +355,7 @@ $language_list = startup_language_list();
                                                         </div>
 
                                                         <div class="title">
-                                                            <a href="<?php the_permalink(); ?>" hreflang="en"><?php the_title(); ?></a>
+                                                            <a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>" hreflang="en"><?php the_title(); ?></a>
                                                         </div>
 
                                                         <div class="ribbon-box">
@@ -369,7 +369,7 @@ $language_list = startup_language_list();
                                                         </div>
 
                                                         <div class="link">
-                                                            <a href="<?php the_permalink(); ?>">View</a>
+                                                            <a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>">View</a>
                                                         </div>
 
                                                     </div>

@@ -16,7 +16,7 @@ return array(
                 'data' => array(
                     array(
                         'source' => 'function',
-                        'value'  => 'jeg_company_list',
+                        'value'  => 'dakachi_jeg_company_list',
                     ),
                 ),
             ),

@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 function dakachi_change_create_edit_job_init()
 {
     if (class_exists('Jeg_Job')) {
-        $Jeg_Job = Jeg_Job::getInstance();
+        $Jeg_Job = Jeg_Job::getInstance(); 
         remove_action('wp_loaded', array($Jeg_Job, 'form_handler'), 20);
         remove_filter('build_job_seach_query', array($Jeg_Job, 'build_job_seach_query'), 10, 3);
         remove_filter('post_row_actions', array($Jeg_Job, 'post_row_actions'), 10, 2);

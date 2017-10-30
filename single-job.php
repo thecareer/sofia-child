@@ -8,6 +8,9 @@ $locations = wp_get_post_terms( get_the_ID(), 'job-location');
 $location = $locations[0];
 $latlng = explode(',', vp_metabox('jobplanet_job.map_location'));
 $company_name = get_the_title($company_id);
+
+
+$company_status = get_post_field( 'post_status', $company_id );
 ?>
 <div class="region region-help">
     
@@ -30,9 +33,13 @@ $company_name = get_the_title($company_id);
                                         <div class="job-info-wrapper">
                                             <div class="logo-wrapper-small">
                                                 <div class="centered">
+                                                <?php if($company_status == 'publish') { ?>
                                                     <a href="<?php echo get_the_permalink( $company_id ); ?>"> 
                                                         <img src="<?php echo $company_image_src[0] ?>" width="300" height="300" alt="<?php echo get_the_title($company_id); ?>">
                                                     </a>
+                                                <?php }else { ?>
+                                                        <img src="<?php echo $company_image_src[0] ?>" width="300" height="300" alt="<?php echo get_the_title($company_id); ?>">
+                                                <?php } ?>
                                                 </div>
                                             </div>
 
@@ -44,7 +51,11 @@ $company_name = get_the_title($company_id);
 
                                                 <div class="field field--name-field-company field--type-entity-reference field--label-hidden field__items">
                                                     <div class="field__item">
+                                                    <?php if($company_status == 'publish') { ?>
                                                         <a href="<?php echo get_the_permalink( $company_id ); ?>" hreflang="en"><?php echo $company_name; ?></a>
+                                                    <?php }else {
+                                                        echo $company_name;
+                                                    } ?>
                                                     </div>
                                                 </div>
                                                 | <span class="company-address"><?php echo $location->name; ?></span> </div>
@@ -52,7 +63,6 @@ $company_name = get_the_title($company_id);
 
                                         <div class="block block-bix-jobs-apply-bottom-only-apply">
                                             <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--4" accept-charset="UTF-8">
-                                                <div class="apply-now-result"><a href="http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam" target="_blank">http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam</a></div>
                                                 <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
                                                 <input  type="hidden" name="form_build_id" value="form-mHYuJcgrsGkKA-QQdrH4ypT2DadLuvpaupfYYsOdwzE">
                                                 <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
@@ -77,7 +87,6 @@ $company_name = get_the_title($company_id);
                                 <div class="block block-bix-jobs block-bix-jobs-apply-bottom">
 
                                     <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--2" accept-charset="UTF-8">
-                                        <div class="apply-now-result"><a href="http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam" target="_blank">http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam</a></div>
                                         <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
                                         <input  type="hidden" name="form_build_id" value="form-l3AMPHHEm_m99tCVeo0T63ftRVmhsQpb59uzkcZukpU">
                                         <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
@@ -192,13 +201,16 @@ $company_name = get_the_title($company_id);
 
                                         <div class="logo-wrapper-medium">
                                             <div class="centered">
+                                            <?php if($company_status == 'publish') { ?>
                                                 <a href="<?php echo get_the_permalink( $company_id ); ?>"> 
                                                     <img src="<?php echo $company_image_src[0]; ?>" width="300" height="300" alt="">
                                                 </a>
+                                            <?php }else { ?> 
+                                                <img src="<?php echo $company_image_src[0]; ?>" width="300" height="300" alt="">
+                                            <?php } ?>
                                             </div>
                                         </div>
                                         <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form" accept-charset="UTF-8">
-                                            <div class="apply-now-result"><a href="http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam" target="_blank">http://energysavvy.applytojob.com/apply/pB5CyxP07L/Software-Engineer-Cambridge?source=BuiltInVietnam</a></div>
                                             <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-right-rail" tid="12">Apply now</div>
                                             <input  type="hidden" name="form_build_id" value="form-bqgz10QSnMBbS28elpOGYkExwwiUmj9AqjIxcAIxwH0">
                                             <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
@@ -209,9 +221,10 @@ $company_name = get_the_title($company_id);
                                             <a title="Share to Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed facebook" data-ga-event="job-save-right-rail" rel="nofollow">Share to Facebook</a>
 
                                             <a title="Share to Facebook" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=<?php vp_metabox('jobplanet_job.short_desc'); ?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed linkedin" data-ga-event="job-save-right-rail" rel="nofollow">Share to LinkedIn</a>
-
+                                        <?php if($company_status == 'publish') { ?>
                                         <a href="<?php echo get_the_permalink( $company_id ); ?>" class="view-profile">View <?php echo get_the_title($company_id); ?>'s full profile</a>
                                         <a href="<?php echo get_the_permalink( $company_id ); ?>#seemorejobs" class="job-category">See more <?php echo get_the_title($company_id); ?> jobs</a>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>

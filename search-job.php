@@ -348,13 +348,13 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                         <div class="description"><?php echo vp_metabox('jobplanet_job.short_desc'); ?></div>
                                                     </div>
                                                     <div class="right">
-                                                        <div class="job-save"><a href="<?php the_permalink(); ?>" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">apply</a></div>
+                                                        <div class="job-save"><a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">apply</a></div>
                                                         <div class="job-date"><?php echo human_time_diff( strtotime(get_the_date()) ); ?></div>
                                                         <div class="job-location"><?php echo $term->name; ?></div>
                                                         <div class="link"><i></i></div>
                                                     </div>
                                                     <div class="wrap-view-page">
-                                                        <a href="<?php the_permalink(); ?>" hreflang="en"> </a>
+                                                        <a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>" hreflang="en"> </a>
                                                     </div>
                                                 </div>
                                             <?php endwhile; ?>
