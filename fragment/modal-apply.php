@@ -5,17 +5,17 @@
   }
 </script>
 <div id="apply-modal" class="modal">
-  <?php if(vp_metabox('jobplanet_job.application_url')) : ?>
+  <?php if(!vp_metabox('jobplanet_job.application_email')) : ?>
     <!-- Modal content -->
-    <div class="modal-content">
+    <div class="modal-content iframe">
     	<div class="modal-header">
           <span class="close">&times;</span>
       </div>
       <iframe onload="resizeIframe(this)" src="https://apply.startup.jobs/apply/embed/form/<?php echo vp_metabox('jobplanet_job.jazzid'); ?>" frameborder="0" scrolling="no"></iframe>
     </div>
-  <?php else ?>
+  <?php else : ?>
 
-   <div class="modal-content">
+   <div class="modal-content normal-form">
     <div class="modal-header">
       <span class="close">&times;</span>
       <h2>Apply Now</h2>
@@ -65,7 +65,6 @@
                 <div class="clearfix"></div>
             </form>
         </div>
-        
     </div>
   <?php endif; ?>
 

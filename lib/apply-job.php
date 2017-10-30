@@ -7,38 +7,72 @@ if (!defined('ABSPATH')) {
 function job_startup_apply_job()
 {
     parse_str($_REQUEST['data'], $data);
-    $file_url = '';
-    if (isset($data['cv_file'])) {
-        $file_url = wp_get_attachment_url($data['cv_file']);
+    $job = get_post($data['job_id']);
+    try {
+        if ($data['job_id'] == '' && !$job) {
+            throw new Exception(esc_html(__('Việc làm không hợp lệ', 'jobplanet-plugin')));
+        }
+
+        if ($data['first_name'] == '' && $data['last_name'] == '') {
+            throw new Exception(esc_html(__('Vui lòng nhập vào tên của bạn', 'jobplanet-plugin')));
+        }
+
+        if ($data['email'] == '') {
+            throw new Exception(esc_html(__('Vui lòng nhập vào địa chỉ email', 'jobplanet-plugin')));
+        }
+
+        if ($data['cv_file'] == '') {
+            throw new Exception(esc_html(__('Vui lòng gửi kèm CVs của bạn.', 'jobplanet-plugin')));
+        }
+
+        $attach = array(get_attached_file($data['cv_file']));
+
+        jeg_send_email(
+            sprintf(esc_html(__('%s đã ứng tuyển %s tại {site_title}', 'jobplanet-plugin')), $name, $job->post_title),
+            'email/employer-application-notification',
+            dakachi_get_employer_email($job->ID),
+            array(
+                // 'employer_name'  => $employer_name,
+                'applicant_name'  => $data['first_name'] . ' ' . $data['last_name'],
+                'job_name'        => $job->post_title,
+                'job_link'        => get_permalink($job->ID),
+                'message'         => $data['message'],
+                'applicant_email' => $data['email'],
+            ), $attach
+        );
+
+        $email = jeg_send_email(
+            sprintf(esc_html(__('Bạn đã ứng tuyển vị trí %s tại {site_title}', 'jobplanet-plugin')), $job->post_title),
+            'email/jobseeker-application-notification',
+            $email,
+            array(
+                'applicant_name' => $data['first_name'] . ' ' . $data['last_name'],
+                'job_name'       => $job->post_title,
+                'job_link'       => get_permalink($job->ID),
+                'message'        => $data['message'],
+            )
+        );
+        if ($email) {
+            wp_send_json(array('success' => true));
+        }
+    } catch (Exception $e) {
+        $message = '<div class="alert alert-danger" role="alert">' . $e->getMessage() . '</div>';
+        wp_send_json(array('success' => false, 'msg' => $message));
     }
-
-    $args = array(
-        'method'      => 'POST',
-        'timeout'     => 45,
-        'redirection' => 5,
-        'httpversion' => '1.0',
-        'blocking'    => true,
-        'headers'     => array(),
-        'body'        => array(
-            'api_key'    => '056f5fe90d1a449404e50c498a39c4e102549dd9',
-            'job_url'    => get_permalink(absint($data['job_id'])),
-            'job_code'   => $data['job_id'],
-            'language'   => 1,
-            'first_name' => $data['first_name'],
-            'last_name'  => $data['last_name'],
-            'email'      => $data['email'],
-            'phone'      => $data['phone'],
-            'resume_url' => $file_url,
-            // 'about_me' => $data['message'],
-            'message'    => $data['message'],
-
-        ),
-        'cookies'     => array(),
-    );
-    $response = wp_remote_post('https://sofia.interviewapp.co/api/v1/progressApply', $args);
-    $body     = json_decode($response['body']);
-    wp_send_json(array('success' => $body->success));
 
 }
 add_action('wp_ajax_apply-job', 'job_startup_apply_job');
 add_action('wp_ajax_nopriv_apply-job', 'job_startup_apply_job');
+
+/**
+ * copy tu class-jeg-applicant.php de lay employer email
+ */
+function dakachi_get_employer_email($job_id)
+{
+    if (vp_metabox('jobplanet_job.application_email', null, $job_id)) {
+        return vp_metabox('jobplanet_job.application_email', null, $job_id);
+    } else {
+        $job = get_post($job_id);
+        return get_the_author_meta('user_email', $job->post_author);
+    }
+}

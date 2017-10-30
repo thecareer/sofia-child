@@ -134,6 +134,7 @@
             e.preventDefault();
             var button = $(this),
                 form = button.parents('form');
+            $('.alert').remove();
             $.ajax({
                 type: 'post',
                 url: global.ajax_url,
@@ -145,10 +146,13 @@
                     button.text('Loading ...');
                 },
                 success: function(res) {
+                    console.log(res);
                     if (res.success) {
                         var modal = document.getElementById('apply-modal');
                         modal.style.display = "none";
                         alert('You have successfully applied');
+                    }else {
+                        form.prepend(res.msg);
                     }
                     button.text('SEND YOUR APPLICATION');
                 }
