@@ -1,14 +1,35 @@
 <?php
 $base_jazz_url = "https://api.resumatorapi.com/v1/jobs?apikey=9aBEBBNI63Fg2hzuMxQkxv5LSt2zJE53"; // fix ra config sau
-
+add_action( 'save_post', 'published_to_draft'); 
 add_action( 'rest_api_init', function () {
   register_rest_route( 'jazz', 'hook_job', array(
     'methods' => 'GET',
     'callback' => 'callback_hook_job',
   ) );
+
+  register_rest_route( 'jazz', 'find_company', array(
+    'methods' => 'GET',
+    'callback' => 'callback_find_company',
+  ) );
+
 } );
 
+function callback_find_company() {
+  if(isset($_GET['hiring_lead'])) {
+    $companies = get_posts( array(
+      'post_type'        => 'company',
+      'meta_key' => 'hiring_lead',
+      'meta_value'       => sanitize_text_field($_GET['hiring_lead']),
+    ) );
+
+    if(count($companies) > 0) {
+      return $companies[0];
+    }
+  }
+}
+
 function callback_hook_job() {
+  
   global $base_jazz_url;
   $jobs = json_decode(file_get_contents($base_jazz_url));
   foreach($jobs as $job) {
@@ -20,7 +41,7 @@ function callback_hook_job() {
       'meta_value'       => $job->id,
       'post_status' => 'any'
     ) );
-
+      
     if(count($posts) > 0) {
       continue;
     }
@@ -93,3 +114,43 @@ function push_to_slack($title, $id) {
       curl_close($ch);
       return $response;
 }
+
+function published_to_draft( $post_id ) { 
+  
+      $status = get_post_status($post_id);
+      $post_type = get_post_type($post_id);
+      if($post_type == 'job')
+      {
+          if($status == 'publish')
+          {
+              remove_action('save_post', 'published_to_draft');
+              $publish = get_post_meta($post_id, 'sent_mail', true);
+              if($publish != '1') {
+
+                $hiring_lead = get_post_meta($post_id, 'hiringlead', true);
+                if($hiring_lead != null && $hiring_lead != "") {
+                  $user_jazz = json_decode(file_get_contents("https://api.resumatorapi.com/v1/users/".$hiring_lead."?apikey=9aBEBBNI63Fg2hzuMxQkxv5LSt2zJE53"));
+                  
+                  $post = get_post($post_id);
+                  $post_url = get_post_permalink($post_id);
+
+                  $to = $user_jazz->email;
+                  $subject = "Job Published";
+                  $message = "{last_name} {first_name}, {post_title} - {post_url}";
+
+                  $message = str_replace(array('{last_name}', '{first_name}', '{post_title}', '{post_url}'), 
+                                        array($user_jazz->last_name, $user_jazz->first_name, $post->post_title, $post_url), $message);
+
+                  wp_mail($to, $subject, $message);
+  
+                  update_post_meta($post_id, 'sent_mail', 1);
+                }
+                
+              }
+              
+              add_action( 'save_post', 'published_to_draft'); 
+          }    
+      }
+      
+  
+  }

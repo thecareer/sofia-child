@@ -125,5 +125,10 @@ return array(
             'name' => 'official_instagram',
             'label' => esc_html(__('Instagram Page', 'jobplanet-plugin')),
         ),
+        array(
+            'type' => 'textbox',
+            'name' => 'hiring_lead',
+            'label' => esc_html(__('Hiring Lead', 'jobplanet-plugin')),
+        ),
     ),
 );
