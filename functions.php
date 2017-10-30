@@ -10,6 +10,7 @@ require_once dirname(__FILE__) . '/lib/dakachi-upload.php';
 require_once dirname(__FILE__) . '/lib/apply-job.php';
 require_once dirname(__FILE__) . '/lib/blog.php';
 require_once dirname(__FILE__) . '/lib/job-metabox.php';
+require_once dirname(__FILE__) . '/lib/handle-jazz.php';
 
 function onix_add_cssjs_ver($src)
 {
