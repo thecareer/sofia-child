@@ -13,7 +13,7 @@ function job_startup_apply_job()
             throw new Exception(esc_html(__('Việc làm không hợp lệ', 'jobplanet-plugin')));
         }
 
-        if ($data['first_name'] == '' && $data['last_name'] == '') {
+        if ($data['name'] == '' ) {
             throw new Exception(esc_html(__('Vui lòng nhập vào tên của bạn', 'jobplanet-plugin')));
         }
 
@@ -33,11 +33,13 @@ function job_startup_apply_job()
             dakachi_get_employer_email($job->ID),
             array(
                 // 'employer_name'  => $employer_name,
-                'applicant_name'  => $data['first_name'] . ' ' . $data['last_name'],
+                'applicant_name'  => $data['name'],
                 'job_name'        => $job->post_title,
                 'job_link'        => get_permalink($job->ID),
                 'message'         => $data['message'],
                 'applicant_email' => $data['email'],
+                'phone' => $data['phone'],
+                'address' => $data['address'],
             ), $attach
         );
 
@@ -46,10 +48,13 @@ function job_startup_apply_job()
             'email/jobseeker-application-notification',
             $email,
             array(
-                'applicant_name' => $data['first_name'] . ' ' . $data['last_name'],
+                'applicant_name' => $data['name'],
                 'job_name'       => $job->post_title,
                 'job_link'       => get_permalink($job->ID),
                 'message'        => $data['message'],
+                'applicant_email' => $data['email'],
+                'phone' => $data['phone'],
+                'address' => $data['address'],
             )
         );
         if ($email) {

@@ -29,13 +29,13 @@
               </div>
               <div class="info">
                   <div class="width-50">
-                        <label>First name</label>
-                        <input type="text" name="first_name" required="true" />
+                        <label>Name</label>
+                        <input type="text" name="name" required="true" />
                   </div>
 
                   <div class="width-50">
-                        <label>Last name</label>
-                        <input type="text" name="last_name" required="true" />
+                        <label>Address</label>
+                        <input type="text" name="address" required="true" />
                   </div>
                     <div class="width-50">
                       <label>Email</label>

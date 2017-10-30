@@ -2,11 +2,11 @@
     <tbody>
         <tr>
             <td style="background:#d42f92;padding:30px;border-radius:4px;border-bottom-left-radius:0;border-bottom-right-radius:0">
-                <table style="border-collapse:collapse;border-spacing:0;Margin-left:auto;Margin-right:auto;background-color:#d42f92;width:600px;table-layout:fixed">
+                <table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto;background-color:#d42f92;width:600px;table-layout:fixed">
                     <tbody>
                         <tr>
                             <td style="padding:0;vertical-align:top;text-align:left;padding-top:10px">
-                                <div align="center" style="font-size:12px;Margin-bottom:15px;font-style:normal;font-weight:400;font-family:'Open Sans',Open Sans,sans-serif!important;color:#8e8e8e">
+                                <div align="center" style="font-size:12px;margin-bottom:15px;font-style:normal;font-weight:400;font-family:'Open Sans',Open Sans,sans-serif!important;color:#8e8e8e">
                                     <img alt="" height="40" src="<?php echo get_stylesheet_directory_uri(); ?>/img/email-user-icon.png" style="border:0;display:block;max-width:64px" width="40">
                                     </img>
                                 </div>
@@ -14,9 +14,9 @@
                                     <tbody>
                                         <tr>
                                             <td style="padding:0;vertical-align:top;padding-left:32px;padding-right:32px;word-break:break-word;word-wrap:break-word">
-                                                <p style="Margin-top:0;font-style:normal;font-weight:400;font-size:20px;line-height:28px;Margin-bottom:10px;font-family:'Open Sans',Open Sans,sans-serif!important;color:#8e8e8e;text-align:center">
+                                                <p style="margin-top:0;font-style:normal;font-weight:400;font-size:20px;line-height:28px;margin-bottom:10px;font-family:'Open Sans',Open Sans,sans-serif!important;color:#8e8e8e;text-align:center">
                                                     <span style="color:#ffffff;font-family:'Open Sans',Open Sans,sans-serif!important;font-weight:bold">
-                                                        Your application for {{job title}}
+                                                        Your application for <?php echo $job_name; ?>
                                                     </span>
                                                     <br>
                                                         <span style="color:#ffffff;font-family:'Open Sans',Open Sans,sans-serif!important;font-weight:normal!important">
@@ -46,7 +46,7 @@
                                 Name
                             </td>
                             <td style="width:70%;font-size:14px">
-                                Truong Thi Bich Thu
+                                <?php echo $applicant_name; ?>
                             </td>
                         </tr>
                         <tr style="height:28px">
@@ -54,8 +54,8 @@
                                 Email
                             </td>
                             <td style="width:70%;font-size:14px;color:#8e58a4!important">
-                                <a href="mailto:ngoctuanatg@gmail.com" style="color:#546474!important;text-decoration:none" target="_blank">
-                                    thudieu@gmail.com
+                                <a href="mailto:<?php echo $applicant_email; ?>" style="color:#546474!important;text-decoration:none" target="_blank">
+                                    <?php echo $applicant_email; ?>
                                 </a>
                             </td>
                         </tr>
@@ -65,7 +65,7 @@
                             </td>
                             <td style="width:70%;font-size:14px">
                                 <a href="tel:938373899" style="color:#546474!important;text-decoration:none" target="_blank">
-                                    938373899
+                                    <?php echo $phone; ?>
                                 </a>
                             </td>
                         </tr>
@@ -75,7 +75,7 @@
                             </td>
                             <td style="width:70%;font-size:14px">
                                 <a href="tel:938373899" style="color:#546474!important;text-decoration:none" target="_blank">
-                                    12 Vuon Chuoi
+                                    <?php echo $address; ?>
                                 </a>
                             </td>
                         </tr>
@@ -95,7 +95,7 @@
                     <tbody>
                         <tr>
                             <td style="width:50%">
-                                <a href="{{job url}}" style="display:block;text-decoration:none;color:#fff;text-align:center;text-transform:uppercase;margin:0;background:#8e58a4;padding:12px;font-size:12px;border-radius:4px" target="_blank">
+                                <a href="<?php echo $job_link; ?>" style="display:block;text-decoration:none;color:#fff;text-align:center;text-transform:uppercase;margin:0;background:#8e58a4;padding:12px;font-size:12px;border-radius:4px" target="_blank">
                                     View Job Details
                                 </a>
                             </td>
@@ -115,10 +115,7 @@
                     Message
                 </h3>
                 <span style="font-family:'Open Sans',Open Sans,sans-serif!important;font-size:14px;color:#414b55!important">
-                    {{Message here
-                    <br/>
-                    <br/>
-                    Heehehe}}
+                    <?php echo nl2br($message); ?>
                 </span>
                 <p>
                 </p>
