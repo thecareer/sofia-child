@@ -12,7 +12,26 @@ add_action( 'rest_api_init', function () {
     'callback' => 'callback_find_company',
   ) );
 
+  register_rest_route( 'jazz', 'find_job', array(
+    'methods' => 'GET',
+    'callback' => 'callback_find_job',
+  ) );
+
 } );
+
+function callback_find_job() {
+  if(isset($_GET['job_id'])) {
+    $jobs = get_posts( array(
+      'post_type'        => 'job',
+      'meta_key'         => 'jazzid',
+      'meta_value'       => sanitize_text_field($_GET['job_id']),
+    ) );
+    
+    if(count($jobs) > 0) {
+      return array_merge((array)$jobs[0], array('job_url' => get_post_permalink($jobs[0]->ID)));
+    }
+  }
+}
 
 function callback_find_company() {
   if(isset($_GET['hiring_lead'])) {
@@ -61,6 +80,7 @@ function callback_hook_job() {
           'jazzmaxsalary' => $job->maximum_salary,
           'jazztype' => $job->type,
           'jazzstatus' => $job->status,
+          'jazzopenday' => $job->original_open_date,
           'hiringlead' => $job->hiring_lead,
           'embedcode' => $job->internal_code,
           'jazzcountry' => $job->country_id,
@@ -129,19 +149,23 @@ function published_to_draft( $post_id ) {
 
                 $hiring_lead = get_post_meta($post_id, 'hiringlead', true);
                 if($hiring_lead != null && $hiring_lead != "") {
+                  $mod = wp_get_current_user();
+                  
                   $user_jazz = json_decode(file_get_contents("https://api.resumatorapi.com/v1/users/".$hiring_lead."?apikey=9aBEBBNI63Fg2hzuMxQkxv5LSt2zJE53"));
                   
                   $post = get_post($post_id);
                   $post_url = get_post_permalink($post_id);
 
                   $to = $user_jazz->email;
-                  $subject = "Job Published";
-                  $message = "{last_name} {first_name}, {post_title} - {post_url}";
+                  $subject = "Congratulations! Your job is now published.";
 
-                  $message = str_replace(array('{last_name}', '{first_name}', '{post_title}', '{post_url}'), 
-                                        array($user_jazz->last_name, $user_jazz->first_name, $post->post_title, $post_url), $message);
+                  $open_day = get_post_meta($post_id, 'jazzopenday', true);
+                  $closing_day = get_post_meta($post_id, 'closing', true);
+                  $message = file_get_contents(dirname(__FILE__) . '/../template/email/2.html');
+                  $message = str_replace(array('{{mod_name}}', '{{mod_mail}}', '{{open_day}}', '{{closing_day}}', '{{job_title}}', '{{job url}}'), 
+                  array($mod->display_name, $mod->user_email, $open_day, $closing_day, $post->post_title, $post_url), $message);
 
-                  wp_mail($to, $subject, $message);
+                  wp_mail($to, $subject, $message, array('Content-Type: text/html; charset=UTF-8'));
   
                   update_post_meta($post_id, 'sent_mail', 1);
                 }
