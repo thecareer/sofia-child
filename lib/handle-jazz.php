@@ -42,7 +42,7 @@ function callback_find_company() {
     ) );
 
     if(count($companies) > 0) {
-      return $companies[0];
+      return array_merge((array)$companies[0], ['logo_url' => get_the_post_thumbnail_url($companies[0]->ID)]);
     }
   }
 }
