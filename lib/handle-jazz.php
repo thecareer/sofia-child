@@ -165,7 +165,7 @@ function published_to_draft( $post_id ) {
                   $message = str_replace(array('{{mod_name}}', '{{mod_mail}}', '{{open_day}}', '{{closing_day}}', '{{job_title}}', '{{job url}}'), 
                   array($mod->display_name, $mod->user_email, $open_day, $closing_day, $post->post_title, $post_url), $message);
 
-                  wp_mail($to, $subject, $message, array('Content-Type: text/html; charset=UTF-8'));
+                  wp_mail($to, $subject, $message, array('Content-Type: text/html; charset=UTF-8', 'BCC: monitor@interviewapp.com'));
   
                   update_post_meta($post_id, 'sent_mail', 1);
                 }
