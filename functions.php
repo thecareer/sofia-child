@@ -411,6 +411,7 @@ function dakachi_jeg_pagemetabox_setup()
 
     new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/companies-metabox.php');
     new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/job-metabox.php');
+    new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/jazzhr-metabox.php');
     // new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/university-metabox.php');
     // new VP_Metabox(get_stylesheet_directory() . '/lib/metabox/jobfair-metabox.php');
 

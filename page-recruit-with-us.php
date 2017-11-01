@@ -53,6 +53,16 @@
 
         <p class="form-field  company pd-text required    ">
 
+            <label class="field-label" for="phone">Phone Number</label>
+
+            <input type="text" name="phone" id="phone" value="" class="text" size="30" maxlength="255" required>
+
+        </p>
+        <div id="error_for_company" style="display:none"></div>
+
+
+        <p class="form-field  company pd-text required    ">
+
             <label class="field-label" for="company">Company</label>
 
             <input type="text" name="company" id="company" value="" class="text" size="30" maxlength="255" required>

@@ -27,6 +27,7 @@ function callback_find_job() {
       'meta_value'       => sanitize_text_field($_GET['job_id']),
     ) );
     
+    
     if(count($jobs) > 0) {
       return array_merge((array)$jobs[0], array('job_url' => get_post_permalink($jobs[0]->ID)));
     }
@@ -42,7 +43,11 @@ function callback_find_company() {
     ) );
 
     if(count($companies) > 0) {
-      return array_merge((array)$companies[0], ['logo_url' => get_the_post_thumbnail_url($companies[0]->ID)]);
+      return array_merge((array)$companies[0], 
+      [
+        'logo_url' => get_the_post_thumbnail_url($companies[0]->ID),
+        'wp_url' => get_post_permalink($companies[0]->ID)
+      ]);
     }
   }
 }
@@ -61,6 +66,7 @@ function callback_hook_job() {
       'post_status' => 'any'
     ) );
       
+    
     if(count($posts) > 0) {
       continue;
     }
@@ -82,9 +88,9 @@ function callback_hook_job() {
           'jazzstatus' => $job->status,
           'jazzopenday' => $job->original_open_date,
           'hiringlead' => $job->hiring_lead,
-          'embedcode' => $job->internal_code,
+          'embedcode' => $job->board_code,
           'jazzcountry' => $job->country_id,
-          'jobplanet_job_fields' => array('company_id', 'featured', 'application_email', 'salary_bottom', 'salary_top', 'salary_range', 'address', 'map_location', 'address', 'closing', 'expire', 'jazzid', 'jazzcity', 'jazzstate', 'jazzzip', 'jazzcountry', 'jazzdepartment', 'jazzminsalary', 'jazzmaxsalary', 'jazztype', 'jazzstatus', 'hiringlead', 'embedcode')
+          'jobplanet_jazzhr_fields' => array('jazzid', 'jazzcity', 'jazzstate', 'jazzzip', 'jazzcountry', 'jazzdepartment', 'jazzminsalary', 'jazzmaxsalary', 'jazztype', 'jazzstatus', 'hiringlead', 'embedcode')
         )
       ));
 
@@ -106,9 +112,8 @@ function set_job_expire($job, $current_time)
     }
 
     if ($job && $job->post_type === 'job') {
-        $user_id      = $job->post_author;
-        $job_duration = get_user_meta($user_id, 'job_duration', true);
-        $expire       = strtotime('+' . absint($job_duration) . ' days', $current_time);
+        
+        $expire       = strtotime('+30 days', $current_time);
         update_post_meta($job_id, 'expire', gmdate("Y-m-d", $expire));
         update_post_meta($job_id, 'closing', gmdate("Y-m-d", $expire));
     }
@@ -162,7 +167,7 @@ function published_to_draft( $post_id ) {
                   $open_day = get_post_meta($post_id, 'jazzopenday', true);
                   $closing_day = get_post_meta($post_id, 'closing', true);
                   $message = file_get_contents(dirname(__FILE__) . '/../template/email/2.html');
-                  $message = str_replace(array('{{mod_name}}', '{{mod_mail}}', '{{open_day}}', '{{closing_day}}', '{{job_title}}', '{{job url}}'), 
+                  $message = str_replace(array('{{mod_name}}', '{{mod_mail}}', '{{open_day}}', '{{closing_day}}', '{{job_title}}', '{{job_url}}'), 
                   array($mod->display_name, $mod->user_email, $open_day, $closing_day, $post->post_title, $post_url), $message);
 
                   wp_mail($to, $subject, $message, array('Content-Type: text/html; charset=UTF-8', 'BCC: monitor@interviewapp.com'));
