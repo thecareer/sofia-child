@@ -66,11 +66,23 @@ function callback_hook_job() {
       'post_status' => 'any'
     ) );
       
-    
     if(count($posts) > 0) {
       continue;
     }
     else {
+
+      $companies = get_posts( array(
+        'post_type'        => 'company',
+        'meta_key' => 'hiring_lead',
+        'meta_value'       => $job->hiring_lead,
+        'post_status' => 'any'
+      ) );
+
+      $company_id = null;
+      if(count($companies) > 0)  {
+        $company_id = $companies[0]->ID;
+      }
+
       $post_id = wp_insert_post(array(
         'post_author' => 8,
         'post_title' => $job->title,
@@ -90,6 +102,8 @@ function callback_hook_job() {
           'hiringlead' => $job->hiring_lead,
           'embedcode' => $job->board_code,
           'jazzcountry' => $job->country_id,
+          'company_id' => $company_id,
+          'jobplanet_job_fields' => array('company_id', 'featured', 'application_email', 'salary_bottom', 'salary_top', 'salary_range', 'address', 'map_location', 'address', 'closing', 'expire'),
           'jobplanet_jazzhr_fields' => array('jazzid', 'jazzcity', 'jazzstate', 'jazzzip', 'jazzcountry', 'jazzdepartment', 'jazzminsalary', 'jazzmaxsalary', 'jazztype', 'jazzstatus', 'hiringlead', 'embedcode')
         )
       ));
