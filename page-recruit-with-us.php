@@ -18,7 +18,7 @@
         <p><img alt="" border="0" height="56" src="<?php echo get_stylesheet_directory_uri(); ?>/img/hand_icon.png" style="width: 64px; height: 56px; margin-left: 232px; margin-right: 232px; border-width: 0px; border-style: solid;" width="64"></p>
 
         <p><span style="font-size:30px;"><span style="color:#040030;"><span style="font-family:arial,helvetica,sans-serif;"><strong>You’re one step away from </strong></span></span>
-            </span><span style="font-size:30px;"><span style="color:#040030;"><span style="font-family:arial,helvetica,sans-serif;"><strong>connecting with Boston’s top talent.</strong></span></span>
+            </span><span style="font-size:30px;"><span style="color:#040030;"><span style="font-family:arial,helvetica,sans-serif;"><strong>connecting with Startup.JOBS top talent.</strong></span></span>
             </span>
         </p>
 

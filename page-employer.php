@@ -22,16 +22,16 @@ get_header();
                                             <div class="node-header--info-wrapper">
                                                 <div class="node-header--info">
                                                     <h1 class="node-header--title">
-<div class="field field--name-field-header-subheadline field--type-string field--label-hidden field__item">Premium Membership</div>
+<div class="field field--name-field-header-subheadline field--type-string field--label-hidden field__item">Premium Employer</div>
 </h1>
                                                     <h2 class="node-header--headline">
-<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h1>Finding the best talent demands<br>
-a <span>targeted + authentic</span> approach</h1>
-<p>Built In’s <strong>three-phase approach</strong> merges employer branding,<br>
-events&nbsp;+ recruitment solutions to deliver top talent</p>
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h1>Finding the great talent<br>
+with <span>Applicant Tracking Platform</span> at JazzHR</h1>
+<p>Startup.JOBS <strong>help your company</strong> in employer branding,<br>
+post jobs, optimize hiring process to deliver best talent</p>
 </div>
 </h2>
-                                                    <div class="field field--name-field-header-button field--type-link field--label-hidden field__item"><a href="/recruit-with-us/">Recruit with us</a></div>
+                                                    <div class="field field--name-field-header-button field--type-link field--label-hidden field__item"><a href="/recruit-with-us">Recruit with us</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -42,7 +42,7 @@ events&nbsp;+ recruitment solutions to deliver top talent</p>
                         <div class="row">
                             <div class="">
                                 <div class="block-region-middle">
-                                    <div class="block block-block-content block-block-content5abab5f6-2e8f-44ef-8f0d-857925d7a031 block-left">
+                                    <div class="block block-block-content block-block-content block-left">
                                         <div class="gallery-wrapper">
 										    <ul class="gallery">
 										        <li class="item-1"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/placeit-18.jpg" width="570" height="600" alt="" class="image-style-premium-box">
@@ -56,7 +56,7 @@ events&nbsp;+ recruitment solutions to deliver top talent</p>
                                             <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                                 <h2>PREMIUM COMPANY PROFILE<br>
 FEATURED JOB SLOTS</h2>
-                                                <p>Introduce your company to the Built In Boston community with an engaging detailed profile that highlights your culture. Day one you’ll start recruiting with targeted premium job slots that easily integrate with your ATS.
+                                                <p>Introduce your company to Startup jobs community with an engaging detailed profile that highlights your culture. Day one you’ll start recruiting with targeted premium job slots that easily integrate with your ATS.
                                                     <br> &nbsp;
                                                 </p>
                                             </div>
@@ -90,7 +90,7 @@ FEATURED JOB SLOTS</h2>
                                             <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                                 <h2>EMPLOYER BRANDED CONTENT<br>
 COMMUNITY EVENTS</h2>
-                                                <p>Our content will help you tell your story and highlight everything that makes you a dream destination for prospective candidates. Get infront of the right audience by hosting or participating in recruitment events at Boston’s coolest workspaces.</p>
+                                                <p>Our content will help you tell your story and highlight everything that makes you a dream destination for prospective candidates. Get infront of the right audience by hosting or participating in recruitment events at Startup.JOBS coolest workspaces.</p>
                                                 <p>&nbsp;</p>
                                             </div>
                                             <div class="clearfix text-formatted field field--name-field-premium-box-percents field--type-text-long field--label-hidden field__items">
@@ -149,7 +149,7 @@ WEEKLY JOB EMAILS</h2>
                                     <div class="block block-block-content block-block-content7de5294b-7423-473e-9cfd-fa34f852a1fe">
                                         <h2 class="box-title">Our Community</h2>
                                         <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
-                                            <p>Built In Boston’s <span>targeted</span>
+                                            <p>Startup.JOBS <span>targeted</span>
                                                 <br><span>recruiting</span> appeals to highly
                                                 <br> skilled talent in the heart of
                                                 <br> the tech community.</p>
@@ -177,14 +177,14 @@ WEEKLY JOB EMAILS</h2>
                                         </div>
                                     </div>
                                     <div class="block block-block-content block-block-content86226a2f-5e7c-4d2f-8858-4fe43348ff11">
-                                        <h2 class="box-title">The Built In Boston Effect</h2>
+                                        <h2 class="box-title">The Startup.JOBS</h2>
                                         <div class="field field--name-field-collection-testimonial field--type-field-collection field--label-hidden field__items">
                                             <div class="field__item">
                                                 <div class="field-collection-item field-collection-item--name-field-collection-testimonial field-collection-item--view-mode-default">
                                                     <div class="content">
                                                         <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/bruce.png" width="100" height="100" alt="Bruce">
                                                         </div>
-                                                        <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">We have&nbsp;had successful hires&nbsp;in Sales and Engineering.&nbsp;Built In has been impactful for us to communicate our culture to the Boston community.</div>
+                                                        <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">We have&nbsp;had successful hires&nbsp;in Sales and Engineering.&nbsp;Startup.JOBS has been impactful for us to communicate our culture to the Boston community.</div>
                                                         <div class="field field--name-field-testimonial-name field--type-string field--label-hidden field__item">Bruce</div>
                                                         <div class="field field--name-field-testimonial-title field--type-string field--label-hidden field__item">Sr. Director Global Talent</div>
                                                         <div class="field field--name-field-testimonial-company field--type-string field--label-hidden field__item">Acquia</div>
@@ -196,7 +196,7 @@ WEEKLY JOB EMAILS</h2>
                                                     <div class="content">
                                                         <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/maria.png" width="100" height="100" alt="maria">
                                                         </div>
-                                                        <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">We used to post on Indeed and Dice but found that Built In was much better for filling our technical roles.</div>
+                                                        <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">We used to post on Indeed and Dice but found that Startup.JOBS was much better for filling our technical roles.</div>
                                                         <div class="field field--name-field-testimonial-name field--type-string field--label-hidden field__item">Maria</div>
                                                         <div class="field field--name-field-testimonial-title field--type-string field--label-hidden field__item">Technical Recruiter</div>
                                                         <div class="field field--name-field-testimonial-company field--type-string field--label-hidden field__item">Grubhub</div>
@@ -208,7 +208,7 @@ WEEKLY JOB EMAILS</h2>
                                                     <div class="content">
                                                         <div class="field field--name-field-testimonial-picture field--type-image field--label-hidden field__item"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/kelli.png" width="100" height="100" alt="kelli">
                                                         </div>
-                                                        <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">If you ever went out of business, I literally would not be able to live my life. We have made 40 hires in the past year and over half have come from Built In.</div>
+                                                        <div class="field field--name-field-testimonial-body field--type-string-long field--label-hidden field__item">If you ever went out of business, I literally would not be able to live my life. We have made 40 hires in the past year and over half have come from Start.JOBS.</div>
                                                         <div class="field field--name-field-testimonial-name field--type-string field--label-hidden field__item">Kelli</div>
                                                         <div class="field field--name-field-testimonial-title field--type-string field--label-hidden field__item">Recruiter</div>
                                                         <div class="field field--name-field-testimonial-company field--type-string field--label-hidden field__item">Stack Overflow</div>
@@ -242,7 +242,7 @@ WEEKLY JOB EMAILS</h2>
                                                     <br> hires in the past
                                                     <br> year and over half
                                                     <br> have come from
-                                                    <br> Built In.”</p>
+                                                    <br> Startup.JOBS”</p>
                                                 <p><span class="name">KELLI</span>
                                                     <br><span class="company-title">Recruiter, StackOverflow</span></p>
                                             </div>

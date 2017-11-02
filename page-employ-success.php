@@ -17,7 +17,7 @@
 
         <p style="text-align: center;"><img alt="" border="0" src="<?php echo get_stylesheet_directory_uri(); ?>/img/check_box.png" style="border-style:solid; border-width:0px; height:132px; margin:50px 200px; width:130px"></p>
 
-        <p style="text-align: center;"><span style="color:#04003f"><strong><span style="font-size:28px"><span style="font-family:arial,helvetica,sans-serif">Welcome to the community!</span></span>
+        <p style="text-align: center;"><span style="color:#04003f"><strong><span style="font-size:28px"><span style="font-family:arial,helvetica,sans-serif">Welcome to Startup.JOBS!</span></span>
             </strong>
             </span>
         </p>
