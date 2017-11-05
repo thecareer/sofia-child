@@ -27,7 +27,7 @@
         // Get the modal
         var modal = document.getElementById('apply-modal');
         // Get the button that opens the modal
-        var btn = $(".apply-button");
+        var btn = $(".open-apply-modal");
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
         // When the user clicks the button, open the modal 

@@ -24,7 +24,7 @@
                 <a href="/" title="Home" rel="home" class="site-logo">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/startup.jobs.logo.svg" alt="Startup.JOBS">
                 </a>
-                <?php
+                <?php /*
                 $language_list = startup_language_list();
                 // ICL_LANGUAGE_CODE
                 ?>
@@ -42,6 +42,7 @@
                       </div>
                     </li>
                     </ul>
+                <?php */ ?>
             </div>
 
         </div>

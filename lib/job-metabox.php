@@ -41,8 +41,8 @@ function dakachi_save_job_name($post_ID, $post, $update) {
 }
 add_action('save_post_job', 'dakachi_save_job_name', 10, 3);
 
-function dakachi_filter_job_link($link, $post) {
-	if( 'job' == $post->post_type && vp_metabox('jobplanet_job.application_url')) {
+function dakachi_filter_job_link($link, $job) {
+	if( !is_admin() && 'job' == $job->post_type && vp_metabox('jobplanet_job.application_url')) {
 		return vp_metabox('jobplanet_job.application_url');
 	}
 	return $link;

@@ -11,6 +11,7 @@ $company_name = get_the_title($company_id);
 
 
 $company_status = get_post_field( 'post_status', $company_id );
+remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
 ?>
 <div class="region region-help">
     
@@ -86,8 +87,12 @@ $company_status = get_post_field( 'post_status', $company_id );
                                 </div>
                                 <div class="block block-bix-jobs block-bix-jobs-apply-bottom">
 
-                                    <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--2" accept-charset="UTF-8">
-                                        <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
+                                    <form class="bix-jobs-apply-job-form"  action="" method="post" id="bix-jobs-apply-job-form--2" accept-charset="UTF-8">
+                                        <?php if(vp_metabox('jobplanet_job.application_url')) : ?>
+                                            <a class="apply-button ga-event-processed" href="<?php echo vp_metabox('jobplanet_job.application_url'); ?>" target="_blank" bix-click-campaign="apply-now-button" >Apply now</a>
+                                        <?php else : ?>
+                                            <div class="apply-button open-apply-modal ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
+                                        <?php endif; ?>
                                         <input  type="hidden" name="form_build_id" value="form-l3AMPHHEm_m99tCVeo0T63ftRVmhsQpb59uzkcZukpU">
                                         <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
                                         <input  type="hidden" name="form_id" value="bix_jobs_apply_job_form">
@@ -97,7 +102,7 @@ $company_status = get_post_field( 'post_status', $company_id );
                                     <div class="save-job">
 
                                         <a title="" target="_blank" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" data-ga-event="job-save-job-description" rel="nofollow">Share to Facebook</a></div>
-                                    <div class="save-job">    
+                                    <div class="save-job">
                                         <a title="" target="_blank" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=<?php vp_metabox('jobplanet_job.short_desc'); ?>" data-ga-event="job-save-job-description" rel="nofollow">Share to LinkedIn</a></div>
 
                                     
@@ -211,7 +216,11 @@ $company_status = get_post_field( 'post_status', $company_id );
                                             </div>
                                         </div>
                                         <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form" accept-charset="UTF-8">
-                                            <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-right-rail" tid="12">Apply now</div>
+                                            <?php if(vp_metabox('jobplanet_job.application_url')) : ?>
+                                            <a class="apply-button ga-event-processed" href="<?php echo vp_metabox('jobplanet_job.application_url'); ?>" target="_blank" bix-click-campaign="apply-now-button" >Apply now</a>
+                                        <?php else : ?>
+                                            <div class="apply-button open-apply-modal ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
+                                        <?php endif; ?>
                                             <input  type="hidden" name="form_build_id" value="form-bqgz10QSnMBbS28elpOGYkExwwiUmj9AqjIxcAIxwH0">
                                             <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
                                             <input  type="hidden" name="form_id" value="bix_jobs_apply_job_form">
