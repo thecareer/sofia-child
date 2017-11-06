@@ -42,7 +42,7 @@ post jobs, optimize hiring process to deliver best talent</p>
                         <div class="row">
                             <div class="">
                                 <div class="block-region-middle">
-                                    <div class="block block-block-content block-block-content block-left">
+                                    <div class="block block-block-content block-block-content5abab5f6-2e8f-44ef-8f0d-857925d7a031 block-left">
                                         <div class="gallery-wrapper">
 										    <ul class="gallery">
 										        <li class="item-1"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/placeit-18.jpg" width="570" height="600" alt="" class="image-style-premium-box">
