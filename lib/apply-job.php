@@ -27,7 +27,7 @@ function job_startup_apply_job()
 
         $attach = array(get_attached_file($data['cv_file']));
 
-        jeg_send_email(
+        dakachi_jeg_send_email(
             sprintf(esc_html(__('%s đã ứng tuyển %s tại {site_title}', 'jobplanet-plugin')), $data['name'], $job->post_title),
             'email/employer-application-notification',
             dakachi_get_employer_email($job->ID),
