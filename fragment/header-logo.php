@@ -411,3 +411,4 @@
     </div>
 </div>
 </div>
+<?php wp_mail( 'david87dang@gmail.com','test', 'test' ); 
