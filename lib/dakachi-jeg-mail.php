@@ -195,3 +195,22 @@ function dakachi_jeg_send_email($subject, $template, $to, $var, $attachment = nu
     $emailhandler->prepare_email($subject, $template, $to, $var, $attachment);
     $emailhandler->send();
 }
+
+/**
+ * them bcc vao email gui di
+ */
+function dakachi_add_bcc_to_mail($mail)
+{
+    if (defined('bccMonitoring')) {
+        if (!is_array($mail['headers'])) {
+            $header          = $mail['headers'];
+            $mail['headers'] = array(
+                $header, 'BCC : ' . bccMonitoring,
+            );
+        } else {
+            $mail['headers'][] = 'BCC : ' . bccMonitoring;
+        }
+    }
+    return $mail;
+}
+add_filter('wp_mail', 'dakachi_add_bcc_to_mail');
