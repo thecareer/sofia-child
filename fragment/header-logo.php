@@ -57,10 +57,10 @@
                     <a href="<?php echo home_url(); ?>" data-sofia-link-system-path="<front>">Home</a>
                 </li>
                 <li class="menu-item">
-                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['job_page'] ); ?>" data-sofia-link-system-path="jobs">Jobs</a>
+                    <a href="<?php echo home_url( '/jobs' ); ?>" data-sofia-link-system-path="jobs">Jobs</a>
                 </li>
                 <li class="menu-item">
-                    <a href="<?php echo get_permalink(  dakachi_page_array(ICL_LANGUAGE_CODE)['company_list_page'] ); ?>">Companies</a>
+                    <a href="<?php echo home_url( '/companies' ); ?>">Companies</a>
                 </li>
                 <li class="menu-item">
                     <a href="<?php echo home_url( '/blogs' ); ?>" data-sofia-link-system-path="blogs">Blog</a>
@@ -111,7 +111,7 @@
         <?php global $post; ?>
             <ul class="menu">
                 <li class="nav-item jobs menu-item <?php if( is_page_template( 'search-job.php' ) || is_singular( 'job' ) ) {echo 'active';} ?>">
-                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['job_page'] ); ?>"><span>Job Search</span></a>
+                    <a href="/jobs"><span>Job Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <div class="submenu">
@@ -182,7 +182,7 @@
                     </div>
                 </li>
                 <li class="nav-item startups menu-item menu-item--expanded <?php if( is_page_template( 'company-list.php' ) || is_singular( 'company' ) ) {echo 'active';} ?>">
-                    <a href="<?php echo get_permalink( dakachi_page_array(ICL_LANGUAGE_CODE)['company_list_page'] ); ?>"><span>Companies</span></a>
+                    <a href="/companies"><span>Companies</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
                             <ul class="menu">
