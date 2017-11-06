@@ -28,7 +28,7 @@ function job_startup_apply_job()
         $attach = array(get_attached_file($data['cv_file']));
 
         jeg_send_email(
-            sprintf(esc_html(__('%s đã ứng tuyển %s tại {site_title}', 'jobplanet-plugin')), $name, $job->post_title),
+            sprintf(esc_html(__('%s đã ứng tuyển %s tại {site_title}', 'jobplanet-plugin')), $data['name'], $job->post_title),
             'email/employer-application-notification',
             dakachi_get_employer_email($job->ID),
             array(
@@ -43,10 +43,10 @@ function job_startup_apply_job()
             ), $attach
         );
 
-        $email = jeg_send_email(
+        jeg_send_email(
             sprintf(esc_html(__('Bạn đã ứng tuyển vị trí %s tại {site_title}', 'jobplanet-plugin')), $job->post_title),
             'email/jobseeker-application-notification',
-            $email,
+            $data['email'],
             array(
                 'applicant_name' => $data['name'],
                 'job_name'       => $job->post_title,
@@ -57,9 +57,8 @@ function job_startup_apply_job()
                 'address' => $data['address'],
             )
         );
-        if ($email) {
-            wp_send_json(array('success' => true));
-        }
+        
+        wp_send_json(array('success' => true));
     } catch (Exception $e) {
         $message = '<div class="alert alert-danger" role="alert">' . $e->getMessage() . '</div>';
         wp_send_json(array('success' => false, 'msg' => $message));
