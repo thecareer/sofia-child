@@ -411,9 +411,3 @@
     </div>
 </div>
 </div>
-<?php $a = wp_mail( 'david87dang@gmail.com','test', 'test' ); 
-echo '<!-- ';
-echo "<pre>";
- print_r($a);
- echo "</pre>"; 
-echo '-->';
