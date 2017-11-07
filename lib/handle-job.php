@@ -1600,22 +1600,21 @@ class Dakachi_Jeg_Job
                 if(count($locations) == 0 || count($company_size) == 0 || count($company_industry) == 0) {
                     wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
                 }
-            }
-            $external = false;
-            $html = str_get_html(get_post_field('post_content', $post_id));
-            foreach($html->find('img') as $element) {
-                if(!strpos($element->src, 'startup.jobs'))
-                    $external = true;
-            }
 
-            if($external == true) {
-                wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+                $external = false;
+                $html = str_get_html(get_post_field('post_content', $post_id));
+                foreach($html->find('img') as $element) {
+                    if(!strpos($element->src, 'startup.jobs'))
+                        $external = true;
+                }
+    
+                if($external == true) {
+                    wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+                }
             }
-
-            
         }
         
-        if($post_type == 'job') {
+        if($post_type == 'job' && $status == 'publish') {
             
             
             $job_type = wp_get_post_terms($post_id, 'job-type');
@@ -1657,29 +1656,30 @@ class Dakachi_Jeg_Job
    
         }
 
-        if($post_type == 'post') {
-            $external = false;
-            $html = str_get_html(get_post_field('post_content', $post_id));
-            foreach($html->find('img') as $element) {
-                if(!strpos($element->src, 'startup.jobs'))
-                    $external = true;
-            }
-
-            if($external == true) {
-                wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
-            }
-
-            $category_detail = get_the_category($post_id);
-            foreach($category_detail as $cd){
-                
-                if($cd->cat_ID == 1)
+        if($post_type == 'post' && $status == 'publish') {
+            
+                $external = false;
+                $html = str_get_html(get_post_field('post_content', $post_id));
+                foreach($html->find('img') as $element) {
+                    if(!strpos($element->src, 'startup.jobs'))
+                        $external = true;
+                }
+    
+                if($external == true) {
                     wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
-            }
-
-            $featured_image = has_post_thumbnail($post_id);
-            if($featured_image === false)
-                wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
-
+                }
+    
+                $category_detail = get_the_category($post_id);
+                foreach($category_detail as $cd){
+                    
+                    if($cd->cat_ID == 1)
+                        wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+                }
+    
+                $featured_image = has_post_thumbnail($post_id);
+                if($featured_image === false)
+                    wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+            
         }
         add_action( 'save_post', array($this, 'published_to_draft'));
     }
