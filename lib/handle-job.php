@@ -3,6 +3,7 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+require('simple_html_dom.php');
 
 /**
  * Add action init to remove action form handler
@@ -43,6 +44,7 @@ class Dakachi_Jeg_Job
         add_filter('manage_job_posts_columns', array($this, 'job_columns'));
 
         add_action('restrict_manage_posts', array(&$this, 'restrict_manage_posts'), 12);
+        add_action( 'save_post', array($this, 'published_to_draft'));
     }
 
     public function post_row_actions($actions, $post)
@@ -1574,6 +1576,88 @@ class Dakachi_Jeg_Job
             'pending' => esc_html(__('Pending Approval', 'jobplanet-plugin')),
             'publish' => esc_html(__('Active', 'jobplanet-plugin')),
         );
+    }
+
+    function published_to_draft( $post_id ) { 
+        remove_action('save_post', array($this, 'published_to_draft'));
+        $status = get_post_status($post_id);
+        $post_type = get_post_type($post_id);
+        if($post_type == 'company')
+        {
+            
+            if($status == 'simple')
+            {
+                if(!has_post_thumbnail($post_id)) {
+                    wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+                }
+                
+            }
+            if($status == 'publish') {
+                $locations = wp_get_post_terms($post_id, 'company-location');
+                $company_size = wp_get_post_terms($post_id, 'company-size');
+                $company_industry = wp_get_post_terms($post_id, 'company-industry');
+
+                if(count($locations) == 0 || count($company_size) == 0 || count($company_industry) == 0) {
+                    wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+                }
+            }
+            $external = false;
+            $html = str_get_html(get_post_field('post_content', $post_id));
+            foreach($html->find('img') as $element) {
+                if(!strpos($element->src, 'startup.jobs'))
+                    $external = true;
+            }
+
+            if($external == true) {
+                wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+            }
+
+            
+        }
+        
+        if($post_type == 'job') {
+            
+            
+            $job_type = wp_get_post_terms($post_id, 'job-type');
+            $job_category = wp_get_post_terms($post_id, 'job-category');
+            $job_location = wp_get_post_terms($post_id, 'job-location');
+            $job_level = wp_get_post_terms($post_id, 'job_level');
+            
+            if(count($job_type) == 0 || count($job_category) == 0 || count($job_location) == 0 || count($job_level) == 0) {
+                
+                wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+            }
+
+            $company_id = get_post_meta($post_id, 'company_id', true);
+            $expire = get_post_meta($post_id, 'expire', true);
+            $short_desc = get_post_meta($post_id, 'short_desc', true);
+            
+            if($company_id == null || $company_id == "" || $expire == null || $expire == "" || $short_desc == null || $short_desc == "") {
+                
+                wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+            }
+
+            $number_vacancy = get_post_meta($post_id, 'number_vacancy', true);
+            if($number_vacancy == "" || $number_vacancy == null) {
+                
+                update_post_meta($post_id, 'number_vacancy', 1);
+            }
+            
+
+            $external = false;
+            $html = str_get_html(get_post_field('post_content', $post_id));
+            foreach($html->find('img') as $element) {
+                if(!strpos($element->src, 'startup.jobs'))
+                    $external = true;
+            }
+
+            if($external == true) {
+                wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+            }
+
+            
+        }
+        add_action( 'save_post', array($this, 'published_to_draft'));
     }
 }
 
