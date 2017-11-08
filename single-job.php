@@ -64,7 +64,7 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
 
                                         <div class="block block-bix-jobs-apply-bottom-only-apply">
                                             <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--4" accept-charset="UTF-8">
-                                                <div class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
+                                                <div <?php if(isset($_COOKIE['applied_'.get_the_ID()])) {echo 'disabled';} ?> class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
                                                 <input  type="hidden" name="form_build_id" value="form-mHYuJcgrsGkKA-QQdrH4ypT2DadLuvpaupfYYsOdwzE">
                                                 <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
                                                 <input  type="hidden" name="form_id" value="bix_jobs_apply_job_form">
@@ -91,7 +91,7 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                                         <?php if(vp_metabox('jobplanet_job.application_url')) : ?>
                                             <a class="apply-button ga-event-processed" href="<?php echo vp_metabox('jobplanet_job.application_url'); ?>" target="_blank" bix-click-campaign="apply-now-button" >Apply now</a>
                                         <?php else : ?>
-                                            <div class="apply-button open-apply-modal ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
+                                            <div  class="apply-button <?php if(!isset($_COOKIE['applied_'.get_the_ID()])) {echo 'open-apply-modal';} ?> ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
                                         <?php endif; ?>
                                         <input  type="hidden" name="form_build_id" value="form-l3AMPHHEm_m99tCVeo0T63ftRVmhsQpb59uzkcZukpU">
                                         <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
@@ -219,7 +219,7 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                                             <?php if(vp_metabox('jobplanet_job.application_url')) : ?>
                                             <a class="apply-button ga-event-processed" href="<?php echo vp_metabox('jobplanet_job.application_url'); ?>" target="_blank" bix-click-campaign="apply-now-button" >Apply now</a>
                                         <?php else : ?>
-                                            <div class="apply-button open-apply-modal ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
+                                            <div class="apply-button <?php if(!isset($_COOKIE['applied_'.get_the_ID()])) {echo 'open-apply-modal';} ?> ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
                                         <?php endif; ?>
                                             <input  type="hidden" name="form_build_id" value="form-bqgz10QSnMBbS28elpOGYkExwwiUmj9AqjIxcAIxwH0">
                                             <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">

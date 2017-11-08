@@ -154,6 +154,7 @@
                     }else {
                         form.prepend(res.msg);
                     }
+                    $('.apply-button').removeClass('open-apply-modal');
                     button.text('SEND YOUR APPLICATION');
                 }
             });

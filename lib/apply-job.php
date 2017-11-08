@@ -9,7 +9,7 @@ function job_startup_apply_job()
     parse_str($_REQUEST['data'], $data);
     $job = get_post($data['job_id']);
     try {
-        if ($data['job_id'] == '' && !$job) {
+        if ($data['job_id'] == '' || !$job || $job->post_type != 'job') {
             throw new Exception(esc_html(__('Việc làm không hợp lệ.', 'jobplanet-plugin')));
         }
 
@@ -57,7 +57,7 @@ function job_startup_apply_job()
                 'address' => $data['address'],
             )
         );
-        
+        setcookie('applied_' . $job->ID , 1, time()+129600, '/' );
         wp_send_json(array('success' => true));
     } catch (Exception $e) {
         $message = '<div class="alert alert-danger" role="alert">' . $e->getMessage() . '</div>';
