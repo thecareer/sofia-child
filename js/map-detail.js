@@ -74,7 +74,7 @@
         })
 
 
-        initMapDetail();
+        // initMapDetail();
         $(window).scroll(function() {
             var heightHeader = $('.layout-container > .header').outerHeight(),
                 heightFooter = $('.layout-container > footer').outerHeight(),

@@ -120,7 +120,8 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                                 
                                     <div class="gmap_location_widget company_location">
                                         <div class="gmap_location_widget_description company_description"><?php echo esc_html(vp_metabox('jobplanet_job.address')); ?></div>
-                                        <div id="gmap_location_widget_map" style="position: relative; overflow: hidden;" data-lat="<?php echo esc_html(trim($latlng[0])); ?>" data-lng="<?php echo esc_html(trim($latlng[1])); ?>">
+                                        <div id="gmap_location_widget_map" style="position: relative; overflow: hidden;">
+                                            <iframe id="gmap" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCXbA7-odJtEHPviVy32Sc5mPBvaJgFrts&amp;q=<?php echo esc_html(vp_metabox('jobplanet_job.address')); ?>" allowfullscreen="" width="100%" height="360" frameborder="0"> </iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -133,7 +134,6 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                                             $query = array(
                                                 'post_status' => 'publish',
                                                 'post_type' => 'job',
-                                                'paged' => $currentpage,
                                                 'meta_key' => 'company_id',
                                                 'meta_value' => $company_id,
                                                 'exclude' => array(get_the_ID())

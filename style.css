@@ -226,6 +226,10 @@ a.page-numbers{
     font-size: 18px;
 }
 
+.views-row-more {
+    cursor: pointer;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */

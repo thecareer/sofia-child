@@ -10,15 +10,15 @@ function job_startup_apply_job()
     $job = get_post($data['job_id']);
     try {
         if ($data['job_id'] == '' && !$job) {
-            throw new Exception(esc_html(__('Việc làm không hợp lệ', 'jobplanet-plugin')));
+            throw new Exception(esc_html(__('Việc làm không hợp lệ.', 'jobplanet-plugin')));
         }
 
         if ($data['name'] == '' ) {
-            throw new Exception(esc_html(__('Vui lòng nhập vào tên của bạn', 'jobplanet-plugin')));
+            throw new Exception(esc_html(__('Vui lòng nhập vào tên của bạn.', 'jobplanet-plugin')));
         }
 
-        if ($data['email'] == '') {
-            throw new Exception(esc_html(__('Vui lòng nhập vào địa chỉ email', 'jobplanet-plugin')));
+        if ($data['email'] == '' || !is_email( $data['email'] )) {
+            throw new Exception(esc_html(__('Vui lòng nhập vào địa chỉ email.', 'jobplanet-plugin')));
         }
 
         if ($data['cv_file'] == '') {
