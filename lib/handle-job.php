@@ -1582,6 +1582,18 @@ class Dakachi_Jeg_Job
         remove_action('save_post', array($this, 'published_to_draft'));
         $status = get_post_status($post_id);
         $post_type = get_post_type($post_id);
+        try {
+            $external = false;
+            $html = str_get_html(get_post_field('post_content', $post_id));
+            foreach($html->find('img') as $element) {
+                if(!strpos($element->src, 'startup.jobs'))
+                    $external = true;
+            }
+        }
+        catch(Exception $ex) {
+            // catch error find()
+        }
+        
         if($post_type == 'company')
         {
             
@@ -1601,16 +1613,6 @@ class Dakachi_Jeg_Job
                     wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
                 }
 
-                $external = false;
-                $html = str_get_html(get_post_field('post_content', $post_id));
-                foreach($html->find('img') as $element) {
-                    if(!strpos($element->src, 'startup.jobs'))
-                        $external = true;
-                }
-    
-                if($external == true) {
-                    wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
-                }
             }
         }
         
@@ -1642,32 +1644,10 @@ class Dakachi_Jeg_Job
                 update_post_meta($post_id, 'number_vacancy', 1);
             }
             
-
-            $external = false;
-            $html = str_get_html(get_post_field('post_content', $post_id));
-            foreach($html->find('img') as $element) {
-                if(!strpos($element->src, 'startup.jobs'))
-                    $external = true;
-            }
-
-            if($external == true) {
-                wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
-            }
-   
         }
 
         if($post_type == 'post' && $status == 'publish') {
             
-                $external = false;
-                $html = str_get_html(get_post_field('post_content', $post_id));
-                foreach($html->find('img') as $element) {
-                    if(!strpos($element->src, 'startup.jobs'))
-                        $external = true;
-                }
-    
-                if($external == true) {
-                    wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
-                }
     
                 $category_detail = get_the_category($post_id);
                 foreach($category_detail as $cd){
