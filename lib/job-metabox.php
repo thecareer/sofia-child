@@ -47,4 +47,4 @@ function dakachi_filter_job_link($link, $job) {
 	}
 	return $link;
 }
-add_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
+// add_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );

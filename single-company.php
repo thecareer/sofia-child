@@ -224,7 +224,7 @@ if($company_head_id) {
                                                     </div>
 
                                                     <div class="title">
-                                                        <a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>" hreflang="en">
+                                                        <a href="<?php the_permalink(); ?>" hreflang="en">
                                                         <?php the_title(); ?>
                                                         </a>
                                                     </div>
@@ -234,7 +234,7 @@ if($company_head_id) {
                                                     </div>
 
                                                     <div class="link">
-                                                        <a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>">View</a>
+                                                        <a href="<?php the_permalink(); ?>">View</a>
                                                     </div>
 
                                                 </div>
