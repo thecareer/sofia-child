@@ -1582,17 +1582,16 @@ class Dakachi_Jeg_Job
         remove_action('save_post', array($this, 'published_to_draft'));
         $status = get_post_status($post_id);
         $post_type = get_post_type($post_id);
-        try {
-            $external = false;
-            $html = str_get_html(get_post_field('post_content', $post_id));
-            foreach($html->find('img') as $element) {
-                if(!strpos($element->src, 'startup.jobs'))
-                    $external = true;
-            }
+            
+    $external = false;
+    $html = str_get_html(get_post_field('post_content', $post_id));
+    if ($html !== false) {
+        foreach($html->find('img') as $element) {
+            if(!strpos($element->src, 'startup.jobs'))
+                $external = true;
         }
-        catch(Exception $ex) {
-            // catch error find()
-        }
+    }
+    
         
         if($post_type == 'company')
         {
