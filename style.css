@@ -143,7 +143,7 @@ a.page-numbers{
 .home-top-company .company-type{
     margin-top: 10px;
     max-width: 200px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
     text-transform: uppercase;
@@ -154,7 +154,7 @@ a.page-numbers{
     bottom: 11px;
 }
 .home-top-company .open-jobs {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
     margin-top: 5px;
@@ -164,7 +164,7 @@ a.page-numbers{
     text-transform: uppercase;
 }
 .home-top-company .open-jobs a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
