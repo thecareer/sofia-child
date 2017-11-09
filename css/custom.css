@@ -1228,7 +1228,7 @@ h2.heading2 {
 }
 
 .nav-item.events .view-navigation-events .views-row .organized-by, .nav-item.events .view-navigation-events .views-row .organized-by a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -1939,7 +1939,7 @@ h2.heading2 {
     position: relative;
     color: #FFF;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
 }
 
@@ -3213,7 +3213,7 @@ h2.heading2 {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     color: #FFF;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -3226,10 +3226,10 @@ h2.heading2 {
 }
 
 .job-opportunities .views-row .location {
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     margin-top: 10px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -3239,7 +3239,7 @@ h2.heading2 {
 }
 
 .job-opportunities .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -3609,9 +3609,9 @@ h2.heading2 {
 .logo-wrapper-small .centered {
     display: table-cell;
     background-color: #FFF;
-    border: 1px solid #F0F2FA;
-    height: 100px;
-    width: 100px;
+    border: 2px solid #FFF;
+    height: 88px;
+    width: 88px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -3620,7 +3620,6 @@ h2.heading2 {
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
-    padding: 19.6446609407px;
     overflow: hidden;
     vertical-align: middle;
 }
@@ -3790,7 +3789,7 @@ h2.heading2 {
 }
 
 .sidebar-listing .company-title, .sidebar-listing .company-title a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -4255,7 +4254,7 @@ h2.heading2 {
 }
 
 .ribbon-box {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 1.78;
     letter-spacing: 0.3px;
@@ -5355,7 +5354,7 @@ h2.heading2 {
 }
 
 .bix-embed-people .bix-embed-people-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -7329,7 +7328,7 @@ header .site-slogan:last-child {
 }
 
 .company-culture .field--name-field-employee-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
     text-transform: uppercase;
@@ -8072,7 +8071,7 @@ header .site-slogan:last-child {
 
 .block-views-blockcompany-employee-testimonials-block-1 .testimonials-slideshow .field--name-field-employee-name, .block-views-blockcompany-employee-testimonials-block-1 .testimonials-slideshow .field--name-field-employee-title {
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .block-views-blockcompany-employee-testimonials-block-1 .lSAction a {
@@ -8272,7 +8271,7 @@ header .site-slogan:last-child {
 
 .block-bix-companies-our-full-stack-block .full-stack-item-field {
     color: #7F8398;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -9474,7 +9473,7 @@ header .site-slogan:last-child {
 
 .page-node-type-blog .author .name {
     margin-left: 10px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -9488,7 +9487,7 @@ header .site-slogan:last-child {
 }
 
 .page-node-type-blog .author .date {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -10183,7 +10182,7 @@ header .site-slogan:last-child {
 
 .node--type-blog.node--view-mode-spotlight .author .name {
     margin-left: 10px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -10197,7 +10196,7 @@ header .site-slogan:last-child {
 }
 
 .node--type-blog.node--view-mode-spotlight .author .date {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -11498,7 +11497,7 @@ header .site-slogan:last-child {
 }
 
 .page-node-type-event .event-time, .page-node-type-event .event-category {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -13260,7 +13259,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-frontpage-startups .view-frontpage-companies .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 10px;
@@ -13294,7 +13293,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-frontpage-startups .view-frontpage-companies .views-row .company-type, .block-bix-frontpage-startups .view-frontpage-companies .views-row .company-type a, .block-bix-frontpage-startups .view-frontpage-companies .views-row .open-jobs, .block-bix-frontpage-startups .view-frontpage-companies .views-row .open-jobs a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -13845,7 +13844,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-frontpage-events .view-frontpage-events .views-row .organized-by, .block-bix-frontpage-events .view-frontpage-events .views-row .organized-by a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -15392,7 +15391,7 @@ header .site-slogan:last-child {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     color: #FFF;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -15405,10 +15404,10 @@ header .site-slogan:last-child {
 }
 
 .block-bix-frontpage-recommended-jobs .view-frontpage-saved-jobs .views-row .location, .block-bix-frontpage-recommended-jobs .view-frontpage-jobs-by-expertise .views-row .location {
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     margin-top: 10px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -15418,7 +15417,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-frontpage-recommended-jobs .view-frontpage-saved-jobs .views-row .company-title, .block-bix-frontpage-recommended-jobs .view-frontpage-jobs-by-expertise .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -16076,7 +16075,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockfrontpage-saved-jobs-block-2 .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -16505,7 +16504,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-series-companies .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 10px;
@@ -16539,7 +16538,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-series-companies .views-row .company-type, .block-bix-series-companies .views-row .company-type a, .block-bix-series-companies .views-row .open-jobs, .block-bix-series-companies .views-row .open-jobs a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -16746,7 +16745,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-series-companies-hiring .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 10px;
@@ -16780,7 +16779,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-series-companies-hiring .views-row .company-type, .block-bix-series-companies-hiring .views-row .company-type a, .block-bix-series-companies-hiring .views-row .open-jobs, .block-bix-series-companies-hiring .views-row .open-jobs a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -18165,7 +18164,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockspotlight-blogs-block-1 .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 10px;
@@ -18199,7 +18198,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockspotlight-blogs-block-1 .views-row .company-type, .block-views-blockspotlight-blogs-block-1 .views-row .company-type a, .block-views-blockspotlight-blogs-block-1 .views-row .open-jobs, .block-views-blockspotlight-blogs-block-1 .views-row .open-jobs a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -18916,7 +18915,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockcompanies-landing-companies-landing-content .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 10px;
@@ -18950,7 +18949,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockcompanies-landing-companies-landing-content .views-row .company-type, .block-views-blockcompanies-landing-companies-landing-content .views-row .company-type a, .block-views-blockcompanies-landing-companies-landing-content .views-row .open-jobs, .block-views-blockcompanies-landing-companies-landing-content .views-row .open-jobs a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -19770,7 +19769,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockjobs-jobs-landing-mobile .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -19867,7 +19866,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-jobs-landing-page-featured-views .view-featured-companies .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 10px;
@@ -19901,7 +19900,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-jobs-landing-page-featured-views .view-featured-companies .views-row .company-type, .block-bix-jobs-landing-page-featured-views .view-featured-companies .views-row .company-type a, .block-bix-jobs-landing-page-featured-views .view-featured-companies .views-row .open-jobs, .block-bix-jobs-landing-page-featured-views .view-featured-companies .views-row .open-jobs a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -19971,7 +19970,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-jobs-landing-page-featured-views .view-display-id-featured_jobs .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -19981,7 +19980,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-jobs-landing-page-featured-views .view-display-id-featured_jobs .views-row .description {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     margin-top: 10px;
 }
@@ -19991,7 +19990,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-jobs-landing-page-featured-views .view-display-id-featured_jobs .views-row .job-date, .block-bix-jobs-landing-page-featured-views .view-display-id-featured_jobs .views-row .job-location {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -20065,7 +20064,7 @@ header .site-slogan:last-child {
     -webkit-font-smoothing: auto;
     text-align: center;
     padding: 5px 10px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 1.78;
     letter-spacing: 0.3px;
@@ -20211,7 +20210,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockjobs-jobs-landing .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -20221,7 +20220,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockjobs-jobs-landing .views-row .description {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     margin-top: 10px;
 }
@@ -20231,7 +20230,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockjobs-jobs-landing .views-row .job-date, .block-views-blockjobs-jobs-landing .views-row .job-location {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -20305,7 +20304,7 @@ header .site-slogan:last-child {
     -webkit-font-smoothing: auto;
     text-align: center;
     padding: 5px 10px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 1.78;
     letter-spacing: 0.3px;
@@ -20820,7 +20819,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockbix-profile-blocks-block-4 .field--name-field-job-title, .block-views-blockbix-profile-blocks-block-4 .professional-years-from-to {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -21763,7 +21762,7 @@ header .site-slogan:last-child {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     color: #FFF;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -21776,10 +21775,10 @@ header .site-slogan:last-child {
 }
 
 .block-bix-jobs-savedrecommended-jobs .view-saved-jobs .views-row .location, .block-bix-jobs-savedrecommended-jobs .view-frontpage-jobs-by-expertise .views-row .location {
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     margin-top: 10px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -21789,7 +21788,7 @@ header .site-slogan:last-child {
 }
 
 .block-bix-jobs-savedrecommended-jobs .view-saved-jobs .views-row .company-title, .block-bix-jobs-savedrecommended-jobs .view-frontpage-jobs-by-expertise .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -22278,7 +22277,7 @@ header .site-slogan:last-child {
 }
 
 .view-search .views-row .description {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -22287,7 +22286,7 @@ header .site-slogan:last-child {
 }
 
 .view-search .views-row .company-type, .view-search .views-row .company-title, .view-search .views-row .authored-on {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -22459,7 +22458,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockmembers-block-1 .views-row .company-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -22469,7 +22468,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockmembers-block-1 .views-row .experience {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     margin-top: 10px;
 }
@@ -22694,7 +22693,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockevents-landing-events .views-row .time, .block-views-blockevents-landing-events .views-row .category {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -23280,7 +23279,7 @@ header .site-slogan:last-child {
 }
 
 .block-views-blockevents-blocks-block-1 .views-row .organized-by, .block-views-blockevents-blocks-block-1 .views-row .organized-by a {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
 }
@@ -23804,7 +23803,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-2 .col-2-1 .position-company {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -23812,7 +23811,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-2 .col-2-1 .mini-bio, .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-2 .col-2-1 .mini-bio-full {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -23830,7 +23829,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-2 .col-2-2 .expertise, .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-2 .col-2-2 .location {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 1.22;
     letter-spacing: 0.3px;
@@ -23977,7 +23976,7 @@ header .site-slogan:last-child {
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-3 .get-introduction {
     cursor: pointer;
     background-color: #00b9fe;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 30px;
     letter-spacing: 0.3px;
@@ -24022,7 +24021,7 @@ header .site-slogan:last-child {
     display: block;
     cursor: pointer;
     margin-bottom: 31px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 20px;
     letter-spacing: 0.3px;
@@ -24052,7 +24051,7 @@ header .site-slogan:last-child {
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-1 .col-3 .candidate-ignore {
     cursor: pointer;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.3px;
     text-align: left;
@@ -24112,7 +24111,7 @@ header .site-slogan:last-child {
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-1 .view-id-bix_recruitment_blocks .view-header {
     border-bottom: none;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     line-height: 1.9;
     text-align: left;
@@ -24164,7 +24163,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-1 .views-field-field-professional-experience .info .company {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -24174,7 +24173,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-1 .views-field-field-professional-experience .info .description {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -24186,7 +24185,7 @@ header .site-slogan:last-child {
     display: inline-block;
     vertical-align: top;
     width: 100px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 1.78;
     letter-spacing: 0.3px;
@@ -24248,7 +24247,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-1 .education .edu-info .edu-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     line-height: 1.9;
     text-align: left;
@@ -24263,7 +24262,7 @@ header .site-slogan:last-child {
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-1 .education .edu-date {
     display: inline-block;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 1.78;
     letter-spacing: 0.3px;
@@ -24278,7 +24277,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-2 .skills-title {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     line-height: 1.9;
     text-align: left;
@@ -24291,7 +24290,7 @@ header .site-slogan:last-child {
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-2 .skills span {
     background-color: white;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 20px;
     letter-spacing: 0.3px;
@@ -24312,7 +24311,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .view-id-recruitment_find_prospects .views-row .profile-content-wrapper .row-2 .col-2 .activity {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.3px;
     text-align: left;
@@ -24528,7 +24527,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment .contact-message-introduction-form-form .requestee-wrapper .col-right .company {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
@@ -24761,7 +24760,7 @@ header .site-slogan:last-child {
 }
 
 .path-recruitment.path-recruitment-match .profile-content-wrapper .request-info .label {
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1.56;
 }
 
@@ -25082,7 +25081,7 @@ form button:active:hover, form input[type="button"]:active:hover, form input[typ
 
 .block-facets .facet-item__count {
     float: right;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #7F8398;
     padding-top: 1px;
@@ -28691,7 +28690,7 @@ body.open-ui-autocomplete {
         letter-spacing: 0;
     }
     .page-node-type-job .job-info-wrapper .job-info, .page-node-type-job .job-info-wrapper .job-info a {
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 500;
         line-height: 1.6;
         letter-spacing: 0.3px;
