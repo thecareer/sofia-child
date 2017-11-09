@@ -124,7 +124,6 @@ if($company_head_id) {
                                                                 <img src="<?php echo $cover_image_src; ?>" width="435" height="320" alt="" class="image-style-company-overview">
 
                                                                 <div class="culture-words">
-                                                                    <div class="company-adjectives-title">We are</div>
                                                                     <div class="company-adjectives">
                                                                         <?php echo vp_metabox('jobplanet_company.slogan'); ?>
                                                                     </div>
