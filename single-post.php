@@ -99,7 +99,7 @@ global $post;
                             <div class="block-region-bottom">
                                 <div class="views-element-container block block-views block-views-blocktech-series-block-1">
 
-                                    <h2 class="box-title">Boston startup guides</h2>
+                                    <h2 class="box-title">Startup guides</h2>
 
                                     <div>
                                         <div class="overlay-grid view view-tech-series view-id-tech_series view-display-id-block_1 js-view-dom-id-8b78f2ff2a231011b4b79d9f1460cbeee79d43d1c64ff8d4c5e75accfea6dc62">
