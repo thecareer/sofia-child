@@ -5,6 +5,7 @@ Template Name: Landing Page
 get_header('landing');
 $language_list = startup_language_list();
 ?>
+<script type='application/ld+json'>{"@context":"http://schema.org","@type":"Organization","url":"https://startup.jobs","sameAs":["https://facebook.com/go.startup.jobs"],"@id":"#organization","name":"Startup.JOBS","logo":"https://i.imgur.com/8YnHdGY.png"}</script>
 <div class="region region-help">
 </div>
 <main role="main">
