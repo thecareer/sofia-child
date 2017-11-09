@@ -267,7 +267,7 @@ $post_3 = $news[2];
                                 </div>
                                 <?php /*<div class="block block-bix-global block-bix-global-sign-up">
 
-                                    <h5 class="title">The Boston startup scene moves fast. Keep up. </h5>
+                                    <h5 class="title">The startup scene moves fast. Keep up. </h5>
                                     <div class="more-link"><a href="/user/register">Sign Up</a></div>
                                 </div> */ ?>
                             </div>
