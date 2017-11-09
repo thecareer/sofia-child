@@ -9,6 +9,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes' />
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    <script type='application/ld+json'>{"@context":"http://schema.org","@type":"WebSite","@id":"#website","url":"https://startup.jobs","name":"Startup.JOBS","potentialAction":{"@type":"SearchAction","target":"https://startup.jobs/jobs?keyword={search_term_string}","query-input":"required name=search_term_string"}}</script>
     <?php wp_head(); ?>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78263364-17"></script>
