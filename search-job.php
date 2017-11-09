@@ -10,6 +10,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
     $base = remove_query_arg( 'keyword', $base );
 }
 ?>
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "@id": "https://startup.jobs", "name": "Home Page" } },{ "@type": "ListItem", "position": 2, "item": { "@type": "WebPage", "@id": "https://startup.jobs/jobs", "name": "Job Search" } } ] }</script>
 <div class="region region-featured-top">
     <div class="region-inner">
 
