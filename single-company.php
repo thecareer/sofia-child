@@ -55,17 +55,13 @@ if($company_head_id) {
                                                 <div class="company-card-info">
                                                     <div class="col-1">
                                                         <div class=""><?php echo vp_metabox('jobplanet_company.address') ?></div>
-                                                        <div class=""><?php echo $industry[0]->name; ?></div>
-                                                        <!-- <div class="">Automotive, Technology</div> -->
                                                     </div>
                                                     <div class="col-2">
                                                         <div class="year-founding"> Founded in
                                                             <time datetime="2006-01-01T12:00:00Z" class="datetime"><?php echo vp_metabox('jobplanet_company.founded_year') ?></time>
                                                         </div>
-                                                        <div class="">
-                                                            <div class=""></div>
-                                                        </div>
-                                                        <div class=""><?php echo vp_metabox('jobplanet_company.number_of_employee') ?> Local Employees</div>
+                                                        <div class=""><?php echo $industry[0]->name; ?></div>
+                                                        <div class=""><?php echo vp_metabox('jobplanet_company.number_of_employee') ?> Employees</div>
                                                     </div>
                                                     <div class="col-3">
                                                         <a href="<?php echo vp_metabox('jobplanet_company.website') ?>" class="profile-social-link website" target="_blank">
