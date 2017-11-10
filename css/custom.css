@@ -3658,7 +3658,6 @@ h2.heading2 {
     border-top-right-radius: 75px;
     border-bottom-left-radius: 75px;
     border-top-left-radius: 75px;
-    padding: 18px;
     overflow: hidden;
     vertical-align: middle;
 }
@@ -6539,7 +6538,6 @@ header .site-slogan:last-child {
     border-top-right-radius: 25px;
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
-    padding: 19.6446609407px;
     overflow: hidden;
     vertical-align: middle;
 }
@@ -8382,7 +8380,7 @@ header .site-slogan:last-child {
 }
 
 .page-node-type-job .job-info, .page-node-type-job .job-info a {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -25721,7 +25719,6 @@ body.open-ui-autocomplete {
         float: left;
         display: block;
         margin-right: 1.7743706606%;
-        width: 18.5805034715%;
         text-align: center;
         position: inherit;
     }
@@ -25732,8 +25729,8 @@ body.open-ui-autocomplete {
         display: table-cell;
         background-color: #FFF;
         border: 1px solid #F0F2FA;
-        height: 200px;
-        width: 200px;
+        height: 168px;
+        width: 168px;
         border-top-left-radius: 100px;
         border-top-right-radius: 100px;
         border-bottom-left-radius: 100px;
@@ -25742,7 +25739,6 @@ body.open-ui-autocomplete {
         border-top-right-radius: 100px;
         border-bottom-left-radius: 100px;
         border-top-left-radius: 100px;
-        padding: 34.2893218813px;
         overflow: hidden;
         vertical-align: middle;
     }
@@ -27667,7 +27663,7 @@ body.open-ui-autocomplete {
         display: none;
     }
     .view-company-card .company-card-logo {
-        width: 200px;
+        width: 168px;
         margin-right: 30px;
     }
     .view-company-card .company-card-content {
@@ -29465,4 +29461,3 @@ div.Tokenize ul.Dropdown li.Hover {
 .svg .view-navigation-job-categories .views-row.category-wrapper-developer:after, .svg .view-navigation-job-categories .views-row.category-wrapper-design:after, .svg .view-navigation-job-categories .views-row.category-wrapper-operations:after {
     background-image: url(../img/category-category-sprite.svg);
 }
-
