@@ -7,8 +7,6 @@ $company_image = get_the_post_thumbnail_url();
 $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
 
 
-$gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => get_the_ID()) );
-
 $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
 if($company_cover_id) {
     $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
@@ -24,6 +22,9 @@ if($company_head_id) {
 }else {
     $head_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
 }
+
+
+$gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => get_the_ID() , 'post__not_in' => array($company_cover_id, $company_head_id, $company_image) ) );
 
 ?>
 
