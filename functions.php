@@ -353,6 +353,20 @@ function dakachi_add_company_cover_photo()
         )
     );
 
+    register_taxonomy('job-category', array('job'),
+        array(
+            'hierarchical'   => false,
+            'label'          => __("Job Category", "jobplanet-themes"),
+            'singular_label' => __("Job Category", "jobplanet-themes"),
+            'rewrite'        => false,
+            'query_var'      => true,
+            'public'         => true,
+            'show_ui'        => true,
+        )
+    );
+
+    unregister_taxonomy_for_object_type('job-category', 'company');
+
     unregister_post_type( 'home_slider' );
     unregister_post_type( 'resume' );
     unregister_post_type( 'alert' );
