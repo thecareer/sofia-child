@@ -26,11 +26,21 @@
 <!-- wrapper page -->
 <div class="layout-container <?php if(is_404()) { echo "layout-container-404";} ?>">
 	<?php if(is_singular( 'company' )) : ?>
+  <?php
+  $company_head_id = get_post_meta( get_the_ID(), 'company_company-head_thumbnail_id', true );
+if($company_head_id) {
+    $head_image_src = wp_get_attachment_image_src($company_head_id, 'full');
+    $head_image_src = $head_image_src['0'];
+}else {
+    $head_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
+}
+  ?>
+
 		<div class="region region-background">
 	    	<div id="block-bixcompanypremiumbackground" class="block block-bix-companies block-bix-companies-premium-background">
 	  
 	    
-	      		<div class="company-background" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/img/PENDING_Company_Profile_Premium.jpg);"></div>
+	      		<div class="company-background" style="background-image: url(<?php echo $head_image_src; ?>);"></div>
 	  		</div>
 
 	  	</div>

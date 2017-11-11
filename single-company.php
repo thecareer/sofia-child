@@ -16,12 +16,6 @@ if($company_cover_id) {
 }
 
 $company_head_id = get_post_meta( get_the_ID(), 'company_company-head_thumbnail_id', true );
-if($company_head_id) {
-    $head_image_src = wp_get_attachment_image_src($company_head_id, 'full');
-    $head_image_src = $head_image_src['0'];
-}else {
-    $head_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
-}
 
 
 $gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => get_the_ID() , 'post__not_in' => array($company_cover_id, $company_head_id, get_post_thumbnail_id() ) ));
