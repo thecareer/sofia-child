@@ -2,6 +2,7 @@
 get_header();
 the_post();
 $industry = get_the_terms(get_the_ID(), 'company-industry');
+$size = get_the_terms(get_the_ID(), 'company-size');
 $company_image = get_the_post_thumbnail_url();
 $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
 
@@ -61,7 +62,9 @@ if($company_head_id) {
                                                             <time datetime="2006-01-01T12:00:00Z" class="datetime"><?php echo vp_metabox('jobplanet_company.founded_year') ?></time>
                                                         </div>
                                                         <div class=""><?php echo $industry[0]->name; ?></div>
-                                                        <div class=""><?php echo vp_metabox('jobplanet_company.number_of_employee') ?> Employees</div>
+                                                        <?php if(!empty($size)) : ?>
+                                                            <div class=""><?php echo $size[0]->name; ?> Employees</div>
+                                                        <?php endif; ?>
                                                     </div>
                                                     <div class="col-3">
                                                         <a href="<?php echo vp_metabox('jobplanet_company.website') ?>" class="profile-social-link website" target="_blank">
@@ -271,7 +274,7 @@ if($company_head_id) {
                                     $query = array(
                                         'post_status' => 'publish',
                                         'post_type' => 'job',
-                                        'paged' => $currentpage,
+                                        // 'paged' => $currentpage,
                                         'meta_key' => 'company_id',
                                         'meta_value' => get_the_ID(),
                                         'showposts' => 10

@@ -7016,6 +7016,9 @@ header .site-slogan:last-child {
     display: block;
     margin-right: 2.2278458867%;
     width: 74.4430385283%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .block-bix-companies-we-hiring-block .item-list .category:last-child {

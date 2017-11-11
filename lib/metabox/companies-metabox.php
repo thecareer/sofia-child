@@ -75,11 +75,11 @@ return array(
             'label' => esc_html(__('Founded Year', 'jobplanet-plugin')),
         ),
         //number_of_employee
-        array(
-            'type' => 'textbox',
-            'name' => 'number_of_employee',
-            'label' => esc_html(__('Number of employee', 'jobplanet-plugin')),
-        ),
+        // array(
+        //     'type' => 'textbox',
+        //     'name' => 'number_of_employee',
+        //     'label' => esc_html(__('Number of employee', 'jobplanet-plugin')),
+        // ),
         array(
             'type' => 'textbox',
             'name' => 'address',

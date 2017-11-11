@@ -366,6 +366,12 @@ function dakachi_add_company_cover_photo()
         'show_in_admin_status_list' => true,
         'label_count'               => _n_noop( 'Simple <span class="count">(%s)</span>', 'Simple <span class="count">(%s)</span>', 'jobplanet-plugin' ),
     ));
+
+    remove_image_size( 'medium' );
+    remove_image_size( 'large' );
+    remove_image_size( 'company-logo');
+    remove_image_size( 'company-thumbnail' );
+    remove_image_size( 'post-landing' );
 }
 add_action('init', 'dakachi_add_company_cover_photo');
 
