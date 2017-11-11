@@ -114,17 +114,19 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                     <div class="row">
                         <div class="">
                             <div class="block-region-bottom">
-                                <div class="block block-bix-companies block-bix-companies-location">
-  
-                                    <h2 class="box-title">Location</h2>
-                                
-                                    <div class="gmap_location_widget company_location">
-                                        <div class="gmap_location_widget_description company_description"><?php echo esc_html(vp_metabox('jobplanet_job.address')); ?></div>
-                                        <div id="gmap_location_widget_map" style="position: relative; overflow: hidden;">
-                                            <iframe id="gmap" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCXbA7-odJtEHPviVy32Sc5mPBvaJgFrts&amp;q=<?php echo esc_html(vp_metabox('jobplanet_job.address')); ?>" allowfullscreen="" width="100%" height="360" frameborder="0"> </iframe>
+                                <?php if(vp_metabox('jobplanet_job.address')) : ?>
+                                    <div class="block block-bix-companies block-bix-companies-location">
+      
+                                        <h2 class="box-title">Location</h2>
+                                    
+                                        <div class="gmap_location_widget company_location">
+                                            <div class="gmap_location_widget_description company_description"><?php echo esc_html(vp_metabox('jobplanet_job.address')); ?></div>
+                                            <div id="gmap_location_widget_map" style="position: relative; overflow: hidden;">
+                                                <iframe id="gmap" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCXbA7-odJtEHPviVy32Sc5mPBvaJgFrts&amp;q=<?php echo esc_html(vp_metabox('jobplanet_job.address')); ?>" allowfullscreen="" width="100%" height="360" frameborder="0"> </iframe>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                <?php endif; ?>
                                
                                 <div class="views-element-container block block-views block-views-blockjob-opportunities-block-1">
 

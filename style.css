@@ -209,7 +209,10 @@ a.page-numbers{
     top: 145px;
     z-index: inherit;
 }
-
+.single-job .node--type-job .job-description ul,
+.single-job .node--type-job .job-description ol {
+    margin-bottom: 20px;
+}
 .single-job .node--type-job .job-description p,
 .single-job .node--type-job .job-description ul li {
     font-size: 16px !important;
