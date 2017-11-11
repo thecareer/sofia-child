@@ -229,6 +229,10 @@ a.page-numbers{
     font-size: 18px;
 }
 
+.single-job .jp-relatedposts {
+    display: none !important;
+}
+
 .views-row-more {
     cursor: pointer;
 }
