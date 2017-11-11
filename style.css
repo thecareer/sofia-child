@@ -525,6 +525,11 @@ li .uploading-progress {
 .grid-listing .teaser {
     font-size: 14px;
     padding: 0 10px;
+    font-size: 14px;
+    padding: 0 10px;
+    height: 75px;
+    overflow: hidden;
+    line-height: 24px;
 }
 
 #list-post .title a {
