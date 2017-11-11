@@ -34,6 +34,7 @@ return array(
             'type' => 'textbox',
             'name' => 'number_vacancy',
             'label' => esc_html(__('Number of vacancy', 'jobplanet-plugin')),
+            'default' => 1
         ),
 
         array(
