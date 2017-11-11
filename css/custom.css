@@ -6663,7 +6663,12 @@ header .site-slogan:last-child {
     color: #28386F;
 }
 
-.company-overview-content .title {
+.company-overview-content .title,
+.company-overview-content .description h2,
+.company-overview-content .description h3,
+.company-overview-content .description h4,
+.company-overview-content .description h5,
+.company-overview-content .description h6 {
     font-size: 20px;
     font-weight: bold;
     line-height: 1.35;
