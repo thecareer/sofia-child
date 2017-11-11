@@ -24,7 +24,7 @@ if($company_head_id) {
 }
 
 
-$gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => get_the_ID() , 'post__not_in' => array($company_cover_id, $company_head_id, get_the_post_thumbnail_id() ) ));
+$gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => get_the_ID() , 'post__not_in' => array($company_cover_id, $company_head_id, get_post_thumbnail_id() ) ));
 
 ?>
 
