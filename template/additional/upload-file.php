@@ -14,20 +14,20 @@
     </div>
 
 <script>
-    (function ($) {
-        $(document).ready(function(){
-            $('#<?php echo esc_js($id); ?>').jFileUploader({
-                browse_button: '<?php echo esc_js($button); ?>',
-                multi: <?php echo $multi ? "true" : "false"; ?>,
-                name: <?php echo "'" . esc_js($name) . "'" ?>,
-                extension: 'pdf,doc,docx,xls,xlsx,ppt,pptx',
-                swf: '<?php echo esc_url(JOBPLANET_PLUGIN_URL . '/assets/js/plupload/js/Moxie.swf'); ?>',
-                upload_url: '<?php echo admin_url('admin-ajax.php') . '?nonce=' . wp_create_nonce('jobplanet') ?>',
-                <?php echo isset($maxsize) ? "maxsize : '$maxsize',\n" : ""; ?>
-                <?php echo isset($maxwidth) ? "maxwidth : $maxwidth,\n" : ""; ?>
-                <?php echo isset($maxheight) ? "maxheight : $maxheight,\n" : ""; ?>
-                <?php echo isset($maxcount) ? "maxcount : $maxcount,\n" : ""; ?>
-            });
-        });
-    })(jQuery);
+    // (function ($) {
+    //     $(document).ready(function(){
+    //         $('#<?php echo esc_js($id); ?>').jFileUploader({
+    //             browse_button: '<?php echo esc_js($button); ?>',
+    //             multi: <?php echo $multi ? "true" : "false"; ?>,
+    //             name: <?php echo "'" . esc_js($name) . "'" ?>,
+    //             extension: 'pdf,doc,docx,xls,xlsx,ppt,pptx',
+    //             swf: '<?php echo esc_url(JOBPLANET_PLUGIN_URL . '/assets/js/plupload/js/Moxie.swf'); ?>',
+    //             upload_url: '<?php echo admin_url('admin-ajax.php') . '?nonce=' . wp_create_nonce('jobplanet') ?>',
+    //             <?php echo isset($maxsize) ? "maxsize : '$maxsize',\n" : ""; ?>
+    //             <?php echo isset($maxwidth) ? "maxwidth : $maxwidth,\n" : ""; ?>
+    //             <?php echo isset($maxheight) ? "maxheight : $maxheight,\n" : ""; ?>
+    //             <?php echo isset($maxcount) ? "maxcount : $maxcount,\n" : ""; ?>
+    //         });
+    //     });
+    // })(jQuery);
 </script>

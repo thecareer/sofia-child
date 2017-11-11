@@ -67,12 +67,23 @@
                 $('body').removeClass('modal-open');
             }
         }
-
         $('#mc-embedded-subscribe').click(function() {
             alert_modal.style.display = "none";
             $('body').removeClass('modal-open');
-        })
-
+        });
+        (function($) {
+            $(document).ready(function() {
+                $('#upload_cv_file').jFileUploader({
+                    browse_button: 'btn-upload',
+                    multi: false,
+                    name: 'cv_file',
+                    extension: 'pdf,doc,docx,xls,xlsx,ppt,pptx',
+                    swf: 'https://startup.jobs/wp-content/plugins/jobplanet-plugin/assets/js/plupload/js/Moxie.swf',
+                    upload_url: 'https://startup.jobs/wp-admin/admin-ajax.php?nonce=42078e247b',
+                    maxsize: '2mb',
+                });
+            });
+        })(jQuery);
 
         // initMapDetail();
         $(window).scroll(function() {
@@ -151,7 +162,7 @@
                         var modal = document.getElementById('apply-modal');
                         modal.style.display = "none";
                         alert('You have successfully applied');
-                    }else {
+                    } else {
                         form.prepend(res.msg);
                     }
                     $('.apply-button').removeClass('open-apply-modal');
