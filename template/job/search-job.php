@@ -1,4 +1,7 @@
 <?php
+/**
+Template Name: Job lists Page
+ */
 get_header();
 $language_list = startup_language_list();
 $base = remove_query_arg( 'paged' );
@@ -7,6 +10,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
     $base = remove_query_arg( 'keyword', $base );
 }
 ?>
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "@id": "https://startup.jobs", "name": "Home Page" } },{ "@type": "ListItem", "position": 2, "item": { "@type": "WebPage", "@id": "https://startup.jobs/jobs", "name": "Job Search" } } ] }</script>
 <div class="region region-featured-top">
     <div class="region-inner">
 
@@ -326,7 +330,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                     $job_id = get_the_ID(); 
                                                     $company_id = vp_metabox('jobplanet_job.company_id');
                                                     $company_image_id = get_post_thumbnail_id($company_id);
-                                                    $company_image_src = wp_get_attachment_image_src($company_image_id, 'full');
+                                                    $company_image_src = wp_get_attachment_image_src($company_image_id, 'post-thumbnail');
                                                     $terms = wp_get_post_terms( get_the_ID(), 'job-location');
                                                     $term = $terms[0];
                                                 ?>
@@ -345,14 +349,13 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                         <div class="description"><?php echo vp_metabox('jobplanet_job.short_desc'); ?></div>
                                                     </div>
                                                     <div class="right">
-                                                        <div class="job-save">
-                                                            <a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">apply</a></div>
+                                                        <div class="job-save"><a href="<?php the_permalink(); ?>" class="flag-save_job ga-event-processed" data-ga-event="job-save-jobs-lp">apply</a></div>
                                                         <div class="job-date"><?php echo human_time_diff( strtotime(get_the_date()) ); ?></div>
                                                         <div class="job-location"><?php echo $term->name; ?></div>
                                                         <div class="link"><i></i></div>
                                                     </div>
                                                     <div class="wrap-view-page">
-                                                        <a <?php if(vp_metabox('jobplanet_job.application_url')){ echo "target='_blank'";} ?> href="<?php the_permalink(); ?>" hreflang="en"> </a>
+                                                        <a href="<?php the_permalink(); ?>" hreflang="en"> </a>
                                                     </div>
                                                 </div>
                                             <?php endwhile; ?>
