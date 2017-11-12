@@ -79,8 +79,14 @@ add_action('wp_enqueue_scripts', 'startup_add_scripts_styles');
 
 
 /**
- * Admin enqueue script to control job and company
+ * Just allow admin access page editor
  */
+function prevent_access_edit_page () {
+    if(!current_user_can('manage_options') && isset($_GET['post_type']) && $_GET['post_type'] == 'page') {
+        wp_die('You do not have permission to edit page');
+    }
+}
+add_action('admin_init', 'prevent_access_edit_page');
 
 
 
