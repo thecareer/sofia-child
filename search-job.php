@@ -330,7 +330,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                     $job_id = get_the_ID(); 
                                                     $company_id = vp_metabox('jobplanet_job.company_id');
                                                     $company_image_id = get_post_thumbnail_id($company_id);
-                                                    $company_image_src = wp_get_attachment_image_src($company_image_id, 'full');
+                                                    $company_image_src = wp_get_attachment_image_src($company_image_id, 'post-thumbnail');
                                                     $terms = wp_get_post_terms( get_the_ID(), 'job-location');
                                                     $term = $terms[0];
                                                 ?>
