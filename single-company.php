@@ -172,7 +172,8 @@ $gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => ge
 
                                     <div class="gmap_location_widget company_location">
                                         <div class="gmap_location_widget_description company_description"><?php echo vp_metabox('jobplanet_company.address'); ?></div>
-                                        <div id="gmap_location_widget_map" style="position: relative; overflow: hidden;" data-lat="<?php echo esc_html(trim($latlng[0])); ?>" data-lng="<?php echo esc_html(trim($latlng[1])); ?>">
+                                        <div id="gmap_location_widget_map">
+                                            <iframe id="gmap" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCXbA7-odJtEHPviVy32Sc5mPBvaJgFrts&amp;q=<?php echo esc_html(vp_metabox('jobplanet_company.address')); ?>" allowfullscreen="" width="100%" height="360" frameborder="0"> </iframe>
                                         </div>
                                     </div>
                                 </div>
