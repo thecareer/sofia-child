@@ -302,7 +302,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 <?php endwhile; ?>
                                             </div>
                                             <?php
-                                            if($companies->max_num_pages > 1) {
+                                            // if($companies->max_num_pages > 1) {
                                                 $big = 999999999; // need an unlikely integer
                                                 $link =  paginate_links( array(
                                                     'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -344,7 +344,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                     <?php endif; ?>
                                                 </ul>
                                             </nav>
-                                            <?php } ?>
+                                            <?php //} ?>
                                         <?php else : ?>
                                         <div class="view-empty">
                                             <div class="job-list-no-results">No results found, check if your spelling is correct, or try removing   filters
