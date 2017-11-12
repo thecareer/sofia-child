@@ -212,7 +212,7 @@
                                         <?php while ($companies->have_posts()) : $companies->the_post(); 
                                             $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
                                             if($company_cover_id) {
-                                                $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
+                                                $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'header-thumbnail');
                                                 $cover_image_src = $cover_image_src['0'];
                                             }else {
                                                 $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
@@ -345,7 +345,7 @@
                                             <div class="views-row">
                                                 <div class="image">
                                                     <div>
-                                                        <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>" width="265" height="200" alt="" class="image-style-navigation-image">
+                                                        <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('header-thumbnail'); ?>" width="265" height="200" alt="" class="image-style-navigation-image">
 
                                                         </a>
                                                     </div>

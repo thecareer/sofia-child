@@ -72,7 +72,7 @@ $post_3 = $news[2];
                                                             <div class="views-row">
                                                                 <div class="image">
                                                                     <div>
-                                                                        <a href="<?php echo get_permalink( $post_1->ID ); ?>"><img src="<?php echo get_the_post_thumbnail_url( $post_1->ID); ?>" width="520" height="390" alt="<?php echo get_the_title($post_1->ID); ?>" class="image-style-news-landing">
+                                                                        <a href="<?php echo get_permalink( $post_1->ID ); ?>"><img src="<?php echo get_the_post_thumbnail_url( $post_1->ID , 'big-featured-blog'); ?>" width="520" height="390" alt="<?php echo get_the_title($post_1->ID); ?>" class="image-style-news-landing">
 
                                                                         </a>
                                                                     </div>
@@ -100,7 +100,7 @@ $post_3 = $news[2];
                                                                 <div class="image">
                                                                     <div>
                                                                         <a href="<?php echo get_permalink( $post_2->ID ); ?>">
-                                                                            <img src="<?php echo get_the_post_thumbnail_url( $post_2->ID) ?>" width="250" height="190" alt="" class="image-style-news-card">
+                                                                            <img src="<?php echo get_the_post_thumbnail_url( $post_2->ID , 'header-thumbnail') ?>" width="250" height="190" alt="" class="image-style-news-card">
 
                                                                         </a>
                                                                     </div>
@@ -111,7 +111,7 @@ $post_3 = $news[2];
                                                                 <div class="image">
                                                                     <div>
                                                                         <a href="<?php echo get_permalink( $post_3->ID ); ?>">
-                                                                            <img src="<?php echo get_the_post_thumbnail_url( $post_3->ID) ?>" width="250" height="190" alt="" class="image-style-news-card">
+                                                                            <img src="<?php echo get_the_post_thumbnail_url( $post_3->ID, 'header-thumbnail'); ?>" width="250" height="190" alt="" class="image-style-news-card">
 
                                                                         </a>
                                                                     </div>
@@ -139,7 +139,7 @@ $post_3 = $news[2];
                                                     <div class="views-row">
                                                         <div class="image">
                                                             <div>
-                                                                <a href="<?php the_permalink() ?>"><img src="<?php the_post_thumbnail_url(); ?>" width="250" height="190" alt="" class="image-style-news-card">
+                                                                <a href="<?php the_permalink() ?>"><img src="<?php the_post_thumbnail_url('header-thumbnail'); ?>" width="250" height="190" alt="" class="image-style-news-card">
 
                                                                 </a>
                                                             </div>
