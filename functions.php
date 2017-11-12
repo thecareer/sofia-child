@@ -501,6 +501,7 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
                 return $image;
             }
             $link .= '/w_258,h_193,c_fill';
+            break;
         case 'full':
             return $image;
             break;
