@@ -140,6 +140,7 @@ function dakachi_admin_footer()
     }
 
     jQuery( 'input[name="jobplanet_company[city]"' ).val(city +  ', ' + country);
+    jQuery( 'input[name="jobplanet_company[map_location]"' ).val(place.geometry.location.lat() +  ', ' + place.geometry.location.lng());
     // Get each component of the address from the place details
     // and fill the corresponding field on the form.
   }
