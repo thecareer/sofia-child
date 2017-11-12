@@ -510,8 +510,12 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
             $link .= '/w_424,h_317,c_fill';
             break;
 
-        case 'large' : 
+        case 'medium' : 
             $link .= '/w_424,h_317,c_fill';
+            break;
+
+        case 'large' : 
+            $link .= '/w_809,h_450,c_fill';
             break;
         case 'full':
             return $image;
