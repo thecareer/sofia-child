@@ -5089,6 +5089,10 @@ h2.heading2 {
     display: inline-block;
     line-height: 33px;
 }
+.pager__items.js-pager__items .pager__item.pager__item--previous span,
+.pager__items.js-pager__items .pager__item.pager__item--next span{
+    width: 80px;
+}
 .pager__items.js-pager__items .pager__item a {
     background-color: #FFF;
     border-top-left-radius: 25%;
