@@ -54,7 +54,7 @@ function callback_find_company() {
 
 function callback_hook_job() {
   
-  global $base_jazz_url;
+  global $base_jazz_url, $wpdb;
   $jobs = json_decode(file_get_contents($base_jazz_url));
   foreach($jobs as $job) {
     if($job->status != "Open" && $job->status != "Approved")
@@ -65,8 +65,10 @@ function callback_hook_job() {
       'meta_value'       => $job->id,
       'post_status' => 'any'
     ) );
-      
-    if(count($posts) > 0) {
+
+    $count = $wpdb->get_var("SELECT COUNT(*) FROM jazz_sync_history WHERE jazz_id = '".$job->id."'");
+    
+    if(count($posts) > 0 || $count > 0) {
       continue;
     }
     else {
@@ -109,6 +111,7 @@ function callback_hook_job() {
       ));
 
       set_job_expire($post_id, strtotime($job->original_open_date));
+      $wpdb->query("INSERT INTO jazz_sync_history (jazz_id, sync_at) VALUES('".$job->id."', '".date("Y-m-d H:i:s")."')");
       push_to_slack($job->title, $post_id);
     }
 
