@@ -204,7 +204,7 @@ $post_3 = $news[2];
                                                         <div class="company-type">
                                                             <div><?php echo $term->name; ?></div>
                                                         </div>
-                                                        <div class="open-jobs"><span><a href="<?php the_permalink(); ?>">Views Jobs</a></span></div>
+                                                        <!--<div class="open-jobs"><span><a href="<?php the_permalink(); ?>">Views Jobs</a></span></div>-->
                                                         <div class="link"><i></i></div>
                                                         <a class="view-page" href="<?php the_permalink(); ?>"></a>
                                                     </div>
