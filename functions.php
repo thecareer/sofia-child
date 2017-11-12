@@ -11,6 +11,7 @@ require_once dirname(__FILE__) . '/lib/apply-job.php';
 require_once dirname(__FILE__) . '/lib/dakachi-jeg-mail.php';
 require_once dirname(__FILE__) . '/lib/blog.php';
 require_once dirname(__FILE__) . '/lib/job-metabox.php';
+require_once dirname(__FILE__) . '/lib/company-metabox.php';
 require_once dirname(__FILE__) . '/lib/handle-jazz.php';
 
 function onix_add_cssjs_ver($src)
@@ -78,72 +79,10 @@ add_action('wp_enqueue_scripts', 'startup_add_scripts_styles');
 /**
  * Admin enqueue script to control job and company
  */
-function dakachi_admin_enqueue_scripts()
-{
-    global $wp_scripts, $post;
-    // // get registered script object for jquery-ui
-    // $ui       = $wp_scripts->query('jquery-ui-core');
-    // $protocol = is_ssl() ? 'https' : 'http';
-    // $url      = "$protocol://ajax.googleapis.com/ajax/libs/jqueryui/{$ui->ver}/themes/smoothness/jquery-ui.min.css";
-    // wp_enqueue_style('jquery-ui-smoothness', $url, false, null);
-    // wp_enqueue_script('jquery-ui-datepicker');
-
-    // if($post && $post->post_type == 'university') {
-    //   wp_enqueue_style('jeg-datepicker-css', JOBPLANET_PLUGIN_URL . '/assets/css/jquery.datetimepicker.css', null, JOBPLANET_PLUGIN_VERSION);
-    //   wp_enqueue_script('jeg-datepicker-js', JOBPLANET_PLUGIN_URL . '/assets/js/jquery.datetimepicker.full.min.js', null, JOBPLANET_PLUGIN_VERSION, true);
-    // }
-
-    wp_enqueue_script('chosen', get_stylesheet_directory_uri() . '/js/chosen.jquery.min.js');
-    wp_enqueue_script('admin.js', get_stylesheet_directory_uri() . '/js/admin.js');
-    wp_enqueue_style('chosen', get_stylesheet_directory_uri() . '/css/chosen.min.css');
-
-}
-add_action('admin_enqueue_scripts', 'dakachi_admin_enqueue_scripts');
 
 
-/**
- * Hook in admin_head to put the style
- */
-function dakachi_admin_header()
-{
-    ?>
-<style>
-  #place_info {
-    display: none;
-  }
-  .vp-field div.mce-panel {
-      border: 1px solid #ccc;
-      background: #fff;
-  }
-  #jobplanet_company_metabox .chosen-container, #jobplanet_job_metabox  .chosen-container{
-    width : 100% !important;
-  }
-  .xdsoft_datetimepicker {
-    display: none !important;
-  }
-  .chosen-container {
-    min-width: 140px;
-  }
-  .chosen-container-single .chosen-single {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    padding: 0 0 0 8px;
-    height: 28px;
-    border: 1px solid #ddd;
-    border-radius: 0px;
-    background-color: #fff;
-    background :#fff;
-  }
-  .tablenav .actions {
-    overflow: inherit;
-  }
-</style>
 
-  }
-<?php
-}
-add_action('admin_head', 'dakachi_admin_header');
+
 
 function job_filter_body_class($classes)
 {
