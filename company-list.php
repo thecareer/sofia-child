@@ -345,7 +345,11 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                 </ul>
                                             </nav>
                                             <?php } ?>
-                                        
+                                        <?php else : ?>
+                                        <div class="view-empty">
+                                            <div class="job-list-no-results">No results found, check if your spelling is correct, or try removing   filters
+                                            </div>
+                                        </div>
                                         <?php endif; ?>
                                     </div>
 
