@@ -59,6 +59,8 @@ function startup_add_scripts_styles()
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 
     wp_enqueue_script('jquery');
+    // 
+    wp_enqueue_script('jquery.validate', '//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js');
     wp_enqueue_script('sticky', get_stylesheet_directory_uri() . '/js/jquery.sticky.js');
     wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
     wp_enqueue_script('scroll', get_stylesheet_directory_uri() . '/js/scroll.js');
@@ -67,7 +69,7 @@ function startup_add_scripts_styles()
     wp_enqueue_script('jfileuploader', get_stylesheet_directory_uri() . '/js/jfileuploader.js');
 
     wp_enqueue_script('jeg-gmap', get_stylesheet_directory_uri() . '/js/gmap.js');
-    wp_enqueue_script('jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js');
+    wp_enqueue_script('jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js', array('jquery', 'jquery.validate'));
     wp_enqueue_script('owl', get_stylesheet_directory_uri() . '/js/owl.carousel.js');
 
     wp_localize_script('jeg-detail', 'global', array('ajax_url' => admin_url('admin-ajax.php')));

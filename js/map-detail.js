@@ -71,19 +71,19 @@
             alert_modal.style.display = "none";
             $('body').removeClass('modal-open');
         });
-        (function($) {
-            $(document).ready(function() {
-                $('#upload_cv_file').jFileUploader({
-                    browse_button: 'btn-upload',
-                    multi: false,
-                    name: 'cv_file',
-                    extension: 'pdf,doc,docx,xls,xlsx,ppt,pptx',
-                    swf: 'https://startup.jobs/wp-content/plugins/jobplanet-plugin/assets/js/plupload/js/Moxie.swf',
-                    upload_url: 'https://startup.jobs/wp-admin/admin-ajax.php?nonce=42078e247b',
-                    maxsize: '2mb',
-                });
-            });
-        })(jQuery);
+        // (function($) {
+        //     $(document).ready(function() {
+        //         $('#upload_cv_file').jFileUploader({
+        //             browse_button: 'btn-upload',
+        //             multi: false,
+        //             name: 'cv_file',
+        //             extension: 'pdf,doc,docx,xls,xlsx,ppt,pptx',
+        //             swf: 'https://startup.jobs/wp-content/plugins/jobplanet-plugin/assets/js/plupload/js/Moxie.swf',
+        //             upload_url: 'https://startup.jobs/wp-admin/admin-ajax.php?nonce=42078e247b',
+        //             maxsize: '2mb',
+        //         });
+        //     });
+        // })(jQuery);
 
         // initMapDetail();
         $(window).scroll(function() {
@@ -141,11 +141,17 @@
                 }
             });
         });
-        $('.btn-submit-apply').click(function(e) {
+        $('#apply-modal form').submit(function(e) {
             e.preventDefault();
-            var button = $(this),
-                form = button.parents('form');
+            var button = $(this).find('.btn-submit-apply'),
+                form = $(this);
             $('.alert').remove();
+
+            if(!$('#cv_file').val()) {
+                form.prepend('<div class="alert alert-danger" role="alert">Vui lòng gửi kèm CVs của bạn.</div>');
+                return;
+            }
+
             $.ajax({
                 type: 'post',
                 url: global.ajax_url,
