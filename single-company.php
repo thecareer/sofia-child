@@ -17,9 +17,13 @@ if($company_cover_id) {
 
 $company_head_id = get_post_meta( get_the_ID(), 'company_company-head_thumbnail_id', true );
 
-
 $gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => get_the_ID() , 'post__not_in' => array($company_cover_id, $company_head_id, get_post_thumbnail_id() ) ));
-
+$first_image_src = '';
+$photo = $gallery;
+if(!empty($photo)) {
+$first = array_pop($photo);
+$first_image_src = wp_get_attachment_image_src($first->ID, 'medium')[0];
+}
 ?>
 
 <main role="main">
@@ -92,8 +96,9 @@ $gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => ge
                                                 <div class="views-row">
                                                     <div class="company-overview-content">
                                                         <div class="row first-child">
+                                                            <?php if($first_image_src) : ?>
                                                             <div class="col-1">
-                                                                <img src="<?php echo $head_image_src; ?>" width="435" height="320" alt="" class="image-style-company-overview">
+                                                                <img src="<?php echo $first_image_src; ?>" width="435" height="320" alt="" class="image-style-company-overview">
 
                                                                 <div class="company-gallery-dots">
                                                                     <?php for ($i=0; $i < count($gallery); $i++) : ?>
@@ -101,6 +106,7 @@ $gallery = get_children( array('post_type' => 'attachment' , 'post_parent' => ge
                                                                     <?php endfor; ?>
                                                                 </div>
                                                             </div>
+                                                            <?php endif; ?>
                                                             <div class="col-2">
                                                                 <div class="description">
                                                                     <?php the_content(); ?>
