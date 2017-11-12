@@ -496,7 +496,7 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
             $link .= '/w_150';
             break;
         case 'full':
-            $link .= '/w_150';
+            return $image;
             break;
         case 'cover-list' : 
             $link .= '/w_258,h_193,c_fill';
