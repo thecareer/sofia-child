@@ -16,6 +16,8 @@ function dakachi_change_create_edit_job_init()
         remove_filter('build_job_seach_query', array($Jeg_Job, 'build_job_seach_query'), 10, 3);
         remove_filter('post_row_actions', array($Jeg_Job, 'post_row_actions'), 10, 2);
         remove_filter('manage_job_posts_columns', array($Jeg_Job, 'job_columns'));
+
+        remove_filter('wp_dropdown_users', array($Jeg_Job, 'user_dropdown'));
     }
 }
 add_action('init', 'dakachi_change_create_edit_job_init');
@@ -45,6 +47,8 @@ class Dakachi_Jeg_Job
 
         add_action('restrict_manage_posts', array(&$this, 'restrict_manage_posts'), 12);
         add_action( 'save_post', array($this, 'published_to_draft'));
+
+        // add_filter('wp_dropdown_users', array(&$this, 'user_dropdown'));
     }
 
     public function post_row_actions($actions, $post)
@@ -1525,7 +1529,7 @@ class Dakachi_Jeg_Job
 
     public function user_dropdown($output)
     {
-        return jeg_admin_user_dropdown($output, Jeg_Account::EMPLOYER, 'job');
+        return jeg_admin_user_dropdown($output, array('employer', 'editor'), 'job');
     }
 
     public function is_job_list_page()
