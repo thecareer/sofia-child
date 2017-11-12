@@ -112,7 +112,7 @@ $language_list = startup_language_list();
                                                     $logo = get_the_post_thumbnail_url();
                                                     $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
                                                     if($company_cover_id) {
-                                                        $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
+                                                        $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'cover-list');
                                                         $cover_image_src = $cover_image_src['0'];
                                                     }else {
                                                         $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
@@ -194,7 +194,7 @@ $language_list = startup_language_list();
                                                     $logo = get_the_post_thumbnail_url();
                                                     $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
                                                     if($company_cover_id) {
-                                                        $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
+                                                        $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'cover-list');
                                                         $cover_image_src = $cover_image_src['0'];
                                                     }else {
                                                         $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
@@ -343,7 +343,7 @@ $language_list = startup_language_list();
                                                     <?php
                                                     $company_id = vp_metabox('jobplanet_job.company_id');
                                                     $company_image_id = get_post_thumbnail_id($company_id);
-                                                    $company_image_src = wp_get_attachment_image_src($company_image_id, 'full');
+                                                    $company_image_src = wp_get_attachment_image_src($company_image_id, 'cover-list');
                                                     $locations = wp_get_post_terms( get_the_ID(), 'job-location');
                                                     $location = $locations[0];
                                                     $types = wp_get_post_terms( get_the_ID(), 'job-type');

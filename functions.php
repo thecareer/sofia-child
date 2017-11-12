@@ -495,11 +495,14 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
         case 'post-thumbnail':
             $link .= '/w_150';
             break;
+        case 'cover-list' :
+            if(empty($image)) {
+                return $image[0] = 'https://static.startup.jobs/startupjobs/w_258,h_193,c_fill/media/bg/com/'.rand(1,20).'.jpg';
+            }
+            $link .= '/w_258,h_193,c_fill';
         case 'full':
             return $image;
             break;
-        case 'cover-list' : 
-            $link .= '/w_258,h_193,c_fill';
         default:
             return $image;
             break;
@@ -510,4 +513,4 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
     $image[0] = str_replace($media, $link, $image[0]);
     return $image;
 }
-add_filter('wp_get_attachment_image_src', 'staticize_attachment_src', null, 4);
+add_filter('wp_get_attachment_image_src', 'staticize_attachment_src', 10, 4);
