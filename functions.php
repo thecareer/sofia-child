@@ -497,7 +497,8 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
             break;
         case 'cover-list' :
             if(empty($image)) {
-                return $image[0] = 'https://static.startup.jobs/startupjobs/w_258,h_193,c_fill/media/bg/com/'.rand(1,20).'.jpg';
+                $image[0] = 'https://static.startup.jobs/startupjobs/w_258,h_193,c_fill/media/bg/com/'.rand(1,20).'.jpg';
+                return $image;
             }
             $link .= '/w_258,h_193,c_fill';
         case 'full':
