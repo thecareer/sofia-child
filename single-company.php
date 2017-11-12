@@ -9,7 +9,7 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
 
 $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
 if($company_cover_id) {
-    $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'full');
+    $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'cover-single');
     $cover_image_src = $cover_image_src['0'];
 }else {
     $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
