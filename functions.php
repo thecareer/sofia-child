@@ -302,10 +302,10 @@ function dakachi_add_company_cover_photo()
 
     register_taxonomy('job-category', array('job'),
         array(
-            'hierarchical'   => false,
+            'hierarchical'   => true,
             'label'          => __("Job Category", "jobplanet-themes"),
             'singular_label' => __("Job Category", "jobplanet-themes"),
-            'rewrite'        => false,
+            'rewrite'        => true,
             'query_var'      => true,
             'public'         => true,
             'show_ui'        => true,
