@@ -484,3 +484,29 @@ function custom_rewrite_rule()
      add_rewrite_rule('link\/(.*)','index.php?pagename=link&link=$matches[1]','top'); 
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
+
+
+
+function staticize_attachment_src($image, $attachment_id, $size, $icon)
+{
+    $link = 'https://static.startup.jobs/startupjobs';
+    switch ($size) {
+        //post-thumbnail
+        case 'post-thumbnail':
+            $link .= '/w_150';
+            break;
+        case 'full':
+            $link .= '/w_150';
+            break;
+        
+        default:
+            return $image;
+            break;
+    }
+    $link .= '/media';
+    $media = content_url('/uploads');
+
+    $image[0] = str_replace($media, $link, $image[0]);
+    return $image;
+}
+add_filter('wp_get_attachment_image_src', 'staticize_attachment_src', null, 4);

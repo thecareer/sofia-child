@@ -32,7 +32,7 @@ if($company_head_id) {
     $head_image_src = wp_get_attachment_image_src($company_head_id, 'full');
     $head_image_src = $head_image_src['0'];
 }else {
-    $head_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
+    $head_image_src = get_stylesheet_directory_uri(). '/img/cover/'.rand(1, 20).'.jpg';
 }
   ?>
 
