@@ -72,7 +72,7 @@ function startup_add_scripts_styles()
     wp_enqueue_script('jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js', array('jquery', 'jquery.validate'));
     wp_enqueue_script('owl', get_stylesheet_directory_uri() . '/js/owl.carousel.js');
 
-    wp_localize_script('jeg-detail', 'global', array('ajax_url' => admin_url('admin-ajax.php')));
+    wp_localize_script('jeg-detail', 'global', array('ajax_url' => admin_url('admin-ajax.php') , 'upload_file_nonce' => wp_create_nonce('jobplanet') ));
 
 }
 add_action('wp_enqueue_scripts', 'startup_add_scripts_styles');
