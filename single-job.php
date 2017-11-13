@@ -3,7 +3,7 @@ get_header();
 the_post();
 $company_id = vp_metabox('jobplanet_job.company_id');
 $company_image_id = get_post_thumbnail_id($company_id);
-$company_image_src = wp_get_attachment_image_src($company_image_id, 'full');
+$company_image_src = wp_get_attachment_image_src($company_image_id, 'post-thumbnail');
 $locations = wp_get_post_terms( get_the_ID(), 'job-location');
 $location = $locations[0];
 $latlng = explode(',', vp_metabox('jobplanet_job.map_location'));

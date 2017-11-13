@@ -28158,9 +28158,6 @@ body.open-ui-autocomplete {
     .company-perks .views-row:nth-child(4n+1) {
         clear: left;
     }
-    .company-overview-content .description {
-        max-height: 200px;
-    }
     .block-views-blockcompany-funding-block-1 .views-field-field-company-funding {
         padding: 20px;
     }

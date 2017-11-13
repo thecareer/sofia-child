@@ -22,7 +22,7 @@ $first_image_src = '';
 $photo = $gallery;
 if(!empty($photo)) {
 $first = array_pop($photo);
-$first_image_src = wp_get_attachment_image_src($first->ID, 'medium')[0];
+$first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
 }
 ?>
 
@@ -152,7 +152,7 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'medium')[0];
                                                     <?php foreach($gallery as $attachment) : ?>
                                                         <?php 
                                                         $thumb = wp_get_attachment_image_src( $attachment->ID,'thumbnail' );
-                                                        $full = wp_get_attachment_image_src( $attachment->ID,'large' );
+                                                        $full = wp_get_attachment_image_src( $attachment->ID,'tuan-large' );
                                                         ?>
                                                         <li data-thumb="<?php echo $thumb[0]; ?>"><img src="<?php echo $full[0]; ?>"></li>
                                                     <?php endforeach; ?>
