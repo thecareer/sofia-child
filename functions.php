@@ -248,7 +248,7 @@ function dakachi_add_company_cover_photo()
     register_taxonomy('job_level', 'job', $args);
     register_taxonomy('job_tag', 'job');
 
-    register_taxonomy('job_type', array('job'),
+    register_taxonomy('job-type', array('job'),
         array(
             'hierarchical'   => true,
             'label'          => __("Job Type", "jobplanet-themes"),
