@@ -248,6 +248,18 @@ function dakachi_add_company_cover_photo()
     register_taxonomy('job_level', 'job', $args);
     register_taxonomy('job_tag', 'job');
 
+    register_taxonomy('job_type', array('job'),
+        array(
+            'hierarchical'   => true,
+            'label'          => __("Job Type", "jobplanet-themes"),
+            'singular_label' => __("Job Type", "jobplanet-themes"),
+            'rewrite'        => false,
+            'query_var'      => true,
+            'public'         => true,
+            'show_ui'        => true,
+        )
+    );
+
     add_post_type_support('job', 'thumbnail');
     add_post_type_support('company', 'revisions');
 
@@ -258,7 +270,7 @@ function dakachi_add_company_cover_photo()
             'hierarchical'   => true,
             'label'          => __("Company Industry", "jobplanet-themes"),
             'singular_label' => __("Company Industry", "jobplanet-themes"),
-            'rewrite'        => false,
+            'rewrite'        => array('slug' => '/companies/industry' , 'with_front' =>true),
             'query_var'      => true,
             'public'         => true,
             'show_ui'        => true,
@@ -271,7 +283,7 @@ function dakachi_add_company_cover_photo()
             'label'          => __("Company location", "jobplanet-themes"),
             'singular_label' => __("Company location", "jobplanet-themes"),
             'rewrite'        => false,
-            'query_var'      => true,
+            'query_var'      => 'type',
             'public'         => true,
             'show_ui'        => true,
         )

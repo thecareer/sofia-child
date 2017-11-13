@@ -228,7 +228,6 @@ class Dakachi_Jeg_Company
                 // 'compare'  => 'IN',
             );
         }
-
         // filter by category
         if (!empty(get_query_var( 'type'))) {
             $tax_query[] = array(
