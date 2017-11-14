@@ -41,7 +41,7 @@ global $post;
 
                                             <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
                                                 <figure role="group" class="caption caption-img">
-                                                    <?php the_post_thumbnail( 'blog-featured' ); ?>
+                                                    <img src=<?php echo get_the_post_thumbnail_url( 'blog-featured' ); ?> />
                                                 </figure>
                                                 <?php the_content() ;?>
                                             </div>
