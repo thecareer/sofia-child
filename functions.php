@@ -534,6 +534,9 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
         case 'tuan-large' :
             $link .= '/w_809,h_450,c_fill';
             break;
+        case 'blog-featured' :
+            $link .= '/w_788,h_386,c_fill';
+            break;
         case 'full':
             return $image;
             break;
