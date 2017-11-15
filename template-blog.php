@@ -176,12 +176,9 @@ $post_3 = $news[2];
                                                 <?php while($featured_company->have_posts()) : $featured_company->the_post(); ?>
                                                     <?php
                                                         $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
-                                                        if($company_cover_id) {
-                                                            $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'cover-list');
-                                                            $cover_image_src = $cover_image_src['0'];
-                                                        }else {
-                                                            $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
-                                                        }
+                                                        $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'cover-list');
+                                                        $cover_image_src = $cover_image_src['0'];
+
                                                         $terms = wp_get_post_terms( get_the_ID(), 'company-industry');
                                                         $term = $terms[0];
                                                     ?>

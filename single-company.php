@@ -8,12 +8,12 @@ $latlng = explode(',', vp_metabox('jobplanet_company.map_location'));
 
 
 $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
-if($company_cover_id) {
+// if($company_cover_id) {
     $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'cover-single');
     $cover_image_src = $cover_image_src['0'];
-}else {
-    $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
-}
+// }else {
+//     $cover_image_src = get_stylesheet_directory_uri(). '/img/cover_photo_3.png';
+// }
 
 $company_head_id = get_post_meta( get_the_ID(), 'company_company-head_thumbnail_id', true );
 
@@ -172,17 +172,22 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                     <div class="row">
                         <div class="">
                             <div class="block-region-middle">
+                                <?php
+                                $full_address = vp_metabox('jobplanet_company.full_address');
+                                $address = $full_address ? $full_address : vp_metabox('jobplanet_company.address');
+                                if($address) : ?>
                                 <div class="block block-bix-companies block-bix-companies-location">
 
                                     <h2 class="box-title">Where we are</h2>
 
                                     <div class="gmap_location_widget company_location">
-                                        <div class="gmap_location_widget_description company_description"><?php echo vp_metabox('jobplanet_company.address'); ?></div>
+                                        <div class="gmap_location_widget_description company_description"><?php echo esc_html( $address ); ?></div>
                                         <div id="gmap_location_widget_map">
-                                            <iframe id="gmap" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCXbA7-odJtEHPviVy32Sc5mPBvaJgFrts&amp;q=<?php echo esc_html(vp_metabox('jobplanet_company.address')); ?>" allowfullscreen="" width="100%" height="360" frameborder="0"> </iframe>
+                                            <iframe id="gmap" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCXbA7-odJtEHPviVy32Sc5mPBvaJgFrts&amp;q=<?php echo esc_html($address); ?>" allowfullscreen="" width="100%" height="360" frameborder="0"> </iframe>
                                         </div>
                                     </div>
                                 </div>
+                            <?php endif ; ?>
                                 <?php
                                             $query = array(
                                                 'post_status' => 'publish',
