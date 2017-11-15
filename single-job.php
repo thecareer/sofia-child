@@ -61,7 +61,8 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                                                 </div>
                                                 | <span class="company-address"><?php echo $location->name; ?></span> </div>
                                         </div>
-
+                                        <?php
+                                        /*
                                         <div class="block block-bix-jobs-apply-bottom-only-apply">
                                             <form class="bix-jobs-apply-job-form"  action="/job/software-engineer-cambridge-1" method="post" id="bix-jobs-apply-job-form--4" accept-charset="UTF-8">
                                                 <div <?php if(isset($_COOKIE['applied_'.get_the_ID()])) {echo 'disabled';} ?> class="apply-button ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
@@ -72,7 +73,8 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                                             </form>
                                             <div class="save-job"><a title="" href="#" class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed" data-ga-event="job-save-job-description" rel="nofollow">Save</a></div>
                                         </div>
-
+                                        */
+                                        ?>
                                         <div class="node__content">
                                             <div class="job-description fade-out">
                                                 <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
@@ -93,9 +95,13 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                                         <?php else : ?>
                                             <div  class="apply-button <?php if(!isset($_COOKIE['applied_'.get_the_ID()])) {echo 'open-apply-modal';} ?> ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
                                         <?php endif; ?>
+                                        <?php
+                                        /*
                                         <input  type="hidden" name="form_build_id" value="form-l3AMPHHEm_m99tCVeo0T63ftRVmhsQpb59uzkcZukpU">
                                         <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
                                         <input  type="hidden" name="form_id" value="bix_jobs_apply_job_form">
+                                        */
+                                        ?>
 
                                     </form>
 
@@ -223,14 +229,16 @@ remove_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
                                         <?php else : ?>
                                             <div class="apply-button <?php if(!isset($_COOKIE['applied_'.get_the_ID()])) {echo 'open-apply-modal';} ?> ga-event-processed" id="apply-button" bix-click-campaign="apply-now-button" nid="6133" data-ga-event="job-apply-now-job-description" tid="12">Apply now</div>
                                         <?php endif; ?>
+                                            <?php
+                                            /*
                                             <input  type="hidden" name="form_build_id" value="form-bqgz10QSnMBbS28elpOGYkExwwiUmj9AqjIxcAIxwH0">
                                             <input  type="hidden" name="form_token" value="4Lwal-i-H39YoviKIWti5VInDAgLMcjq4D6RWZDih2c">
                                             <input  type="hidden" name="form_id" value="bix_jobs_apply_job_form">
-
+                                            */
+                                            ?>
                                         </form>
 
                                             <a title="Share to Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed facebook" data-ga-event="job-save-right-rail" rel="nofollow">Share to Facebook</a>
-
                                             <a title="Share to Facebook" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=<?php vp_metabox('jobplanet_job.short_desc'); ?>"  class="use-ajax flag flag-save_job flag-save_job-6133 action-flag ga-event-processed linkedin" data-ga-event="job-save-right-rail" rel="nofollow">Share to LinkedIn</a>
                                         <?php if($company_status == 'publish') { ?>
                                         <a href="<?php echo get_the_permalink( $company_id ); ?>" class="view-profile">View <?php echo get_the_title($company_id); ?>'s full profile</a>
