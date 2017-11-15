@@ -239,7 +239,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                     <div class="row">
                         <div class="">
                             <div class="block-region-middle">
-                                <!--<div class="block block-bix-jobs block-bix-jobs-landing-page-featured-views">
+                                <?php /*<div class="block block-bix-jobs block-bix-jobs-landing-page-featured-views">
 
                                     <h2 class="box-title">Vietnam Startups and Companies hiring</h2>
                                     <div class="views-element-container">
@@ -309,7 +309,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                         </div>
                                     </div>
 
-                                </div> -->
+                                </div> */ ?>
                                 <?php 
                                 $perpage = vp_option('joption.job_per_page', 10);
                                 $currentpage = get_query_var('paged') ? get_query_var('paged') : 1;
