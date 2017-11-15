@@ -551,3 +551,13 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
     return $image;
 }
 add_filter('wp_get_attachment_image_src', 'staticize_attachment_src', 10, 4);
+
+
+
+function jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}

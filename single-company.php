@@ -24,6 +24,9 @@ if(!empty($photo)) {
 $first = array_pop($photo);
 $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
 }
+
+add_filter( 'wp', 'jetpackme_remove_rp', 20 );
+
 ?>
 
 <main role="main">
@@ -257,6 +260,16 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                                 </div>
                                 <?php endif; ?>
                                 <?php wp_reset_query(); ?>
+
+                                <div class="views-element-container block block-views block-views-blockjob-opportunities-block-1">
+                                    <div>
+                                        <?php 
+                                        if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+                                            echo do_shortcode( '[jetpack-related-posts]' );
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
