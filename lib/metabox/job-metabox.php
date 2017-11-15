@@ -144,7 +144,7 @@ return array(
         // ),
 
         array(
-            'type' => 'textarea',
+            'type' => 'textbox',
             'name' => 'address',
             'label' => esc_html(__('Address of Employment', 'jobplanet-plugin')),
             'description' => esc_html(__('Address of Employment', 'jobplanet-plugin')),
@@ -157,9 +157,9 @@ return array(
         ),
         array(
             'type' => 'textbox',
-            'name' => 'address',
-            'label' => esc_html(__('Address of Employment', 'jobplanet-plugin')),
-            'description' => esc_html(__('Address of Employment', 'jobplanet-plugin')),
+            'name' => 'full_address',
+            'label' => esc_html(__('Full Address of Employment', 'jobplanet-plugin')),
+            'description' => esc_html(__('Full Address of Employment', 'jobplanet-plugin')),
         ),
         array(
             'type' => 'toggle',

@@ -94,11 +94,11 @@ return array(
             'description' => esc_html(__('Coordinates of company location', 'jobplanet-plugin')),
         ),
 
-        // array(
-        //     'type' => 'textbox',
-        //     'name' => 'city',
-        //     'label' => esc_html(__('City', 'jobplanet-plugin')),
-        // ),
+        array(
+            'type' => 'textbox',
+            'name' => 'full_address',
+            'label' => esc_html(__('Full Address', 'jobplanet-plugin')),
+        ),
 
         array(
             'type' => 'textbox',

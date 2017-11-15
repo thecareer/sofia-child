@@ -189,6 +189,7 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                                                 'post_type' => 'job',
                                                 'meta_key' => 'company_id',
                                                 'meta_value' => get_the_ID(),
+                                                'showposts' => -1
                                             );
 
                                             $result = new WP_Query($query);
@@ -278,7 +279,7 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                                         // 'paged' => $currentpage,
                                         'meta_key' => 'company_id',
                                         'meta_value' => get_the_ID(),
-                                        'showposts' => 10
+                                        'showposts' => 6
                                     );
 
                                     $result = new WP_Query($query);
