@@ -200,13 +200,13 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                                         <div class="job-opportunities view view-job-opportunities view-id-job_opportunities view-display-id-block_1 js-view-dom-id-633b3dd5208feb4dc04444b51fc4b4b441513ba4866ec143c0121a631880be9c" id="bix-companies-open-jobs">
 
                                             <div class="box-title"><?php printf(__( "Jobs at %s<span>%d open jobs</span>" , "enginethemes" ), get_the_title(), $result->found_posts) ?></div>
-
-                                            <!-- <div class="job-categories">
+                                            <?php /*
+                                            <div class="job-categories">
                                                 <div class="category processed" data-category="all"><span>All</span></div>
                                                 <div class="category active processed" data-category=".category-wrapper-developer"><span>Developer + Engineer</span></div>
                                                 <div class="category processed" data-category=".category-wrapper-operations"><span>Operations</span></div>
-                                            </div> -->
-
+                                            </div>
+                                            */ ?>
                                             <div class="view-content processed">
 
                                                 <div class="grid-sizer"></div>
@@ -224,7 +224,7 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                                                     </div>
 
                                                     <div class="title">
-                                                        <a href="<?php the_permalink(); ?>" hreflang="en">
+                                                        <a alt="<?php the_title(); ?>" href="<?php the_permalink(); ?>" hreflang="en">
                                                         <?php the_title(); ?>
                                                         </a>
                                                     </div>
@@ -267,7 +267,6 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                                                 <div class="centered">
                                                     <a href="<?php the_permalink( ); ?>"> 
                                                         <img src="<?php echo $company_image; ?>" width="512" height="512" alt="">
-
                                                     </a>
                                                 </div>
                                             </div>
@@ -290,7 +289,7 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                                             <ul>
                                             <?php while($result->have_posts()) : $result->the_post(); ?>
                                                 <li class="odd first">
-                                                    <a href="<?php the_permalink(); ?>" class="category-wrapper item processed" data-category=".category-wrapper-developer">
+                                                    <a alt="<?php the_title(); ?>" href="<?php the_permalink(); ?>" class="category-wrapper item processed" data-category=".category-wrapper-developer">
                                                         <div class="category" ><span class="arrow"><?php the_title(); ?></span></div>
                                                         <div class="number"><span><?php echo (vp_metabox('jobplanet_job.number_vacancy')) ? vp_metabox('jobplanet_job.number_vacancy') : 1; ?></span></div>
                                                     </a>
