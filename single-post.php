@@ -22,8 +22,8 @@ global $post;
                                             <div class="author">
                                                 <div class="col-left">
                                                     <div class="picture">
-                                                        <a href="<?php echo get_author_posts_url($post->post_author); ?>"></a>
-                                                        <a href="<?php echo get_author_posts_url($post->post_author); ?>">
+                                                        <a href="#<?php //echo get_author_posts_url($post->post_author); ?>"></a>
+                                                        <a href="#<?php //echo get_author_posts_url($post->post_author); ?>">
                                                             <div class="field field--name-field-profile-pic field--type-image field--label-hidden field__item"> 
                                                                 <?php echo get_avatar( $post->post_author, 265 ); ?>
                                                             </div>
@@ -55,7 +55,7 @@ global $post;
                                                             <div class="centered">
 
                                                                 <div class="field field--name-field-company-logo field--type-image field--label-hidden field__item">
-                                                                    <a href="/company/indigo"><?php echo get_avatar( $post->post_author, 265 ); ?>
+                                                                    <a href="#"><?php echo get_avatar( $post->post_author, 265 ); ?>
 
                                                                     </a>
                                                                 </div>
