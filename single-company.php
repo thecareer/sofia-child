@@ -1,4 +1,5 @@
 <?php 
+jetpackme_remove_rp();
 get_header();
 the_post();
 $industry = get_the_terms(get_the_ID(), 'company-industry');
@@ -24,8 +25,6 @@ if(!empty($photo)) {
 $first = array_pop($photo);
 $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
 }
-
-add_filter( 'wp', 'jetpackme_remove_rp', 20 );
 
 ?>
 
