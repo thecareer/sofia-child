@@ -561,3 +561,38 @@ function jetpackme_remove_rp() {
         remove_filter( 'the_content', $callback, 40 );
     }
 }
+
+
+add_action('wp_head', 'dakachi_add_meta_og');
+function dakachi_add_meta_og()
+{
+    global $post;
+    $img = $author = '';
+    if (is_singular('post')) {
+        $img    = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+        $author = get_the_author_meta('display_name', $post->post_author);
+    }
+
+    if (is_singular('job')) {
+        $img     = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+        $company = vp_metabox('jobplanet_job.company_id');
+        $author  = esc_html(get_the_title($company));
+    }
+
+    // if (is_singular('company')) {
+    //     $company_cover_id = get_post_meta(get_the_ID(), 'company_company-cover_thumbnail_id', true);
+    //     if ($company_cover_id) {
+    //         $img = wp_get_attachment_image_src($company_cover_id, 'full');
+    //     }
+    //     $author = esc_html(get_the_title());
+    // }
+
+    if ($img) {?>
+        <meta property="og:image" content="<?php echo $img[0]; ?>" />
+    <?php }
+
+    if ($author) {?>
+        <meta name="author" content="<?php echo $author; ?>">
+    <?php
+}
+}
