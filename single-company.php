@@ -262,11 +262,17 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
 
                                 <div class="views-element-container block block-views block-views-blockjob-opportunities-block-1">
                                     <div>
-                                        <?php 
-                                        if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-                                            echo do_shortcode( '[jetpack-related-posts]' );
-                                        }
-                                        ?>
+                                        <div class="job-opportunities view view-job-opportunities view-id-job_opportunities view-display-id-block_1 js-view-dom-id-633b3dd5208feb4dc04444b51fc4b4b441513ba4866ec143c0121a631880be9c" id="bix-companies-open-jobs">
+
+                                            <div class="box-title"><?php _e("RELATED COMPANIES", "enginethemes"); ?></div>
+                                            <div class="view-content processed">
+                                                <?php 
+                                                if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+                                                    echo do_shortcode( '[jetpack-related-posts]' );
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
