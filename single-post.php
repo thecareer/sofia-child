@@ -63,7 +63,7 @@ global $post;
                                                             </div>
                                                         </div>
                                                         <h2 class="company-title"><a href="#"><span class="field field--name-title field--type-string field--label-hidden"><?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
-</a></h2>
+                                                            </a></h2>
                                                         
                                                         <?php /*
 

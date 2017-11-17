@@ -48,3 +48,16 @@ function dakachi_filter_job_link($link, $job) {
 	return $link;
 }
 // add_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
+
+
+
+add_filter( 'wpseo_opengraph_image', 'ag_yoast_seo_fb_share_images', 10, 1 );
+function ag_yoast_seo_fb_share_images( $img ) {
+	if(is_singular( 'job' )) {
+		$company_id = vp_metabox('jobplanet_job.company_id');
+		$company_image_id = get_post_thumbnail_id($company_id);
+		$company_image_src = wp_get_attachment_image_src($company_image_id, 'post-thumbnail');
+		return $company_image_src;
+	}
+	return $img;
+};
