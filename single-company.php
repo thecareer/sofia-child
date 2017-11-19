@@ -38,7 +38,7 @@ $first_image_src = wp_get_attachment_image_src($first->ID, 'tuan-medium')[0];
                         <div class="views-element-container block block-views block-views-blockcompany-card-block-1">
 
                             <div>
-                                <div class="view view-company-card view-id-company_card view-display-id-block_1 js-view-dom-id-8120b700e81f3cf0457d28710ce8907c100c4322bfc72cb7d17cb6ada0e161bf">
+                                <div class="view view-company-card view-id-company_card view-display-id-block_1">
 
                                     <div class="view-content">
                                         <div class="views-row">
