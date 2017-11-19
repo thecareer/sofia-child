@@ -406,7 +406,7 @@
             </ul>
         </nav>
         <div id="block-accountmenunavigation" class="block block-bix-global block-bix-global-account-menu">
-            <a href="https://goo.gl/forms/N5Gj1qxUNXHwpSLy1" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="/employer" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
+            <a href="https://goo.gl/forms/N5Gj1qxUNXHwpSLy1" target="_blank" class="post-job ga-event-processed" data-ga-event="customers-post-job">Post Job</a><span><a href="/employer" data-ga-event="user-acq-join-nav-bar" class="ga-event-processed">Employer</a></span>
         </div>
     </div>
 </div>
