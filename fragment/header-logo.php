@@ -110,7 +110,7 @@
         <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main">
         <?php global $post; ?>
             <ul class="menu">
-                <li class="nav-item jobs menu-item <?php if( is_page_template( 'search-job.php' ) || is_singular( 'job' ) || is_tax(array('job-location', 'job_type', 'job_level', 'job_tag', 'job-category')) ) {echo 'active';} ?>">
+                <li class="nav-item jobs menu-item <?php if( is_page_template( 'search-job.php' ) || is_singular( 'job' ) || is_tax(array('job-location', 'job-type', 'job_level', 'job_tag', 'job-category')) ) {echo 'active';} ?>">
                     <a href="/jobs"><span>Job Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
