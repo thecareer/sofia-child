@@ -229,11 +229,11 @@ class Dakachi_Jeg_Company
             );
         }
         // filter by category
-        if (!empty(get_query_var( 'type'))) {
+        if (!empty(get_query_var( 'industry'))) {
             $tax_query[] = array(
                 'taxonomy' => 'company-industry',
                 'field'    => 'slug',
-                'terms'    => get_query_var( 'type'),
+                'terms'    => get_query_var( 'industry'),
                 // 'compare'  => 'IN',
             );
         }

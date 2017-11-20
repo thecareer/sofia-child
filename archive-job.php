@@ -1,14 +1,8 @@
 <?php
-/**
-Template Name: Job lists Page
- */
 get_header();
 $language_list = startup_language_list();
-$base = remove_query_arg( 'paged' );
-$base = preg_replace('%\/page/[0-9]+%', '', $base);
-if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
-    $base = remove_query_arg( 'keyword', $base );
-}
+$base = get_permalink( vp_option('joption.job_page') );
+
 ?>
 <script type="application/ld+json">{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "@id": "https://startup.jobs", "name": "Home Page" } },{ "@type": "ListItem", "position": 2, "item": { "@type": "WebPage", "@id": "https://startup.jobs/jobs", "name": "Job Search" } } ] }</script>
 <div class="region region-featured-top">
@@ -24,7 +18,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                 </div>
             </div>
         </div>
-        <form action="<?php echo $base; ?>" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
+        <form action="/jobs" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
         <div id="block-searchjob" class="block block-bix-jobs block-bix-jobs-search-job">
 
             <div class="search-bar"><span class="label">Search |</span>
@@ -54,7 +48,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                     <?php
                                     $job_types = get_terms( array('taxonomy' => 'job-type','hide_empty' => false) );
-                                    $selected_types = isset($_GET['type']) ? $_GET['type'] : array();
+                                    $selected_types =  get_query_var('type') ? array(get_query_var('type')) : array();
                                     ?>
 
                                     <h2 class="box-title active">Type</h2>
@@ -98,7 +92,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 <div class="block-facet--bix-facets-jobs-checkbox block block-facets block-facet-blockjob-category">
                                     <?php
                                     $categorys = get_terms( array('taxonomy' => 'job-category','hide_empty' => false) );
-                                    $selected_categorys = isset($_GET['category']) ? $_GET['category'] : array();
+                                    $selected_categorys = get_query_var('category') ? array(get_query_var('category')) : array();
                                     ?>
                                     <h2 class="box-title <?php if(!empty($selected_categorys)) {echo 'active';} ?>">Category</h2>
 
@@ -142,7 +136,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 <div class="block-facet--bix-facets-jobs-checkbox block block-facets block-facet-blockjob-level">
                                 <?php
                                 $levels = get_terms( array('taxonomy' => 'job_level','hide_empty' => false) );
-                                $selected_levels = isset($_GET['level']) ? $_GET['level'] : array();
+                                $selected_levels = get_query_var('level') ? array(get_query_var('level')) : array();
                                 ?>
                                 <h2 class="box-title <?php if(!empty($selected_levels)) {echo 'active';} ?>">level</h2>
 
@@ -187,7 +181,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 <div class="block-facet--bix-facets-jobs-checkbox block block-facets block-facet-blockjob-location last">
                                     <?php
                                     $locations = get_terms( array('taxonomy' => 'job-location','hide_empty' => false) );
-                                    $selected_locations = isset($_GET['location']) ? $_GET['location'] : array();
+                                    $selected_locations = get_query_var('location') ? array(get_query_var('location')) : array();
                                     ?>
                                     <h2 class="box-title <?php if(!empty($selected_locations)) {echo 'active';} ?>">Location</h2>
 
@@ -307,11 +301,12 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                     </div>
 
                                 </div> */ ?>
-                                <?php 
+                                <?php
+                                global $wp_query;
                                 $perpage = vp_option('joption.job_per_page', 10);
                                 $currentpage = get_query_var('paged') ? get_query_var('paged') : 1;
 
-                                $jobs = apply_filters('build_job_seach_query', null, $perpage, $currentpage);
+                                $jobs = $wp_query;//apply_filters('build_job_seach_query', null, $perpage, $currentpage);
                                 ?>
                                 <div class="views-element-container block block-views block-views-blockjobs-jobs-landing">
 

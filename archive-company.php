@@ -6,6 +6,7 @@ $base = preg_replace('%\/page/[0-9]+%', '', $base);
 if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
     $base = remove_query_arg( 'keyword', $base );
 }
+
 ?>
 <script type="application/ld+json">{"@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "item": { "@type": "WebSite", "@id": "https://startup.jobs", "name": "Home Page" } },{ "@type": "ListItem", "position": 2, "item": { "@type": "WebPage", "@id": "https://startup.jobs/companies", "name": "Startup Companies" } } ] }</script>
 <div class="region region-featured-top">
@@ -57,7 +58,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 ?>
                                 <?php
                                 $industries = get_terms( array('taxonomy' => 'company-industry','hide_empty' => false) );
-                                $selected_industry = isset($_GET['type']) ? $_GET['type'] : array();
+                                $selected_industry = get_query_var('industry') ? array(get_query_var('industry')) : array();
                                 ?>
                                 <div class="block-facet--checkbox block block-facets block-facet-blockcompany-types-aggregate-type-industry">
 
@@ -75,16 +76,16 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                             ?>
                                                 <li class="facet-item ">
                                                     <?php if($current) : 
-                                                            $link  = remove_query_arg('type', $base );
+                                                            $link  = remove_query_arg('industry', $base );
                                                             foreach ($selected_industry as $key => $v) {
                                                                 if($v != $industry->slug) {
-                                                                    $link  = add_query_arg(array('type[]' => $v), $link );
+                                                                    $link  = add_query_arg(array('industry[]' => $v), $link );
                                                                 }
                                                             }
                                                         ?>
                                                             <a href="<?php echo esc_url($link); ?>">
                                                             <?php else : ?>
-                                                                <a href="<?php echo esc_url(add_query_arg('type[]', $industry->slug, $base )); ?>">
+                                                                <a href="<?php echo esc_url(add_query_arg('industry[]', $industry->slug, $base )); ?>">
                                                             <?php endif; ?>
                                                     <input type="checkbox" class="facets-checkbox" id="type-<?php echo $industry->slug ?>" <?php if($current){echo 'checked=true';} ?> >
                                                     <div class="label" for="type-<?php echo $industry->slug ?>">
@@ -104,7 +105,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                 <!-- company-size -->
                                 <?php
                                 $sizes = get_terms( array('taxonomy' => 'company-size','hide_empty' => false) );
-                                $selected_size = isset($_GET['size']) ? $_GET['size'] : array();
+                                $selected_size = get_query_var('size') ? array(get_query_var('size')) : array();
                                 ?>
                                 <div class="block-facet--bix-facets-checkboxes block block-facets block-facet-blocklocal-employees">
 
@@ -152,7 +153,7 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
 
                                 <?php
                                 $locationss = get_terms( array('taxonomy' => 'company-location','hide_empty' => false) );
-                                $selected_locations = isset($_GET['locations']) ? $_GET['locations'] : array();
+                                $selected_locations = get_query_var('location') ? array(get_query_var('location')) : array();
                                 ?>
 
                                 <div class="block-facet--bix-facets-checkboxes block block-facets block-facet-blockfield-location-amount last">
