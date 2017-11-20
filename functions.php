@@ -111,12 +111,12 @@ function job_filter_body_class($classes)
         return $classes;
     }
 
-    if (is_page_template('search-job.php')) {
+    if (is_page_template('search-job.php') || is_archive('job')) {
         $classes[] = 'page-jobs page-jobs-landing path-desktop';
         return $classes;
     }
 
-    if (is_page_template('company-list.php')) {
+    if (is_page_template('company-list.php') || is_archive('company')) {
         $classes[] = 'path-companies';
     }
 
@@ -138,6 +138,7 @@ function job_filter_body_class($classes)
         $classes[] = 'active-slideshow tall-header  premium-company user-logged-in path-node page-node-type-company gorgias-loaded';
         return $classes;
     }
+
 
     return $classes;
 }

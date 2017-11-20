@@ -84,15 +84,12 @@ if( isset($_GET['keyword']) && empty($_GET['keyword'])) {
                                                             <?php endif; ?>
                                                     <input type="checkbox" class="facets-checkbox" id="type-<?php echo $type->slug ?>" <?php if($current){echo 'checked=true';} ?> >
                                                     <div class="label" for="type-<?php echo $type->slug ?>">
-                                                        
                                                                 <span class="facet-item__value"><?php echo $type->name; ?></span>
                                                                 <span class="facet-item__count">
                                                                   <?php echo $type->count ?>
-                                                    
                                                               </span>
                                                     </div>
                                                     </a>
-                                                    
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
