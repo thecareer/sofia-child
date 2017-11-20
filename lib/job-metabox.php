@@ -54,6 +54,7 @@ add_action( 'restrict_manage_posts', 'wpse45436_admin_posts_filter_restrict_mana
  */
 function wpse45436_admin_posts_filter_restrict_manage_posts(){
     if (isset($_GET['post_type']) && ($_GET['post_type'] == 'company' || $_GET['post_type'] == 'job' )) {
-    	wp_dropdown_users(array('name' => 'author', 'selected' => $_GET['author']));
+    	$author = isset($_GET['author']) ? $_GET['author'] : 0;
+    	wp_dropdown_users(array('name' => 'author', 'selected' => $author, 'show_option_none' => 'Select author'));
     }
 }
