@@ -112,7 +112,7 @@
 <div class="basement">Love your Startup <span></span> Love your job</div>
 </div>
     <?php wp_footer() ?>
-
+    <script src="https://embed.small.chat/T5KUT0HCNG82U7MPRS.js" async></script>
     <?php get_template_part( 'fragment/modal', 'apply' ); ?>
     <?php get_template_part( 'fragment/modal', 'alert' ); ?>
 </div>
