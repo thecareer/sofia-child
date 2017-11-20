@@ -18,7 +18,7 @@ $base = get_permalink( vp_option('joption.job_page') );
                 </div>
             </div>
         </div>
-        <form action="/jobs" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
+        <form action="<?php echo $base; ?>" method="get" id="views-exposed-form-jobs-jobs-landing" accept-charset="UTF-8">
         <div id="block-searchjob" class="block block-bix-jobs block-bix-jobs-search-job">
 
             <div class="search-bar"><span class="label">Search |</span>
