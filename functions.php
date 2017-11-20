@@ -49,7 +49,6 @@ function startup_add_scripts_styles()
 
     // wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom.css', array('main'));
 
-
     if (is_404()) {
         wp_enqueue_style('404', get_stylesheet_directory_uri() . '/css/404.css', array('main'));
     }
@@ -59,7 +58,7 @@ function startup_add_scripts_styles()
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 
     wp_enqueue_script('jquery');
-    // 
+    //
     wp_enqueue_script('jquery.validate', '//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js');
     wp_enqueue_script('sticky', get_stylesheet_directory_uri() . '/js/jquery.sticky.js');
     wp_enqueue_script('blazy', get_stylesheet_directory_uri() . '/js/blazy.js');
@@ -72,25 +71,25 @@ function startup_add_scripts_styles()
     wp_enqueue_script('jeg-detail', get_stylesheet_directory_uri() . '/js/map-detail.js', array('jquery', 'jquery.validate'));
     wp_enqueue_script('owl', get_stylesheet_directory_uri() . '/js/owl.carousel.js');
 
-    wp_localize_script('jeg-detail', 'global', array('ajax_url' => admin_url('admin-ajax.php') , 'upload_file_nonce' => wp_create_nonce('jobplanet') ));
+    wp_localize_script('jeg-detail', 'global', array(
+        'ajax_url' => admin_url('admin-ajax.php'), 
+        'upload_file_nonce' => wp_create_nonce('jobplanet'),
+        'swf' => esc_url(JOBPLANET_PLUGIN_URL . '/assets/js/plupload/js/Moxie.swf')
+    ));
 
 }
 add_action('wp_enqueue_scripts', 'startup_add_scripts_styles');
 
-
 /**
  * Just allow admin access page editor
  */
-function prevent_access_edit_page () {
-    if(!current_user_can('manage_options') && isset($_GET['post_type']) && $_GET['post_type'] == 'page') {
+function prevent_access_edit_page()
+{
+    if (!current_user_can('manage_options') && isset($_GET['post_type']) && $_GET['post_type'] == 'page') {
         wp_die('You do not have permission to edit page');
     }
 }
 add_action('admin_init', 'prevent_access_edit_page');
-
-
-
-
 
 function job_filter_body_class($classes)
 {
@@ -121,7 +120,7 @@ function job_filter_body_class($classes)
         $classes[] = 'path-companies';
     }
 
-    if (is_page_template('page-employer.php')){
+    if (is_page_template('page-employer.php')) {
         $classes[] = "path-premium";
     }
 
@@ -270,7 +269,7 @@ function dakachi_add_company_cover_photo()
             'hierarchical'   => true,
             'label'          => __("Company Industry", "jobplanet-themes"),
             'singular_label' => __("Company Industry", "jobplanet-themes"),
-            'rewrite'        => array('slug' => '/companies/industry' , 'with_front' =>true),
+            'rewrite'        => array('slug' => '/companies/industry', 'with_front' => true),
             'query_var'      => true,
             'public'         => true,
             'show_ui'        => true,
@@ -326,25 +325,25 @@ function dakachi_add_company_cover_photo()
 
     unregister_taxonomy_for_object_type('job-category', 'company');
 
-    unregister_post_type( 'home_slider' );
-    unregister_post_type( 'resume' );
-    unregister_post_type( 'alert' );
-    unregister_post_type( 'application' );
+    unregister_post_type('home_slider');
+    unregister_post_type('resume');
+    unregister_post_type('alert');
+    unregister_post_type('application');
 
-    register_post_status( 'simple', array(
-        'label'                     => esc_html(__( 'Simple', 'jobplanet-plugin' )),
+    register_post_status('simple', array(
+        'label'                     => esc_html(__('Simple', 'jobplanet-plugin')),
         'public'                    => false,
         'exclude_from_search'       => false,
         'show_in_admin_all_list'    => true,
         'show_in_admin_status_list' => true,
-        'label_count'               => _n_noop( 'Simple <span class="count">(%s)</span>', 'Simple <span class="count">(%s)</span>', 'jobplanet-plugin' ),
+        'label_count'               => _n_noop('Simple <span class="count">(%s)</span>', 'Simple <span class="count">(%s)</span>', 'jobplanet-plugin'),
     ));
 
-    remove_image_size( 'medium' );
-    remove_image_size( 'large' );
-    remove_image_size( 'company-logo');
-    remove_image_size( 'company-thumbnail' );
-    remove_image_size( 'post-landing' );
+    remove_image_size('medium');
+    remove_image_size('large');
+    remove_image_size('company-logo');
+    remove_image_size('company-thumbnail');
+    remove_image_size('post-landing');
 }
 add_action('init', 'dakachi_add_company_cover_photo');
 
@@ -352,22 +351,22 @@ function dakachi_jeg_company_list()
 {
     $result = array('0' => array(
         'value' => '',
-        'label' => 'Select a company'
+        'label' => 'Select a company',
     ));
     $statement = new WP_Query(array(
-        'post_type' => 'company',
-        'orderby' => 'menu_order',
-        'order' => 'ASC',
+        'post_type'      => 'company',
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
         'posts_per_page' => -1,
-        'post_status' =>array('publish', 'simple')
+        'post_status'    => array('publish', 'simple'),
     ));
 
     $companies = $statement->posts;
 
-    foreach($companies as $company){
+    foreach ($companies as $company) {
         $result[] = array(
             'value' => $company->ID,
-            'label' => $company->post_title
+            'label' => $company->post_title,
         );
     }
 
@@ -493,11 +492,9 @@ function dakachi_page_array($lang)
 
 function custom_rewrite_rule()
 {
-     add_rewrite_rule('link\/(.*)','index.php?pagename=link&link=$matches[1]','top'); 
+    add_rewrite_rule('link\/(.*)', 'index.php?pagename=link&link=$matches[1]', 'top');
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
-
-
 
 function staticize_attachment_src($image, $attachment_id, $size, $icon)
 {
@@ -507,34 +504,34 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
         case 'post-thumbnail':
             $link .= '/w_150';
             break;
-        case 'cover-list' :
-            if(empty($image)) {
-                $image[0] = 'https://static.startup.jobs/startupjobs/w_258,h_193,c_fill/media/bg/com/'.rand(1,20).'.jpg';
+        case 'cover-list':
+            if (empty($image)) {
+                $image[0] = 'https://static.startup.jobs/startupjobs/w_258,h_193,c_fill/media/bg/com/' . rand(1, 20) . '.jpg';
                 return $image;
             }
             $link .= '/w_258,h_193,c_fill';
             break;
-        case 'cover-single' :
-            if(empty($image)) {
-                $image[0] = 'https://static.startup.jobs/startupjobs/w_424,h_317,c_fill/media/bg/com/'.rand(1,20).'.jpg';
+        case 'cover-single':
+            if (empty($image)) {
+                $image[0] = 'https://static.startup.jobs/startupjobs/w_424,h_317,c_fill/media/bg/com/' . rand(1, 20) . '.jpg';
                 return $image;
             }
             $link .= '/w_424,h_317,c_fill';
             break;
 
-        case 'tuan-medium' :
+        case 'tuan-medium':
             $link .= '/w_424,h_317,c_fill';
             break;
-        case 'header-thumbnail' :
+        case 'header-thumbnail':
             $link .= '/w_258,h_172,c_fill';
             break;
         case 'big-featured-blog';
             $link .= '/w_533,h_355,c_fill';
             break;
-        case 'tuan-large' :
+        case 'tuan-large':
             $link .= '/w_809,h_450,c_fill';
             break;
-        case 'blog-featured' :
+        case 'blog-featured':
             $link .= '/w_788,h_386,c_fill';
             break;
         case 'full':
@@ -552,16 +549,14 @@ function staticize_attachment_src($image, $attachment_id, $size, $icon)
 }
 add_filter('wp_get_attachment_image_src', 'staticize_attachment_src', 10, 4);
 
-
-
-function jetpackme_remove_rp() {
-    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-        $jprp = Jetpack_RelatedPosts::init();
-        $callback = array( $jprp, 'filter_add_target_to_dom' );
-        remove_filter( 'the_content', $callback, 40 );
+function jetpackme_remove_rp()
+{
+    if (class_exists('Jetpack_RelatedPosts')) {
+        $jprp     = Jetpack_RelatedPosts::init();
+        $callback = array($jprp, 'filter_add_target_to_dom');
+        remove_filter('the_content', $callback, 40);
     }
 }
-
 
 add_action('wp_head', 'dakachi_add_meta_og');
 function dakachi_add_meta_og()
@@ -574,11 +569,11 @@ function dakachi_add_meta_og()
     }
 
     if (is_singular('job')) {
-        $company_id = vp_metabox('jobplanet_job.company_id');
+        $company_id       = vp_metabox('jobplanet_job.company_id');
         $company_image_id = get_post_thumbnail_id($company_id);
-        $img = wp_get_attachment_image_src($company_image_id, 'post-thumbnail');
-        $company = vp_metabox('jobplanet_job.company_id');
-        $author  = esc_html(get_the_title($company));
+        $img              = wp_get_attachment_image_src($company_image_id, 'post-thumbnail');
+        $company          = vp_metabox('jobplanet_job.company_id');
+        $author           = esc_html(get_the_title($company));
     }
 
     // if (is_singular('company')) {

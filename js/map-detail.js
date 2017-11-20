@@ -78,8 +78,8 @@
                     multi: false,
                     name: 'cv_file',
                     extension: 'pdf,doc,docx,xls,xlsx,ppt,pptx',
-                    swf: 'https://startup.jobs/wp-content/plugins/jobplanet-plugin/assets/js/plupload/js/Moxie.swf',
-                    upload_url: 'https://startup.jobs/wp-admin/admin-ajax.php?nonce='+global.upload_file_nonce,
+                    swf: global.swf,
+                    upload_url: global.ajax_url + '?nonce='+global.upload_file_nonce,
                     maxsize: '2mb',
                 });
             });
@@ -147,7 +147,7 @@
                 form = $(this);
             $('.alert').remove();
 
-            if(!$('#cv_file').val()) {
+            if(!$('input[name="cv_file"]').val()) {
                 form.prepend('<div class="alert alert-danger" role="alert">Vui lòng gửi kèm CVs của bạn.</div>');
                 return;
             }
@@ -163,7 +163,6 @@
                     button.text('Loading ...');
                 },
                 success: function(res) {
-                    console.log(res);
                     if (res.success) {
                         var modal = document.getElementById('apply-modal');
                         modal.style.display = "none";
