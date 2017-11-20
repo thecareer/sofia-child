@@ -95,9 +95,11 @@
             if ($(window).scrollTop() >= (heightHeader + 250)) {
                 $('.wrap-sticky').addClass('is-sticky');
                 $('.block-bix-companies-we-hiring-block').addClass('is-fixed');
+                
             } else {
                 $('.wrap-sticky').removeClass('is-sticky');
                 $('.block-bix-companies-we-hiring-block').removeClass('is-fixed');
+                $('.block-bix-jobs-apply-bottom-only-apply').removeClass('is-fixed');
             }
             if ($(window).scrollTop() >= main_conent_height) {
                 $('.wrap-sticky').removeClass('is-sticky');
@@ -111,6 +113,14 @@
             if ($(window).scrollTop() >= main_conent_height - 300) {
                 $('.block-bix-jobs-apply').removeClass('is-fixed');
             }
+
+
+            if($(window).scrollTop() > 200) {
+                $('.block-bix-jobs-apply-bottom-only-apply').addClass('is-fixed');
+            }else{
+                $('.block-bix-jobs-apply-bottom-only-apply').removeClass('is-fixed');
+            }
+
         });
         var blog_page = 1;
         $('#load-more-blog').click(function(e) {
