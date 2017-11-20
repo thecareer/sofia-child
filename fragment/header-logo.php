@@ -110,7 +110,7 @@
         <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main">
         <?php global $post; ?>
             <ul class="menu">
-                <li class="nav-item jobs menu-item <?php if( is_page_template( 'search-job.php' ) || is_singular( 'job' ) ) {echo 'active';} ?>">
+                <li class="nav-item jobs menu-item <?php if( is_page_template( 'search-job.php' ) || is_singular( 'job' ) || is_tax(array('job-location', 'job_type', 'job_level', 'job_tag', 'job-category')) ) {echo 'active';} ?>">
                     <a href="/jobs"><span>Job Search</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -181,7 +181,7 @@
                         <div class="underlay"></div>
                     </div>
                 </li>
-                <li class="nav-item startups menu-item menu-item--expanded <?php if( is_page_template( 'company-list.php' ) || is_singular( 'company' ) ) {echo 'active';} ?>">
+                <li class="nav-item startups menu-item menu-item--expanded <?php if( is_page_template( 'company-list.php' ) || is_singular( 'company' ) || is_tax( array('company-industry', 'company-size', 'company-location', 'company-tag') ) ) {echo 'active';} ?>">
                     <a href="/companies"><span>Companies</span></a>
                     <div class="nav-content" style="display: none;">
                         <div class="nav-content-inner">
@@ -209,7 +209,7 @@
                                     <div class="overlay-grid view view-navigation-series view-id-navigation_series view-display-id-block_1 js-view-dom-id-319cb1d3f6b7a4169eaeb92241b819b879356141f0b904e357cf1e50d4b291e3">
 
                                         <div class="view-content">
-                                        <?php while ($companies->have_posts()) : $companies->the_post(); 
+                                        <?php while ($companies->have_posts()) : $companies->the_post();
                                             $company_cover_id = get_post_meta( get_the_ID(), 'company_company-cover_thumbnail_id', true );
                                             if($company_cover_id) {
                                                 $cover_image_src = wp_get_attachment_image_src($company_cover_id, 'header-thumbnail');
