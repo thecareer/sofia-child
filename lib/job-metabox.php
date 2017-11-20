@@ -41,10 +41,19 @@ function dakachi_save_job_name($post_ID, $post, $update) {
 }
 add_action('save_post_job', 'dakachi_save_job_name', 10, 3);
 
-function dakachi_filter_job_link($link, $job) {
-	if( !is_admin() && 'job' == $job->post_type && vp_metabox('jobplanet_job.application_url')) {
-		return vp_metabox('jobplanet_job.application_url');
-	}
-	return $link;
+
+
+add_action( 'restrict_manage_posts', 'wpse45436_admin_posts_filter_restrict_manage_posts' );
+/**
+ * First create the dropdown
+ * make sure to change POST_TYPE to the name of your custom post type
+ * 
+ * @author Ohad Raz
+ * 
+ * @return void
+ */
+function wpse45436_admin_posts_filter_restrict_manage_posts(){
+    if (isset($_GET['post_type']) && ($_GET['post_type'] == 'company' || $_GET['post_type'] == 'job' )) {
+    	wp_dropdown_users(array('name' => 'author', 'selected' => $_GET['author']));
+    }
 }
-// add_filter( 'post_type_link', 'dakachi_filter_job_link', 10, 2 );
