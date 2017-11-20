@@ -22,15 +22,17 @@ function dakachi_custom_title($title)
             $loc[] = $location->name;
         }
         $location       = join(',', $loc);
-        $title = sprintf(__("%s tuyển dụng %s tại %s", "jobplanet-themes"), $company_title, $job_title, $location);
+        $title = sprintf(__("%s at %s | %s", "jobplanet-themes"), $job_title, $company_title,  $blogname);
         return $title;
     }
 
     if(is_singular( 'company' )) {
         $company_name = esc_html( get_the_title() );
-        $title = sprintf(__("Working at %s. company profile and job opportunities", "jobplanet-themes"), $company_name);
+        $title = sprintf(__("Working at %s. company profile and job opportunities | %s", "jobplanet-themes"), $company_name, $blogname);
         return $title;
     }
+
+    return $title;
 
     if (is_singular('page') && get_the_ID() == vp_option('joption.job_page')) {
 
