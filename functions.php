@@ -145,6 +145,9 @@ add_filter('body_class', 'job_filter_body_class');
 
 function dakachi_add_company_cover_photo()
 {
+    if(!defined('ICL_LANGUAGE_CODE')) {
+        define('ICL_LANGUAGE_CODE', 'en');
+    }
     /**
      * add setting cover photo
      */
@@ -232,9 +235,7 @@ function dakachi_add_company_cover_photo()
         'show_tagcloud'     => true,
         'show_ui'           => true,
         'query_var'         => true,
-        'rewrite'           => array(
-            'slug' => 'job-level',
-        ),
+        'rewrite'        => array('slug' => '/jobs/level', 'with_front' => true),
         'query_var'         => true,
         'capabilities'      => array(
             'manage_terms',
@@ -245,14 +246,24 @@ function dakachi_add_company_cover_photo()
     );
 
     register_taxonomy('job_level', 'job', $args);
-    register_taxonomy('job_tag', 'job');
+    register_taxonomy('job_tag', array('job'),
+        array(
+            'hierarchical'   => true,
+            'label'          => __("Job Tag", "jobplanet-themes"),
+            'singular_label' => __("Job Tag", "jobplanet-themes"),
+            'rewrite'        => array('slug' => '/jobs/tag', 'with_front' => true),
+            'query_var'      => true,
+            'public'         => true,
+            'show_ui'        => true,
+        )
+    );
 
     register_taxonomy('job-type', array('job'),
         array(
             'hierarchical'   => true,
             'label'          => __("Job Type", "jobplanet-themes"),
             'singular_label' => __("Job Type", "jobplanet-themes"),
-            'rewrite'        => false,
+            'rewrite'        => array('slug' => '/jobs/type', 'with_front' => true),
             'query_var'      => true,
             'public'         => true,
             'show_ui'        => true,
@@ -281,7 +292,7 @@ function dakachi_add_company_cover_photo()
             'hierarchical'   => true,
             'label'          => __("Company location", "jobplanet-themes"),
             'singular_label' => __("Company location", "jobplanet-themes"),
-            'rewrite'        => false,
+            'rewrite'        => array('slug' => '/companies/location', 'with_front' => true),
             'query_var'      => 'type',
             'public'         => true,
             'show_ui'        => true,
@@ -292,7 +303,7 @@ function dakachi_add_company_cover_photo()
             'hierarchical'   => true,
             'label'          => __("Company Size", "jobplanet-themes"),
             'singular_label' => __("Company Size", "jobplanet-themes"),
-            'rewrite'        => false,
+            'rewrite'        => array('slug' => '/companies/size', 'with_front' => true),
             'query_var'      => true,
             'public'         => true,
             'show_ui'        => true,
@@ -304,7 +315,7 @@ function dakachi_add_company_cover_photo()
             'hierarchical'   => false,
             'label'          => __("Company Tag", "jobplanet-themes"),
             'singular_label' => __("Company TAg", "jobplanet-themes"),
-            'rewrite'        => false,
+            'rewrite'        => array('slug' => '/companies/tag', 'with_front' => true),
             'query_var'      => true,
             'public'         => true,
             'show_ui'        => true,
@@ -316,7 +327,7 @@ function dakachi_add_company_cover_photo()
             'hierarchical'   => true,
             'label'          => __("Job Category", "jobplanet-themes"),
             'singular_label' => __("Job Category", "jobplanet-themes"),
-            'rewrite'        => true,
+            'rewrite'        => array('slug' => '/jobs/category', 'with_front' => true),
             'query_var'      => true,
             'public'         => true,
             'show_ui'        => true,
