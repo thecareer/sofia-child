@@ -571,7 +571,7 @@ function dakachi_add_meta_og()
     if (is_singular('job')) {
         $company_id       = vp_metabox('jobplanet_job.company_id');
         $company_image_id = get_post_thumbnail_id($company_id);
-        $img              = wp_get_attachment_image_src($company_image_id, 'post-thumbnail');
+        $img              = wp_get_attachment_image_src($company_image_id, 'full');
         $company          = vp_metabox('jobplanet_job.company_id');
         $author           = esc_html(get_the_title($company));
     }
